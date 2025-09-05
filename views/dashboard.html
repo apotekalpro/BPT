@@ -196,30 +196,33 @@
                     <div class="card-content">
                         <div class="org-structure">
                             <!-- Level 1: CSO -->
-                            <div class="org-level">
+                            <div class="org-level level-1">
                                 <div class="org-box cso">
                                     <div class="org-title">CSO - Marketing Director</div>
                                     <div class="org-name">Tomas</div>
                                 </div>
                             </div>
                             
-                            <!-- Level 2: Department Heads -->
-                            <div class="org-level">
+                            <!-- Level 2: Department Heads (All in same horizontal row) -->
+                            <div class="org-level level-2">
                                 <div class="org-box department">
                                     <div class="org-title">Creative Builders</div>
                                     <div class="org-name">Rahma</div>
                                     <div class="org-subtitle">Creative Builder Executive</div>
                                 </div>
+                                
                                 <div class="org-box department">
                                     <div class="org-title">Promotion & Event</div>
                                     <div class="org-name">Tarjo (Anto)</div>
                                     <div class="org-subtitle">BPT Executive</div>
                                 </div>
+                                
                                 <div class="org-box department vacant">
                                     <div class="org-title">Digital Marketing</div>
                                     <div class="org-name">Vacant</div>
                                     <div class="org-subtitle">Executive Position</div>
                                 </div>
+                                
                                 <div class="org-box department">
                                     <div class="org-title">Visual Merchandize</div>
                                     <div class="org-name">Pratiwi</div>
@@ -227,20 +230,31 @@
                                 </div>
                             </div>
                             
-                            <!-- Level 3: Associates & Staff -->
-                            <div class="org-level">
+                            <!-- Level 3: Staff reporting to Level 2 managers (Positioned directly under their managers) -->
+                            <div class="org-level level-3">
                                 <div class="org-box staff">
                                     <div class="org-title">Creative Builder Associate</div>
                                     <div class="org-name">Khalisa</div>
+                                    <div class="org-subtitle">Reports to Rahma</div>
                                 </div>
+                                
                                 <div class="org-box staff">
                                     <div class="org-title">BPT Internship</div>
                                     <div class="org-name">Agnes</div>
+                                    <div class="org-subtitle">Reports to Tarjo</div>
                                 </div>
+                                
                                 <div class="org-box staff">
                                     <div class="org-title">BPT Associate</div>
                                     <div class="org-name">Kelsey</div>
+                                    <div class="org-subtitle">Reports to Digital Marketing</div>
                                 </div>
+                                
+                                <div class="org-spacer"><!-- Empty spacer to align with Pratiwi --></div>
+                            </div>
+                            
+                            <!-- Additional Area Manager (separate branch) -->
+                            <div class="org-level level-extra">
                                 <div class="org-box staff user-position">
                                     <div class="org-title">Area Manager</div>
                                     <div class="org-name" id="orgAccountManager">Loading...</div>
@@ -349,18 +363,77 @@
 
         <!-- Monitoring Tab -->
         <div class="tab-content" id="monitoring">
-            <div class="maintenance-container">
-                <div class="maintenance-content">
-                    <div class="maintenance-icon">
-                        <i class="fas fa-cogs"></i>
+            <div class="monitoring-section">
+                <div class="monitoring-header">
+                    <div class="monitoring-title">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>TikTok Cuan Monitoring</h2>
                     </div>
-                    <h2>Under Maintenance</h2>
-                    <p>The Monitoring section is currently under maintenance. Please check back later.</p>
-                    <div class="mascot-maintenance">
-                        <div class="character-head">
-                            <div class="character-glasses">
-                                <div class="glass left"></div>
-                                <div class="glass right"></div>
+                    <div class="monitoring-subtitle">
+                        <p>Real-time analytics and performance monitoring</p>
+                    </div>
+                </div>
+
+                <div class="monitoring-tabs-container">
+                    <div class="monitoring-nav">
+                        <button class="monitoring-tab active" data-monitor="tiktok-analytics">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok Analytics</span>
+                        </button>
+                        <button class="monitoring-tab" data-monitor="performance-metrics">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Performance Metrics</span>
+                        </button>
+                    </div>
+
+                    <div class="monitoring-content">
+                        <!-- TikTok Analytics -->
+                        <div class="monitoring-tab-content active" id="tiktok-analytics">
+                            <div class="monitoring-embed-header">
+                                <div class="monitoring-info">
+                                    <h3><i class="fab fa-tiktok"></i> TikTok Performance Dashboard</h3>
+                                    <p>Real-time monitoring • Analytics & Insights</p>
+                                </div>
+                                <div class="monitoring-status-badge active">
+                                    <i class="fas fa-signal"></i>
+                                    Live Monitoring
+                                </div>
+                            </div>
+                            <div class="monitoring-embed-container">
+                                <div class="embed-placeholder">
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">
+                                            <i class="fab fa-tiktok"></i>
+                                        </div>
+                                        <h3>TikTok Analytics Dashboard</h3>
+                                        <p>Ready for embed URL integration</p>
+                                        <div class="placeholder-note">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span>This section will display the embedded TikTok monitoring interface when URL is provided</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Metrics -->
+                        <div class="monitoring-tab-content" id="performance-metrics">
+                            <div class="monitoring-embed-header">
+                                <div class="monitoring-info">
+                                    <h3><i class="fas fa-chart-bar"></i> Performance Metrics</h3>
+                                    <p>Campaign performance • ROI Analysis</p>
+                                </div>
+                            </div>
+                            <div class="monitoring-embed-container">
+                                <div class="embed-placeholder">
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <h3>Performance Analytics</h3>
+                                        <p>Comprehensive campaign performance monitoring</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
