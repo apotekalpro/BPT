@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apotek Alpro - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="alpro-logo">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/0032dd95bbc24c3bbac505f6463145c4" 
+                         alt="Apotek Alpro Logo" class="logo-image">
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="bpt-portal-title">
+                    <h1>BPT Portal</h1>
+                    <span class="portal-subtitle">Business Performance Team</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="user-info">
+                    <div class="user-details">
+                        <span class="user-name" id="userName">Demo User</span>
+                        <span class="user-type" id="userType">OUTLET User</span>
+                    </div>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn" onclick="window.location.href='index.html'">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="nav-container">
+            <button class="nav-tab active" data-tab="homepage">
+                <i class="fas fa-home"></i>
+                <span>Homepage</span>
+            </button>
+            <button class="nav-tab" data-tab="campaign">
+                <i class="fas fa-bullhorn"></i>
+                <span>Campaign</span>
+            </button>
+            <button class="nav-tab" data-tab="monitoring">
+                <i class="fas fa-chart-line"></i>
+                <span>Monitoring</span>
+            </button>
+            <button class="nav-tab" data-tab="health-news">
+                <i class="fas fa-newspaper"></i>
+                <span>Health News</span>
+            </button>
+            <button class="nav-tab" data-tab="tiktok-cuan">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok Cuan</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Homepage Tab -->
+        <div class="tab-content active" id="homepage">
+            <!-- Top Banner -->
+            <div class="top-banner">
+                <div class="banner-content">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/3dd985cdee27403802c438c513b9b781" 
+                         alt="Apotek Alpro Team" 
+                         class="team-banner-image">
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Campaign Calendar Section -->
+                <div class="dashboard-card campaign-calendar-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-calendar-star"></i> BPT Campaign Calendar 2025</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="campaign-timeline">
+                            <div class="campaign-item upcoming">
+                                <div class="campaign-month">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Jan 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>New Year Health Campaign</h4>
+                                    <p>Vitamin & Supplement Promotion</p>
+                                    <div class="campaign-status upcoming">Upcoming</div>
+                                </div>
+                            </div>
+                            <div class="campaign-item active">
+                                <div class="campaign-month">
+                                    <i class="fas fa-star"></i>
+                                    <span>Dec 2024</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>Year End Wellness</h4>
+                                    <p>Health Products Special Offer</p>
+                                    <div class="campaign-status active">Active</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizational Chart Section -->
+                <div class="dashboard-card org-chart-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-sitemap"></i> BPT Organizational Chart</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="org-chart">
+                            <!-- Level 1: General Manager -->
+                            <div class="org-level level-1">
+                                <div class="org-box gm">
+                                    <div class="org-title">General Manager</div>
+                                    <div class="org-name">Lukman Sardi</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 2: Department Heads -->
+                            <div class="org-level level-2">
+                                <div class="org-box department">
+                                    <div class="org-title">Creative Builders</div>
+                                    <div class="org-name">Rahma</div>
+                                </div>
+                                <div class="org-box department">
+                                    <div class="org-title">Campaign Specialist</div>
+                                    <div class="org-name">Keysa</div>
+                                </div>
+                                <div class="org-box department">
+                                    <div class="org-title">Visual Content</div>
+                                    <div class="org-name">Nicky</div>
+                                </div>
+                                <div class="org-box department">
+                                    <div class="org-title">Event Coordinator</div>
+                                    <div class="org-name">Tasya</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign Tab -->
+        <div class="tab-content" id="campaign">
+            <div class="campaign-header">
+                <div class="campaign-title">
+                    <h2><i class="fas fa-bullhorn"></i> Campaign Management</h2>
+                    <p>Manage and monitor active campaigns</p>
+                </div>
+            </div>
+            
+            <div class="campaign-iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVrq2c4fhEqiJkJ-GghVPKPzO0iZhOoAMmXdZCbIkqrlFZf8cAqF2U4YcOiTEXgPjKvDuj9Ws0CGU5/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Monitoring Tab -->
+        <div class="tab-content" id="monitoring">
+            <div class="campaign-header">
+                <div class="campaign-title">
+                    <h2><i class="fas fa-chart-line"></i> Performance Monitoring</h2>
+                    <p>Track campaign performance and analytics</p>
+                </div>
+            </div>
+            
+            <div class="campaign-iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlGFQOq0PJs-OmBz5LZXweCbFscTd1KcU0iMKOl3RViid1S5cv9tQWj3p9P2PXKABRx0C2iQT5d2tl/pubhtml?gid=822288251&amp;single=true&amp;widget=true&amp;headers=false" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Health News Tab -->
+        <div class="tab-content" id="health-news">
+            <div class="campaign-header">
+                <div class="campaign-title">
+                    <h2><i class="fas fa-newspaper"></i> Health News & Updates</h2>
+                    <p>Latest health news and pharmaceutical updates</p>
+                </div>
+            </div>
+            
+            <div class="campaign-iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVrq2c4fhEqiJkJ-GghVPKPzO0iZhOoAMmXdZCbIkqrlFZf8cAqF2U4YcOiTEXgPjKvDuj9Ws0CGU5/pubhtml?gid=1234567890&amp;single=true&amp;widget=true&amp;headers=false" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- TikTok Cuan Tab -->
+        <div class="tab-content" id="tiktok-cuan">
+            <div class="campaign-header">
+                <div class="campaign-title">
+                    <h2><i class="fab fa-tiktok"></i> TikTok Cuan</h2>
+                    <p>Social media campaigns and TikTok content</p>
+                </div>
+            </div>
+            
+            <div class="campaign-iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVrq2c4fhEqiJkJ-GghVPKPzO0iZhOoAMmXdZCbIkqrlFZf8cAqF2U4YcOiTEXgPjKvDuj9Ws0CGU5/pubhtml?gid=2023456789&amp;single=true&amp;widget=true&amp;headers=false" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/dashboard-static.js"></script>
+</body>
+</html>

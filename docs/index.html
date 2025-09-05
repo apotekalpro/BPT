@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apotek Alpro - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo-container">
+                    <div class="alpro-logo">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/0032dd95bbc24c3bbac505f6463145c4" 
+                             alt="Apotek Alpro Logo" class="logo-image">
+                    </div>
+                </div>
+                <h1>BPT Portal</h1>
+                <h2>Welcome Back</h2>
+                <p>Please sign in to your account</p>
+            </div>
+            
+            <div class="login-form-container">
+                <div class="login-type-selector">
+                    <button type="button" class="login-type-btn active" data-type="outlet">
+                        <span class="icon">🏪</span>
+                        Outlet Login
+                    </button>
+                    <button type="button" class="login-type-btn" data-type="hq">
+                        <span class="icon">🏢</span>
+                        HQ Login
+                    </button>
+                </div>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username" id="usernameLabel">Store Code</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your store code" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" id="passwordLabel">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">
+                        <span class="btn-text">Sign In</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </form>
+                
+                <div id="errorMessage" class="error-message hidden"></div>
+                
+                <div class="demo-info">
+                    <p style="margin-top: 20px; padding: 12px; background: rgba(79, 172, 254, 0.1); border-radius: 8px; font-size: 12px; color: #1e40af; text-align: center;">
+                        🌟 <strong>Demo Mode</strong><br>
+                        Use any credentials to access the dashboard
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/login-static.js"></script>
+</body>
+</html>
