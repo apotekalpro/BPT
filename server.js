@@ -27,12 +27,42 @@ app.use(session({
 
 // Google Sheets configuration
 const SHEET_ID = '1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo9wE';
-const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+const OUTLET_SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`; // Outlet Login sheet
+const HQ_SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=1`; // HQ Login sheet (assuming gid=1)
 
-// Fetch Google Sheets data
-async function fetchSheetData() {
+// Fetch Outlet Login sheet data
+async function fetchOutletSheetData() {
     try {
-        const response = await axios.get(SHEET_URL);
+        const response = await axios.get(OUTLET_SHEET_URL);
+        const csvData = response.data;
+        const lines = csvData.split('\n');
+        const data = [];
+        
+        // Skip header row and process data
+        for (let i = 1; i < lines.length; i++) {
+            if (lines[i].trim()) {
+                const columns = lines[i].split(',');
+                if (columns.length >= 4) {
+                    data.push({
+                        shortStoreName: columns[0]?.replace(/"/g, '').trim(),
+                        storeName: columns[1]?.replace(/"/g, '').trim(),
+                        am: columns[2]?.replace(/"/g, '').trim(),
+                        password: columns[3]?.replace(/"/g, '').trim()
+                    });
+                }
+            }
+        }
+        return data;
+    } catch (error) {
+        console.error('Error fetching outlet sheet data:', error);
+        return [];
+    }
+}
+
+// Fetch HQ Login sheet data
+async function fetchHQSheetData() {
+    try {
+        const response = await axios.get(HQ_SHEET_URL);
         const csvData = response.data;
         const lines = csvData.split('\n');
         const data = [];
@@ -43,9 +73,13 @@ async function fetchSheetData() {
                 const columns = lines[i].split(',');
                 if (columns.length >= 8) {
                     data.push({
-                        shortStoreName: columns[0]?.replace(/"/g, '').trim(),
-                        storeName: columns[1]?.replace(/"/g, '').trim(),
-                        am: columns[3]?.replace(/"/g, '').trim(),
+                        name: columns[0]?.replace(/"/g, '').trim(),
+                        email: columns[1]?.replace(/"/g, '').trim(),
+                        status: columns[2]?.replace(/"/g, '').trim(),
+                        role: columns[3]?.replace(/"/g, '').trim(),
+                        dateAdded: columns[4]?.replace(/"/g, '').trim(),
+                        addedBy: columns[5]?.replace(/"/g, '').trim(),
+                        lastAccess: columns[6]?.replace(/"/g, '').trim(),
                         password: columns[7]?.replace(/"/g, '').trim()
                     });
                 }
@@ -53,7 +87,7 @@ async function fetchSheetData() {
         }
         return data;
     } catch (error) {
-        console.error('Error fetching sheet data:', error);
+        console.error('Error fetching HQ sheet data:', error);
         return [];
     }
 }
@@ -88,28 +122,32 @@ app.post('/api/login', async (req, res) => {
     const { username, password, loginType } = req.body;
     
     try {
-        const sheetData = await fetchSheetData();
         let user = null;
         
         if (loginType === 'outlet') {
-            // Outlet login: Column A (shortStoreName) as username, Column D (am) as password
-            user = sheetData.find(row => 
+            // Outlet login: Column A (shortStoreName) as username, Column D (password) as password
+            const outletData = await fetchOutletSheetData();
+            user = outletData.find(row => 
                 row.shortStoreName && row.shortStoreName.toLowerCase() === username.toLowerCase() && 
-                row.am && row.am.toLowerCase() === password.toLowerCase()
+                row.password === password
             );
             if (user) {
                 user.type = 'outlet';
                 user.displayName = user.shortStoreName;
+                user.fullStoreName = user.storeName;
             }
         } else if (loginType === 'hq') {
-            // HQ login: Column B (storeName) as username, Column H (password) as password
-            user = sheetData.find(row => 
-                row.storeName && row.storeName.toLowerCase() === username.toLowerCase() && 
+            // HQ login: Column B (email) as username, Column H (password) as password
+            const hqData = await fetchHQSheetData();
+            user = hqData.find(row => 
+                row.email && row.email.toLowerCase() === username.toLowerCase() && 
                 row.password === password
             );
             if (user) {
                 user.type = 'hq';
-                user.displayName = user.storeName;
+                user.displayName = user.name;
+                user.email = user.email;
+                user.role = user.role;
             }
         }
         
@@ -118,8 +156,9 @@ app.post('/api/login', async (req, res) => {
             res.json({ success: true, user: { 
                 type: user.type, 
                 displayName: user.displayName,
-                fullStoreName: user.storeName,
-                am: user.am
+                fullStoreName: user.fullStoreName || user.name,
+                am: user.am || user.role,
+                email: user.email
             }});
         } else {
             res.json({ success: false, message: 'Invalid credentials' });
@@ -137,8 +176,9 @@ app.get('/api/user', (req, res) => {
             user: { 
                 type: req.session.user.type, 
                 displayName: req.session.user.displayName,
-                fullStoreName: req.session.user.storeName,
-                am: req.session.user.am
+                fullStoreName: req.session.user.fullStoreName || req.session.user.name,
+                am: req.session.user.am || req.session.user.role,
+                email: req.session.user.email
             }
         });
     } else {

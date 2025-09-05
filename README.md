@@ -44,9 +44,13 @@ The application authenticates users against this Google Sheets:
 https://docs.google.com/spreadsheets/d/1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo9wE/edit?gid=0#gid=0
 
 **Column Mapping:**
+
+**Outlet Login Sheet:**
 - Column A: Short Store Name (Outlet Username)
-- Column B: Store Name (HQ Username)  
-- Column D: AM/Account Manager (Outlet Password)
+- Column D: Password (Outlet Password)
+
+**HQ Login Sheet:**
+- Column B: Email (HQ Username)  
 - Column H: Password (HQ Password)
 
 ## 🚀 Quick Start
@@ -55,10 +59,10 @@ https://docs.google.com/spreadsheets/d/1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo
 
 **Outlet Login:**
 - Store Code: `JKJSTT1`
-- Account Manager: `JESIKA SILITONGA`
+- Password: `Alpro@123`
 
 **HQ Login:**
-- Store Name: `APOTEK ALPRO TEBET TIMUR`
+- Email: `eni.khuzaimah@apotekalpro.id`
 - Password: `Alpro@123`
 
 ### Navigation
