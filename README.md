@@ -16,16 +16,19 @@ A modern web application for Apotek Alpro pharmacy chain management with dual lo
 - **Session Management:** Secure user sessions with proper logout functionality
 
 ### Dashboard Features
-- **BPT Overview:** Real-time business metrics and performance indicators
-- **Event Calendar:** Interactive calendar with pharmacy events and appointments
+- **Campaign Calendar 2025:** Complete BPT campaign timeline with visual indicators
+- **Organizational Chart:** Carta Organisasi & PIC structure display
+- **Contact Information:** Marketing team contact details and creative request form
 - **Navigation Tabs:** Three main sections (Homepage, On Going Campaign, Monitoring)
 - **Quick Actions:** Shortcuts for common pharmacy operations
 - **Store Information:** Dynamic display based on user login type
 
 ### Design & Branding
-- **Apotek Alpro Brand Identity:** Custom logo, colors, and mascot integration
-- **Responsive Design:** Works on desktop, tablet, and mobile devices
-- **Modern UI/UX:** Clean, professional interface with smooth animations
+- **Official Apotek Alpro Logo:** Authentic logo with ® symbol and proper styling
+- **Marketing-Focused Design:** Enhanced visuals for marketing and creative teams
+- **Gradient Headers:** Professional gradient backgrounds with animations
+- **Modern UI/UX:** Premium interface with hover effects and smooth transitions
+- **Responsive Design:** Optimized for desktop, tablet, and mobile devices
 - **Accessibility:** Keyboard shortcuts and screen reader support
 
 ## 🔧 Technical Stack
@@ -135,19 +138,28 @@ npx pm2 stop all        # Stop application
 npx pm2 delete all      # Delete PM2 processes
 ```
 
-## 📈 Dashboard Metrics
+## 📅 Campaign Calendar 2025
 
-- **Monthly Revenue:** Real-time revenue tracking
-- **Total Transactions:** Daily transaction counts
-- **Customer Satisfaction:** Satisfaction percentage
-- **Active Products:** Current inventory count
+**August 2025:** National Day Sales (GO Jaksel + Bekasi)
+**September 2025:** Woman Health & Fitness (GO Jaksel)
+**October 2025:** Kenali Gula Anda (GO)
+**November 2025:** Kenali Gula Anda (GO)
+**December 2025:** Anniversary Year End Sales, Apotek Cilik Experience Day, Apotek Alpro Picasso 2025
 
-## 🗓️ Calendar Events
+## 📞 Marketing Contacts
 
-Sample events included:
-- Health Awareness Campaign (Sep 15)
-- Monthly Staff Meeting (Sep 22)
-- Inventory Check (Sep 30)
+**Email:** marketing@apotekalpro.id
+**Phone:** +62 877 8573 1144
+**Creative Requests:** [Artwork Request Form](https://docs.google.com/forms/d/1sqb9qcDQmdJ9e5m_TOrr2VG8z3lqbJW7Ai_aeutcogg/edit)
+
+## 🎨 Visual Enhancements
+
+- **Gradient Animations:** Dynamic gradient headers with smooth animations
+- **Hover Effects:** Interactive elements with professional transitions
+- **Campaign Status Indicators:** Color-coded status badges for campaigns
+- **Card Animations:** Smooth slide-in animations for dashboard cards
+- **Modern Typography:** Enhanced font weights and spacing
+- **Marketing-Focused Layout:** Optimized for creative and marketing workflows
 
 ## 🚧 Future Enhancements
 
