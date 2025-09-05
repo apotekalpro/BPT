@@ -78,10 +78,10 @@
         <!-- Homepage Tab -->
         <div class="tab-content active" id="homepage">
             <div class="dashboard-grid">
-                <!-- BPT Overview Section -->
-                <div class="dashboard-card bpt-overview">
-                    <div class="card-header">
-                        <h3><i class="fas fa-chart-bar"></i> BPT Overview</h3>
+                <!-- Campaign Calendar Section -->
+                <div class="dashboard-card campaign-calendar-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-calendar-star"></i> BPT Campaign Calendar 2025</h3>
                         <div class="card-actions">
                             <button class="refresh-btn" onclick="refreshBPT()">
                                 <i class="fas fa-sync-alt"></i>
@@ -89,39 +89,81 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="bpt-metrics">
-                            <div class="metric-item">
-                                <div class="metric-value">₹2,45,680</div>
-                                <div class="metric-label">Monthly Revenue</div>
-                                <div class="metric-trend positive">
-                                    <i class="fas fa-arrow-up"></i> 12.5%
+                        <div class="campaign-timeline">
+                            <div class="campaign-item august">
+                                <div class="campaign-month">
+                                    <i class="fas fa-flag"></i>
+                                    <span>Aug 2025</span>
                                 </div>
+                                <div class="campaign-details">
+                                    <h4>National Day Sales</h4>
+                                    <p>GO Jaksel + Bekasi</p>
+                                </div>
+                                <div class="campaign-status active">Active</div>
                             </div>
-                            <div class="metric-item">
-                                <div class="metric-value">1,234</div>
-                                <div class="metric-label">Total Transactions</div>
-                                <div class="metric-trend positive">
-                                    <i class="fas fa-arrow-up"></i> 8.3%
+                            
+                            <div class="campaign-item september">
+                                <div class="campaign-month">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Sep 2025</span>
                                 </div>
+                                <div class="campaign-details">
+                                    <h4>Woman Health & Fitness</h4>
+                                    <p>GO Jaksel</p>
+                                </div>
+                                <div class="campaign-status upcoming">Current</div>
                             </div>
-                            <div class="metric-item">
-                                <div class="metric-value">89.2%</div>
-                                <div class="metric-label">Customer Satisfaction</div>
-                                <div class="metric-trend positive">
-                                    <i class="fas fa-arrow-up"></i> 2.1%
+                            
+                            <div class="campaign-item october">
+                                <div class="campaign-month">
+                                    <i class="fas fa-sugar-cube"></i>
+                                    <span>Oct 2025</span>
                                 </div>
+                                <div class="campaign-details">
+                                    <h4>Kenali Gula Anda</h4>
+                                    <p>GO</p>
+                                </div>
+                                <div class="campaign-status planned">Planned</div>
                             </div>
-                            <div class="metric-item">
-                                <div class="metric-value">456</div>
-                                <div class="metric-label">Active Products</div>
-                                <div class="metric-trend neutral">
-                                    <i class="fas fa-minus"></i> 0%
+                            
+                            <div class="campaign-item november">
+                                <div class="campaign-month">
+                                    <i class="fas fa-sugar-cube"></i>
+                                    <span>Nov 2025</span>
                                 </div>
+                                <div class="campaign-details">
+                                    <h4>Kenali Gula Anda</h4>
+                                    <p>GO</p>
+                                </div>
+                                <div class="campaign-status planned">Planned</div>
+                            </div>
+                            
+                            <div class="campaign-item december">
+                                <div class="campaign-month">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Dec 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>Anniversary Year End Sales</h4>
+                                    <p>Apotek Cilik Experience Day<br>Apotek Alpro Picasso 2025</p>
+                                </div>
+                                <div class="campaign-status special">Special</div>
                             </div>
                         </div>
                         
-                        <div class="bpt-chart-container">
-                            <canvas id="bptChart" width="400" height="200"></canvas>
+                        <div class="campaign-stats">
+                            <div class="stat-box">
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Total Campaigns</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Active Now</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Upcoming</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,6 +250,83 @@
                                 <i class="fas fa-file-alt"></i>
                                 <span>Generate Report</span>
                             </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizational Chart & PIC -->
+                <div class="dashboard-card org-chart-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-sitemap"></i> Carta Organisasi & PIC</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="org-structure">
+                            <div class="org-level">
+                                <div class="org-box director">
+                                    <div class="org-title">Marketing Director</div>
+                                    <div class="org-name">TBD</div>
+                                </div>
+                            </div>
+                            <div class="org-level">
+                                <div class="org-box manager">
+                                    <div class="org-title">Campaign Manager</div>
+                                    <div class="org-name">Marketing Team</div>
+                                </div>
+                                <div class="org-box manager">
+                                    <div class="org-title">Creative Manager</div>
+                                    <div class="org-name">Design Team</div>
+                                </div>
+                            </div>
+                            <div class="org-level">
+                                <div class="org-box staff">
+                                    <div class="org-title">Area Manager</div>
+                                    <div class="org-name" id="orgAccountManager">Loading...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="dashboard-card contact-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-address-book"></i> Contact Us</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Marketing Email</div>
+                                    <a href="mailto:marketing@apotekalpro.id" class="contact-value">marketing@apotekalpro.id</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Phone Number</div>
+                                    <a href="tel:+6287785731144" class="contact-value">+62 877 8573 1144</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item artwork-request">
+                                <div class="contact-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Request Artwork dari Creative Builder BPT</div>
+                                    <a href="https://docs.google.com/forms/d/1sqb9qcDQmdJ9e5m_TOrr2VG8z3lqbJW7Ai_aeutcogg/edit" 
+                                       target="_blank" class="artwork-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Submit Creative Request
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
