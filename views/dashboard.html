@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apotek Alpro - Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="alpro-logo">
+                    <div class="logo-circle">α</div>
+                    <div class="logo-text">
+                        <div class="alpro-main">alpro</div>
+                        <div class="apotek-sub">apotek pharmacy</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="mascot-header">
+                    <div class="mascot-small">
+                        <div class="character-head-small">
+                            <div class="character-glasses-small">
+                                <div class="glass-small left"></div>
+                                <div class="glass-small right"></div>
+                            </div>
+                        </div>
+                        <div class="character-body-small">
+                            <div class="lab-coat-small">α</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="user-info">
+                    <div class="user-details">
+                        <span class="user-name" id="userName">Loading...</span>
+                        <span class="user-type" id="userType">Loading...</span>
+                    </div>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="nav-container">
+            <button class="nav-tab active" data-tab="homepage">
+                <i class="fas fa-home"></i>
+                <span>Homepage</span>
+            </button>
+            <button class="nav-tab" data-tab="campaign">
+                <i class="fas fa-bullhorn"></i>
+                <span>On Going Campaign</span>
+            </button>
+            <button class="nav-tab" data-tab="monitoring">
+                <i class="fas fa-chart-line"></i>
+                <span>Monitoring</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Homepage Tab -->
+        <div class="tab-content active" id="homepage">
+            <div class="dashboard-grid">
+                <!-- BPT Overview Section -->
+                <div class="dashboard-card bpt-overview">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-bar"></i> BPT Overview</h3>
+                        <div class="card-actions">
+                            <button class="refresh-btn" onclick="refreshBPT()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="bpt-metrics">
+                            <div class="metric-item">
+                                <div class="metric-value">₹2,45,680</div>
+                                <div class="metric-label">Monthly Revenue</div>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 12.5%
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">1,234</div>
+                                <div class="metric-label">Total Transactions</div>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 8.3%
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">89.2%</div>
+                                <div class="metric-label">Customer Satisfaction</div>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 2.1%
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">456</div>
+                                <div class="metric-label">Active Products</div>
+                                <div class="metric-trend neutral">
+                                    <i class="fas fa-minus"></i> 0%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bpt-chart-container">
+                            <canvas id="bptChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Calendar Section -->
+                <div class="dashboard-card event-calendar">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Event Calendar</h3>
+                        <div class="calendar-nav">
+                            <button class="calendar-nav-btn" onclick="previousMonth()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span id="currentMonth">September 2025</span>
+                            <button class="calendar-nav-btn" onclick="nextMonth()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="calendar-container">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">Sun</div>
+                                <div class="weekday">Mon</div>
+                                <div class="weekday">Tue</div>
+                                <div class="weekday">Wed</div>
+                                <div class="weekday">Thu</div>
+                                <div class="weekday">Fri</div>
+                                <div class="weekday">Sat</div>
+                            </div>
+                            <div class="calendar-days" id="calendarDays">
+                                <!-- Calendar days will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="upcoming-events">
+                            <h4>Upcoming Events</h4>
+                            <div class="event-list">
+                                <div class="event-item">
+                                    <div class="event-date">Sep 15</div>
+                                    <div class="event-details">
+                                        <div class="event-title">Health Awareness Campaign</div>
+                                        <div class="event-time">10:00 AM - 2:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">Sep 22</div>
+                                    <div class="event-details">
+                                        <div class="event-title">Monthly Staff Meeting</div>
+                                        <div class="event-time">9:00 AM - 11:00 AM</div>
+                                    </div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">Sep 30</div>
+                                    <div class="event-details">
+                                        <div class="event-title">Inventory Check</div>
+                                        <div class="event-time">All Day</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card quick-actions">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-plus"></i>
+                                <span>New Order</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-box"></i>
+                                <span>Check Inventory</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-users"></i>
+                                <span>Customer Report</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Generate Report</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Information -->
+                <div class="dashboard-card store-info">
+                    <div class="card-header">
+                        <h3><i class="fas fa-store"></i> Store Information</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="store-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Store Name:</span>
+                                <span class="detail-value" id="storeName">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Account Manager:</span>
+                                <span class="detail-value" id="accountManager">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Last Login:</span>
+                                <span class="detail-value" id="lastLogin">Today, 9:30 AM</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Status:</span>
+                                <span class="detail-value status-active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign Tab -->
+        <div class="tab-content" id="campaign">
+            <div class="maintenance-container">
+                <div class="maintenance-content">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2>Under Maintenance</h2>
+                    <p>The On Going Campaign section is currently under maintenance. Please check back later.</p>
+                    <div class="mascot-maintenance">
+                        <div class="character-head">
+                            <div class="character-glasses">
+                                <div class="glass left"></div>
+                                <div class="glass right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monitoring Tab -->
+        <div class="tab-content" id="monitoring">
+            <div class="maintenance-container">
+                <div class="maintenance-content">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h2>Under Maintenance</h2>
+                    <p>The Monitoring section is currently under maintenance. Please check back later.</p>
+                    <div class="mascot-maintenance">
+                        <div class="character-head">
+                            <div class="character-glasses">
+                                <div class="glass left"></div>
+                                <div class="glass right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
