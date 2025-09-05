@@ -61,7 +61,7 @@
             </button>
             <button class="nav-tab" data-tab="campaign">
                 <i class="fas fa-bullhorn"></i>
-                <span>On Going Campaign</span>
+                <span>Campaign</span>
             </button>
             <button class="nav-tab" data-tab="monitoring">
                 <i class="fas fa-chart-line"></i>
@@ -70,6 +70,10 @@
             <button class="nav-tab" data-tab="health-news">
                 <i class="fas fa-newspaper"></i>
                 <span>Health News</span>
+            </button>
+            <button class="nav-tab" data-tab="tiktok-cuan">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok Cuan</span>
             </button>
         </div>
     </nav>
@@ -100,7 +104,7 @@
                                     <h4>National Day Sales</h4>
                                     <p>GO Jaksel + Bekasi</p>
                                 </div>
-                                <div class="campaign-status active">Active</div>
+                                <div class="campaign-status past">Past</div>
                             </div>
                             
                             <div class="campaign-item september">
@@ -162,8 +166,12 @@
                                 <div class="stat-label">Active Now</div>
                             </div>
                             <div class="stat-box">
-                                <div class="stat-number">4</div>
+                                <div class="stat-number">3</div>
                                 <div class="stat-label">Upcoming</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Past</div>
                             </div>
                         </div>
                     </div>
@@ -254,18 +262,46 @@
 
         <!-- Campaign Tab -->
         <div class="tab-content" id="campaign">
-            <div class="maintenance-container">
-                <div class="maintenance-content">
-                    <div class="maintenance-icon">
-                        <i class="fas fa-tools"></i>
+            <div class="campaign-section">
+                <div class="campaign-header">
+                    <div class="campaign-title">
+                        <i class="fas fa-bullhorn"></i>
+                        <h2>Active Campaigns</h2>
                     </div>
-                    <h2>Under Maintenance</h2>
-                    <p>The On Going Campaign section is currently under maintenance. Please check back later.</p>
-                    <div class="mascot-maintenance">
-                        <div class="character-head">
-                            <div class="character-glasses">
-                                <div class="glass left"></div>
-                                <div class="glass right"></div>
+                    <div class="campaign-subtitle">
+                        <p>Manage and monitor ongoing marketing campaigns</p>
+                    </div>
+                </div>
+
+                <div class="campaign-tabs-container">
+                    <div class="campaign-nav">
+                        <button class="campaign-tab active" data-campaign="sept-women-health">
+                            <i class="fas fa-heart"></i>
+                            <span>Sept: Woman Health & Fitness</span>
+                        </button>
+                    </div>
+
+                    <div class="campaign-content">
+                        <!-- September Campaign -->
+                        <div class="campaign-tab-content active" id="sept-women-health">
+                            <div class="campaign-embed-header">
+                                <div class="campaign-info">
+                                    <h3><i class="fas fa-heart"></i> Woman Health & Fitness Campaign</h3>
+                                    <p>September 2025 • GO Jaksel • Active Campaign</p>
+                                </div>
+                                <div class="campaign-status-badge current">
+                                    <i class="fas fa-play-circle"></i>
+                                    Currently Active
+                                </div>
+                            </div>
+                            <div class="campaign-embed-container">
+                                <iframe 
+                                    src="https://apotekalpro-womanhealth.pages.dev/#metrics" 
+                                    class="campaign-iframe"
+                                    title="Woman Health & Fitness Campaign Metrics"
+                                    frameborder="0"
+                                    allowfullscreen>
+                                </iframe>
                             </div>
                         </div>
                     </div>
@@ -314,6 +350,48 @@
                         frameborder="0"
                         allowfullscreen>
                     </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- TikTok Cuan Tab -->
+        <div class="tab-content" id="tiktok-cuan">
+            <div class="tiktok-cuan-container">
+                <div class="tiktok-cuan-header">
+                    <div class="tiktok-cuan-title">
+                        <i class="fab fa-tiktok"></i>
+                        <h2>TikTok Cuan</h2>
+                    </div>
+                    <div class="tiktok-cuan-subtitle">
+                        <p>TikTok marketing campaigns and monetization strategies for Apotek Alpro</p>
+                    </div>
+                </div>
+                <div class="tiktok-cuan-content">
+                    <div class="tiktok-placeholder">
+                        <div class="tiktok-placeholder-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <h3>TikTok Cuan Dashboard</h3>
+                        <p>Coming soon! TikTok marketing analytics and campaign management will be available here.</p>
+                        <div class="tiktok-features">
+                            <div class="feature-item">
+                                <i class="fas fa-video"></i>
+                                <span>Video Campaign Tracking</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-trending-up"></i>
+                                <span>Engagement Analytics</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Revenue Monetization</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-users"></i>
+                                <span>Audience Insights</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
