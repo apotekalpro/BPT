@@ -19,16 +19,17 @@ A modern web application for Apotek Alpro pharmacy chain management with dual lo
 - **Campaign Calendar 2025:** Complete BPT campaign timeline with visual indicators
 - **Organizational Chart:** Carta Organisasi & PIC structure display
 - **Contact Information:** Marketing team contact details and creative request form
-- **Navigation Tabs:** Three main sections (Homepage, On Going Campaign, Monitoring)
+- **Navigation Tabs:** Four main sections (Homepage, On Going Campaign, Monitoring, Health News)
 - **Quick Actions:** Shortcuts for common pharmacy operations
 - **Store Information:** Dynamic display based on user login type
 
 ### Design & Branding
-- **Official Apotek Alpro Logo:** Authentic logo with ® symbol and proper styling
+- **Official Apotek Alpro Logo:** Authentic logo image with professional styling and hover effects
 - **Marketing-Focused Design:** Enhanced visuals for marketing and creative teams
 - **Gradient Headers:** Professional gradient backgrounds with animations
 - **Modern UI/UX:** Premium interface with hover effects and smooth transitions
 - **Responsive Design:** Optimized for desktop, tablet, and mobile devices
+- **Health News Integration:** Full-screen iframe with external health news source
 - **Accessibility:** Keyboard shortcuts and screen reader support
 
 ## 🔧 Technical Stack
@@ -83,6 +84,7 @@ https://docs.google.com/spreadsheets/d/1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo
 - `Ctrl/Cmd + 1` - Go to Homepage
 - `Ctrl/Cmd + 2` - Go to Campaign tab
 - `Ctrl/Cmd + 3` - Go to Monitoring tab
+- `Ctrl/Cmd + 4` - Go to Health News tab
 - `Ctrl/Cmd + R` - Refresh dashboard data
 - `Esc` - Close notifications
 
