@@ -59,6 +59,10 @@ async function fetchSheetData() {
 }
 
 // Routes
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).send();
+});
+
 app.get('/', (req, res) => {
     if (req.session.user) {
         res.sendFile(path.join(__dirname, 'views', 'dashboard.html'));
