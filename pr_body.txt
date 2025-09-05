@@ -1,0 +1,43 @@
+## Summary
+
+This PR fixes the organizational chart layout issues and improves scrolling capabilities for the campaign and monitoring sections as requested.
+
+## Key Changes
+
+### Organizational Chart Layout Fix
+- Restructured HTML: Level 2 departments now display in a single horizontal row using CSS Grid
+- Proper Reporting Structure: Level 3 staff positioned directly under their respective Level 2 managers
+- Khalisa reports to Rahma (Creative Builders)
+- Agnes reports to Tarjo (Promotion & Event)  
+- Kelsey reports to Digital Marketing (Vacant position)
+- Pratiwi (Visual Merchandize) has no direct reports
+- Visual Connections: Added CSS connecting lines to show clear reporting hierarchy
+
+### Improved Scrolling & Heights
+- Enhanced Campaign Section: Increased height for better content visibility
+- Enhanced Monitoring Section: Added complete CSS styling with improved height management
+- Better Iframe Heights: Updated iframe min-heights to utilize more viewport space
+- Responsive Design: Maintained responsive behavior across different screen sizes
+
+### Monitoring Tab System
+- Complete JavaScript: Added monitoring tab navigation event handlers
+- Tab Switching: Implemented switchMonitoringTab() function with proper state management
+- Content Loading: Added specific functions for TikTok Analytics and Performance Metrics tabs
+- Visual Feedback: Integrated notification system for tab switching
+
+## Testing
+
+The organizational chart now properly shows:
+1. Level 1: CSO (Tomas) at the top
+2. Level 2: Four department heads in horizontal alignment (Rahma, Tarjo, Vacant, Pratiwi)
+3. Level 3: Staff members positioned under their respective managers with visual connecting lines
+
+Scrolling improvements allow for better content visibility in campaign and monitoring sections with larger viewable areas.
+
+## Preview
+
+Access the live preview at: https://3000-iuudf3oj4zth3i27u5dg2-6532622b.e2b.dev
+
+Test the organizational chart in the Homepage tab and try the improved scrolling in Campaign/Monitoring tabs.
+
+Fixes organizational chart layout issues and scrolling limitations as requested.
