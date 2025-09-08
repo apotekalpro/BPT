@@ -886,20 +886,31 @@ function handleWhatsAppRequest(data) {
             // Create WhatsApp URL - try multiple methods for better compatibility
             const encodedMessage = encodeURIComponent(message);
             
-            // Method 1: Try WhatsApp Web first
+            // Method 1: Try WhatsApp Web for specific contact
             const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMessage}`;
             
             // Method 2: Try WhatsApp mobile app (for mobile users)
             const whatsappAppUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
             
-            // Try WhatsApp Web first (better for desktop)
+            // Method 3: WhatsApp Group (primary for general communication)
+            const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+            
+            // Try specific contact first if phone number provided
             const newWindow = window.open(whatsappWebUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
             
-            // Fallback: if window didn't open, try mobile method
+            // Fallback: if window didn't open, try mobile method, then group
             setTimeout(() => {
                 if (!newWindow || newWindow.closed) {
                     console.log('📱 Trying WhatsApp mobile fallback (static)...');
-                    window.open(whatsappAppUrl, '_blank', 'noopener,noreferrer');
+                    const mobileWindow = window.open(whatsappAppUrl, '_blank', 'noopener,noreferrer');
+                    
+                    // Ultimate fallback: open group
+                    setTimeout(() => {
+                        if (!mobileWindow || mobileWindow.closed) {
+                            console.log('📱 Opening WhatsApp Group as final fallback (static)...');
+                            window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+                        }
+                    }, 2000);
                 }
             }, 2000);
             
@@ -908,17 +919,19 @@ function handleWhatsAppRequest(data) {
             console.log(`📱 WhatsApp opened (static) for ${cleanPhone}: ${message}`);
             
         } else if (data.action === 'open_whatsapp') {
-            // Open WhatsApp Web
-            const whatsappWindow = window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer,width=800,height=600');
+            // Open specific WhatsApp group
+            const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+            const whatsappWindow = window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
             
-            // Fallback to mobile WhatsApp if web doesn't work
+            // Fallback: if window doesn't open, try alternative method
             setTimeout(() => {
                 if (!whatsappWindow || whatsappWindow.closed) {
-                    window.open('https://wa.me/', '_blank', 'noopener,noreferrer');
+                    // Try alternative WhatsApp group access
+                    window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
                 }
             }, 2000);
             
-            sendWhatsAppResponse(data.requestId, true, 'WhatsApp Web opened');
+            sendWhatsAppResponse(data.requestId, true, 'WhatsApp Group opened');
             
         } else if (data.action === 'whatsapp_click' || data.type === 'whatsapp_click') {
             // Handle direct WhatsApp button clicks from iframe
@@ -980,15 +993,18 @@ function closeWhatsAppPanel() {
 }
 
 function openWhatsAppWeb() {
-    window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+    const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+    window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
     closeWhatsAppPanel();
-    console.log('📱 Opened WhatsApp Web (static)');
+    console.log('📱 Opened WhatsApp Group (static)');
 }
 
 function openWhatsAppAPI() {
-    // Placeholder for WhatsApp Business API integration
-    alert('WhatsApp Business API integration coming soon!\n\nFor now, please use WhatsApp Web or Quick Message.');
-    console.log('📱 WhatsApp Business API requested (static)');
+    // Open WhatsApp Group for community access
+    const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+    window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+    closeWhatsAppPanel();
+    console.log('📱 WhatsApp Community/Group opened (static)');
 }
 
 function sendQuickMessage() {
@@ -1015,16 +1031,31 @@ function sendWhatsAppMessage() {
         return;
     }
     
-    // Open WhatsApp with pre-filled message
-    const whatsappUrl = `https://web.whatsapp.com/send?phone=${encodeURIComponent(phoneNumber.replace(/\D/g, ''))}&text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    // If phone number provided, try to send to specific contact
+    if (phoneNumber.trim()) {
+        const cleanPhone = phoneNumber.replace(/\D/g, '');
+        const whatsappUrl = `https://web.whatsapp.com/send?phone=${encodeURIComponent(cleanPhone)}&text=${encodeURIComponent(message)}`;
+        const contactWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        
+        // Fallback to group if contact window fails
+        setTimeout(() => {
+            if (!contactWindow || contactWindow.closed) {
+                const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+                window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+            }
+        }, 2000);
+    } else {
+        // No phone number, open group directly
+        const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+        window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+    }
     
     // Clear form and close panel
     phoneInput.value = '';
     messageInput.value = '';
     closeWhatsAppPanel();
     
-    console.log('📱 Quick WhatsApp message sent (static)');
+    console.log('📱 WhatsApp message/group access initiated (static)');
 }
 
 function cancelQuickMessage() {
@@ -1139,14 +1170,16 @@ function handleWhatsAppUrl(url) {
             
             console.log(`📱 WhatsApp opened (static) for ${phoneNumber}`);
         } else {
-            // No phone number found, just open WhatsApp Web
-            window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+            // No phone number found, open WhatsApp Group
+            const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+            window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
         }
         
     } catch (error) {
         console.error('Error processing WhatsApp URL (static):', error);
-        // Fallback: just open WhatsApp Web
-        window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+        // Fallback: open WhatsApp Group
+        const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+        window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
     }
 }
 
