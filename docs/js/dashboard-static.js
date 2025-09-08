@@ -994,9 +994,15 @@ function closeWhatsAppPanel() {
 
 function openWhatsAppWeb() {
     const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
-    window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+    
+    console.log('📱 Attempting to open WhatsApp Group (static):', whatsappGroupUrl);
+    
+    // Use the enhanced multi-method approach
+    openWhatsAppWithMultipleMethods(whatsappGroupUrl);
+    
     closeWhatsAppPanel();
-    console.log('📱 Opened WhatsApp Group (static)');
+    
+    console.log('📱 Enhanced WhatsApp Group opening initiated (static)');
 }
 
 function openWhatsAppAPI() {
@@ -1026,28 +1032,82 @@ function sendWhatsAppMessage() {
     const phoneNumber = phoneInput.value.trim();
     const message = messageInput.value.trim();
     
-    if (!phoneNumber || !message) {
-        alert('Please enter both phone number and message');
+    if (!message) {
+        alert('Please enter a message');
         return;
     }
     
-    // If phone number provided, try to send to specific contact
+    const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+    
+    // If phone number provided, try to send to specific contact first
     if (phoneNumber.trim()) {
-        const cleanPhone = phoneNumber.replace(/\D/g, '');
-        const whatsappUrl = `https://web.whatsapp.com/send?phone=${encodeURIComponent(cleanPhone)}&text=${encodeURIComponent(message)}`;
-        const contactWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        console.log('📱 Attempting to send WhatsApp message to (static):', phoneNumber);
         
-        // Fallback to group if contact window fails
+        // Clean and format phone number
+        let cleanPhone = phoneNumber.replace(/\D/g, '');
+        if (cleanPhone.startsWith('0')) {
+            cleanPhone = '62' + cleanPhone.substring(1); // Indonesia country code
+        }
+        if (!cleanPhone.startsWith('62')) {
+            cleanPhone = '62' + cleanPhone; // Ensure Indonesia country code
+        }
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMessage}`;
+        const whatsappAppUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+        
+        // Method 1: Try WhatsApp Web with aggressive parameters
+        let contactWindow = null;
+        try {
+            contactWindow = window.open(whatsappWebUrl, '_blank', 'noopener,noreferrer,width=800,height=600,scrollbars=yes,resizable=yes,toolbar=yes,location=yes,status=yes,menubar=yes');
+            console.log('📱 WhatsApp Web window result (static):', contactWindow);
+        } catch (error) {
+            console.error('📱 WhatsApp Web window.open failed (static):', error);
+        }
+        
+        // Method 2: If window.open fails, try creating a link and clicking it
+        if (!contactWindow || contactWindow.closed) {
+            console.log('📱 Trying fallback method: creating link element for contact (static)');
+            try {
+                const link = document.createElement('a');
+                link.href = whatsappWebUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                console.log('📱 Contact link click method executed (static)');
+            } catch (error) {
+                console.error('📱 Contact link click method failed (static):', error);
+            }
+        }
+        
+        // Method 3: Mobile WhatsApp fallback
         setTimeout(() => {
             if (!contactWindow || contactWindow.closed) {
-                const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
-                window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+                console.log('📱 Trying mobile WhatsApp URL as fallback (static)');
+                try {
+                    const mobileWindow = window.open(whatsappAppUrl, '_blank', 'noopener,noreferrer');
+                    
+                    // Ultimate fallback: WhatsApp Group
+                    setTimeout(() => {
+                        if (!mobileWindow || mobileWindow.closed) {
+                            console.log('📱 Opening WhatsApp Group as ultimate fallback (static)');
+                            openWhatsAppWithMultipleMethods(whatsappGroupUrl);
+                        }
+                    }, 2000);
+                } catch (error) {
+                    console.error('📱 Mobile WhatsApp failed (static):', error);
+                    openWhatsAppWithMultipleMethods(whatsappGroupUrl);
+                }
             }
         }, 2000);
+        
     } else {
-        // No phone number, open group directly
-        const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
-        window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+        // No phone number, open group directly with enhanced methods
+        console.log('📱 Opening WhatsApp Group directly (no phone number provided) (static)');
+        openWhatsAppWithMultipleMethods(whatsappGroupUrl);
     }
     
     // Clear form and close panel
@@ -1055,7 +1115,7 @@ function sendWhatsAppMessage() {
     messageInput.value = '';
     closeWhatsAppPanel();
     
-    console.log('📱 WhatsApp message/group access initiated (static)');
+    console.log('📱 Enhanced WhatsApp message/group access initiated (static)');
 }
 
 function cancelQuickMessage() {
@@ -1183,6 +1243,266 @@ function handleWhatsAppUrl(url) {
     }
 }
 
+// Enhanced WhatsApp opening function with multiple methods (static version)
+function openWhatsAppWithMultipleMethods(url) {
+    console.log('📱 Opening WhatsApp with multiple methods (static):', url);
+    
+    // Method 1: Try window.open with aggressive parameters
+    let whatsappWindow = null;
+    try {
+        whatsappWindow = window.open(url, '_blank', 'noopener,noreferrer,width=800,height=600,scrollbars=yes,resizable=yes,toolbar=yes,location=yes,status=yes,menubar=yes');
+        console.log('📱 Enhanced window.open result (static):', whatsappWindow);
+    } catch (error) {
+        console.error('📱 Enhanced window.open failed (static):', error);
+    }
+    
+    // Method 2: If window.open fails, try creating a link and clicking it
+    if (!whatsappWindow || whatsappWindow.closed) {
+        console.log('📱 Trying enhanced fallback method: creating link element (static)');
+        try {
+            const link = document.createElement('a');
+            link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.style.display = 'none';
+            // Add to body for better compatibility
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            console.log('📱 Enhanced link click method executed (static)');
+        } catch (error) {
+            console.error('📱 Enhanced link click method failed (static):', error);
+        }
+    }
+    
+    // Method 3: Try location assignment in new context
+    setTimeout(() => {
+        if (!whatsappWindow || whatsappWindow.closed) {
+            console.log('📱 Trying location assignment method (static)');
+            try {
+                // Create a temporary iframe to handle the navigation
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = 'about:blank';
+                document.body.appendChild(iframe);
+                
+                setTimeout(() => {
+                    try {
+                        iframe.contentWindow.location.href = url;
+                        // Remove iframe after delay
+                        setTimeout(() => {
+                            if (iframe.parentNode) {
+                                iframe.parentNode.removeChild(iframe);
+                            }
+                        }, 1000);
+                    } catch (e) {
+                        console.log('📱 Iframe navigation blocked, trying direct assignment (static)');
+                        if (iframe.parentNode) {
+                            iframe.parentNode.removeChild(iframe);
+                        }
+                        // Last resort: direct navigation (only for static version)
+                        window.location.assign(url);
+                    }
+                }, 100);
+            } catch (error) {
+                console.error('📱 Location assignment method failed (static):', error);
+                showWhatsAppFallbackMessage(url);
+            }
+        }
+    }, 1000);
+    
+    // Method 4: Use top window navigation as absolute last resort
+    setTimeout(() => {
+        if (!whatsappWindow || whatsappWindow.closed) {
+            console.log('📱 Using top window navigation method as last resort (static)');
+            try {
+                if (window.top && window.top !== window) {
+                    // We're in an iframe, use parent window
+                    window.top.open(url, '_blank', 'noopener,noreferrer');
+                } else {
+                    // Show fallback UI instead of direct navigation (static-friendly)
+                    showWhatsAppFallbackMessage(url);
+                }
+            } catch (error) {
+                console.error('📱 Top window navigation failed (static):', error);
+                showWhatsAppFallbackMessage(url);
+            }
+        }
+    }, 3000);
+}
+
+function showWhatsAppFallbackMessage(url) {
+    // Remove any existing fallback messages
+    const existing = document.querySelectorAll('.whatsapp-fallback-overlay');
+    existing.forEach(el => el.remove());
+    
+    const fallbackHtml = `
+        <div class="whatsapp-fallback-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                    background: rgba(0,0,0,0.7); z-index: 99998; display: flex; align-items: center; justify-content: center;" 
+             onclick="this.remove();">
+            <div style="position: relative; background: white; border: 3px solid #25D366; border-radius: 20px; 
+                        padding: 40px; max-width: 500px; width: 90%; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+                        animation: fallbackFadeIn 0.3s ease-out;" onclick="event.stopPropagation();">
+                <button onclick="this.closest('.whatsapp-fallback-overlay').remove()" 
+                        style="position: absolute; top: 15px; right: 15px; background: none; border: none; 
+                               font-size: 24px; color: #999; cursor: pointer; width: 30px; height: 30px;
+                               display: flex; align-items: center; justify-content: center;">&times;</button>
+                
+                <div style="color: #25D366; font-size: 64px; margin-bottom: 25px; animation: whatsappBounce 0.6s ease-out;">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                
+                <h3 style="color: #333; margin-bottom: 15px; font-size: 24px; font-weight: 700;">
+                    Connect via WhatsApp
+                </h3>
+                
+                <p style="color: #666; margin-bottom: 25px; line-height: 1.6; font-size: 16px;">
+                    If the automatic redirect didn't work, please use one of the methods below to connect:
+                </p>
+                
+                <div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 20px; border-radius: 12px; 
+                            margin-bottom: 25px; border: 1px solid #dee2e6;">
+                    <p style="margin: 0 0 10px 0; font-weight: 600; color: #495057;">Direct Link:</p>
+                    <div style="background: white; padding: 12px; border-radius: 8px; word-break: break-all; 
+                                border: 1px solid #ced4da;">
+                        <a href="${url}" target="_blank" style="color: #25D366; text-decoration: none; font-weight: 600;">
+                            ${url}
+                        </a>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="attemptMultipleWhatsAppMethods('${url}')" 
+                            style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none; 
+                                   padding: 15px 30px; border-radius: 12px; cursor: pointer; font-weight: 700; 
+                                   font-size: 16px; display: flex; align-items: center; gap: 10px; 
+                                   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;
+                                   min-width: 160px;" 
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 211, 102, 0.4)'" 
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(37, 211, 102, 0.3)'">
+                        <i class="fab fa-whatsapp"></i>
+                        Try Again
+                    </button>
+                    
+                    <button onclick="copyToClipboard('${url}'); this.textContent='Copied!'; setTimeout(() => this.innerHTML='<i class=\\"fas fa-copy\\"></i> Copy Link', 2000)" 
+                            style="background: linear-gradient(135deg, #6c757d, #495057); color: white; border: none; 
+                                   padding: 15px 25px; border-radius: 12px; cursor: pointer; font-weight: 600; 
+                                   font-size: 16px; display: flex; align-items: center; gap: 8px;
+                                   transition: all 0.3s ease;" 
+                            onmouseover="this.style.transform='translateY(-2px)'" 
+                            onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-copy"></i>
+                        Copy Link
+                    </button>
+                </div>
+                
+                <p style="color: #6c757d; margin-top: 20px; font-size: 14px; line-height: 1.4;">
+                    💡 <strong>Tip:</strong> If you're on mobile, try copying the link and opening it in your browser.
+                </p>
+            </div>
+        </div>
+        
+        <style>
+            @keyframes fallbackFadeIn {
+                from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+                to { opacity: 1; transform: scale(1) translateY(0); }
+            }
+            @keyframes whatsappBounce {
+                0% { transform: scale(0.3) rotate(-15deg); }
+                50% { transform: scale(1.1) rotate(5deg); }
+                100% { transform: scale(1) rotate(0deg); }
+            }
+        </style>
+    `;
+    
+    const fallbackElement = document.createElement('div');
+    fallbackElement.innerHTML = fallbackHtml;
+    document.body.appendChild(fallbackElement);
+    
+    console.log('📱 Enhanced WhatsApp fallback message displayed (static)');
+}
+
+// Enhanced attempt function for the fallback (static version)
+function attemptMultipleWhatsAppMethods(url) {
+    console.log('📱 Attempting multiple WhatsApp opening methods from fallback (static)');
+    
+    // Try different approaches with slight delays
+    const methods = [
+        () => window.open(url, '_blank', 'noopener,noreferrer,width=800,height=600,resizable=yes'),
+        () => {
+            const link = document.createElement('a');
+            link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        },
+        () => {
+            navigator.clipboard?.writeText(url).then(() => {
+                alert('WhatsApp link copied to clipboard! Please paste it in your browser.');
+            }).catch(() => {
+                prompt('Copy this WhatsApp link:', url);
+            });
+        },
+        () => window.location.assign(url)
+    ];
+    
+    let methodIndex = 0;
+    
+    function tryNextMethod() {
+        if (methodIndex < methods.length) {
+            try {
+                console.log(`📱 Trying method ${methodIndex + 1}/${methods.length} (static)`);
+                methods[methodIndex]();
+                methodIndex++;
+                
+                // Try next method after delay if previous didn't work
+                if (methodIndex < methods.length) {
+                    setTimeout(tryNextMethod, 1500);
+                }
+            } catch (error) {
+                console.error(`📱 Method ${methodIndex + 1} failed (static):`, error);
+                methodIndex++;
+                if (methodIndex < methods.length) {
+                    setTimeout(tryNextMethod, 500);
+                }
+            }
+        }
+    }
+    
+    tryNextMethod();
+}
+
+// Copy to clipboard helper (static version)
+function copyToClipboard(text) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            console.log('📱 WhatsApp URL copied to clipboard (static)');
+        }).catch(err => {
+            console.error('📱 Failed to copy to clipboard (static):', err);
+            fallbackCopy(text);
+        });
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+        document.execCommand('copy');
+        console.log('📱 WhatsApp URL copied using fallback method (static)');
+    } catch (err) {
+        console.error('📱 Fallback copy failed (static):', err);
+        prompt('Copy this WhatsApp link:', text);
+    }
+    document.body.removeChild(textArea);
+}
+
 // Global functions for inline event handlers
 window.refreshBPT = refreshBPT;
 window.openInNewTab = openInNewTab;
@@ -1200,3 +1520,8 @@ window.openWhatsAppAPI = openWhatsAppAPI;
 window.sendQuickMessage = sendQuickMessage;
 window.sendWhatsAppMessage = sendWhatsAppMessage;
 window.cancelQuickMessage = cancelQuickMessage;
+window.openWhatsAppWithMultipleMethods = openWhatsAppWithMultipleMethods;
+window.showWhatsAppFallbackMessage = showWhatsAppFallbackMessage;
+window.attemptMultipleWhatsAppMethods = attemptMultipleWhatsAppMethods;
+window.copyToClipboard = copyToClipboard;
+window.fallbackCopy = fallbackCopy;
