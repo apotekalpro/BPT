@@ -1243,95 +1243,136 @@ function handleWhatsAppUrl(url) {
     }
 }
 
-// Enhanced WhatsApp opening function with multiple methods (static version)
+// Enhanced WhatsApp opening function with network bypass strategies (static version)
 function openWhatsAppWithMultipleMethods(url) {
-    console.log('📱 Opening WhatsApp with multiple methods (static):', url);
+    console.log('📱 Opening WhatsApp with network bypass methods (static):', url);
     
-    // Method 1: Try window.open with aggressive parameters
+    // Alternative WhatsApp URLs to bypass network blocks
+    const alternativeUrls = [
+        url, // Original URL
+        'https://wa.me/+6285890874888', // Direct phone number
+        'https://web.whatsapp.com/', // WhatsApp Web base
+        'https://api.whatsapp.com/send?phone=6285890874888&text=Hello%20from%20Apotek%20Alpro', // API endpoint
+        'whatsapp://send?phone=6285890874888&text=Hello%20from%20Apotek%20Alpro' // App protocol
+    ];
+    
+    let currentUrlIndex = 0;
     let whatsappWindow = null;
-    try {
-        whatsappWindow = window.open(url, '_blank', 'noopener,noreferrer,width=800,height=600,scrollbars=yes,resizable=yes,toolbar=yes,location=yes,status=yes,menubar=yes');
-        console.log('📱 Enhanced window.open result (static):', whatsappWindow);
-    } catch (error) {
-        console.error('📱 Enhanced window.open failed (static):', error);
-    }
+    let successfullyOpened = false;
     
-    // Method 2: If window.open fails, try creating a link and clicking it
-    if (!whatsappWindow || whatsappWindow.closed) {
-        console.log('📱 Trying enhanced fallback method: creating link element (static)');
+    function tryNextUrl() {
+        if (currentUrlIndex >= alternativeUrls.length || successfullyOpened) {
+            if (!successfullyOpened) {
+                console.log('📱 All WhatsApp URL methods failed, showing fallback UI (static)');
+                showWhatsAppNetworkBypassFallback();
+            }
+            return;
+        }
+        
+        const currentUrl = alternativeUrls[currentUrlIndex];
+        console.log(`📱 Trying WhatsApp URL ${currentUrlIndex + 1}/${alternativeUrls.length} (static):`, currentUrl);
+        
+        // Method 1: Enhanced window.open with bypass headers
+        try {
+            whatsappWindow = window.open('', '_blank', 'noopener,noreferrer,width=800,height=600,scrollbars=yes,resizable=yes,toolbar=yes,location=yes,status=yes,menubar=yes');
+            
+            if (whatsappWindow) {
+                // Use document.write to bypass some restrictions
+                whatsappWindow.document.write(`
+                    <html><head><title>Opening WhatsApp...</title></head>
+                    <body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+                        <div style="color: #25D366; font-size: 48px; margin-bottom: 20px;">📱</div>
+                        <h2>Opening WhatsApp...</h2>
+                        <p>If WhatsApp doesn't open automatically, <a href="${currentUrl}" target="_self" style="color: #25D366; text-decoration: none; font-weight: bold;">click here</a></p>
+                        <script>
+                            setTimeout(function() {
+                                try {
+                                    window.location.href = "${currentUrl}";
+                                } catch(e) {
+                                    document.body.innerHTML += '<p style="color: red;">Failed to redirect. Please click the link above.</p>';
+                                }
+                            }, 1000);
+                        </script>
+                    </body></html>
+                `);
+                whatsappWindow.document.close();
+                successfullyOpened = true;
+                console.log('📱 WhatsApp bypass window opened successfully (static)');
+                return;
+            }
+        } catch (error) {
+            console.error('📱 Enhanced window.open failed (static):', error);
+        }
+        
+        // Method 2: Direct link creation with bypass techniques
         try {
             const link = document.createElement('a');
-            link.href = url;
+            link.href = currentUrl;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
             link.style.display = 'none';
-            // Add to body for better compatibility
+            
+            // Add referrer policy to bypass some restrictions
+            link.referrerPolicy = 'no-referrer';
+            
             document.body.appendChild(link);
-            link.click();
+            
+            // Simulate user interaction to bypass popup blockers
+            const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+                buttons: 1
+            });
+            
+            link.dispatchEvent(clickEvent);
             document.body.removeChild(link);
-            console.log('📱 Enhanced link click method executed (static)');
+            
+            console.log('📱 Enhanced link click method executed for URL (static):', currentUrl);
+            successfullyOpened = true;
+            return;
         } catch (error) {
             console.error('📱 Enhanced link click method failed (static):', error);
         }
+        
+        // Method 3: Form submission bypass
+        try {
+            const form = document.createElement('form');
+            form.action = currentUrl;
+            form.method = 'GET';
+            form.target = '_blank';
+            form.style.display = 'none';
+            
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+            
+            console.log('📱 Form submission method executed for URL (static):', currentUrl);
+            successfullyOpened = true;
+            return;
+        } catch (error) {
+            console.error('📱 Form submission method failed (static):', error);
+        }
+        
+        // Try next URL after a delay
+        currentUrlIndex++;
+        setTimeout(tryNextUrl, 1500);
     }
     
-    // Method 3: Try location assignment in new context
-    setTimeout(() => {
-        if (!whatsappWindow || whatsappWindow.closed) {
-            console.log('📱 Trying location assignment method (static)');
-            try {
-                // Create a temporary iframe to handle the navigation
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = 'about:blank';
-                document.body.appendChild(iframe);
-                
-                setTimeout(() => {
-                    try {
-                        iframe.contentWindow.location.href = url;
-                        // Remove iframe after delay
-                        setTimeout(() => {
-                            if (iframe.parentNode) {
-                                iframe.parentNode.removeChild(iframe);
-                            }
-                        }, 1000);
-                    } catch (e) {
-                        console.log('📱 Iframe navigation blocked, trying direct assignment (static)');
-                        if (iframe.parentNode) {
-                            iframe.parentNode.removeChild(iframe);
-                        }
-                        // Last resort: direct navigation (only for static version)
-                        window.location.assign(url);
-                    }
-                }, 100);
-            } catch (error) {
-                console.error('📱 Location assignment method failed (static):', error);
-                showWhatsAppFallbackMessage(url);
-            }
-        }
-    }, 1000);
+    // Start trying URLs
+    tryNextUrl();
     
-    // Method 4: Use top window navigation as absolute last resort
+    // Fallback timeout
     setTimeout(() => {
-        if (!whatsappWindow || whatsappWindow.closed) {
-            console.log('📱 Using top window navigation method as last resort (static)');
-            try {
-                if (window.top && window.top !== window) {
-                    // We're in an iframe, use parent window
-                    window.top.open(url, '_blank', 'noopener,noreferrer');
-                } else {
-                    // Show fallback UI instead of direct navigation (static-friendly)
-                    showWhatsAppFallbackMessage(url);
-                }
-            } catch (error) {
-                console.error('📱 Top window navigation failed (static):', error);
-                showWhatsAppFallbackMessage(url);
-            }
+        if (!successfullyOpened) {
+            console.log('📱 All methods timed out, showing advanced fallback (static)');
+            showWhatsAppNetworkBypassFallback();
         }
-    }, 3000);
+    }, 8000);
 }
 
-function showWhatsAppFallbackMessage(url) {
+// New network bypass fallback for blocked URLs (static version)
+function showWhatsAppNetworkBypassFallback() {\n    // Remove any existing fallback messages\n    const existing = document.querySelectorAll('.whatsapp-fallback-overlay');\n    existing.forEach(el => el.remove());\n    \n    const whatsappAlternatives = [\n        {\n            title: 'WhatsApp Web',\n            url: 'https://web.whatsapp.com/',\n            description: 'Open WhatsApp Web and search for our contact',\n            icon: '\ud83c\udf10'\n        },\n        {\n            title: 'Direct Phone Contact',\n            url: 'tel:+6285890874888',\n            description: 'Call us directly',\n            icon: '\ud83d\udcde'\n        },\n        {\n            title: 'WhatsApp Mobile App',\n            url: 'whatsapp://send?phone=6285890874888&text=Hello%20from%20Apotek%20Alpro',\n            description: 'Open in WhatsApp mobile app',\n            icon: '\ud83d\udcf1'\n        },\n        {\n            title: 'Copy Phone Number',\n            action: 'copy',\n            data: '+62 858-9087-4888',\n            description: 'Copy and paste in WhatsApp',\n            icon: '\ud83d\udccb'\n        }\n    ];\n    \n    const fallbackHtml = `\n        <div class=\"whatsapp-fallback-overlay\" style=\"position: fixed; top: 0; left: 0; width: 100%; height: 100%; \n                    background: rgba(0,0,0,0.8); z-index: 99999; display: flex; align-items: center; justify-content: center;\n                    animation: fallbackFadeIn 0.4s ease-out;\" \n             onclick=\"this.remove();\">\n            <div style=\"position: relative; background: white; border: 3px solid #25D366; border-radius: 20px; \n                        padding: 30px; max-width: 600px; width: 95%; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.5);\n                        animation: fallbackSlideUp 0.4s ease-out; max-height: 90vh; overflow-y: auto;\" \n                 onclick=\"event.stopPropagation();\">\n                \n                <button onclick=\"this.closest('.whatsapp-fallback-overlay').remove()\" \n                        style=\"position: absolute; top: 15px; right: 15px; background: none; border: none; \n                               font-size: 28px; color: #999; cursor: pointer; width: 35px; height: 35px;\n                               display: flex; align-items: center; justify-content: center; border-radius: 50%;\n                               transition: background 0.2s;\" \n                        onmouseover=\"this.style.background='#f0f0f0'\" \n                        onmouseout=\"this.style.background='none'\">&times;</button>\n                \n                <div style=\"color: #dc3545; font-size: 64px; margin-bottom: 20px; animation: warningPulse 2s infinite;\">\n                    \u26a0\ufe0f\n                </div>\n                \n                <h3 style=\"color: #333; margin-bottom: 15px; font-size: 24px; font-weight: 700;\">\n                    Network Restriction Detected\n                </h3>\n                \n                <p style=\"color: #666; margin-bottom: 25px; line-height: 1.6; font-size: 16px;\">\n                    The WhatsApp group link is blocked by network restrictions. Please try one of these alternative methods:\n                </p>\n                \n                <div style=\"display: grid; gap: 15px; margin-bottom: 25px;\">\n                    ${whatsappAlternatives.map((alt, index) => `\n                        <div style=\"background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 2px solid #dee2e6; \n                                    border-radius: 12px; padding: 20px; text-align: left; cursor: pointer; \n                                    transition: all 0.3s ease; position: relative;\" \n                             onclick=\"${alt.action === 'copy' ? `copyToClipboard('${alt.data}'); this.style.background='linear-gradient(135deg, #d4edda, #c3e6cb)'; this.querySelector('.copy-feedback').style.display='block'; setTimeout(() => { this.style.background='linear-gradient(135deg, #f8f9fa, #e9ecef)'; this.querySelector('.copy-feedback').style.display='none'; }, 2000);` : `attemptAlternativeWhatsApp('${alt.url}')`}\" \n                             onmouseover=\"this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'\" \n                             onmouseout=\"this.style.transform='translateY(0)'; this.style.boxShadow='none'\">\n                            \n                            <div style=\"display: flex; align-items: center; gap: 15px;\">\n                                <div style=\"font-size: 32px;\">${alt.icon}</div>\n                                <div style=\"flex: 1;\">\n                                    <h4 style=\"margin: 0 0 5px 0; color: #333; font-size: 16px; font-weight: 600;\">\n                                        ${alt.title}\n                                    </h4>\n                                    <p style=\"margin: 0; color: #666; font-size: 14px; line-height: 1.4;\">\n                                        ${alt.description}\n                                    </p>\n                                    ${alt.action === 'copy' ? `\n                                        <div class=\"copy-feedback\" style=\"display: none; color: #28a745; font-size: 12px; font-weight: bold; margin-top: 5px;\">\n                                            \u2713 Copied to clipboard!\n                                        </div>\n                                    ` : ''}\n                                </div>\n                                <div style=\"color: #25D366; font-size: 20px;\">\u2192</div>\n                            </div>\n                        </div>\n                    `).join('')}\n                </div>\n                \n                <div style=\"background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; \n                            border-radius: 12px; padding: 20px; margin-bottom: 20px;\">\n                    <h4 style=\"margin: 0 0 10px 0; color: #856404; display: flex; align-items: center; gap: 8px;\">\n                        \ud83d\udca1 <span>Alternative: Manual Contact</span>\n                    </h4>\n                    <p style=\"margin: 0; color: #856404; font-size: 14px; line-height: 1.4;\">\n                        Open WhatsApp manually and search for: <strong>+62 858-9087-4888</strong><br>\n                        Or visit: <strong>Apotek Alpro Official</strong>\n                    </p>\n                </div>\n                \n                <button onclick=\"retryWhatsAppConnection()\" \n                        style=\"background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none; \n                               padding: 15px 30px; border-radius: 12px; cursor: pointer; font-weight: 700; \n                               font-size: 16px; display: inline-flex; align-items: center; gap: 10px; \n                               box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;\" \n                        onmouseover=\"this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 211, 102, 0.4)'\" \n                        onmouseout=\"this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(37, 211, 102, 0.3)'\">\n                    \ud83d\udd04 Retry Connection\n                </button>\n            </div>\n        </div>\n        \n        <style>\n            @keyframes fallbackFadeIn {\n                from { opacity: 0; }\n                to { opacity: 1; }\n            }\n            @keyframes fallbackSlideUp {\n                from { opacity: 0; transform: translateY(30px) scale(0.95); }\n                to { opacity: 1; transform: translateY(0) scale(1); }\n            }\n            @keyframes warningPulse {\n                0%, 100% { transform: scale(1); }\n                50% { transform: scale(1.1); }\n            }\n        </style>\n    `;\n    \n    const fallbackElement = document.createElement('div');\n    fallbackElement.innerHTML = fallbackHtml;\n    document.body.appendChild(fallbackElement);\n    \n    console.log('\ud83d\udcf1 WhatsApp network bypass fallback displayed (static)');\n}\n\n// Alternative WhatsApp attempt function (static version)\nfunction attemptAlternativeWhatsApp(url) {\n    console.log('\ud83d\udcf1 Attempting alternative WhatsApp method (static):', url);\n    \n    // Multiple attempt strategies\n    const methods = [\n        () => window.open(url, '_blank', 'noopener,noreferrer'),\n        () => {\n            const link = document.createElement('a');\n            link.href = url;\n            link.click();\n        },\n        () => {\n            window.location.href = url;\n        }\n    ];\n    \n    methods.forEach((method, index) => {\n        setTimeout(() => {\n            try {\n                method();\n                console.log(`\ud83d\udcf1 Alternative method ${index + 1} executed (static)`);\n            } catch (error) {\n                console.error(`\ud83d\udcf1 Alternative method ${index + 1} failed (static):`, error);\n            }\n        }, index * 1000);\n    });\n}\n\n// Retry function with fresh approach (static version)\nfunction retryWhatsAppConnection() {\n    console.log('\ud83d\udcf1 Retrying WhatsApp connection with fresh approach (static)');\n    \n    // Close current fallback\n    const overlay = document.querySelector('.whatsapp-fallback-overlay');\n    if (overlay) overlay.remove();\n    \n    // Wait a moment then try again\n    setTimeout(() => {\n        const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';\n        openWhatsAppWithMultipleMethods(whatsappGroupUrl);\n    }, 500);\n}\n\nfunction showWhatsAppFallbackMessage(url) {"
     // Remove any existing fallback messages
     const existing = document.querySelectorAll('.whatsapp-fallback-overlay');
     existing.forEach(el => el.remove());
@@ -1525,3 +1566,6 @@ window.showWhatsAppFallbackMessage = showWhatsAppFallbackMessage;
 window.attemptMultipleWhatsAppMethods = attemptMultipleWhatsAppMethods;
 window.copyToClipboard = copyToClipboard;
 window.fallbackCopy = fallbackCopy;
+window.showWhatsAppNetworkBypassFallback = showWhatsAppNetworkBypassFallback;
+window.attemptAlternativeWhatsApp = attemptAlternativeWhatsApp;
+window.retryWhatsAppConnection = retryWhatsAppConnection;
