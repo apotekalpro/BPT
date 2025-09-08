@@ -777,9 +777,19 @@ function initWhatsAppAPI() {
                 if (event.data.type === 'whatsapp_request') {
                     handleWhatsAppRequest(event.data);
                 } else if (event.data.type === 'whatsapp_click') {
-                    showWhatsAppPanel();
+                    handleWhatsAppRequest(event.data);
                 } else if (event.data.type === 'iframe_error') {
                     handleIframeError(event.data);
+                }
+            }
+            
+            // Also handle simple string messages that might be WhatsApp related
+            if (typeof event.data === 'string') {
+                if (event.data.toLowerCase().includes('whatsapp') || 
+                    event.data.toLowerCase().includes('wa.me') ||
+                    event.data.toLowerCase().includes('chat.whatsapp')) {
+                    console.log('📱 WhatsApp-related message detected (static):', event.data);
+                    showWhatsAppPanel();
                 }
             }
         } catch (error) {
@@ -790,6 +800,9 @@ function initWhatsAppAPI() {
 
     // Add WhatsApp trigger button
     addWhatsAppTrigger();
+    
+    // Add global WhatsApp URL interceptor
+    addWhatsAppUrlInterceptor();
     
     console.log('📱 WhatsApp API integration initialized for TikTok Cuan (static)');
 }
@@ -808,24 +821,63 @@ function handleWhatsAppRequest(data) {
                 return;
             }
             
-            // Open WhatsApp Web with pre-filled message
-            const whatsappUrl = `https://web.whatsapp.com/send?phone=${encodeURIComponent(phoneNumber.replace(/\D/g, ''))}&text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            // Clean and format phone number (remove non-digits, add country code if needed)
+            let cleanPhone = phoneNumber.replace(/\D/g, '');
+            if (cleanPhone.startsWith('0')) {
+                cleanPhone = '62' + cleanPhone.substring(1); // Indonesia country code
+            }
+            if (!cleanPhone.startsWith('62')) {
+                cleanPhone = '62' + cleanPhone; // Ensure Indonesia country code
+            }
+            
+            // Create WhatsApp URL - try multiple methods for better compatibility
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Method 1: Try WhatsApp Web first
+            const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMessage}`;
+            
+            // Method 2: Try WhatsApp mobile app (for mobile users)
+            const whatsappAppUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+            
+            // Try WhatsApp Web first (better for desktop)
+            const newWindow = window.open(whatsappWebUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
+            
+            // Fallback: if window didn't open, try mobile method
+            setTimeout(() => {
+                if (!newWindow || newWindow.closed) {
+                    console.log('📱 Trying WhatsApp mobile fallback (static)...');
+                    window.open(whatsappAppUrl, '_blank', 'noopener,noreferrer');
+                }
+            }, 2000);
             
             // Notify iframe of success
             sendWhatsAppResponse(data.requestId, true, 'WhatsApp opened successfully');
+            console.log(`📱 WhatsApp opened (static) for ${cleanPhone}: ${message}`);
             
         } else if (data.action === 'open_whatsapp') {
             // Open WhatsApp Web
-            window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+            const whatsappWindow = window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer,width=800,height=600');
+            
+            // Fallback to mobile WhatsApp if web doesn't work
+            setTimeout(() => {
+                if (!whatsappWindow || whatsappWindow.closed) {
+                    window.open('https://wa.me/', '_blank', 'noopener,noreferrer');
+                }
+            }, 2000);
+            
             sendWhatsAppResponse(data.requestId, true, 'WhatsApp Web opened');
             
+        } else if (data.action === 'whatsapp_click' || data.type === 'whatsapp_click') {
+            // Handle direct WhatsApp button clicks from iframe
+            console.log('📱 WhatsApp button clicked from iframe (static)');
+            showWhatsAppPanel();
+            
         } else {
-            console.warn('Unknown WhatsApp action:', data.action);
+            console.warn('Unknown WhatsApp action (static):', data.action);
             sendWhatsAppResponse(data.requestId, false, 'Unknown action');
         }
     } catch (error) {
-        console.error('Error handling WhatsApp request:', error);
+        console.error('Error handling WhatsApp request (static):', error);
         sendWhatsAppResponse(data.requestId, false, 'Internal error occurred');
     }
 }
@@ -950,6 +1002,101 @@ function addWhatsAppTrigger() {
     console.log('📱 WhatsApp trigger button added (static)');
 }
 
+function addWhatsAppUrlInterceptor() {
+    // Intercept clicks on WhatsApp links within iframes
+    document.addEventListener('click', function(event) {
+        const target = event.target;
+        
+        // Check if clicked element or its parents have WhatsApp-related attributes
+        let element = target;
+        for (let i = 0; i < 5; i++) { // Check up to 5 parent levels
+            if (!element) break;
+            
+            const href = element.href || element.getAttribute('href') || '';
+            const text = element.textContent || '';
+            const className = element.className || '';
+            const id = element.id || '';
+            
+            // Check for WhatsApp-related patterns
+            if (href.includes('whatsapp') || href.includes('wa.me') || 
+                text.toLowerCase().includes('whatsapp') || 
+                className.includes('whatsapp') || 
+                id.includes('whatsapp')) {
+                
+                event.preventDefault();
+                console.log('📱 WhatsApp link intercepted (static):', href || text);
+                
+                // Extract phone number and message if possible
+                if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+                    handleWhatsAppUrl(href);
+                } else {
+                    showWhatsAppPanel();
+                }
+                return false;
+            }
+            
+            element = element.parentElement;
+        }
+    }, true); // Use capture phase to intercept early
+    
+    console.log('📱 WhatsApp URL interceptor added (static)');
+}
+
+function handleWhatsAppUrl(url) {
+    try {
+        console.log('📱 Processing WhatsApp URL (static):', url);
+        
+        // Extract phone number and text from WhatsApp URL
+        const urlObj = new URL(url);
+        let phoneNumber = '';
+        let message = '';
+        
+        if (url.includes('wa.me')) {
+            // Format: https://wa.me/6281234567890?text=Hello
+            const pathParts = urlObj.pathname.split('/');
+            phoneNumber = pathParts[pathParts.length - 1];
+            message = urlObj.searchParams.get('text') || '';
+        } else if (url.includes('whatsapp.com/send')) {
+            // Format: https://web.whatsapp.com/send?phone=6281234567890&text=Hello
+            phoneNumber = urlObj.searchParams.get('phone') || '';
+            message = urlObj.searchParams.get('text') || '';
+        }
+        
+        if (phoneNumber) {
+            // Clean phone number
+            let cleanPhone = phoneNumber.replace(/\D/g, '');
+            if (cleanPhone.startsWith('0')) {
+                cleanPhone = '62' + cleanPhone.substring(1);
+            }
+            if (!cleanPhone.startsWith('62')) {
+                cleanPhone = '62' + cleanPhone;
+            }
+            
+            // Create new WhatsApp URL and open it
+            const newUrl = `https://web.whatsapp.com/send?phone=${cleanPhone}&text=${encodeURIComponent(message)}`;
+            const whatsappWindow = window.open(newUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
+            
+            // Fallback to mobile if web doesn't work
+            setTimeout(() => {
+                if (!whatsappWindow || whatsappWindow.closed) {
+                    const mobileUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+                    window.open(mobileUrl, '_blank', 'noopener,noreferrer');
+                }
+            }, 2000);
+            
+            console.log(`📱 WhatsApp opened (static) for ${phoneNumber}`);
+        } else {
+            // No phone number found, just open WhatsApp Web
+            window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+        }
+        
+    } catch (error) {
+        console.error('Error processing WhatsApp URL (static):', error);
+        // Fallback: just open WhatsApp Web
+        window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+    }
+}
+
 // Global functions for inline event handlers
 window.refreshBPT = refreshBPT;
 window.openInNewTab = openInNewTab;
@@ -958,6 +1105,8 @@ window.refreshTikTokData = refreshTikTokData;
 window.retryTikTokLoad = retryTikTokLoad;
 window.initWhatsAppAPI = initWhatsAppAPI;
 window.initNetworkMonitoring = initNetworkMonitoring;
+window.handleWhatsAppUrl = handleWhatsAppUrl;
+window.addWhatsAppUrlInterceptor = addWhatsAppUrlInterceptor;
 window.showWhatsAppPanel = showWhatsAppPanel;
 window.closeWhatsAppPanel = closeWhatsAppPanel;
 window.openWhatsAppWeb = openWhatsAppWeb;
