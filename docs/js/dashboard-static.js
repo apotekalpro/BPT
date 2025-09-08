@@ -232,66 +232,192 @@ class DashboardManager {
 
         let loadTimeout;
         let hasLoaded = false;
+        let retryCount = 0;
+        const maxRetries = 3;
+        const iframeUrl = 'https://zyqsemod.gensparkspace.com/';
 
-        // Show loading initially
-        tiktokLoading.style.display = 'block';
-        tiktokError.style.display = 'none';
-        tiktokFrame.style.display = 'none';
-
-        // Set a timeout to show error if iframe doesn't load
-        loadTimeout = setTimeout(() => {
-            if (!hasLoaded) {
-                this.showTikTokError();
+        // Check network connectivity first
+        this.checkNetworkConnectivity().then(isOnline => {
+            if (!isOnline) {
+                this.showTikTokError('No internet connection detected');
+                return;
             }
-        }, 10000); // 10 seconds timeout
-
-        // Monitor iframe load
-        tiktokFrame.addEventListener('load', () => {
-            hasLoaded = true;
-            clearTimeout(loadTimeout);
-            
-            // Hide loading and show iframe
-            tiktokLoading.style.display = 'none';
-            tiktokError.style.display = 'none';
-            tiktokFrame.style.display = 'block';
-            
-            console.log('✅ TikTok Cuan iframe loaded (static)');
+            this.startIframeLoading();
         });
 
-        // Monitor iframe errors
-        tiktokFrame.addEventListener('error', () => {
+        const startIframeLoading = () => {
             hasLoaded = false;
-            clearTimeout(loadTimeout);
-            this.showTikTokError();
-        });
+            console.log(`🔄 Loading TikTok Cuan iframe (static) (attempt ${retryCount + 1}/${maxRetries + 1})`);
 
-        // Check for X-Frame-Options blocking
-        setTimeout(() => {
-            try {
-                if (!hasLoaded && tiktokFrame.contentWindow) {
-                    // Try to access iframe content to detect X-Frame-Options
-                    const iframeDoc = tiktokFrame.contentDocument || tiktokFrame.contentWindow.document;
-                    if (!iframeDoc && !hasLoaded) {
-                        this.showTikTokError();
+            // Show loading state
+            tiktokLoading.style.display = 'block';
+            tiktokError.style.display = 'none';
+            tiktokFrame.style.display = 'none';
+
+            // Update loading text with retry info
+            const loadingText = tiktokLoading.querySelector('p');
+            if (loadingText && retryCount > 0) {
+                loadingText.textContent = `Loading TikTok Cuan Dashboard... (Attempt ${retryCount + 1})`;
+            }
+
+            // Set iframe source (this will trigger the load)
+            if (tiktokFrame.src !== iframeUrl) {
+                tiktokFrame.src = iframeUrl;
+            } else {
+                // Force reload if src is already set
+                tiktokFrame.src = '';
+                setTimeout(() => {
+                    tiktokFrame.src = iframeUrl;
+                }, 100);
+            }
+
+            // Set timeout with exponential backoff
+            const timeoutDuration = 15000 + (retryCount * 5000); // 15s, 20s, 25s, 30s
+            loadTimeout = setTimeout(() => {
+                if (!hasLoaded) {
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        console.log(`⏰ TikTok iframe timeout (static), retrying... (${retryCount}/${maxRetries})`);
+                        startIframeLoading();
+                    } else {
+                        this.showTikTokError('Connection timeout after multiple attempts');
                     }
                 }
-            } catch (e) {
-                // Cross-origin access denied - this is normal for external sites
-                console.log('Cross-origin iframe detected (normal behavior)');
+            }, timeoutDuration);
+        };
+
+        this.startIframeLoading = startIframeLoading;
+
+        // Monitor iframe successful load
+        tiktokFrame.addEventListener('load', () => {
+            // Verify the iframe actually loaded content
+            setTimeout(() => {
+                try {
+                    // Check if iframe has loaded by testing its window object
+                    if (tiktokFrame.contentWindow && tiktokFrame.src === iframeUrl) {
+                        hasLoaded = true;
+                        clearTimeout(loadTimeout);
+                        retryCount = 0; // Reset retry count on success
+                        
+                        // Hide loading and show iframe
+                        tiktokLoading.style.display = 'none';
+                        tiktokError.style.display = 'none';
+                        tiktokFrame.style.display = 'block';
+                        
+                        console.log('✅ TikTok Cuan iframe loaded successfully (static)');
+                    }
+                } catch (e) {
+                    // Cross-origin access is normal, consider it loaded if no other errors
+                    if (tiktokFrame.src === iframeUrl) {
+                        hasLoaded = true;
+                        clearTimeout(loadTimeout);
+                        retryCount = 0;
+                        
+                        tiktokLoading.style.display = 'none';
+                        tiktokError.style.display = 'none';
+                        tiktokFrame.style.display = 'block';
+                        
+                        console.log('✅ TikTok Cuan iframe loaded (static, cross-origin)');
+                    }
+                }
+            }, 2000); // Give iframe time to fully load
+        });
+
+        // Monitor iframe loading errors
+        tiktokFrame.addEventListener('error', (e) => {
+            console.error('TikTok iframe error event (static):', e);
+            hasLoaded = false;
+            clearTimeout(loadTimeout);
+            
+            if (retryCount < maxRetries) {
+                retryCount++;
+                console.log(`🔄 Iframe error (static), retrying... (${retryCount}/${maxRetries})`);
+                setTimeout(() => startIframeLoading(), 2000);
+            } else {
+                this.showTikTokError('Failed to load after multiple attempts');
             }
-        }, 3000);
+        });
+
+        // Additional check for blocked content
+        setTimeout(() => {
+            if (!hasLoaded && retryCount === 0) {
+                console.log('🔍 Checking for blocked content (static)...');
+                this.checkIframeBlocking(tiktokFrame);
+            }
+        }, 5000);
     }
 
-    showTikTokError() {
+    async checkNetworkConnectivity() {
+        try {
+            // Check if navigator.onLine is available and true
+            if (!navigator.onLine) {
+                return false;
+            }
+
+            // Try to fetch a small resource to verify actual connectivity
+            const response = await fetch('https://httpbin.org/json', {
+                method: 'GET',
+                mode: 'no-cors',
+                cache: 'no-cache'
+            });
+            return true;
+        } catch (error) {
+            console.warn('Network connectivity check failed (static):', error);
+            // Fallback to navigator.onLine
+            return navigator.onLine;
+        }
+    }
+
+    checkIframeBlocking(iframe) {
+        try {
+            // Test if iframe is accessible
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+            
+            // If we can't access it but it has a src, it's likely cross-origin (normal)
+            if (!iframeDoc && iframe.src) {
+                console.log('ℹ️ Iframe is cross-origin (static, normal behavior)');
+                // Consider it loaded if it has the correct src
+                if (iframe.src.includes('zyqsemod.gensparkspace.com')) {
+                    iframe.style.display = 'block';
+                    document.getElementById('tiktokLoading').style.display = 'none';
+                    document.getElementById('tiktokError').style.display = 'none';
+                    console.log('✅ Assuming iframe loaded (static, cross-origin content)');
+                }
+                return;
+            }
+            
+            // Check if iframe is empty or blocked
+            if (!iframe.src || iframe.src === 'about:blank') {
+                console.warn('⚠️ Iframe has no source or is blank (static)');
+                this.showTikTokError('Iframe source not set properly');
+            }
+        } catch (error) {
+            // This is expected for cross-origin iframes
+            console.log('ℹ️ Cross-origin iframe access blocked (static, expected)');
+        }
+    }
+
+    showTikTokError(customMessage = '') {
         const tiktokLoading = document.getElementById('tiktokLoading');
         const tiktokError = document.getElementById('tiktokError');
         const tiktokFrame = document.getElementById('tiktokFrame');
 
         if (tiktokLoading) tiktokLoading.style.display = 'none';
-        if (tiktokError) tiktokError.style.display = 'block';
+        if (tiktokError) {
+            tiktokError.style.display = 'block';
+            
+            // Update error message if custom message provided
+            if (customMessage) {
+                const errorTitle = tiktokError.querySelector('h3');
+                const errorDesc = tiktokError.querySelector('p');
+                
+                if (errorTitle) errorTitle.textContent = 'Connection Issue';
+                if (errorDesc) errorDesc.textContent = customMessage;
+            }
+        }
         if (tiktokFrame) tiktokFrame.style.display = 'none';
 
-        console.log('⚠️ TikTok Cuan iframe failed to load (static)');
+        console.log('⚠️ TikTok Cuan iframe error (static):', customMessage || 'Failed to load');
     }
 
     handleLogout() {
@@ -361,6 +487,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize WhatsApp API for TikTok Cuan
     initWhatsAppAPI();
+    
+    // Initialize network monitoring
+    initNetworkMonitoring();
 });
 
 // Initialize WhatsApp iframe handling
@@ -557,7 +686,7 @@ function refreshTikTokData() {
     }
 }
 
-// TikTok retry function
+// Enhanced TikTok retry function (static)
 function retryTikTokLoad() {
     const tiktokFrame = document.getElementById('tiktokFrame');
     const tiktokLoading = document.getElementById('tiktokLoading');
@@ -565,19 +694,52 @@ function retryTikTokLoad() {
     
     if (!tiktokFrame || !tiktokLoading || !tiktokError) return;
     
-    console.log('🔄 Retrying TikTok Cuan load...');
+    console.log('🔄 Manual retry of TikTok Cuan load (static)...');
     
     // Reset iframe state
     tiktokError.style.display = 'none';
     tiktokLoading.style.display = 'block';
     tiktokFrame.style.display = 'none';
     
-    // Force reload iframe
-    const currentSrc = tiktokFrame.src;
+    // Reset loading text
+    const loadingText = tiktokLoading.querySelector('p');
+    if (loadingText) {
+        loadingText.textContent = 'Loading TikTok Cuan Dashboard...';
+    }
+    
+    // Force reload iframe with fresh initialization
     tiktokFrame.src = '';
+    
     setTimeout(() => {
-        tiktokFrame.src = currentSrc;
+        // Re-initialize monitoring with fresh state
+        if (window.dashboardManager && window.dashboardManager.startIframeLoading) {
+            window.dashboardManager.startIframeLoading();
+        } else {
+            // Fallback if monitoring is not available
+            tiktokFrame.src = 'https://zyqsemod.gensparkspace.com/';
+        }
     }, 500);
+}
+
+// Network status monitoring (static)
+function initNetworkMonitoring() {
+    // Monitor online/offline status
+    window.addEventListener('online', () => {
+        console.log('📶 Network connection restored (static)');
+        
+        // Auto-retry TikTok loading if it failed due to network issues
+        const tiktokError = document.getElementById('tiktokError');
+        if (tiktokError && tiktokError.style.display === 'block') {
+            setTimeout(() => {
+                console.log('🔄 Auto-retrying TikTok load after network restoration (static)...');
+                retryTikTokLoad();
+            }, 2000);
+        }
+    });
+    
+    window.addEventListener('offline', () => {
+        console.log('📵 Network connection lost (static)');
+    });
 }
 
 // Enhanced WhatsApp API integration for TikTok Cuan (static version)
@@ -795,6 +957,7 @@ window.refreshIframe = refreshIframe;
 window.refreshTikTokData = refreshTikTokData;
 window.retryTikTokLoad = retryTikTokLoad;
 window.initWhatsAppAPI = initWhatsAppAPI;
+window.initNetworkMonitoring = initNetworkMonitoring;
 window.showWhatsAppPanel = showWhatsAppPanel;
 window.closeWhatsAppPanel = closeWhatsAppPanel;
 window.openWhatsAppWeb = openWhatsAppWeb;
