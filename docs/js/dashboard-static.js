@@ -128,6 +128,8 @@ class DashboardManager {
                 this.initCampaignTab();
             } else if (tabId === 'monitoring') {
                 this.initMonitoringTab();
+            } else if (tabId === 'tiktok-cuan') {
+                this.loadTikTokCuan();
             }
         }
     }
@@ -215,6 +217,83 @@ class DashboardManager {
         }
     }
 
+    loadTikTokCuan() {
+        // Initialize TikTok Cuan iframe monitoring for static version
+        this.initTikTokIframeMonitoring();
+        console.log('TikTok Cuan section loaded (static version)');
+    }
+
+    initTikTokIframeMonitoring() {
+        const tiktokFrame = document.getElementById('tiktokFrame');
+        const tiktokLoading = document.getElementById('tiktokLoading');
+        const tiktokError = document.getElementById('tiktokError');
+
+        if (!tiktokFrame || !tiktokLoading || !tiktokError) return;
+
+        let loadTimeout;
+        let hasLoaded = false;
+
+        // Show loading initially
+        tiktokLoading.style.display = 'block';
+        tiktokError.style.display = 'none';
+        tiktokFrame.style.display = 'none';
+
+        // Set a timeout to show error if iframe doesn't load
+        loadTimeout = setTimeout(() => {
+            if (!hasLoaded) {
+                this.showTikTokError();
+            }
+        }, 10000); // 10 seconds timeout
+
+        // Monitor iframe load
+        tiktokFrame.addEventListener('load', () => {
+            hasLoaded = true;
+            clearTimeout(loadTimeout);
+            
+            // Hide loading and show iframe
+            tiktokLoading.style.display = 'none';
+            tiktokError.style.display = 'none';
+            tiktokFrame.style.display = 'block';
+            
+            console.log('✅ TikTok Cuan iframe loaded (static)');
+        });
+
+        // Monitor iframe errors
+        tiktokFrame.addEventListener('error', () => {
+            hasLoaded = false;
+            clearTimeout(loadTimeout);
+            this.showTikTokError();
+        });
+
+        // Check for X-Frame-Options blocking
+        setTimeout(() => {
+            try {
+                if (!hasLoaded && tiktokFrame.contentWindow) {
+                    // Try to access iframe content to detect X-Frame-Options
+                    const iframeDoc = tiktokFrame.contentDocument || tiktokFrame.contentWindow.document;
+                    if (!iframeDoc && !hasLoaded) {
+                        this.showTikTokError();
+                    }
+                }
+            } catch (e) {
+                // Cross-origin access denied - this is normal for external sites
+                console.log('Cross-origin iframe detected (normal behavior)');
+            }
+        }, 3000);
+    }
+
+    showTikTokError() {
+        const tiktokLoading = document.getElementById('tiktokLoading');
+        const tiktokError = document.getElementById('tiktokError');
+        const tiktokFrame = document.getElementById('tiktokFrame');
+
+        if (tiktokLoading) tiktokLoading.style.display = 'none';
+        if (tiktokError) tiktokError.style.display = 'block';
+        if (tiktokFrame) tiktokFrame.style.display = 'none';
+
+        console.log('⚠️ TikTok Cuan iframe failed to load (static)');
+    }
+
     handleLogout() {
         localStorage.removeItem('user');
         console.log('👋 User logged out');
@@ -279,6 +358,9 @@ document.addEventListener('keydown', function(e) {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🏥 Apotek Alpro Dashboard Initialized (Static Version)');
     window.dashboardManager = new DashboardManager();
+    
+    // Initialize WhatsApp API for TikTok Cuan
+    initWhatsAppAPI();
 });
 
 // Initialize WhatsApp iframe handling
@@ -475,8 +557,77 @@ function refreshTikTokData() {
     }
 }
 
+// TikTok retry function
+function retryTikTokLoad() {
+    const tiktokFrame = document.getElementById('tiktokFrame');
+    const tiktokLoading = document.getElementById('tiktokLoading');
+    const tiktokError = document.getElementById('tiktokError');
+    
+    if (!tiktokFrame || !tiktokLoading || !tiktokError) return;
+    
+    console.log('🔄 Retrying TikTok Cuan load...');
+    
+    // Reset iframe state
+    tiktokError.style.display = 'none';
+    tiktokLoading.style.display = 'block';
+    tiktokFrame.style.display = 'none';
+    
+    // Force reload iframe
+    const currentSrc = tiktokFrame.src;
+    tiktokFrame.src = '';
+    setTimeout(() => {
+        tiktokFrame.src = currentSrc;
+    }, 500);
+}
+
+// WhatsApp API integration for TikTok Cuan (static version)
+function initWhatsAppAPI() {
+    // Check if the iframe contains WhatsApp functionality
+    const tiktokFrame = document.getElementById('tiktokFrame');
+    if (!tiktokFrame) return;
+
+    // Monitor messages from the iframe for WhatsApp API calls
+    window.addEventListener('message', function(event) {
+        // Verify origin for security
+        if (event.origin !== 'https://zyqsemod.gensparkspace.com') return;
+
+        // Handle WhatsApp API requests from iframe
+        if (event.data && event.data.type === 'whatsapp_request') {
+            handleWhatsAppRequest(event.data);
+        }
+    });
+
+    console.log('📱 WhatsApp API integration initialized for TikTok Cuan (static)');
+}
+
+function handleWhatsAppRequest(data) {
+    console.log('📱 WhatsApp API request received:', data);
+    
+    // Example WhatsApp API integration for static version
+    if (data.action === 'send_message') {
+        // Handle sending WhatsApp message
+        const { phoneNumber, message } = data.payload;
+        
+        // Use WhatsApp Business API or Web API
+        // This is a placeholder for actual WhatsApp integration
+        console.log(`Sending WhatsApp message to ${phoneNumber}: ${message}`);
+        
+        // Notify iframe of success/failure
+        const tiktokFrame = document.getElementById('tiktokFrame');
+        if (tiktokFrame && tiktokFrame.contentWindow) {
+            tiktokFrame.contentWindow.postMessage({
+                type: 'whatsapp_response',
+                success: true,
+                requestId: data.requestId
+            }, 'https://zyqsemod.gensparkspace.com');
+        }
+    }
+}
+
 // Global functions for inline event handlers
 window.refreshBPT = refreshBPT;
 window.openInNewTab = openInNewTab;
 window.refreshIframe = refreshIframe;
 window.refreshTikTokData = refreshTikTokData;
+window.retryTikTokLoad = retryTikTokLoad;
+window.initWhatsAppAPI = initWhatsAppAPI;

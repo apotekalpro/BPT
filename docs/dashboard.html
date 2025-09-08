@@ -462,134 +462,41 @@
                     </div>
                 </div>
                 <div class="tiktok-cuan-content">
-                    <div class="tiktok-dashboard">
-                        <div class="tiktok-header">
-                            <div class="tiktok-header-left">
-                                <div class="tiktok-logo">
-                                    <i class="fab fa-tiktok"></i>
-                                </div>
-                                <div class="tiktok-title">
-                                    <h3>TikTok Cuan Dashboard</h3>
-                                    <p>Social Media Marketing Analytics</p>
-                                </div>
+                    <div class="iframe-container">
+                        <div class="iframe-loading" id="tiktokLoading">
+                            <div class="loading-spinner"></div>
+                            <p>Loading TikTok Cuan Dashboard...</p>
+                        </div>
+                        <div class="iframe-error" id="tiktokError" style="display: none;">
+                            <div class="error-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
                             </div>
-                            <div class="tiktok-status">
-                                <span class="status-badge active">
-                                    <i class="fas fa-circle"></i>
-                                    Active Campaigns
-                                </span>
+                            <h3>Connection Issue</h3>
+                            <p>Unable to load TikTok Cuan dashboard. This may be due to:</p>
+                            <ul>
+                                <li>Network connectivity issues</li>
+                                <li>Browser security restrictions</li>
+                                <li>Temporary service unavailability</li>
+                            </ul>
+                            <div class="error-actions">
+                                <button class="retry-btn" onclick="retryTikTokLoad()">
+                                    <i class="fas fa-redo"></i> Retry
+                                </button>
+                                <button class="external-btn" onclick="window.open('https://zyqsemod.gensparkspace.com/', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i> Open in New Tab
+                                </button>
                             </div>
                         </div>
-                        
-                        <div class="tiktok-stats-grid">
-                            <div class="tiktok-stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number">1.2M</div>
-                                    <div class="stat-label">Total Views</div>
-                                </div>
-                            </div>
-                            
-                            <div class="tiktok-stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number">85.4K</div>
-                                    <div class="stat-label">Likes</div>
-                                </div>
-                            </div>
-                            
-                            <div class="tiktok-stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-share"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number">12.3K</div>
-                                    <div class="stat-label">Shares</div>
-                                </div>
-                            </div>
-                            
-                            <div class="tiktok-stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-dollar-sign"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number">Rp 2.5M</div>
-                                    <div class="stat-label">Revenue</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="tiktok-campaigns">
-                            <h4><i class="fas fa-video"></i> Active TikTok Campaigns</h4>
-                            
-                            <div class="campaign-list">
-                                <div class="campaign-item">
-                                    <div class="campaign-thumbnail">
-                                        <i class="fab fa-tiktok"></i>
-                                    </div>
-                                    <div class="campaign-details">
-                                        <h5>Health Tips Series #1</h5>
-                                        <p>Daily vitamin reminders and health tips</p>
-                                        <div class="campaign-metrics">
-                                            <span><i class="fas fa-eye"></i> 250K views</span>
-                                            <span><i class="fas fa-heart"></i> 18.2K likes</span>
-                                        </div>
-                                    </div>
-                                    <div class="campaign-status">
-                                        <span class="status running">Running</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="campaign-item">
-                                    <div class="campaign-thumbnail">
-                                        <i class="fab fa-tiktok"></i>
-                                    </div>
-                                    <div class="campaign-details">
-                                        <h5>Product Showcase</h5>
-                                        <p>Featured pharmacy products and benefits</p>
-                                        <div class="campaign-metrics">
-                                            <span><i class="fas fa-eye"></i> 180K views</span>
-                                            <span><i class="fas fa-heart"></i> 12.8K likes</span>
-                                        </div>
-                                    </div>
-                                    <div class="campaign-status">
-                                        <span class="status planned">Planned</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="campaign-item">
-                                    <div class="campaign-thumbnail">
-                                        <i class="fab fa-tiktok"></i>
-                                    </div>
-                                    <div class="campaign-details">
-                                        <h5>Customer Stories</h5>
-                                        <p>Real customer testimonials and experiences</p>
-                                        <div class="campaign-metrics">
-                                            <span><i class="fas fa-eye"></i> 95K views</span>
-                                            <span><i class="fas fa-heart"></i> 8.4K likes</span>
-                                        </div>
-                                    </div>
-                                    <div class="campaign-status">
-                                        <span class="status completed">Completed</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="tiktok-actions">
-                            <button class="tiktok-action-btn primary" onclick="window.open('https://www.tiktok.com/@apotekalpro', '_blank')">
-                                <i class="fab fa-tiktok"></i>
-                                Visit TikTok Profile
-                            </button>
-                            <button class="tiktok-action-btn secondary" onclick="refreshTikTokData()">
-                                <i class="fas fa-sync-alt"></i>
-                                Refresh Data
-                            </button>
-                        </div>
+                        <iframe 
+                            id="tiktokFrame"
+                            src="https://zyqsemod.gensparkspace.com/" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            allow="camera; microphone; geolocation; web-share"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-top-navigation-by-user-activation"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            style="width: 100%; height: 600px; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+                        </iframe>
                     </div>
                 </div>
             </div>
