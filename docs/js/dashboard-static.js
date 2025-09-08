@@ -1548,12 +1548,18 @@ function fallbackCopy(text) {
 function openWhatsAppContactFromHomepage() {
     console.log('📱 Opening WhatsApp from homepage contact section (static)');
     
-    const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+    const phoneNumber = '+6287785731144';
+    const whatsappUrl = `https://wa.me/6287785731144`;
     
-    // Use our enhanced multi-method approach
-    openWhatsAppWithMultipleMethods(whatsappGroupUrl);
-    
-    console.log('📱 WhatsApp contact opened from homepage (static)');
+    // Simple direct opening
+    try {
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        console.log('📱 WhatsApp direct contact opened (static):', whatsappUrl);
+    } catch (error) {
+        console.error('📱 Failed to open WhatsApp (static):', error);
+        // Fallback: direct navigation
+        window.location.href = whatsappUrl;
+    }
 }
 
 function openWhatsAppDirectFromTikTok() {
@@ -1561,10 +1567,15 @@ function openWhatsAppDirectFromTikTok() {
     
     const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
     
-    // Use our enhanced multi-method approach
-    openWhatsAppWithMultipleMethods(whatsappGroupUrl);
-    
-    console.log('📱 WhatsApp TikTok Cuan group opened (static)');
+    // Simple direct opening for group
+    try {
+        window.open(whatsappGroupUrl, '_blank', 'noopener,noreferrer');
+        console.log('📱 WhatsApp TikTok Cuan group opened (static):', whatsappGroupUrl);
+    } catch (error) {
+        console.error('📱 Failed to open WhatsApp group (static):', error);
+        // Fallback: direct navigation
+        window.location.href = whatsappGroupUrl;
+    }
 }
 
 // Global functions for inline event handlers

@@ -3262,18 +3262,22 @@ body {
     60% { transform: translateY(-1px); }
 }
 
-/* WhatsApp Direct Access Button for TikTok Cuan */
-.whatsapp-direct-access {
+/* Compact WhatsApp Banner for TikTok Cuan */
+.whatsapp-compact-banner {
     background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(255, 255, 255, 0.95));
     border: 2px solid #25D366;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 30px;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     position: relative;
     overflow: hidden;
 }
 
-.whatsapp-direct-access::before {
+.whatsapp-compact-banner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -3281,77 +3285,20 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.1), transparent);
-    animation: shine 3s infinite;
+    animation: shine 4s infinite;
 }
 
-.whatsapp-access-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.whatsapp-access-header h3 {
-    color: #25D366;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
+.banner-left-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    gap: 15px;
+    flex: 1;
 }
 
-.whatsapp-access-header h3 i {
-    font-size: 28px;
-    animation: whatsappPulse 2s infinite;
-}
-
-.whatsapp-access-header p {
-    color: #666;
-    font-size: 16px;
-    margin: 0;
-}
-
-.whatsapp-direct-btn {
-    width: 100%;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: white;
-    border: none;
-    border-radius: 16px;
-    padding: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.whatsapp-direct-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.whatsapp-direct-btn:hover::before {
-    left: 100%;
-}
-
-.whatsapp-direct-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
-    background: linear-gradient(135deg, #128C7E, #075E54);
-}
-
-.whatsapp-direct-btn .btn-icon {
+.banner-icon {
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #25D366, #128C7E);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -3359,79 +3306,85 @@ body {
     flex-shrink: 0;
 }
 
-.whatsapp-direct-btn .btn-icon i {
+.banner-icon i {
     font-size: 24px;
     color: white;
+    animation: whatsappPulse 2s infinite;
 }
 
-.whatsapp-direct-btn .btn-content {
-    flex: 1;
-    text-align: left;
-}
-
-.whatsapp-direct-btn .btn-title {
-    display: block;
+.banner-text h4 {
+    color: #25D366;
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin: 0 0 4px 0;
 }
 
-.whatsapp-direct-btn .btn-subtitle {
-    display: block;
+.banner-text p {
+    color: #666;
     font-size: 14px;
-    opacity: 0.9;
+    margin: 0;
+    line-height: 1.4;
 }
 
-.whatsapp-direct-btn .btn-arrow {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+.banner-whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
 }
 
-.whatsapp-direct-btn:hover .btn-arrow {
-    transform: translateX(3px);
+.banner-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, #128C7E, #075E54);
 }
 
-.whatsapp-direct-btn .btn-arrow i {
+.banner-whatsapp-btn i {
     font-size: 16px;
-    color: white;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .whatsapp-direct-btn {
+    .whatsapp-compact-banner {
         padding: 15px;
         gap: 15px;
+        flex-direction: column;
+        text-align: center;
     }
     
-    .whatsapp-direct-btn .btn-icon {
+    .banner-left-content {
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .banner-icon {
         width: 40px;
         height: 40px;
     }
     
-    .whatsapp-direct-btn .btn-icon i {
+    .banner-icon i {
         font-size: 20px;
     }
     
-    .whatsapp-direct-btn .btn-title {
+    .banner-text h4 {
         font-size: 16px;
     }
     
-    .whatsapp-direct-btn .btn-subtitle {
+    .banner-text p {
         font-size: 13px;
     }
     
-    .whatsapp-access-header h3 {
-        font-size: 20px;
-    }
-    
-    .whatsapp-access-header p {
-        font-size: 14px;
+    .banner-whatsapp-btn {
+        padding: 10px 16px;
+        font-size: 13px;
     }
 }
