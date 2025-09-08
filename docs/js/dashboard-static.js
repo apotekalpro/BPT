@@ -455,7 +455,28 @@ function refreshIframe(button) {
     }
 }
 
+// TikTok refresh function
+function refreshTikTokData() {
+    console.log('🔄 Refreshing TikTok data...');
+    
+    // Show loading state
+    const refreshBtn = document.querySelector('.tiktok-action-btn.secondary');
+    if (refreshBtn) {
+        const originalText = refreshBtn.innerHTML;
+        refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+        refreshBtn.disabled = true;
+        
+        // Simulate data refresh
+        setTimeout(() => {
+            refreshBtn.innerHTML = originalText;
+            refreshBtn.disabled = false;
+            console.log('✅ TikTok data refreshed');
+        }, 2000);
+    }
+}
+
 // Global functions for inline event handlers
 window.refreshBPT = refreshBPT;
 window.openInNewTab = openInNewTab;
 window.refreshIframe = refreshIframe;
+window.refreshTikTokData = refreshTikTokData;
