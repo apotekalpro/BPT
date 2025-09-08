@@ -195,12 +195,14 @@
                             </div>
                             
                             <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
+                                <div class="contact-icon whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
                                 </div>
                                 <div class="contact-details">
-                                    <div class="contact-label">Phone Number</div>
-                                    <a href="tel:+6287785731144" class="contact-value">+62 877 8573 1144</a>
+                                    <div class="contact-label">WhatsApp Contact</div>
+                                    <a href="javascript:void(0)" onclick="openWhatsAppContactFromHomepage()" class="contact-value whatsapp-contact">
+                                        <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                                    </a>
                                 </div>
                             </div>
                             
@@ -462,6 +464,26 @@
                     </div>
                 </div>
                 <div class="tiktok-cuan-content">
+                    <!-- WhatsApp Direct Access Button -->
+                    <div class="whatsapp-direct-access">
+                        <div class="whatsapp-access-header">
+                            <h3><i class="fab fa-whatsapp"></i> Quick WhatsApp Access</h3>
+                            <p>Connect directly to our WhatsApp group for TikTok Cuan discussions</p>
+                        </div>
+                        <button class="whatsapp-direct-btn" onclick="openWhatsAppDirectFromTikTok()">
+                            <div class="btn-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="btn-content">
+                                <span class="btn-title">Join TikTok Cuan WhatsApp Group</span>
+                                <span class="btn-subtitle">Get real-time updates and discussions</span>
+                            </div>
+                            <div class="btn-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </button>
+                    </div>
+                    
                     <div class="iframe-container">
                         <div class="iframe-loading" id="tiktokLoading">
                             <div class="loading-spinner"></div>

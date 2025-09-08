@@ -1544,6 +1544,29 @@ function fallbackCopy(text) {
     document.body.removeChild(textArea);
 }
 
+// Enhanced WhatsApp functions for homepage and TikTok Cuan (static version)
+function openWhatsAppContactFromHomepage() {
+    console.log('📱 Opening WhatsApp from homepage contact section (static)');
+    
+    const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+    
+    // Use our enhanced multi-method approach
+    openWhatsAppWithMultipleMethods(whatsappGroupUrl);
+    
+    console.log('📱 WhatsApp contact opened from homepage (static)');
+}
+
+function openWhatsAppDirectFromTikTok() {
+    console.log('📱 Opening WhatsApp from TikTok Cuan direct button (static)');
+    
+    const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+    
+    // Use our enhanced multi-method approach
+    openWhatsAppWithMultipleMethods(whatsappGroupUrl);
+    
+    console.log('📱 WhatsApp TikTok Cuan group opened (static)');
+}
+
 // Global functions for inline event handlers
 window.refreshBPT = refreshBPT;
 window.openInNewTab = openInNewTab;
@@ -1569,3 +1592,5 @@ window.fallbackCopy = fallbackCopy;
 window.showWhatsAppNetworkBypassFallback = showWhatsAppNetworkBypassFallback;
 window.attemptAlternativeWhatsApp = attemptAlternativeWhatsApp;
 window.retryWhatsAppConnection = retryWhatsAppConnection;
+window.openWhatsAppContactFromHomepage = openWhatsAppContactFromHomepage;
+window.openWhatsAppDirectFromTikTok = openWhatsAppDirectFromTikTok;
