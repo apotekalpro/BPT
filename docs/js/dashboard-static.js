@@ -345,6 +345,9 @@ class DashboardManager {
                 this.checkIframeBlocking(tiktokFrame);
             }
         }, 5000);
+
+        // Add iframe navigation handling
+        this.setupIframeNavigationHandling(tiktokFrame);
     }
 
     async checkNetworkConnectivity() {
@@ -395,6 +398,56 @@ class DashboardManager {
             // This is expected for cross-origin iframes
             console.log('ℹ️ Cross-origin iframe access blocked (static, expected)');
         }
+    }
+
+    setupIframeNavigationHandling(iframe) {
+        // Monitor iframe for navigation changes (static version)
+        let lastUrl = iframe.src;
+        
+        // Check for URL changes periodically
+        const checkUrlChanges = () => {
+            try {
+                if (iframe.contentWindow && iframe.contentWindow.location) {
+                    const currentUrl = iframe.contentWindow.location.href;
+                    if (currentUrl !== lastUrl) {
+                        console.log('🔗 Iframe navigated (static) from', lastUrl, 'to', currentUrl);
+                        lastUrl = currentUrl;
+                        
+                        // Ensure navigation stays within the TikTok Cuan domain
+                        if (!currentUrl.includes('zyqsemod.gensparkspace.com')) {
+                            console.warn('⚠️ Iframe navigated outside allowed domain (static):', currentUrl);
+                        }
+                    }
+                }
+            } catch (error) {
+                // Cross-origin access blocked - this is expected
+            }
+        };
+
+        // Monitor navigation changes
+        setInterval(checkUrlChanges, 2000);
+
+        // Listen for navigation messages from iframe
+        window.addEventListener('message', (event) => {
+            if (event.origin !== 'https://zyqsemod.gensparkspace.com') return;
+            
+            if (event.data && event.data.type === 'navigation_event') {
+                console.log('🔗 Navigation event from iframe (static):', event.data);
+                
+                // Handle navigation within iframe context
+                if (event.data.url && !event.data.url.includes('zyqsemod.gensparkspace.com')) {
+                    console.log('🔗 External navigation detected (static), handling...');
+                    
+                    // For external links, open in new tab but keep iframe context
+                    if (event.data.shouldOpenExternally) {
+                        window.open(event.data.url, '_blank', 'noopener,noreferrer');
+                        event.preventDefault?.();
+                    }
+                }
+            }
+        });
+
+        console.log('🔗 Iframe navigation handling setup complete (static)');
     }
 
     showTikTokError(customMessage = '') {
