@@ -1,107 +1,190 @@
-// Static Login Functionality for GitHub Pages
-console.log('🏥 Apotek Alpro Login System Initialized (Static Version)');
-console.log('💡 Tip: Use Alt+O for Outlet login, Alt+H for HQ login');
+class LoginManager {
+    constructor() {
+        this.initElements();
+        this.bindEvents();
+        this.currentLoginType = 'outlet';
+        this.updateFormLabels();
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('loginForm');
-    const loginTypeBtns = document.querySelectorAll('.login-type-btn');
-    const usernameLabel = document.getElementById('usernameLabel');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const errorMessage = document.getElementById('errorMessage');
-    const loginBtn = document.querySelector('.login-btn');
-    const btnText = document.querySelector('.btn-text');
-    const loader = document.querySelector('.loader');
-    
-    let currentLoginType = 'outlet';
+    initElements() {
+        this.form = document.getElementById('loginForm');
+        this.usernameInput = document.getElementById('username');
+        this.passwordInput = document.getElementById('password');
+        this.usernameLabel = document.getElementById('usernameLabel');
+        this.passwordLabel = document.getElementById('passwordLabel');
+        this.loginTypeButtons = document.querySelectorAll('.login-type-btn');
+        this.loginButton = this.form.querySelector('.login-btn');
+        this.btnText = this.loginButton.querySelector('.btn-text');
+        this.loader = this.loginButton.querySelector('.loader');
+        this.errorMessage = document.getElementById('errorMessage');
+    }
 
-    // Login type switching
-    loginTypeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            loginTypeBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            currentLoginType = this.dataset.type;
-            
-            if (currentLoginType === 'outlet') {
-                usernameLabel.textContent = 'Store Code';
-                usernameInput.placeholder = 'Enter your store code';
-            } else {
-                usernameLabel.textContent = 'Email';
-                usernameInput.placeholder = 'Enter your email';
-            }
-            
-            // Clear form
-            usernameInput.value = '';
-            passwordInput.value = '';
-            hideError();
+    bindEvents() {
+        // Login type selector
+        this.loginTypeButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const target = e.target.closest('.login-type-btn');
+                this.switchLoginType(target.dataset.type);
+            });
         });
-    });
 
-    // Form submission
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Form submission
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleLogin();
+        });
+
+        // Input focus effects
+        [this.usernameInput, this.passwordInput].forEach(input => {
+            input.addEventListener('focus', () => {
+                this.clearError();
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey) {
+                if (e.code === 'KeyO') {
+                    e.preventDefault();
+                    this.switchLoginType('outlet');
+                } else if (e.code === 'KeyH') {
+                    e.preventDefault();
+                    this.switchLoginType('hq');
+                }
+            }
+        });
+
+        // Check if already logged in
+        this.checkAuthStatus();
+    }
+
+    switchLoginType(type) {
+        if (type === this.currentLoginType) return;
+
+        this.currentLoginType = type;
+
+        // Update button states
+        this.loginTypeButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.type === type) {
+                btn.classList.add('active');
+            }
+        });
+
+        this.updateFormLabels();
+        this.clearForm();
+        this.clearError();
         
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
-        
+        console.log(`🔄 Switched to ${type.toUpperCase()} login`);
+    }
+
+    updateFormLabels() {
+        if (this.currentLoginType === 'outlet') {
+            this.usernameLabel.textContent = 'Store Code';
+            this.usernameInput.placeholder = 'Enter your store code';
+            this.passwordLabel.textContent = 'Password';
+            this.passwordInput.placeholder = 'Enter your password';
+        } else {
+            this.usernameLabel.textContent = 'Email';
+            this.usernameInput.placeholder = 'Enter your email address';
+            this.passwordLabel.textContent = 'Password';
+            this.passwordInput.placeholder = 'Enter your password';
+        }
+    }
+
+    async handleLogin() {
+        const username = this.usernameInput.value.trim();
+        const password = this.passwordInput.value.trim();
+
         if (!username || !password) {
-            showError('Please fill in all fields');
+            this.showError('Please fill in all fields');
             return;
         }
 
-        // Show loading state
-        showLoading(true);
-        
-        // Simulate authentication delay
-        setTimeout(() => {
-            // For demo purposes, accept any credentials
-            console.log(`🔐 Login attempt: ${currentLoginType} - ${username}`);
+        this.setLoading(true);
+
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        try {
+            // For static version, accept any credentials
+            console.log(`🔐 Login attempt: ${this.currentLoginType.toUpperCase()} - ${username}`);
             
-            // Store user info in localStorage
-            localStorage.setItem('user', JSON.stringify({
+            // Create user object
+            const userData = {
                 username: username,
-                type: currentLoginType.toUpperCase(),
-                loginTime: new Date().toISOString()
-            }));
+                type: this.currentLoginType.toUpperCase(),
+                loginTime: new Date().toISOString(),
+                storeName: this.currentLoginType === 'outlet' ? `Store ${username}` : 'Head Office',
+                accountManager: 'BPT Team'
+            };
+
+            // Store in localStorage
+            localStorage.setItem('user', JSON.stringify(userData));
             
-            // Redirect to dashboard
+            // Show success and redirect
+            console.log('✅ Login successful, redirecting to dashboard...');
+            
+            // Brief success feedback before redirect
+            this.btnText.textContent = 'Success!';
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 500);
+
+        } catch (error) {
+            console.error('Login error:', error);
+            this.showError('Login failed. Please try again.');
+            this.setLoading(false);
+        }
+    }
+
+    checkAuthStatus() {
+        const user = JSON.parse(localStorage.getItem('user') || 'null');
+        if (user) {
+            console.log('👤 User already authenticated, redirecting...');
             window.location.href = 'dashboard.html';
-        }, 1500);
-    });
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        if (e.altKey) {
-            if (e.code === 'KeyO') {
-                e.preventDefault();
-                document.querySelector('[data-type="outlet"]').click();
-            } else if (e.code === 'KeyH') {
-                e.preventDefault();
-                document.querySelector('[data-type="hq"]').click();
-            }
         }
-    });
+    }
 
-    function showLoading(show) {
-        if (show) {
-            loginBtn.disabled = true;
-            btnText.style.opacity = '0';
-            loader.classList.remove('hidden');
+    setLoading(isLoading) {
+        this.loginButton.disabled = isLoading;
+        
+        if (isLoading) {
+            this.btnText.style.opacity = '0';
+            this.loader.classList.remove('hidden');
         } else {
-            loginBtn.disabled = false;
-            btnText.style.opacity = '1';
-            loader.classList.add('hidden');
+            this.btnText.style.opacity = '1';
+            this.loader.classList.add('hidden');
+            this.btnText.textContent = 'Sign In';
         }
     }
 
-    function showError(message) {
-        errorMessage.textContent = message;
-        errorMessage.classList.remove('hidden');
-        showLoading(false);
+    showError(message) {
+        this.errorMessage.textContent = message;
+        this.errorMessage.classList.remove('hidden');
+        this.setLoading(false);
+        
+        // Auto-hide error after 5 seconds
+        setTimeout(() => {
+            this.clearError();
+        }, 5000);
     }
 
-    function hideError() {
-        errorMessage.classList.add('hidden');
+    clearError() {
+        this.errorMessage.classList.add('hidden');
+        this.errorMessage.textContent = '';
     }
+
+    clearForm() {
+        this.usernameInput.value = '';
+        this.passwordInput.value = '';
+    }
+}
+
+// Initialize login manager when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🏥 Apotek Alpro Login System Initialized (Static Version)');
+    console.log('💡 Tip: Use Alt+O for Outlet login, Alt+H for HQ login');
+    
+    window.loginManager = new LoginManager();
 });

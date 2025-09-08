@@ -195,12 +195,15 @@
                             </div>
                             
                             <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
+                                <div class="contact-icon whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
                                 </div>
                                 <div class="contact-details">
-                                    <div class="contact-label">Phone Number</div>
-                                    <a href="tel:+6287785731144" class="contact-value">+62 877 8573 1144</a>
+                                    <div class="contact-label">WhatsApp Contact</div>
+                                    <div class="contact-value">+62 877 8573 1144</div>
+                                    <a href="javascript:void(0)" onclick="openWhatsAppContactFromHomepage()" class="contact-value whatsapp-contact">
+                                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                    </a>
                                 </div>
                             </div>
                             
@@ -462,13 +465,105 @@
                     </div>
                 </div>
                 <div class="tiktok-cuan-content">
-                    <iframe 
-                        src="https://xsmhqwic.gensparkspace.com" 
-                        class="tiktok-iframe"
-                        title="TikTok Cuan Dashboard"
-                        frameborder="0"
-                        allowfullscreen>
-                    </iframe>
+                    <!-- Compact WhatsApp Access Banner -->
+                    <div class="whatsapp-compact-banner">
+                        <div class="banner-left-content">
+                            <div class="banner-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="banner-text">
+                                <h4>TikTok Cuan WhatsApp Group</h4>
+                                <p>Join our community for real-time updates and discussions</p>
+                            </div>
+                        </div>
+                        <button class="banner-whatsapp-btn" onclick="openWhatsAppDirectFromTikTok()">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Join Group</span>
+                        </button>
+                    </div>
+                    
+                    <div class="iframe-container">
+                        <div class="iframe-loading" id="tiktokLoading">
+                            <div class="loading-spinner"></div>
+                            <p>Loading TikTok Cuan Dashboard...</p>
+                        </div>
+                        <div class="iframe-error" id="tiktokError" style="display: none;">
+                            <div class="error-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Connection Issue</h3>
+                            <p>Unable to load TikTok Cuan dashboard. This may be due to:</p>
+                            <ul>
+                                <li>Network connectivity issues</li>
+                                <li>Browser security restrictions</li>
+                                <li>Temporary service unavailability</li>
+                            </ul>
+                            <div class="error-actions">
+                                <button class="retry-btn" onclick="retryTikTokLoad()">
+                                    <i class="fas fa-redo"></i> Retry
+                                </button>
+                                <button class="external-btn" onclick="window.open('https://zyqsemod.gensparkspace.com/', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i> Open in New Tab
+                                </button>
+                            </div>
+                        </div>
+                        <iframe 
+                            id="tiktokFrame"
+                            src="https://zyqsemod.gensparkspace.com/" 
+                            name="tiktokCuanFrame"
+                            frameborder="0" 
+                            allowfullscreen 
+                            allow="camera; microphone; geolocation; web-share; accelerometer; gyroscope; payment; usb; autoplay; encrypted-media; fullscreen; picture-in-picture"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-downloads allow-modals"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            loading="lazy"
+                            style="width: 100%; height: 1500px; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+                        </iframe>
+                        
+                        <!-- WhatsApp Integration Panel -->
+                        <div class="whatsapp-integration" id="whatsappIntegration" style="display: none;">
+                            <div class="whatsapp-header">
+                                <i class="fab fa-whatsapp"></i>
+                                <h4>WhatsApp Integration</h4>
+                                <button class="close-whatsapp" onclick="closeWhatsAppPanel()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="whatsapp-content">
+                                <div class="whatsapp-options">
+                                    <button class="whatsapp-option" onclick="openWhatsAppWeb()">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Join WhatsApp Group</span>
+                                    </button>
+                                    <button class="whatsapp-option" onclick="openWhatsAppAPI()">
+                                        <i class="fas fa-users"></i>
+                                        <span>WhatsApp Community</span>
+                                    </button>
+                                    <button class="whatsapp-option" onclick="sendQuickMessage()">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span>Send Quick Message</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="quick-message-form" id="quickMessageForm" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number:</label>
+                                        <input type="tel" id="phoneNumber" placeholder="+62 812 3456 7890" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="messageText">Message:</label>
+                                        <textarea id="messageText" placeholder="Enter your message..." class="form-textarea" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button onclick="sendWhatsAppMessage()" class="send-btn">
+                                            <i class="fab fa-whatsapp"></i> Send Message
+                                        </button>
+                                        <button onclick="cancelQuickMessage()" class="cancel-btn">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
