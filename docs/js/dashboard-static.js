@@ -281,5 +281,181 @@ document.addEventListener('DOMContentLoaded', function() {
     window.dashboardManager = new DashboardManager();
 });
 
+// Initialize WhatsApp iframe handling
+setTimeout(() => {
+    initWhatsAppHandling();
+}, 2000);
+
+// WhatsApp iframe handling functions
+function initWhatsAppHandling() {
+    const iframes = document.querySelectorAll('iframe');
+    
+    iframes.forEach(iframe => {
+        // Monitor iframe load errors
+        iframe.addEventListener('error', function() {
+            console.log('📱 Iframe load error detected');
+            showWhatsAppAlternative(iframe);
+        });
+        
+        // Check for X-Frame-Options errors after load
+        iframe.addEventListener('load', function() {
+            setTimeout(() => {
+                try {
+                    // This will throw an error if X-Frame-Options blocks the content
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    if (!iframeDoc) {
+                        showWhatsAppAlternative(iframe);
+                    }
+                } catch (e) {
+                    if (e.name === 'SecurityError') {
+                        // Check if this might be a blocking issue vs normal cross-origin
+                        console.log('📱 Security error detected for iframe:', iframe.src);
+                        // showWhatsAppAlternative(iframe);
+                    }
+                }
+            }, 1000);
+        });
+    });
+    
+    console.log('📱 WhatsApp iframe monitoring initialized');
+}
+
+function showWhatsAppAlternative(iframe) {
+    const container = iframe.closest('.campaign-embed-container, .monitoring-embed-container, .health-news-content, .tiktok-cuan-content');
+    if (!container || container.querySelector('.whatsapp-alternative')) return;
+    
+    const alternative = document.createElement('div');
+    alternative.className = 'whatsapp-alternative';
+    alternative.innerHTML = `
+        <div class="alternative-content">
+            <div class="alternative-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Content Blocked</h3>
+            <p>This content cannot be displayed in an embedded frame due to security restrictions.</p>
+            <div class="alternative-actions">
+                <button onclick="openInNewTab('${iframe.src}')" class="open-external-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    Open in New Tab
+                </button>
+                <button onclick="refreshIframe(this)" class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    Retry
+                </button>
+            </div>
+        </div>
+    `;
+    
+    // Add CSS for the alternative if not already added
+    if (!document.getElementById('iframe-alternative-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'iframe-alternative-styles';
+        styles.textContent = `
+            .whatsapp-alternative {
+                background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 255, 255, 0.95));
+                border-radius: 12px;
+                padding: 40px;
+                text-align: center;
+                border: 2px dashed rgba(255, 193, 7, 0.4);
+                min-height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+            }
+            .alternative-content {
+                max-width: 400px;
+            }
+            .alternative-icon {
+                font-size: 48px;
+                color: #ffc107;
+                margin-bottom: 16px;
+            }
+            .alternative-content h3 {
+                color: #333;
+                margin-bottom: 12px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .alternative-content p {
+                color: #666;
+                margin-bottom: 24px;
+                line-height: 1.5;
+            }
+            .alternative-actions {
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .open-external-btn {
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            .open-external-btn:hover {
+                background: linear-gradient(135deg, #1d4ed8, #1e40af);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            }
+            .refresh-btn {
+                background: linear-gradient(135deg, #6b7280, #4b5563);
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+            }
+            .refresh-btn:hover {
+                background: linear-gradient(135deg, #4b5563, #374151);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+            }
+        `;
+        document.head.appendChild(styles);
+    }
+    
+    container.appendChild(alternative);
+    iframe.style.display = 'none';
+    
+    console.log('📱 Iframe alternative displayed for blocked content');
+}
+
+function openInNewTab(url) {
+    if (url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        console.log('🔗 Opening blocked content in new tab:', url);
+    }
+}
+
+function refreshIframe(button) {
+    const alternative = button.closest('.whatsapp-alternative');
+    const container = alternative.parentElement;
+    const iframe = container.querySelector('iframe');
+    
+    if (iframe) {
+        iframe.style.display = 'block';
+        iframe.src = iframe.src; // Force reload
+        alternative.remove();
+        console.log('🔄 Iframe refreshed');
+    }
+}
+
 // Global functions for inline event handlers
 window.refreshBPT = refreshBPT;
+window.openInNewTab = openInNewTab;
+window.refreshIframe = refreshIframe;
