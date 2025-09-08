@@ -580,48 +580,212 @@ function retryTikTokLoad() {
     }, 500);
 }
 
-// WhatsApp API integration for TikTok Cuan (static version)
+// Enhanced WhatsApp API integration for TikTok Cuan (static version)
 function initWhatsAppAPI() {
+    console.log('📱 Initializing WhatsApp API integration (static version)...');
+    
     // Check if the iframe contains WhatsApp functionality
     const tiktokFrame = document.getElementById('tiktokFrame');
-    if (!tiktokFrame) return;
+    if (!tiktokFrame) {
+        console.warn('TikTok iframe not found, WhatsApp integration may not work properly');
+        return;
+    }
 
-    // Monitor messages from the iframe for WhatsApp API calls
+    // Add enhanced error handling for iframe messages
     window.addEventListener('message', function(event) {
-        // Verify origin for security
-        if (event.origin !== 'https://zyqsemod.gensparkspace.com') return;
+        try {
+            // Verify origin for security (allow multiple origins for testing)
+            const allowedOrigins = [
+                'https://zyqsemod.gensparkspace.com',
+                'http://localhost',
+                'https://localhost'
+            ];
+            
+            const isOriginAllowed = allowedOrigins.some(origin => 
+                event.origin.startsWith(origin)
+            );
+            
+            if (!isOriginAllowed) {
+                console.log('Message from unauthorized origin:', event.origin);
+                return;
+            }
 
-        // Handle WhatsApp API requests from iframe
-        if (event.data && event.data.type === 'whatsapp_request') {
-            handleWhatsAppRequest(event.data);
+            // Handle WhatsApp API requests from iframe
+            if (event.data && typeof event.data === 'object') {
+                if (event.data.type === 'whatsapp_request') {
+                    handleWhatsAppRequest(event.data);
+                } else if (event.data.type === 'whatsapp_click') {
+                    showWhatsAppPanel();
+                } else if (event.data.type === 'iframe_error') {
+                    handleIframeError(event.data);
+                }
+            }
+        } catch (error) {
+            console.error('Error handling iframe message:', error);
+            // Prevent crash by catching errors
         }
     });
 
+    // Add WhatsApp trigger button
+    addWhatsAppTrigger();
+    
     console.log('📱 WhatsApp API integration initialized for TikTok Cuan (static)');
 }
 
 function handleWhatsAppRequest(data) {
-    console.log('📱 WhatsApp API request received:', data);
+    console.log('📱 WhatsApp API request received (static):', data);
     
-    // Example WhatsApp API integration for static version
-    if (data.action === 'send_message') {
-        // Handle sending WhatsApp message
-        const { phoneNumber, message } = data.payload;
-        
-        // Use WhatsApp Business API or Web API
-        // This is a placeholder for actual WhatsApp integration
-        console.log(`Sending WhatsApp message to ${phoneNumber}: ${message}`);
-        
-        // Notify iframe of success/failure
+    try {
+        if (data.action === 'send_message') {
+            // Handle sending WhatsApp message
+            const { phoneNumber, message } = data.payload || {};
+            
+            if (!phoneNumber || !message) {
+                console.error('Missing phone number or message in WhatsApp request');
+                sendWhatsAppResponse(data.requestId, false, 'Missing phone number or message');
+                return;
+            }
+            
+            // Open WhatsApp Web with pre-filled message
+            const whatsappUrl = `https://web.whatsapp.com/send?phone=${encodeURIComponent(phoneNumber.replace(/\D/g, ''))}&text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            
+            // Notify iframe of success
+            sendWhatsAppResponse(data.requestId, true, 'WhatsApp opened successfully');
+            
+        } else if (data.action === 'open_whatsapp') {
+            // Open WhatsApp Web
+            window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+            sendWhatsAppResponse(data.requestId, true, 'WhatsApp Web opened');
+            
+        } else {
+            console.warn('Unknown WhatsApp action:', data.action);
+            sendWhatsAppResponse(data.requestId, false, 'Unknown action');
+        }
+    } catch (error) {
+        console.error('Error handling WhatsApp request:', error);
+        sendWhatsAppResponse(data.requestId, false, 'Internal error occurred');
+    }
+}
+
+function sendWhatsAppResponse(requestId, success, message = '') {
+    try {
         const tiktokFrame = document.getElementById('tiktokFrame');
         if (tiktokFrame && tiktokFrame.contentWindow) {
             tiktokFrame.contentWindow.postMessage({
                 type: 'whatsapp_response',
-                success: true,
-                requestId: data.requestId
-            }, 'https://zyqsemod.gensparkspace.com');
+                success: success,
+                message: message,
+                requestId: requestId
+            }, '*'); // Use '*' for broader compatibility, but verify origin on receive
         }
+    } catch (error) {
+        console.error('Error sending WhatsApp response:', error);
     }
+}
+
+function handleIframeError(data) {
+    console.error('Iframe error reported:', data);
+    
+    // Show user-friendly error message
+    console.log(`TikTok Cuan: ${data.error || 'An error occurred'}`);
+}
+
+function showWhatsAppPanel() {
+    const whatsappPanel = document.getElementById('whatsappIntegration');
+    if (whatsappPanel) {
+        whatsappPanel.style.display = 'block';
+        console.log('📱 WhatsApp panel opened (static)');
+    }
+}
+
+function closeWhatsAppPanel() {
+    const whatsappPanel = document.getElementById('whatsappIntegration');
+    if (whatsappPanel) {
+        whatsappPanel.style.display = 'none';
+    }
+    
+    // Hide quick message form
+    const quickForm = document.getElementById('quickMessageForm');
+    if (quickForm) {
+        quickForm.style.display = 'none';
+    }
+}
+
+function openWhatsAppWeb() {
+    window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+    closeWhatsAppPanel();
+    console.log('📱 Opened WhatsApp Web (static)');
+}
+
+function openWhatsAppAPI() {
+    // Placeholder for WhatsApp Business API integration
+    alert('WhatsApp Business API integration coming soon!\n\nFor now, please use WhatsApp Web or Quick Message.');
+    console.log('📱 WhatsApp Business API requested (static)');
+}
+
+function sendQuickMessage() {
+    const quickForm = document.getElementById('quickMessageForm');
+    if (quickForm) {
+        quickForm.style.display = quickForm.style.display === 'none' ? 'block' : 'none';
+    }
+}
+
+function sendWhatsAppMessage() {
+    const phoneInput = document.getElementById('phoneNumber');
+    const messageInput = document.getElementById('messageText');
+    
+    if (!phoneInput || !messageInput) {
+        console.error('WhatsApp form inputs not found');
+        return;
+    }
+    
+    const phoneNumber = phoneInput.value.trim();
+    const message = messageInput.value.trim();
+    
+    if (!phoneNumber || !message) {
+        alert('Please enter both phone number and message');
+        return;
+    }
+    
+    // Open WhatsApp with pre-filled message
+    const whatsappUrl = `https://web.whatsapp.com/send?phone=${encodeURIComponent(phoneNumber.replace(/\D/g, ''))}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    
+    // Clear form and close panel
+    phoneInput.value = '';
+    messageInput.value = '';
+    closeWhatsAppPanel();
+    
+    console.log('📱 Quick WhatsApp message sent (static)');
+}
+
+function cancelQuickMessage() {
+    const phoneInput = document.getElementById('phoneNumber');
+    const messageInput = document.getElementById('messageText');
+    
+    if (phoneInput) phoneInput.value = '';
+    if (messageInput) messageInput.value = '';
+    
+    const quickForm = document.getElementById('quickMessageForm');
+    if (quickForm) {
+        quickForm.style.display = 'none';
+    }
+}
+
+function addWhatsAppTrigger() {
+    // Check if trigger already exists
+    if (document.getElementById('whatsappTrigger')) return;
+    
+    const trigger = document.createElement('div');
+    trigger.id = 'whatsappTrigger';
+    trigger.className = 'whatsapp-trigger';
+    trigger.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    trigger.onclick = showWhatsAppPanel;
+    trigger.title = 'WhatsApp Integration';
+    
+    document.body.appendChild(trigger);
+    console.log('📱 WhatsApp trigger button added (static)');
 }
 
 // Global functions for inline event handlers
@@ -631,3 +795,10 @@ window.refreshIframe = refreshIframe;
 window.refreshTikTokData = refreshTikTokData;
 window.retryTikTokLoad = retryTikTokLoad;
 window.initWhatsAppAPI = initWhatsAppAPI;
+window.showWhatsAppPanel = showWhatsAppPanel;
+window.closeWhatsAppPanel = closeWhatsAppPanel;
+window.openWhatsAppWeb = openWhatsAppWeb;
+window.openWhatsAppAPI = openWhatsAppAPI;
+window.sendQuickMessage = sendQuickMessage;
+window.sendWhatsAppMessage = sendWhatsAppMessage;
+window.cancelQuickMessage = cancelQuickMessage;

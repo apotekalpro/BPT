@@ -492,11 +492,56 @@
                             src="https://zyqsemod.gensparkspace.com/" 
                             frameborder="0" 
                             allowfullscreen 
-                            allow="camera; microphone; geolocation; web-share"
-                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-top-navigation-by-user-activation"
+                            allow="camera; microphone; geolocation; web-share; accelerometer; gyroscope; payment; usb; autoplay; encrypted-media; fullscreen; picture-in-picture"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-modals"
                             referrerpolicy="strict-origin-when-cross-origin"
+                            loading="lazy"
                             style="width: 100%; height: 600px; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
                         </iframe>
+                        
+                        <!-- WhatsApp Integration Panel -->
+                        <div class="whatsapp-integration" id="whatsappIntegration" style="display: none;">
+                            <div class="whatsapp-header">
+                                <i class="fab fa-whatsapp"></i>
+                                <h4>WhatsApp Integration</h4>
+                                <button class="close-whatsapp" onclick="closeWhatsAppPanel()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="whatsapp-content">
+                                <div class="whatsapp-options">
+                                    <button class="whatsapp-option" onclick="openWhatsAppWeb()">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Open WhatsApp Web</span>
+                                    </button>
+                                    <button class="whatsapp-option" onclick="openWhatsAppAPI()">
+                                        <i class="fas fa-api"></i>
+                                        <span>WhatsApp Business API</span>
+                                    </button>
+                                    <button class="whatsapp-option" onclick="sendQuickMessage()">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span>Send Quick Message</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="quick-message-form" id="quickMessageForm" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number:</label>
+                                        <input type="tel" id="phoneNumber" placeholder="+62 812 3456 7890" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="messageText">Message:</label>
+                                        <textarea id="messageText" placeholder="Enter your message..." class="form-textarea" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button onclick="sendWhatsAppMessage()" class="send-btn">
+                                            <i class="fab fa-whatsapp"></i> Send Message
+                                        </button>
+                                        <button onclick="cancelQuickMessage()" class="cancel-btn">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
