@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apotek Alpro - Dashboard</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="alpro-logo">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/0032dd95bbc24c3bbac505f6463145c4" 
+                         alt="Apotek Alpro Logo" class="logo-image">
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="bpt-portal-title">
+                    <h1>BPT Portal</h1>
+                    <span class="portal-subtitle">Business Performance Team</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="user-info">
+                    <div class="user-details">
+                        <span class="user-name" id="userName">Loading...</span>
+                        <span class="user-type" id="userType">Loading...</span>
+                    </div>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="nav-container">
+            <button class="nav-tab active" data-tab="homepage">
+                <i class="fas fa-home"></i>
+                <span>Homepage</span>
+            </button>
+            <button class="nav-tab" data-tab="campaign">
+                <i class="fas fa-bullhorn"></i>
+                <span>Campaign</span>
+            </button>
+            <button class="nav-tab" data-tab="monitoring">
+                <i class="fas fa-chart-line"></i>
+                <span>Monitoring</span>
+            </button>
+            <button class="nav-tab" data-tab="health-news">
+                <i class="fas fa-newspaper"></i>
+                <span>Health News</span>
+            </button>
+            <button class="nav-tab" data-tab="tiktok-cuan">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok Cuan</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Homepage Tab -->
+        <div class="tab-content active" id="homepage">
+            <!-- Top Banner -->
+            <div class="top-banner">
+                <div class="banner-content">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/3dd985cdee27403802c438c513b9b781" 
+                         alt="Apotek Alpro Team" 
+                         class="team-banner-image">
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Campaign Calendar Section -->
+                <div class="dashboard-card campaign-calendar-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-calendar-star"></i> BPT Campaign Calendar 2025</h3>
+                        <div class="card-actions">
+                            <button class="refresh-btn" onclick="refreshBPT()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="campaign-timeline">
+                            <div class="campaign-item august">
+                                <div class="campaign-month">
+                                    <i class="fas fa-flag"></i>
+                                    <span>Aug 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>National Day Sales</h4>
+                                    <p>GO Jaksel + Bekasi</p>
+                                </div>
+                                <div class="campaign-status past">Past</div>
+                            </div>
+                            
+                            <div class="campaign-item september">
+                                <div class="campaign-month">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Sep 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>Woman Health & Fitness</h4>
+                                    <p>GO Jaksel</p>
+                                </div>
+                                <div class="campaign-status upcoming">Current</div>
+                            </div>
+                            
+                            <div class="campaign-item october">
+                                <div class="campaign-month">
+                                    <i class="fas fa-sugar-cube"></i>
+                                    <span>Oct 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>Kenali Gula Anda</h4>
+                                    <p>GO</p>
+                                </div>
+                                <div class="campaign-status planned">Planned</div>
+                            </div>
+                            
+                            <div class="campaign-item november">
+                                <div class="campaign-month">
+                                    <i class="fas fa-sugar-cube"></i>
+                                    <span>Nov 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>Kenali Gula Anda</h4>
+                                    <p>GO</p>
+                                </div>
+                                <div class="campaign-status planned">Planned</div>
+                            </div>
+                            
+                            <div class="campaign-item december">
+                                <div class="campaign-month">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Dec 2025</span>
+                                </div>
+                                <div class="campaign-details">
+                                    <h4>Anniversary Year End Sales</h4>
+                                    <p>Apotek Cilik Experience Day<br>Apotek Alpro Picasso 2025</p>
+                                </div>
+                                <div class="campaign-status special">Special</div>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-stats">
+                            <div class="stat-box">
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Total Campaigns</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Active Now</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Upcoming</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Past</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="dashboard-card contact-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-address-book"></i> Contact Us</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Marketing Email</div>
+                                    <a href="mailto:marketing@apotekalpro.id" class="contact-value">marketing@apotekalpro.id</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">WhatsApp Contact</div>
+                                    <div class="contact-value">+62 877 8573 1144</div>
+                                    <a href="javascript:void(0)" onclick="openWhatsAppContactFromHomepage()" class="contact-value whatsapp-contact">
+                                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item artwork-request">
+                                <div class="contact-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Request Artwork dari Creative Builder BPT</div>
+                                    <a href="https://docs.google.com/forms/d/1sqb9qcDQmdJ9e5m_TOrr2VG8z3lqbJW7Ai_aeutcogg/edit" 
+                                       target="_blank" class="artwork-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Submit Creative Request
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Organizational Chart & PIC - Moved to bottom for better visibility -->
+            <div class="org-chart-bottom">
+                <div class="dashboard-card org-chart-card">
+                    <div class="card-header gradient-header">
+                        <h3><i class="fas fa-sitemap"></i> Carta Organisasi & PIC</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="org-structure">
+                            <!-- Level 1: CSO -->
+                            <div class="org-level level-1">
+                                <div class="org-box cso">
+                                    <div class="org-title">CSO - Marketing Director</div>
+                                    <div class="org-name">Tomas</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 2: Department Heads (All in same horizontal row) -->
+                            <div class="org-level level-2">
+                                <div class="org-box department">
+                                    <div class="org-title">Creative Builders</div>
+                                    <div class="org-name">Rahma</div>
+                                    <div class="org-subtitle">Creative Builder Executive</div>
+                                </div>
+                                
+                                <div class="org-box department">
+                                    <div class="org-title">Promotion & Event</div>
+                                    <div class="org-name">Tarjo (Anto)</div>
+                                    <div class="org-subtitle">BPT Executive</div>
+                                </div>
+                                
+                                <div class="org-box department vacant">
+                                    <div class="org-title">Digital Marketing</div>
+                                    <div class="org-name">Vacant</div>
+                                    <div class="org-subtitle">Executive Position</div>
+                                </div>
+                                
+                                <div class="org-box department">
+                                    <div class="org-title">Visual Merchandize</div>
+                                    <div class="org-name">Pratiwi</div>
+                                    <div class="org-subtitle">VM Executive</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 3: Staff reporting to Level 2 managers (Positioned directly under their managers) -->
+                            <div class="org-level level-3">
+                                <div class="org-box staff">
+                                    <div class="org-title">Creative Builder Associate</div>
+                                    <div class="org-name">Khalisa</div>
+                                    <div class="org-subtitle">Reports to Rahma</div>
+                                </div>
+                                
+                                <div class="org-box staff">
+                                    <div class="org-title">BPT Internship</div>
+                                    <div class="org-name">Agnes</div>
+                                    <div class="org-subtitle">Reports to Tarjo</div>
+                                </div>
+                                
+                                <div class="org-box staff">
+                                    <div class="org-title">BPT Associate</div>
+                                    <div class="org-name">Kelsey</div>
+                                    <div class="org-subtitle">Reports to Digital Marketing</div>
+                                </div>
+                                
+                                <div class="org-spacer"><!-- Empty spacer to align with Pratiwi --></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign Tab -->
+        <div class="tab-content" id="campaign">
+            <div class="campaign-section">
+                <div class="campaign-header">
+                    <div class="campaign-title">
+                        <i class="fas fa-bullhorn"></i>
+                        <h2>Active Campaigns</h2>
+                    </div>
+                    <div class="campaign-subtitle">
+                        <p>Manage and monitor ongoing marketing campaigns</p>
+                    </div>
+                </div>
+
+                <div class="campaign-tabs-container">
+                    <div class="campaign-nav">
+                        <button class="campaign-tab active" data-campaign="sept-women-health">
+                            <i class="fas fa-heart"></i>
+                            <span>Sept: Woman Health & Fitness</span>
+                        </button>
+                    </div>
+
+                    <div class="campaign-content">
+                        <!-- September Campaign -->
+                        <div class="campaign-tab-content active" id="sept-women-health">
+                            <div class="campaign-embed-header">
+                                <div class="campaign-info">
+                                    <h3><i class="fas fa-heart"></i> Woman Health & Fitness Campaign</h3>
+                                    <p>September 2025 • GO Jaksel • Active Campaign</p>
+                                </div>
+                                <div class="campaign-status-badge current">
+                                    <i class="fas fa-play-circle"></i>
+                                    Currently Active
+                                </div>
+                            </div>
+                            <div class="campaign-embed-container">
+                                <iframe 
+                                    src="https://apotekalpro-womanhealth.pages.dev/#metrics" 
+                                    class="campaign-iframe"
+                                    title="Woman Health & Fitness Campaign Metrics"
+                                    frameborder="0"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monitoring Tab -->
+        <div class="tab-content" id="monitoring">
+            <div class="monitoring-section">
+                <div class="monitoring-header">
+                    <div class="monitoring-title">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>TikTok Cuan Monitoring</h2>
+                    </div>
+                    <div class="monitoring-subtitle">
+                        <p>Real-time analytics and performance monitoring</p>
+                    </div>
+                </div>
+
+                <div class="monitoring-tabs-container">
+                    <div class="monitoring-nav">
+                        <button class="monitoring-tab active" data-monitor="tiktok-analytics">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok Analytics</span>
+                        </button>
+                        <button class="monitoring-tab" data-monitor="performance-metrics">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Performance Metrics</span>
+                        </button>
+                    </div>
+
+                    <div class="monitoring-content">
+                        <!-- TikTok Analytics -->
+                        <div class="monitoring-tab-content active" id="tiktok-analytics">
+                            <div class="monitoring-embed-header">
+                                <div class="monitoring-info">
+                                    <h3><i class="fab fa-tiktok"></i> TikTok Performance Dashboard</h3>
+                                    <p>Real-time monitoring • Analytics & Insights</p>
+                                </div>
+                                <div class="monitoring-status-badge active">
+                                    <i class="fas fa-signal"></i>
+                                    Live Monitoring
+                                </div>
+                            </div>
+                            <div class="monitoring-embed-container">
+                                <div class="embed-placeholder">
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">
+                                            <i class="fab fa-tiktok"></i>
+                                        </div>
+                                        <h3>TikTok Analytics Dashboard</h3>
+                                        <p>Ready for embed URL integration</p>
+                                        <div class="placeholder-note">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span>This section will display the embedded TikTok monitoring interface when URL is provided</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Metrics -->
+                        <div class="monitoring-tab-content" id="performance-metrics">
+                            <div class="monitoring-embed-header">
+                                <div class="monitoring-info">
+                                    <h3><i class="fas fa-chart-bar"></i> Performance Metrics</h3>
+                                    <p>Campaign performance • ROI Analysis</p>
+                                </div>
+                            </div>
+                            <div class="monitoring-embed-container">
+                                <div class="embed-placeholder">
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <h3>Performance Analytics</h3>
+                                        <p>Comprehensive campaign performance monitoring</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health News Tab -->
+        <div class="tab-content" id="health-news">
+            <div class="health-news-container">
+                <div class="health-news-header">
+                    <div class="health-news-title">
+                        <i class="fas fa-newspaper"></i>
+                        <h2>Health News & Updates</h2>
+                    </div>
+                    <div class="health-news-subtitle">
+                        <p>Stay updated with the latest health news, medical breakthroughs, and pharmacy insights</p>
+                    </div>
+                </div>
+                <div class="health-news-content">
+                    <iframe 
+                        src="https://ogh5izcv13x0.manus.space/" 
+                        class="health-news-iframe"
+                        title="Health News"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- TikTok Cuan Tab -->
+        <div class="tab-content" id="tiktok-cuan">
+            <div class="tiktok-cuan-container">
+                <div class="tiktok-cuan-header">
+                    <div class="tiktok-cuan-title">
+                        <i class="fab fa-tiktok"></i>
+                        <h2>TikTok Cuan</h2>
+                    </div>
+                    <div class="tiktok-cuan-subtitle">
+                        <p>TikTok marketing campaigns and monetization strategies for Apotek Alpro</p>
+                    </div>
+                </div>
+                <div class="tiktok-cuan-content">
+                    <!-- Compact WhatsApp Access Banner -->
+                    <div class="whatsapp-compact-banner">
+                        <div class="banner-left-content">
+                            <div class="banner-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="banner-text">
+                                <h4>TikTok Cuan WhatsApp Group</h4>
+                                <p>Join our community for real-time updates and discussions</p>
+                            </div>
+                        </div>
+                        <button class="banner-whatsapp-btn" onclick="openWhatsAppDirectFromTikTok()">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Join Group</span>
+                        </button>
+                    </div>
+                    
+                    <div class="iframe-container">
+                        <div class="iframe-loading" id="tiktokLoading">
+                            <div class="loading-spinner"></div>
+                            <p>Loading TikTok Cuan Dashboard...</p>
+                        </div>
+                        <div class="iframe-error" id="tiktokError" style="display: none;">
+                            <div class="error-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Connection Issue</h3>
+                            <p>Unable to load TikTok Cuan dashboard. This may be due to:</p>
+                            <ul>
+                                <li>Network connectivity issues</li>
+                                <li>Browser security restrictions</li>
+                                <li>Temporary service unavailability</li>
+                            </ul>
+                            <div class="error-actions">
+                                <button class="retry-btn" onclick="retryTikTokLoad()">
+                                    <i class="fas fa-redo"></i> Retry
+                                </button>
+                                <button class="external-btn" onclick="window.open('https://zyqsemod.gensparkspace.com/', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i> Open in New Tab
+                                </button>
+                            </div>
+                        </div>
+                        <iframe 
+                            id="tiktokFrame"
+                            src="https://zyqsemod.gensparkspace.com/" 
+                            name="tiktokCuanFrame"
+                            frameborder="0" 
+                            allowfullscreen 
+                            allow="camera; microphone; geolocation; web-share; accelerometer; gyroscope; payment; usb; autoplay; encrypted-media; fullscreen; picture-in-picture"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-downloads allow-modals"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            loading="lazy"
+                            style="width: 100%; height: 1500px; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Load Static Dashboard System (No Backend Required) -->
+    <script src="public/js/dashboard-static.js"></script>
+</body>
+</html>

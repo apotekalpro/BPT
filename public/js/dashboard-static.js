@@ -1,0 +1,528 @@
+// Static Dashboard Manager for GitHub Pages (No Backend Required)
+class StaticDashboardManager {
+    constructor() {
+        console.log('🔧 Starting static dashboard initialization...');
+        this.currentUser = null;
+        this.currentTab = 'homepage';
+        this.isStatic = true;
+        
+        // Static user data for GitHub Pages
+        this.staticUserData = {
+            outlet: [
+                {
+                    shortStoreName: 'JKJSTT1',
+                    storeName: 'Jakarta Selatan Store',
+                    am: 'Account Manager 1',
+                    password: 'Alpro@123'
+                },
+                {
+                    shortStoreName: 'BEKASI1',
+                    storeName: 'Bekasi Central Store',
+                    am: 'Account Manager 2',
+                    password: 'Alpro@123'
+                },
+                {
+                    shortStoreName: 'DEMO',
+                    storeName: 'Demo Store',
+                    am: 'Demo Manager',
+                    password: 'demo123'
+                }
+            ],
+            hq: [
+                {
+                    name: 'Eni Khuzaimah',
+                    email: 'eni.khuzaimah@apotekalpro.id',
+                    role: 'Marketing Director',
+                    password: 'Alpro@123'
+                },
+                {
+                    name: 'Demo User',
+                    email: 'demo@apotekalpro.id',
+                    role: 'Demo Role',
+                    password: 'demo123'
+                }
+            ]
+        };
+        
+        try {
+            this.safeInitElements();
+            this.safeBindEvents();
+            this.safeCheckAuth();
+            console.log('✅ Static dashboard initialized successfully');
+        } catch (error) {
+            console.error('❌ Static dashboard initialization failed:', error);
+            this.showSafeError(error);
+        }
+    }
+
+    safeInitElements() {
+        console.log('🔧 Safely initializing elements...');
+        
+        // Navigation elements (safe initialization)
+        this.navTabs = document.querySelectorAll('.nav-tab') || [];
+        this.tabContents = document.querySelectorAll('.tab-content') || [];
+        
+        // User info elements (safe initialization)
+        this.userName = document.getElementById('userName');
+        this.userType = document.getElementById('userType');
+        this.logoutBtn = document.getElementById('logoutBtn');
+        
+        console.log('🔧 Safe element status:', {
+            navTabs: this.navTabs.length,
+            userName: !!this.userName,
+            userType: !!this.userType,
+            logoutBtn: !!this.logoutBtn
+        });
+    }
+
+    safeBindEvents() {
+        console.log('🔧 Safely binding events...');
+        
+        // Navigation tabs with safe binding
+        if (this.navTabs && this.navTabs.length > 0) {
+            this.navTabs.forEach((tab, index) => {
+                if (tab && typeof tab.addEventListener === 'function') {
+                    tab.addEventListener('click', (e) => {
+                        try {
+                            e.preventDefault();
+                            const tabId = tab.dataset ? tab.dataset.tab : tab.getAttribute('data-tab');
+                            console.log('🔄 Tab clicked:', tabId);
+                            if (tabId) this.safeTabSwitch(tabId);
+                        } catch (error) {
+                            console.error('🔄 Tab click error:', error);
+                        }
+                    });
+                }
+            });
+        }
+
+        // Logout button with safe binding
+        if (this.logoutBtn && typeof this.logoutBtn.addEventListener === 'function') {
+            this.logoutBtn.addEventListener('click', (e) => {
+                try {
+                    e.preventDefault();
+                    console.log('🚪 Logout clicked');
+                    this.safeHandleLogout();
+                } catch (error) {
+                    console.error('🚪 Logout error:', error);
+                    // Force redirect as fallback
+                    this.redirectToLogin();
+                }
+            });
+        }
+    }
+
+    safeCheckAuth() {
+        try {
+            console.log('🔐 Safely checking static authentication...');
+            
+            // Skip auth check if on login page
+            if (window.location.pathname === '/login' || 
+                window.location.pathname.includes('/login') || 
+                window.location.pathname.endsWith('login.html')) {
+                console.log('🔐 On login page, skipping auth check');
+                return;
+            }
+            
+            // Check localStorage for saved user session
+            const savedUser = localStorage.getItem('apotek_alpro_user');
+            if (savedUser) {
+                try {
+                    this.currentUser = JSON.parse(savedUser);
+                    console.log('🔐 User loaded from localStorage:', this.currentUser);
+                    this.safeUpdateUserInfo();
+                    return;
+                } catch (e) {
+                    console.error('🔐 Error parsing saved user:', e);
+                    localStorage.removeItem('apotek_alpro_user');
+                }
+            }
+            
+            console.log('🔐 No user found, showing login prompt');
+            this.safeShowLoginPrompt();
+            
+        } catch (error) {
+            console.error('🔐 Auth check failed:', error);
+            this.safeShowLoginPrompt();
+        }
+    }
+
+    // Static authentication method
+    authenticateUser(username, password, loginType) {
+        console.log('🔐 Static authentication attempt:', { username, loginType });
+        
+        let userData = null;
+        
+        if (loginType === 'outlet') {
+            userData = this.staticUserData.outlet.find(user => 
+                user.shortStoreName && 
+                user.shortStoreName.toLowerCase() === username.toLowerCase() && 
+                user.password === password
+            );
+            
+            if (userData) {
+                this.currentUser = {
+                    type: 'outlet',
+                    displayName: userData.shortStoreName,
+                    fullStoreName: userData.storeName,
+                    am: userData.am,
+                    shortStoreName: userData.shortStoreName
+                };
+            }
+        } else if (loginType === 'hq') {
+            userData = this.staticUserData.hq.find(user => 
+                user.email && 
+                user.email.toLowerCase() === username.toLowerCase() && 
+                user.password === password
+            );
+            
+            if (userData) {
+                this.currentUser = {
+                    type: 'hq',
+                    displayName: userData.name,
+                    email: userData.email,
+                    role: userData.role,
+                    fullStoreName: userData.name
+                };
+            }
+        }
+        
+        if (this.currentUser) {
+            // Save to localStorage for persistence
+            localStorage.setItem('apotek_alpro_user', JSON.stringify(this.currentUser));
+            console.log('✅ User authenticated and saved:', this.currentUser);
+            return { success: true, user: this.currentUser };
+        } else {
+            console.error('❌ Authentication failed');
+            return { success: false, message: 'Invalid credentials' };
+        }
+    }
+
+    safeUpdateUserInfo() {
+        if (!this.currentUser) {
+            console.warn('⚠️ No current user to display');
+            return;
+        }
+        
+        try {
+            // Safely update user name
+            if (this.userName && typeof this.userName.textContent !== 'undefined') {
+                this.userName.textContent = this.currentUser.displayName || 'User';
+                console.log('✅ Updated userName');
+            } else {
+                console.warn('⚠️ Cannot update userName - element not available');
+            }
+            
+            // Safely update user type
+            if (this.userType && typeof this.userType.textContent !== 'undefined') {
+                this.userType.textContent = `${(this.currentUser.type || 'general').toUpperCase()} User`;
+                console.log('✅ Updated userType');
+            } else {
+                console.warn('⚠️ Cannot update userType - element not available');
+            }
+            
+            console.log('✅ User info updated safely');
+        } catch (error) {
+            console.error('⚠️ Error in safeUpdateUserInfo:', error);
+        }
+    }
+
+    safeShowLoginPrompt() {
+        console.log('🔐 Showing safe login prompt');
+        
+        try {
+            // Update user info to show not authenticated
+            if (this.userName) this.userName.textContent = 'Please Login';
+            if (this.userType) this.userType.textContent = 'Not Authenticated';
+            
+            // Create and show login prompt overlay
+            this.createSafeLoginOverlay();
+        } catch (error) {
+            console.error('🔐 Error showing login prompt:', error);
+            // Fallback: redirect to login
+            this.redirectToLogin();
+        }
+    }
+
+    createSafeLoginOverlay() {
+        // Remove existing overlay
+        const existing = document.querySelector('.safe-login-overlay');
+        if (existing) existing.remove();
+        
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'safe-login-overlay';
+        overlay.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 99999; font-family: Arial, sans-serif;
+        `;
+        
+        overlay.innerHTML = `
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <div style="font-size: 64px; color: #2E5B9F; margin-bottom: 20px;">🔐</div>
+                <h2 style="color: #2E5B9F; margin-bottom: 15px; font-size: 24px;">Authentication Required</h2>
+                <p style="color: #666; margin-bottom: 25px; line-height: 1.6;">You need to log in to access the Apotek Alpro BPT Portal dashboard.</p>
+                <button onclick="window.staticDashboard.redirectToLogin()" 
+                        style="background: linear-gradient(135deg, #2E5B9F, #1E3F6F); color: white; border: none; padding: 15px 30px; border-radius: 12px; cursor: pointer; font-size: 16px; font-weight: 600; box-shadow: 0 4px 15px rgba(46, 91, 159, 0.3);">
+                    🚀 Go to Login
+                </button>
+            </div>
+        `;
+        
+        document.body.appendChild(overlay);
+    }
+
+    redirectToLogin() {
+        // For GitHub Pages, redirect to login.html
+        if (window.location.pathname.includes('.html')) {
+            window.location.href = 'login.html';
+        } else {
+            window.location.href = '/login';
+        }
+    }
+
+    safeTabSwitch(tabId) {
+        if (!tabId) return;
+        
+        try {
+            console.log('🔄 Safely switching to tab:', tabId);
+            
+            this.currentTab = tabId;
+            
+            // Safely update navigation
+            if (this.navTabs && this.navTabs.length > 0) {
+                this.navTabs.forEach(tab => {
+                    if (tab && tab.classList) {
+                        const isActive = (tab.dataset && tab.dataset.tab === tabId) || 
+                                       (tab.getAttribute && tab.getAttribute('data-tab') === tabId);
+                        tab.classList.toggle('active', isActive);
+                    }
+                });
+            }
+            
+            // Safely update content
+            if (this.tabContents && this.tabContents.length > 0) {
+                this.tabContents.forEach(content => {
+                    if (content && content.classList && content.id) {
+                        content.classList.toggle('active', content.id === tabId);
+                    }
+                });
+            }
+            
+            console.log('✅ Tab switched successfully to:', tabId);
+        } catch (error) {
+            console.error('🔄 Tab switch error:', error);
+        }
+    }
+
+    safeHandleLogout() {
+        try {
+            console.log('🚪 Safely handling logout...');
+            
+            // Show loading on button if possible
+            if (this.logoutBtn) {
+                const originalContent = this.logoutBtn.innerHTML;
+                this.logoutBtn.innerHTML = '🔄 Logging out...';
+                this.logoutBtn.disabled = true;
+            }
+            
+            // Clear localStorage
+            localStorage.removeItem('apotek_alpro_user');
+            this.currentUser = null;
+            
+            console.log('🚪 Logout completed');
+            
+            // Redirect to login
+            setTimeout(() => {
+                this.redirectToLogin();
+            }, 500);
+            
+        } catch (error) {
+            console.error('🚪 Logout error:', error);
+            // Always redirect even if logout fails
+            this.redirectToLogin();
+        }
+    }
+
+    showSafeError(error) {
+        const errorMessage = error?.message || 'Unknown error occurred';
+        console.error('❌ Showing safe error:', errorMessage);
+        
+        document.body.innerHTML = `
+            <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); font-family: Arial, sans-serif;">
+                <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 500px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                    <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+                    <h2 style="color: #dc3545; margin-bottom: 15px;">Dashboard Error</h2>
+                    <p style="color: #666; margin-bottom: 15px;">Error: ${errorMessage}</p>
+                    <p style="color: #999; font-size: 14px; margin-bottom: 20px;">Please try refreshing or contact support if the problem persists.</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="window.location.reload()" 
+                                style="background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 14px;">
+                            🔄 Refresh
+                        </button>
+                        <button onclick="window.location.href='login.html'" 
+                                style="background: #28a745; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 14px;">
+                            🔐 Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Safe initialization when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🏥 Starting Static Apotek Alpro Dashboard...');
+    
+    try {
+        // Check if we're on login page
+        if (document.body && document.body.classList.contains('login-body')) {
+            console.log('📝 On login page, skipping dashboard initialization');
+            return;
+        }
+        
+        // Initialize static dashboard
+        window.staticDashboard = new StaticDashboardManager();
+        
+    } catch (error) {
+        console.error('🚨 Fatal initialization error:', error);
+        
+        // Ultra-safe error display
+        setTimeout(() => {
+            try {
+                document.body.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #dc3545; color: white; font-family: Arial, sans-serif;">
+                        <div style="text-align: center; padding: 40px;">
+                            <h1>⚠️ Fatal Error</h1>
+                            <p>Cannot initialize dashboard: ${error?.message || 'Unknown error'}</p>
+                            <button onclick="window.location.reload()" 
+                                    style="background: white; color: #dc3545; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; margin-top: 20px; font-size: 16px;">
+                                🔄 Refresh Page
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } catch (e) {
+                console.error('🚨 Even error display failed:', e);
+            }
+        }, 100);
+    }
+});
+
+// Enhanced Global WhatsApp Functions with Network Bypass
+function openWhatsAppContactFromHomepage() {
+    try {
+        const phoneNumber = '+6287785731144';
+        const message = 'Hello from Apotek Alpro BPT Portal! I would like to connect with the marketing team.';
+        
+        // Multiple WhatsApp URL strategies for better compatibility
+        const strategies = [
+            `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`,
+            `https://api.whatsapp.com/send?phone=${phoneNumber.replace(/\D/g, '')}&text=${encodeURIComponent(message)}`,
+            `whatsapp://send?phone=${phoneNumber.replace(/\D/g, '')}&text=${encodeURIComponent(message)}`
+        ];
+        
+        // Try each strategy
+        let success = false;
+        for (let i = 0; i < strategies.length && !success; i++) {
+            try {
+                const popup = window.open(strategies[i], '_blank', 'noopener,noreferrer,width=800,height=600');
+                if (popup) {
+                    success = true;
+                    console.log(`📱 WhatsApp contact opened from homepage using strategy ${i + 1}`);
+                    break;
+                }
+            } catch (e) {
+                console.warn(`📱 Strategy ${i + 1} failed:`, e);
+            }
+        }
+        
+        if (!success) {
+            // Fallback: Show phone number for manual dialing
+            alert(`WhatsApp may be blocked. Please contact us directly at: ${phoneNumber}`);
+        }
+        
+    } catch (error) {
+        console.error('📱 Error opening WhatsApp:', error);
+        alert('Unable to open WhatsApp. Please contact us at +6287785731144');
+    }
+}
+
+function openWhatsAppDirectFromTikTok() {
+    try {
+        const whatsappGroupUrl = 'https://chat.whatsapp.com/HukQMDMTtJjFi12x1lAty3';
+        const fallbackMessage = 'Join our TikTok Cuan group for updates and discussions!';
+        const phoneNumber = '+6287785731144';
+        
+        // Multiple strategies for WhatsApp group access
+        const strategies = [
+            whatsappGroupUrl,
+            `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(fallbackMessage)}`,
+            `https://api.whatsapp.com/send?phone=${phoneNumber.replace(/\D/g, '')}&text=${encodeURIComponent(fallbackMessage)}`
+        ];
+        
+        let success = false;
+        for (let i = 0; i < strategies.length && !success; i++) {
+            try {
+                const popup = window.open(strategies[i], '_blank', 'noopener,noreferrer,width=800,height=600');
+                if (popup) {
+                    success = true;
+                    console.log(`📱 WhatsApp group opened from TikTok tab using strategy ${i + 1}`);
+                    break;
+                }
+            } catch (e) {
+                console.warn(`📱 Group strategy ${i + 1} failed:`, e);
+            }
+        }
+        
+        if (!success) {
+            alert(`WhatsApp may be blocked. Contact us at: ${phoneNumber} to join the TikTok Cuan group.`);
+        }
+        
+    } catch (error) {
+        console.error('📱 Error opening WhatsApp group:', error);
+        alert('Unable to open WhatsApp. Please contact us at +6287785731144 for TikTok Cuan group access.');
+    }
+}
+
+// Additional utility functions
+function refreshBPT() {
+    console.log('🔄 Refreshing BPT data...');
+    // Add refresh logic here if needed
+    const refreshBtn = document.querySelector('.refresh-btn i');
+    if (refreshBtn) {
+        refreshBtn.style.animation = 'spin 1s linear';
+        setTimeout(() => {
+            if (refreshBtn) refreshBtn.style.animation = '';
+        }, 1000);
+    }
+}
+
+function retryTikTokLoad() {
+    console.log('🔄 Retrying TikTok load...');
+    const iframe = document.getElementById('tiktokFrame');
+    const loading = document.getElementById('tiktokLoading');
+    const error = document.getElementById('tiktokError');
+    
+    if (iframe && loading && error) {
+        error.style.display = 'none';
+        loading.style.display = 'block';
+        iframe.src = iframe.src; // Reload iframe
+    }
+}
+
+// Add CSS for spin animation
+if (!document.getElementById('dynamic-animations')) {
+    const style = document.createElement('style');
+    style.id = 'dynamic-animations';
+    style.textContent = `
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+}
