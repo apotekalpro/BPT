@@ -96,11 +96,18 @@
                 const user = JSON.parse(savedUser);
                 console.log('User already logged in, redirecting to dashboard');
                 window.location.href = 'dashboard.html';
+                return; // Stop further execution
             } catch (e) {
                 console.error('Invalid session data, clearing');
                 localStorage.removeItem('apotek_alpro_user');
             }
         }
+        
+        // Auto-redirect to login after delay
+        setTimeout(() => {
+            console.log('Auto-redirecting to login page');
+            window.location.href = 'login.html';
+        }, 1500);
     </script>
 </body>
 </html>
