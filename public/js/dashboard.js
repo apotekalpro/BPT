@@ -531,10 +531,21 @@ class DashboardManager {
     }
 
     loadTikTokCuan() {
-        // Initialize TikTok Cuan iframe monitoring
+        // Initialize TikTok Cuan iframe monitoring with improved loading
         this.initTikTokIframeMonitoring();
-        this.showNotification('Loading TikTok Cuan dashboard...', 'info');
+        this.showNotification('TikTok Cuan dashboard loading...', 'info');
         console.log('TikTok Cuan section loaded');
+        
+        // Add loading timeout feedback
+        setTimeout(() => {
+            const tiktokLoading = document.getElementById('tiktokLoading');
+            if (tiktokLoading && tiktokLoading.style.display !== 'none') {
+                const loadingText = tiktokLoading.querySelector('p');
+                if (loadingText) {
+                    loadingText.innerHTML = 'TikTok Cuan is loading... This may take a moment.<br><small>The external service may be slow to respond.</small>';
+                }
+            }
+        }, 10000); // Show extended message after 10 seconds
     }
 
     initTikTokIframeMonitoring() {
@@ -1120,65 +1131,97 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         console.log('🏥 Starting Apotek Alpro Dashboard initialization...');
         
-        // Initialize main dashboard manager
-        dashboardManager = new DashboardManager();
-        console.log('✅ Dashboard manager initialized');
-        
-        // Initialize shortcuts
-        const dashboardShortcuts = new DashboardShortcuts();
-        console.log('✅ Dashboard shortcuts initialized');
-        
-        // Initialize auto-refresh with error handling
-        try {
-            const autoRefresh = new AutoRefresh(5); // Refresh every 5 minutes
-            console.log('✅ Auto-refresh initialized');
-        } catch (error) {
-            console.warn('⚠️ Auto-refresh initialization failed:', error);
+        // Check if we're on login page
+        if (document.body.classList.contains('login-body')) {
+            console.log('📝 On login page, skipping dashboard initialization');
+            return;
         }
         
-        // Initialize WhatsApp features with error handling
+        // Initialize main dashboard manager with enhanced error handling
         try {
-            initWhatsAppHandling();
-            console.log('✅ WhatsApp handling initialized');
+            dashboardManager = new DashboardManager();
+            console.log('✅ Dashboard manager initialized successfully');
         } catch (error) {
-            console.warn('⚠️ WhatsApp handling initialization failed:', error);
+            console.error('❌ Dashboard manager failed:', error);
+            showDashboardError(error);
+            return;
         }
         
-        try {
-            initWhatsAppAPI();
-            console.log('✅ WhatsApp API initialized');
-        } catch (error) {
-            console.warn('⚠️ WhatsApp API initialization failed:', error);
-        }
-        
-        try {
-            initNetworkMonitoring();
-            console.log('✅ Network monitoring initialized');
-        } catch (error) {
-            console.warn('⚠️ Network monitoring initialization failed:', error);
-        }
+        // Initialize additional features with graceful error handling
+        initializeOptionalFeatures();
         
         console.log('🏥 Apotek Alpro Dashboard Fully Initialized');
         console.log('⌨️  Shortcuts: Ctrl+1/2/3 for tabs, Ctrl+R for refresh, Esc to close notifications');
         
     } catch (error) {
         console.error('🚨 Critical dashboard initialization failed:', error);
-        
-        // Show user-friendly error message
-        document.body.innerHTML = `
-            <div style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; font-family: Arial, sans-serif;">
-                <div style="text-align: center; max-width: 500px; padding: 40px;">
-                    <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
-                    <h2 style="color: #dc3545; margin-bottom: 15px;">Dashboard Loading Error</h2>
-                    <p style="color: #666; margin-bottom: 25px;">There was an error loading the dashboard. Please try refreshing the page or contact support if the problem persists.</p>
-                    <button onclick="window.location.reload()" style="background: #007bff; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px;">
-                        🔄 Refresh Page
+        showDashboardError(error);
+    }
+});
+
+function initializeOptionalFeatures() {
+    // Initialize shortcuts with error handling
+    try {
+        const dashboardShortcuts = new DashboardShortcuts();
+        console.log('✅ Dashboard shortcuts initialized');
+    } catch (error) {
+        console.warn('⚠️ Dashboard shortcuts initialization failed:', error);
+    }
+    
+    // Initialize auto-refresh with error handling
+    try {
+        const autoRefresh = new AutoRefresh(5); // Refresh every 5 minutes
+        console.log('✅ Auto-refresh initialized');
+    } catch (error) {
+        console.warn('⚠️ Auto-refresh initialization failed:', error);
+    }
+    
+    // Initialize WhatsApp features with error handling
+    try {
+        initWhatsAppHandling();
+        console.log('✅ WhatsApp handling initialized');
+    } catch (error) {
+        console.warn('⚠️ WhatsApp handling initialization failed:', error);
+    }
+    
+    try {
+        initWhatsAppAPI();
+        console.log('✅ WhatsApp API initialized');
+    } catch (error) {
+        console.warn('⚠️ WhatsApp API initialization failed:', error);
+    }
+    
+    try {
+        initNetworkMonitoring();
+        console.log('✅ Network monitoring initialized');
+    } catch (error) {
+        console.warn('⚠️ Network monitoring initialization failed:', error);
+    }
+}
+
+function showDashboardError(error) {
+    const errorMessage = error?.message || 'Unknown error occurred';
+    
+    document.body.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); font-family: Arial, sans-serif;">
+            <div style="background: rgba(255,255,255,0.95); padding: 40px; border-radius: 20px; text-align: center; max-width: 500px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+                <h2 style="color: #dc3545; margin-bottom: 15px;">Dashboard Error</h2>
+                <p style="color: #666; margin-bottom: 20px;">Error: ${errorMessage}</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="window.location.reload()" 
+                            style="background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 14px;">
+                        🔄 Refresh
+                    </button>
+                    <button onclick="window.location.href='/login'" 
+                            style="background: #28a745; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 14px;">
+                        🔐 Login
                     </button>
                 </div>
             </div>
-        `;
-    }
-});
+        </div>
+    `;
+}
 
 // WhatsApp contact functions for homepage
 function openWhatsAppContactFromHomepage() {
