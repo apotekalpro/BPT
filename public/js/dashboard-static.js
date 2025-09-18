@@ -501,18 +501,7 @@ function refreshBPT() {
     }
 }
 
-function retryTikTokLoad() {
-    console.log('🔄 Retrying TikTok load...');
-    const iframe = document.getElementById('tiktokFrame');
-    const loading = document.getElementById('tiktokLoading');
-    const error = document.getElementById('tiktokError');
-    
-    if (iframe && loading && error) {
-        error.style.display = 'none';
-        loading.style.display = 'block';
-        iframe.src = iframe.src; // Reload iframe
-    }
-}
+// retryTikTokLoad function removed - no longer needed with direct iframe embedding
 
 // Add CSS for spin animation
 if (!document.getElementById('dynamic-animations')) {
