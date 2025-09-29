@@ -96,6 +96,28 @@ class StaticDashboardManager {
             });
         }
 
+        // Campaign tabs with safe binding and initialization
+        const campaignTabs = document.querySelectorAll('.campaign-tab');
+        if (campaignTabs && campaignTabs.length > 0) {
+            campaignTabs.forEach((tab, index) => {
+                if (tab && typeof tab.addEventListener === 'function') {
+                    tab.addEventListener('click', (e) => {
+                        try {
+                            e.preventDefault();
+                            const campaignId = tab.dataset ? tab.dataset.campaign : tab.getAttribute('data-campaign');
+                            console.log('🔄 Campaign tab clicked:', campaignId);
+                            if (campaignId) this.safeCampaignSwitch(campaignId);
+                        } catch (error) {
+                            console.error('🔄 Campaign tab click error:', error);
+                        }
+                    });
+                }
+            });
+            
+            // Initialize first campaign tab as active by default
+            this.initializeDefaultCampaignTab();
+        }
+
         // Logout button with safe binding
         if (this.logoutBtn && typeof this.logoutBtn.addEventListener === 'function') {
             this.logoutBtn.addEventListener('click', (e) => {
@@ -311,9 +333,196 @@ class StaticDashboardManager {
                 });
             }
             
+            // Initialize campaign tabs if switching to campaign section
+            if (tabId === 'campaign') {
+                setTimeout(() => {
+                    this.initializeDefaultCampaignTab();
+                }, 100);
+            }
+            
             console.log('✅ Tab switched successfully to:', tabId);
         } catch (error) {
             console.error('🔄 Tab switch error:', error);
+        }
+    }
+
+    safeCampaignSwitch(campaignId) {
+        if (!campaignId) return;
+        
+        try {
+            console.log('🎯 Safely switching to campaign:', campaignId);
+            
+            // Get all campaign tabs and content sections
+            const campaignTabs = document.querySelectorAll('.campaign-tab');
+            const campaignContents = document.querySelectorAll('.campaign-content, .campaign-section');
+            
+            // Update campaign tab active states
+            if (campaignTabs && campaignTabs.length > 0) {
+                campaignTabs.forEach(tab => {
+                    if (tab && tab.classList) {
+                        const isActive = (tab.dataset && tab.dataset.campaign === campaignId) || 
+                                       (tab.getAttribute && tab.getAttribute('data-campaign') === campaignId);
+                        tab.classList.toggle('active', isActive);
+                        
+                        // Update visual feedback
+                        if (isActive) {
+                            tab.style.background = 'linear-gradient(135deg, #2E5B9F, #1E3F6F)';
+                            tab.style.color = 'white';
+                            tab.style.transform = 'translateY(-2px)';
+                            tab.style.boxShadow = '0 8px 25px rgba(46, 91, 159, 0.4)';
+                        } else {
+                            tab.style.background = '';
+                            tab.style.color = '';
+                            tab.style.transform = '';
+                            tab.style.boxShadow = '';
+                        }
+                    }
+                });
+            }
+            
+            // Update campaign content visibility
+            if (campaignContents && campaignContents.length > 0) {
+                campaignContents.forEach(content => {
+                    if (content && content.classList && content.id) {
+                        const isActive = content.id === campaignId ||
+                                       content.id === `${campaignId}Content` || 
+                                       content.id === `${campaignId}-content` ||
+                                       content.classList.contains(`${campaignId}-section`);
+                        
+                        if (isActive) {
+                            content.classList.add('active');
+                            content.style.display = 'flex';
+                            content.style.flexDirection = 'column';
+                            content.style.opacity = '1';
+                        } else {
+                            content.classList.remove('active');
+                            content.style.display = 'none';
+                            content.style.opacity = '0';
+                        }
+                    }
+                });
+            }
+            
+            // Special handling for specific campaigns
+            switch (campaignId) {
+                case 'oct-kenali-gula':
+                    this.activateOctKenaliGulaContent();
+                    break;
+                case 'tiktok-cuan':
+                    this.activateTikTokCuanContent();
+                    break;
+                case 'campaign-calendar':
+                    this.activateCampaignCalendarContent();
+                    break;
+                default:
+                    console.log('🎯 Using default campaign content display');
+            }
+            
+            console.log('✅ Campaign switched successfully to:', campaignId);
+        } catch (error) {
+            console.error('🎯 Campaign switch error:', error);
+        }
+    }
+
+    activateOctKenaliGulaContent() {
+        try {
+            // Use the correct ID from HTML: "oct-kenali-gula"
+            const octContent = document.getElementById('oct-kenali-gula') || 
+                              document.getElementById('octKenaliGulaContent') || 
+                              document.getElementById('oct-kenali-gula-content') ||
+                              document.querySelector('.oct-kenali-gula-section');
+            
+            if (octContent) {
+                octContent.classList.add('active');
+                octContent.style.display = 'flex';
+                octContent.style.flexDirection = 'column';
+                octContent.style.opacity = '1';
+                
+                // Ensure iframe is properly loaded
+                const octIframe = document.getElementById('octIframe');
+                if (octIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = octIframe.src;
+                    octIframe.src = '';
+                    setTimeout(() => {
+                        octIframe.src = currentSrc || 'https://qqssaxti.gensparkspace.com';
+                    }, 100);
+                }
+                
+                console.log('✅ Oct Kenali Gula content activated');
+            } else {
+                console.warn('⚠️ Oct Kenali Gula content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Oct Kenali Gula activation error:', error);
+        }
+    }
+
+    activateTikTokCuanContent() {
+        try {
+            // Check for the correct Sept campaign ID: "sept-women-health"
+            const tikTokContent = document.getElementById('sept-women-health') ||
+                                 document.getElementById('tikTokCuanContent') || 
+                                 document.getElementById('tiktok-cuan-content') ||
+                                 document.querySelector('.tiktok-cuan-section');
+            
+            if (tikTokContent) {
+                tikTokContent.classList.add('active');
+                tikTokContent.style.display = 'flex';
+                tikTokContent.style.flexDirection = 'column';
+                tikTokContent.style.opacity = '1';
+                
+                console.log('✅ TikTok Cuan content activated');
+            }
+        } catch (error) {
+            console.error('🎯 TikTok Cuan activation error:', error);
+        }
+    }
+
+    activateCampaignCalendarContent() {
+        try {
+            const calendarContent = document.getElementById('campaignCalendarContent') || 
+                                   document.getElementById('campaign-calendar-content') ||
+                                   document.querySelector('.campaign-calendar-section');
+            
+            if (calendarContent) {
+                calendarContent.classList.add('active');
+                calendarContent.style.display = 'block';
+                calendarContent.style.opacity = '1';
+                
+                console.log('✅ Campaign Calendar content activated');
+            }
+        } catch (error) {
+            console.error('🎯 Campaign Calendar activation error:', error);
+        }
+    }
+
+    initializeDefaultCampaignTab() {
+        try {
+            console.log('🎯 Initializing default campaign tab...');
+            
+            const campaignTabs = document.querySelectorAll('.campaign-tab');
+            const campaignContents = document.querySelectorAll('.campaign-tab-content');
+            
+            if (campaignTabs && campaignTabs.length > 0) {
+                // Find the Oct campaign tab (preferred default) or use first available
+                let defaultTab = Array.from(campaignTabs).find(tab => 
+                    tab.dataset && tab.dataset.campaign === 'oct-kenali-gula'
+                ) || campaignTabs[0];
+                
+                if (defaultTab) {
+                    const defaultCampaignId = defaultTab.dataset ? 
+                        defaultTab.dataset.campaign : 
+                        defaultTab.getAttribute('data-campaign');
+                    
+                    console.log('🎯 Setting default campaign tab:', defaultCampaignId);
+                    this.safeCampaignSwitch(defaultCampaignId);
+                }
+            } else {
+                console.warn('⚠️ No campaign tabs found for initialization');
+            }
+        } catch (error) {
+            console.error('🎯 Default campaign tab initialization error:', error);
         }
     }
 
