@@ -408,8 +408,8 @@ class StaticDashboardManager {
                 case 'oct-kenali-gula':
                     this.activateOctKenaliGulaContent();
                     break;
-                case 'tiktok-cuan':
-                    this.activateTikTokCuanContent();
+                case 'sept-women-health':
+                    this.activateSeptWomenHealthContent();
                     break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
@@ -458,24 +458,36 @@ class StaticDashboardManager {
         }
     }
 
-    activateTikTokCuanContent() {
+    activateSeptWomenHealthContent() {
         try {
             // Check for the correct Sept campaign ID: "sept-women-health"
-            const tikTokContent = document.getElementById('sept-women-health') ||
-                                 document.getElementById('tikTokCuanContent') || 
-                                 document.getElementById('tiktok-cuan-content') ||
-                                 document.querySelector('.tiktok-cuan-section');
+            const septContent = document.getElementById('sept-women-health') ||
+                               document.getElementById('septWomenHealthContent') || 
+                               document.querySelector('.sept-women-health-section');
             
-            if (tikTokContent) {
-                tikTokContent.classList.add('active');
-                tikTokContent.style.display = 'flex';
-                tikTokContent.style.flexDirection = 'column';
-                tikTokContent.style.opacity = '1';
+            if (septContent) {
+                septContent.classList.add('active');
+                septContent.style.display = 'flex';
+                septContent.style.flexDirection = 'column';
+                septContent.style.opacity = '1';
                 
-                console.log('✅ TikTok Cuan content activated');
+                // Ensure the iframe for women health campaign is properly loaded
+                const septIframe = septContent.querySelector('iframe');
+                if (septIframe) {
+                    // Refresh iframe src to ensure proper loading of women health URL
+                    const currentSrc = septIframe.src;
+                    septIframe.src = '';
+                    setTimeout(() => {
+                        septIframe.src = currentSrc || 'https://apotekalpro-womanhealth.pages.dev/#metrics';
+                    }, 100);
+                }
+                
+                console.log('✅ Sept Women Health content activated');
+            } else {
+                console.warn('⚠️ Sept Women Health content not found');
             }
         } catch (error) {
-            console.error('🎯 TikTok Cuan activation error:', error);
+            console.error('🎯 Sept Women Health activation error:', error);
         }
     }
 
