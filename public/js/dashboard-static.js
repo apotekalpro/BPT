@@ -96,10 +96,10 @@ class StaticDashboardManager {
             });
         }
 
-        // Campaign tabs with safe binding
+        // Campaign tabs with safe binding and initialization
         const campaignTabs = document.querySelectorAll('.campaign-tab');
         if (campaignTabs && campaignTabs.length > 0) {
-            campaignTabs.forEach((tab) => {
+            campaignTabs.forEach((tab, index) => {
                 if (tab && typeof tab.addEventListener === 'function') {
                     tab.addEventListener('click', (e) => {
                         try {
@@ -113,6 +113,9 @@ class StaticDashboardManager {
                     });
                 }
             });
+            
+            // Initialize first campaign tab as active by default
+            this.initializeDefaultCampaignTab();
         }
 
         // Logout button with safe binding
@@ -330,6 +333,13 @@ class StaticDashboardManager {
                 });
             }
             
+            // Initialize campaign tabs if switching to campaign section
+            if (tabId === 'campaign') {
+                setTimeout(() => {
+                    this.initializeDefaultCampaignTab();
+                }, 100);
+            }
+            
             console.log('✅ Tab switched successfully to:', tabId);
         } catch (error) {
             console.error('🔄 Tab switch error:', error);
@@ -374,14 +384,15 @@ class StaticDashboardManager {
             if (campaignContents && campaignContents.length > 0) {
                 campaignContents.forEach(content => {
                     if (content && content.classList && content.id) {
-                        const isActive = content.id === `${campaignId}Content` || 
+                        const isActive = content.id === campaignId ||
+                                       content.id === `${campaignId}Content` || 
                                        content.id === `${campaignId}-content` ||
-                                       content.id === campaignId ||
                                        content.classList.contains(`${campaignId}-section`);
                         
                         if (isActive) {
                             content.classList.add('active');
-                            content.style.display = 'block';
+                            content.style.display = 'flex';
+                            content.style.flexDirection = 'column';
                             content.style.opacity = '1';
                         } else {
                             content.classList.remove('active');
@@ -415,13 +426,16 @@ class StaticDashboardManager {
 
     activateOctKenaliGulaContent() {
         try {
-            const octContent = document.getElementById('octKenaliGulaContent') || 
+            // Use the correct ID from HTML: "oct-kenali-gula"
+            const octContent = document.getElementById('oct-kenali-gula') || 
+                              document.getElementById('octKenaliGulaContent') || 
                               document.getElementById('oct-kenali-gula-content') ||
                               document.querySelector('.oct-kenali-gula-section');
             
             if (octContent) {
                 octContent.classList.add('active');
-                octContent.style.display = 'block';
+                octContent.style.display = 'flex';
+                octContent.style.flexDirection = 'column';
                 octContent.style.opacity = '1';
                 
                 // Ensure iframe is properly loaded
@@ -446,13 +460,16 @@ class StaticDashboardManager {
 
     activateTikTokCuanContent() {
         try {
-            const tikTokContent = document.getElementById('tikTokCuanContent') || 
+            // Check for the correct Sept campaign ID: "sept-women-health"
+            const tikTokContent = document.getElementById('sept-women-health') ||
+                                 document.getElementById('tikTokCuanContent') || 
                                  document.getElementById('tiktok-cuan-content') ||
                                  document.querySelector('.tiktok-cuan-section');
             
             if (tikTokContent) {
                 tikTokContent.classList.add('active');
-                tikTokContent.style.display = 'block';
+                tikTokContent.style.display = 'flex';
+                tikTokContent.style.flexDirection = 'column';
                 tikTokContent.style.opacity = '1';
                 
                 console.log('✅ TikTok Cuan content activated');
@@ -477,6 +494,35 @@ class StaticDashboardManager {
             }
         } catch (error) {
             console.error('🎯 Campaign Calendar activation error:', error);
+        }
+    }
+
+    initializeDefaultCampaignTab() {
+        try {
+            console.log('🎯 Initializing default campaign tab...');
+            
+            const campaignTabs = document.querySelectorAll('.campaign-tab');
+            const campaignContents = document.querySelectorAll('.campaign-tab-content');
+            
+            if (campaignTabs && campaignTabs.length > 0) {
+                // Find the Oct campaign tab (preferred default) or use first available
+                let defaultTab = Array.from(campaignTabs).find(tab => 
+                    tab.dataset && tab.dataset.campaign === 'oct-kenali-gula'
+                ) || campaignTabs[0];
+                
+                if (defaultTab) {
+                    const defaultCampaignId = defaultTab.dataset ? 
+                        defaultTab.dataset.campaign : 
+                        defaultTab.getAttribute('data-campaign');
+                    
+                    console.log('🎯 Setting default campaign tab:', defaultCampaignId);
+                    this.safeCampaignSwitch(defaultCampaignId);
+                }
+            } else {
+                console.warn('⚠️ No campaign tabs found for initialization');
+            }
+        } catch (error) {
+            console.error('🎯 Default campaign tab initialization error:', error);
         }
     }
 
