@@ -9,7 +9,7 @@ class StaticLoginManager {
         this.googleSheetsConfig = {
             spreadsheetId: '1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo9wE',
             outletSheetName: 'Outlet Login',
-            hqSheetName: 'HQ Login Access'
+            hqSheetName: 'HQ Login'  // Fixed: Changed from 'HQ Login Access' to 'HQ Login'
         };
         
         // Cache for Google Sheets data
@@ -292,7 +292,7 @@ class StaticLoginManager {
             // Fetch both sheets concurrently
             const [outletData, hqData] = await Promise.allSettled([
                 this.fetchSheetData('Outlet Login'),
-                this.fetchSheetData('HQ Login Access')
+                this.fetchSheetData('HQ Login')  // Fixed: Use correct sheet name
             ]);
 
             // Process outlet data
@@ -393,19 +393,28 @@ class StaticLoginManager {
     }
 
     parseHQData(csvData) {
-        // HQ Login Access: User = column B (1), Password = column H (7)
-        // Need to check if we have enough columns
+        // HQ Login: User = column B (1), Password = column H (7)
+        // Column structure: A=Name, B=Email, C=Status, D=Role, E=Date, F=Area, G=?, H=Password
         return csvData.map(row => {
+            console.log('🔍 HQ Row data:', row); // Debug logging
+            
             if (row.length >= 8 && row[1] && row[7]) {
-                // Assume column B contains email and we can derive name from it
+                const name = row[0] ? row[0].replace(/"/g, '') : 'HQ User';
                 const email = row[1].replace(/"/g, '');
-                const name = this.extractNameFromEmail(email);
-                return {
-                    name: name,
-                    email: email,
-                    role: row[2] ? row[2].replace(/"/g, '') : 'HQ User',
-                    password: row[7].replace(/"/g, '')
-                };
+                const status = row[2] ? row[2].replace(/"/g, '') : '';
+                const role = row[3] ? row[3].replace(/"/g, '') : 'HQ User';
+                const password = row[7].replace(/"/g, '');
+                
+                // Only include active users
+                if (status.toLowerCase() === 'active' && email && password) {
+                    return {
+                        name: name,
+                        email: email,
+                        role: role,
+                        status: status,
+                        password: password
+                    };
+                }
             }
             return null;
         }).filter(user => user !== null);
