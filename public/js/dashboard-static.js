@@ -10,7 +10,7 @@ class StaticDashboardManager {
         this.googleSheetsConfig = {
             spreadsheetId: '1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo9wE',
             outletSheetName: 'Outlet Login',
-            hqSheetName: 'HQ Login Access'
+            hqSheetName: 'HQ Login'  // Fixed: Use correct sheet name
         };
 
         // Static user data for GitHub Pages (fallback)
