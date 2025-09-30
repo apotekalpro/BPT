@@ -5,7 +5,22 @@ class StaticLoginManager {
         this.currentLoginType = 'outlet';
         this.isStatic = true;
         
-        // Static user data for authentication
+        // Google Sheets configuration for dynamic authentication
+        this.googleSheetsConfig = {
+            spreadsheetId: '1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo9wE',
+            outletSheetName: 'Outlet Login',
+            hqSheetName: 'HQ Login Access'
+        };
+        
+        // Cache for Google Sheets data
+        this.sheetsUserData = {
+            outlet: [],
+            hq: [],
+            lastFetched: null,
+            cacheExpiry: 5 * 60 * 1000 // 5 minutes cache
+        };
+        
+        // Fallback static user data for authentication (in case Google Sheets is unavailable)
         this.staticUserData = {
             outlet: [
                 {
@@ -46,6 +61,9 @@ class StaticLoginManager {
         this.initializeElements();
         this.bindEvents();
         this.checkExistingSession();
+        
+        // Initialize Google Sheets data fetching
+        this.initializeGoogleSheetsAuth();
         
         console.log('💡 Tip: Use Alt+O for Outlet login, Alt+H for HQ login');
     }
@@ -172,7 +190,7 @@ class StaticLoginManager {
             // Simulate network delay for better UX
             await new Promise(resolve => setTimeout(resolve, 500));
             
-            const result = this.authenticateUser(username, password, this.currentLoginType);
+            const result = await this.authenticateUserWithSheets(username, password, this.currentLoginType);
             
             if (result.success) {
                 this.showSuccess(`Welcome, ${result.user.displayName}!`);
@@ -249,6 +267,251 @@ class StaticLoginManager {
         
         console.error('❌ Authentication failed for:', { username, loginType });
         return { success: false, message: 'Invalid credentials' };
+    }
+
+    // Google Sheets Authentication Methods
+    async initializeGoogleSheetsAuth() {
+        try {
+            console.log('📊 Initializing Google Sheets authentication...');
+            await this.fetchGoogleSheetsData();
+        } catch (error) {
+            console.warn('⚠️ Google Sheets initialization failed, using static data:', error);
+        }
+    }
+
+    async fetchGoogleSheetsData() {
+        try {
+            // Check cache first
+            if (this.isDataCacheValid()) {
+                console.log('📊 Using cached Google Sheets data');
+                return;
+            }
+
+            console.log('📊 Fetching fresh data from Google Sheets...');
+            
+            // Fetch both sheets concurrently
+            const [outletData, hqData] = await Promise.allSettled([
+                this.fetchSheetData('Outlet Login'),
+                this.fetchSheetData('HQ Login Access')
+            ]);
+
+            // Process outlet data
+            if (outletData.status === 'fulfilled' && outletData.value) {
+                this.sheetsUserData.outlet = this.parseOutletData(outletData.value);
+                console.log('✅ Outlet login data loaded:', this.sheetsUserData.outlet.length, 'users');
+            }
+
+            // Process HQ data
+            if (hqData.status === 'fulfilled' && hqData.value) {
+                this.sheetsUserData.hq = this.parseHQData(hqData.value);
+                console.log('✅ HQ login data loaded:', this.sheetsUserData.hq.length, 'users');
+            }
+
+            this.sheetsUserData.lastFetched = Date.now();
+            console.log('📊 Google Sheets data refresh completed');
+
+        } catch (error) {
+            console.error('📊 Google Sheets fetch error:', error);
+            throw error;
+        }
+    }
+
+    async fetchSheetData(sheetName) {
+        try {
+            // Use Google Sheets CSV export API
+            const csvUrl = `https://docs.google.com/spreadsheets/d/${this.googleSheetsConfig.spreadsheetId}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
+            
+            console.log('📊 Fetching sheet:', sheetName);
+            const response = await fetch(csvUrl);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const csvText = await response.text();
+            return this.parseCSV(csvText);
+            
+        } catch (error) {
+            console.error(`📊 Error fetching ${sheetName}:`, error);
+            return null;
+        }
+    }
+
+    parseCSV(csvText) {
+        const lines = csvText.split('\n').filter(line => line.trim());
+        if (lines.length < 2) return [];
+
+        const data = [];
+        for (let i = 1; i < lines.length; i++) { // Skip header row
+            const row = this.parseCSVLine(lines[i]);
+            if (row && row.length > 0) {
+                data.push(row);
+            }
+        }
+        return data;
+    }
+
+    parseCSVLine(line) {
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+        
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            const nextChar = line[i + 1];
+            
+            if (char === '"' && inQuotes && nextChar === '"') {
+                current += '"';
+                i++; // Skip next quote
+            } else if (char === '"') {
+                inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+                result.push(current.trim());
+                current = '';
+            } else {
+                current += char;
+            }
+        }
+        result.push(current.trim());
+        return result;
+    }
+
+    parseOutletData(csvData) {
+        // Outlet Login: User = column A (0), Password = column D (3)
+        // Also get: Store Name = column B (1), AM = column C (2)
+        return csvData.map(row => {
+            if (row.length >= 4 && row[0] && row[3]) {
+                return {
+                    shortStoreName: row[0].replace(/"/g, ''), // Remove quotes
+                    storeName: row[1] ? row[1].replace(/"/g, '') : row[0],
+                    am: row[2] ? row[2].replace(/"/g, '') : 'Account Manager',
+                    password: row[3].replace(/"/g, '')
+                };
+            }
+            return null;
+        }).filter(user => user !== null);
+    }
+
+    parseHQData(csvData) {
+        // HQ Login Access: User = column B (1), Password = column H (7)
+        // Need to check if we have enough columns
+        return csvData.map(row => {
+            if (row.length >= 8 && row[1] && row[7]) {
+                // Assume column B contains email and we can derive name from it
+                const email = row[1].replace(/"/g, '');
+                const name = this.extractNameFromEmail(email);
+                return {
+                    name: name,
+                    email: email,
+                    role: row[2] ? row[2].replace(/"/g, '') : 'HQ User',
+                    password: row[7].replace(/"/g, '')
+                };
+            }
+            return null;
+        }).filter(user => user !== null);
+    }
+
+    extractNameFromEmail(email) {
+        if (!email || !email.includes('@')) return 'HQ User';
+        
+        const localPart = email.split('@')[0];
+        const name = localPart.replace(/[._]/g, ' ');
+        return name.split(' ').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        ).join(' ');
+    }
+
+    isDataCacheValid() {
+        if (!this.sheetsUserData.lastFetched) return false;
+        const age = Date.now() - this.sheetsUserData.lastFetched;
+        return age < this.sheetsUserData.cacheExpiry;
+    }
+
+    // Enhanced authentication method that uses Google Sheets data first, then falls back to static
+    async authenticateUserWithSheets(username, password, loginType) {
+        try {
+            // Ensure we have fresh data
+            await this.fetchGoogleSheetsData();
+            
+            let userData = null;
+            
+            if (loginType === 'outlet') {
+                // Try Google Sheets data first
+                if (this.sheetsUserData.outlet.length > 0) {
+                    userData = this.sheetsUserData.outlet.find(user => 
+                        user.shortStoreName && 
+                        user.shortStoreName.toLowerCase() === username.toLowerCase() && 
+                        user.password === password
+                    );
+                }
+                
+                // Fallback to static data
+                if (!userData) {
+                    userData = this.staticUserData.outlet.find(user => 
+                        user.shortStoreName && 
+                        user.shortStoreName.toLowerCase() === username.toLowerCase() && 
+                        user.password === password
+                    );
+                }
+                
+                if (userData) {
+                    const user = {
+                        type: 'outlet',
+                        displayName: userData.shortStoreName,
+                        fullStoreName: userData.storeName,
+                        am: userData.am,
+                        shortStoreName: userData.shortStoreName,
+                        source: this.sheetsUserData.outlet.length > 0 ? 'sheets' : 'static'
+                    };
+                    
+                    localStorage.setItem('apotek_alpro_user', JSON.stringify(user));
+                    console.log(`✅ Outlet user authenticated (${user.source}):`, user);
+                    return { success: true, user };
+                }
+                
+            } else if (loginType === 'hq') {
+                // Try Google Sheets data first
+                if (this.sheetsUserData.hq.length > 0) {
+                    userData = this.sheetsUserData.hq.find(user => 
+                        user.email && 
+                        user.email.toLowerCase() === username.toLowerCase() && 
+                        user.password === password
+                    );
+                }
+                
+                // Fallback to static data
+                if (!userData) {
+                    userData = this.staticUserData.hq.find(user => 
+                        user.email && 
+                        user.email.toLowerCase() === username.toLowerCase() && 
+                        user.password === password
+                    );
+                }
+                
+                if (userData) {
+                    const user = {
+                        type: 'hq',
+                        displayName: userData.name,
+                        email: userData.email,
+                        role: userData.role,
+                        fullStoreName: userData.name,
+                        source: this.sheetsUserData.hq.length > 0 ? 'sheets' : 'static'
+                    };
+                    
+                    localStorage.setItem('apotek_alpro_user', JSON.stringify(user));
+                    console.log(`✅ HQ user authenticated (${user.source}):`, user);
+                    return { success: true, user };
+                }
+            }
+            
+            console.error('❌ Authentication failed for:', { username, loginType });
+            return { success: false, message: 'Invalid credentials' };
+            
+        } catch (error) {
+            console.error('📊 Google Sheets auth error, falling back to static:', error);
+            // Fallback to original static authentication
+            return this.authenticateUser(username, password, loginType);
+        }
     }
     
     redirectToDashboard() {

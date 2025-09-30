@@ -6,7 +6,14 @@ class StaticDashboardManager {
         this.currentTab = 'homepage';
         this.isStatic = true;
         
-        // Static user data for GitHub Pages
+        // Google Sheets configuration
+        this.googleSheetsConfig = {
+            spreadsheetId: '1wCvZ1WAlHAn-B8UPP5AUEPzQ5Auf84BJFeG48Hlo9wE',
+            outletSheetName: 'Outlet Login',
+            hqSheetName: 'HQ Login Access'
+        };
+
+        // Static user data for GitHub Pages (fallback)
         this.staticUserData = {
             outlet: [
                 {
