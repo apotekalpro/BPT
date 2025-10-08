@@ -289,5 +289,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add some visual feedback for successful initialization
     console.log('🏥 Apotek Alpro Login System Initialized');
-    console.log('💡 Tip: Use Alt+O for Outlet login, Alt+H for HQ login');
+    // Keyboard shortcut tip removed as requested
 });
