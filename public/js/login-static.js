@@ -65,7 +65,7 @@ class StaticLoginManager {
         // Initialize Google Sheets data fetching
         this.initializeGoogleSheetsAuth();
         
-        console.log('💡 Tip: Use Alt+O for Outlet login, Alt+H for HQ login');
+        // Keyboard shortcut tip removed as requested
     }
     
     initializeElements() {
