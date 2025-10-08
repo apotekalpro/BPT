@@ -1671,6 +1671,16 @@ body {
     position: relative;
 }
 
+/* Special 5-column layout for Level 3 when we have both BPT Associates under Digital Marketing */
+.org-level.level-3.five-columns {
+    grid-template-columns: 1fr 1fr 0.8fr 0.8fr 1fr;
+    gap: 16px;
+}
+
+.org-level.level-3.five-columns .org-box {
+    max-width: 160px;
+}
+
 .org-level.level-extra {
     display: flex;
     justify-content: center;
