@@ -1671,18 +1671,14 @@ body {
     position: relative;
 }
 
-/* Special column for Digital Marketing staff (Sekar & Kelsey) */
-.org-column.digital-marketing-staff {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
+/* Special 5-column layout for Level 3 when we have both BPT Associates under Digital Marketing */
+.org-level.level-3.five-columns {
+    grid-template-columns: 1fr 1fr 0.8fr 0.8fr 1fr;
+    gap: 16px;
 }
 
-.org-column.digital-marketing-staff .org-box {
-    margin: 0;
-    width: 100%;
-    max-width: 180px;
+.org-level.level-3.five-columns .org-box {
+    max-width: 160px;
 }
 
 .org-level.level-extra {
