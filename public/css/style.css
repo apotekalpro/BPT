@@ -1792,6 +1792,11 @@ body {
     position: relative;
 }
 
+.org-box.staff.dual-portfolio {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(167, 139, 250, 0.15), rgba(255, 255, 255, 0.95));
+    border: 2px dashed var(--alpro-warning);
+}
+
 .org-box.dual-portfolio::before,
 .org-box.dual-portfolio::after {
     content: '';
