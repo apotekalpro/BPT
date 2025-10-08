@@ -184,7 +184,7 @@ class LoginManager {
 // Initialize login manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🏥 Apotek Alpro Login System Initialized (Static Version)');
-    console.log('💡 Tip: Use Alt+O for Outlet login, Alt+H for HQ login');
+    // Keyboard shortcut tip removed as requested
     
     window.loginManager = new LoginManager();
 });
