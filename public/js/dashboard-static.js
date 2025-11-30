@@ -418,6 +418,9 @@ class StaticDashboardManager {
                 case 'sept-women-health':
                     this.activateSeptWomenHealthContent();
                     break;
+                case 'dec-anniversary-sales':
+                    this.activateDecAnniversarySalesContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -498,6 +501,39 @@ class StaticDashboardManager {
         }
     }
 
+    activateDecAnniversarySalesContent() {
+        try {
+            // Check for the Dec campaign ID: "dec-anniversary-sales"
+            const decContent = document.getElementById('dec-anniversary-sales') ||
+                              document.getElementById('decAnniversarySalesContent') || 
+                              document.querySelector('.dec-anniversary-sales-section');
+            
+            if (decContent) {
+                decContent.classList.add('active');
+                decContent.style.display = 'flex';
+                decContent.style.flexDirection = 'column';
+                decContent.style.opacity = '1';
+                
+                // Ensure the iframe for Dec anniversary campaign is properly loaded
+                const decIframe = decContent.querySelector('iframe');
+                if (decIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = decIframe.src;
+                    decIframe.src = '';
+                    setTimeout(() => {
+                        decIframe.src = currentSrc || 'https://eruyktmb.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Dec Anniversary Sales content activated');
+            } else {
+                console.warn('⚠️ Dec Anniversary Sales content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Dec Anniversary Sales activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -524,9 +560,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Oct campaign tab (preferred default) or use first available
+                // Find the Dec campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'oct-kenali-gula'
+                    tab.dataset && tab.dataset.campaign === 'dec-anniversary-sales'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
