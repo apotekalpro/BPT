@@ -361,7 +361,7 @@ class StaticDashboardManager {
             
             // Get all campaign tabs and content sections
             const campaignTabs = document.querySelectorAll('.campaign-tab');
-            const campaignContents = document.querySelectorAll('.campaign-content, .campaign-section');
+            const campaignContents = document.querySelectorAll('.campaign-content, .campaign-section, .campaign-tab-content');
             
             // Update campaign tab active states
             if (campaignTabs && campaignTabs.length > 0) {
@@ -388,6 +388,7 @@ class StaticDashboardManager {
             }
             
             // Update campaign content visibility
+            console.log(`🔍 Found ${campaignContents.length} campaign content sections to manage`);
             if (campaignContents && campaignContents.length > 0) {
                 campaignContents.forEach(content => {
                     if (content && content.classList && content.id) {
@@ -401,10 +402,12 @@ class StaticDashboardManager {
                             content.style.display = 'flex';
                             content.style.flexDirection = 'column';
                             content.style.opacity = '1';
+                            console.log(`✅ Showing content: ${content.id}`);
                         } else {
                             content.classList.remove('active');
                             content.style.display = 'none';
                             content.style.opacity = '0';
+                            console.log(`❌ Hiding content: ${content.id}`);
                         }
                     }
                 });
