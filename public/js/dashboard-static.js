@@ -424,6 +424,9 @@ class StaticDashboardManager {
                 case 'dec-anniversary-sales':
                     this.activateDecAnniversarySalesContent();
                     break;
+                case 'new-year-new-me':
+                    this.activateNewYearNewMeContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -537,6 +540,39 @@ class StaticDashboardManager {
         }
     }
 
+    activateNewYearNewMeContent() {
+        try {
+            // Check for the New Year campaign ID: "new-year-new-me"
+            const newYearContent = document.getElementById('new-year-new-me') ||
+                                  document.getElementById('newYearNewMeContent') || 
+                                  document.querySelector('.new-year-new-me-section');
+            
+            if (newYearContent) {
+                newYearContent.classList.add('active');
+                newYearContent.style.display = 'flex';
+                newYearContent.style.flexDirection = 'column';
+                newYearContent.style.opacity = '1';
+                
+                // Ensure the iframe for New Year campaign is properly loaded
+                const newYearIframe = newYearContent.querySelector('iframe');
+                if (newYearIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = newYearIframe.src;
+                    newYearIframe.src = '';
+                    setTimeout(() => {
+                        newYearIframe.src = currentSrc || 'https://gdmmhrhz.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ New Year New Me content activated');
+            } else {
+                console.warn('⚠️ New Year New Me content not found');
+            }
+        } catch (error) {
+            console.error('🎯 New Year New Me activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -563,9 +599,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Dec campaign tab (preferred default - latest campaign) or use first available
+                // Find the New Year campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'dec-anniversary-sales'
+                    tab.dataset && tab.dataset.campaign === 'new-year-new-me'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
