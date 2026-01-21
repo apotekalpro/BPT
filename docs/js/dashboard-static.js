@@ -427,6 +427,9 @@ class StaticDashboardManager {
                 case 'new-year-new-me':
                     this.activateNewYearNewMeContent();
                     break;
+                case 'love-and-beauty':
+                    this.activateLoveAndBeautyContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -570,6 +573,39 @@ class StaticDashboardManager {
             }
         } catch (error) {
             console.error('🎯 New Year New Me activation error:', error);
+        }
+    }
+
+    activateLoveAndBeautyContent() {
+        try {
+            // Check for the Love & Beauty campaign ID: "love-and-beauty"
+            const loveBeautyContent = document.getElementById('love-and-beauty') ||
+                                     document.getElementById('loveAndBeautyContent') || 
+                                     document.querySelector('.love-and-beauty-section');
+            
+            if (loveBeautyContent) {
+                loveBeautyContent.classList.add('active');
+                loveBeautyContent.style.display = 'flex';
+                loveBeautyContent.style.flexDirection = 'column';
+                loveBeautyContent.style.opacity = '1';
+                
+                // Ensure the iframe for Love & Beauty campaign is properly loaded
+                const loveBeautyIframe = loveBeautyContent.querySelector('iframe');
+                if (loveBeautyIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = loveBeautyIframe.src;
+                    loveBeautyIframe.src = '';
+                    setTimeout(() => {
+                        loveBeautyIframe.src = currentSrc || 'https://tecchoru.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Love & Beauty content activated');
+            } else {
+                console.warn('⚠️ Love & Beauty content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Love & Beauty activation error:', error);
         }
     }
 
