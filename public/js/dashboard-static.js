@@ -430,6 +430,9 @@ class StaticDashboardManager {
                 case 'love-and-beauty':
                     this.activateLoveAndBeautyContent();
                     break;
+                case 'ramadhan-lebaran':
+                    this.activateRamadhanLebaranContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -606,6 +609,39 @@ class StaticDashboardManager {
             }
         } catch (error) {
             console.error('🎯 Love & Beauty activation error:', error);
+        }
+    }
+
+    activateRamadhanLebaranContent() {
+        try {
+            // Check for the Ramadhan & Lebaran campaign ID: "ramadhan-lebaran"
+            const ramadhanContent = document.getElementById('ramadhan-lebaran') ||
+                                   document.getElementById('ramadhanLebaranContent') || 
+                                   document.querySelector('.ramadhan-lebaran-section');
+            
+            if (ramadhanContent) {
+                ramadhanContent.classList.add('active');
+                ramadhanContent.style.display = 'flex';
+                ramadhanContent.style.flexDirection = 'column';
+                ramadhanContent.style.opacity = '1';
+                
+                // Ensure the iframe for Ramadhan & Lebaran campaign is properly loaded
+                const ramadhanIframe = ramadhanContent.querySelector('iframe');
+                if (ramadhanIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = ramadhanIframe.src;
+                    ramadhanIframe.src = '';
+                    setTimeout(() => {
+                        ramadhanIframe.src = currentSrc || 'https://vrzmleiw.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Ramadhan & Lebaran content activated');
+            } else {
+                console.warn('⚠️ Ramadhan & Lebaran content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Ramadhan & Lebaran activation error:', error);
         }
     }
 
