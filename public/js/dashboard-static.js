@@ -433,6 +433,9 @@ class StaticDashboardManager {
                 case 'ramadhan-lebaran':
                     this.activateRamadhanLebaranContent();
                     break;
+                case 'member-month':
+                    this.activateMemberMonthContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -645,6 +648,39 @@ class StaticDashboardManager {
         }
     }
 
+    activateMemberMonthContent() {
+        try {
+            // Check for the Member Month campaign ID: "member-month"
+            const memberContent = document.getElementById('member-month') ||
+                                 document.getElementById('memberMonthContent') || 
+                                 document.querySelector('.member-month-section');
+            
+            if (memberContent) {
+                memberContent.classList.add('active');
+                memberContent.style.display = 'flex';
+                memberContent.style.flexDirection = 'column';
+                memberContent.style.opacity = '1';
+                
+                // Ensure the iframe for Member Month campaign is properly loaded
+                const memberIframe = memberContent.querySelector('iframe');
+                if (memberIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = memberIframe.src;
+                    memberIframe.src = '';
+                    setTimeout(() => {
+                        memberIframe.src = currentSrc || 'https://gjfjurqx.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Member Month content activated');
+            } else {
+                console.warn('⚠️ Member Month content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Member Month activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -671,9 +707,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the New Year campaign tab (preferred default - latest campaign) or use first available
+                // Find the Member Month campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'new-year-new-me'
+                    tab.dataset && tab.dataset.campaign === 'member-month'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
