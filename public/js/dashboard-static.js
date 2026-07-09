@@ -436,6 +436,9 @@ class StaticDashboardManager {
                 case 'member-month':
                     this.activateMemberMonthContent();
                     break;
+                case 'kenali-kolesterol':
+                    this.activateKenaliKolesterolContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -681,6 +684,39 @@ class StaticDashboardManager {
         }
     }
 
+    activateKenaliKolesterolContent() {
+        try {
+            // Check for the Kenali Kolesterol campaign ID: "kenali-kolesterol"
+            const kolesterolContent = document.getElementById('kenali-kolesterol') ||
+                                     document.getElementById('kenaliKolesterolContent') || 
+                                     document.querySelector('.kenali-kolesterol-section');
+            
+            if (kolesterolContent) {
+                kolesterolContent.classList.add('active');
+                kolesterolContent.style.display = 'flex';
+                kolesterolContent.style.flexDirection = 'column';
+                kolesterolContent.style.opacity = '1';
+                
+                // Ensure the iframe for Kenali Kolesterol campaign is properly loaded
+                const kolesterolIframe = kolesterolContent.querySelector('iframe');
+                if (kolesterolIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = kolesterolIframe.src;
+                    kolesterolIframe.src = '';
+                    setTimeout(() => {
+                        kolesterolIframe.src = currentSrc || 'https://qhwftvbb.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Kenali Kolesterol Anda content activated');
+            } else {
+                console.warn('⚠️ Kenali Kolesterol content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Kenali Kolesterol activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -707,9 +743,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Member Month campaign tab (preferred default - latest campaign) or use first available
+                // Find the Kenali Kolesterol campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'member-month'
+                    tab.dataset && tab.dataset.campaign === 'kenali-kolesterol'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
