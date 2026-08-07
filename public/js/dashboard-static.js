@@ -439,6 +439,9 @@ class StaticDashboardManager {
                 case 'kenali-kolesterol':
                     this.activateKenaliKolesterolContent();
                     break;
+                case 'pesta-promo-merdeka':
+                    this.activatePestaPromoMerdekaContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -717,6 +720,39 @@ class StaticDashboardManager {
         }
     }
 
+    activatePestaPromoMerdekaContent() {
+        try {
+            // Check for the Pesta Promo Merdeka campaign ID: "pesta-promo-merdeka"
+            const merdekaContent = document.getElementById('pesta-promo-merdeka') ||
+                                  document.getElementById('pestaPromoMerdekaContent') || 
+                                  document.querySelector('.pesta-promo-merdeka-section');
+            
+            if (merdekaContent) {
+                merdekaContent.classList.add('active');
+                merdekaContent.style.display = 'flex';
+                merdekaContent.style.flexDirection = 'column';
+                merdekaContent.style.opacity = '1';
+                
+                // Ensure the iframe for Pesta Promo Merdeka campaign is properly loaded
+                const merdekaIframe = merdekaContent.querySelector('iframe');
+                if (merdekaIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = merdekaIframe.src;
+                    merdekaIframe.src = '';
+                    setTimeout(() => {
+                        merdekaIframe.src = currentSrc || 'https://latryzns.gensparkspace.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Pesta Promo Merdeka 2026 content activated');
+            } else {
+                console.warn('⚠️ Pesta Promo Merdeka content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Pesta Promo Merdeka activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -743,9 +779,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Kenali Kolesterol campaign tab (preferred default - latest campaign) or use first available
+                // Find the Pesta Promo Merdeka campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'kenali-kolesterol'
+                    tab.dataset && tab.dataset.campaign === 'pesta-promo-merdeka'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
