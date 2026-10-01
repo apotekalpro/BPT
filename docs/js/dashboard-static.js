@@ -442,6 +442,9 @@ class StaticDashboardManager {
                 case 'pesta-promo-merdeka':
                     this.activatePestaPromoMerdekaContent();
                     break;
+                case 'kenali-tulang-sendi':
+                    this.activateKenaliTulangSendiContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -753,6 +756,39 @@ class StaticDashboardManager {
         }
     }
 
+    activateKenaliTulangSendiContent() {
+        try {
+            // Check for the Kenali Tulang & Sendi campaign ID: "kenali-tulang-sendi"
+            const tulangSendiContent = document.getElementById('kenali-tulang-sendi') ||
+                                       document.getElementById('kenaliTulangSendiContent') || 
+                                       document.querySelector('.kenali-tulang-sendi-section');
+            
+            if (tulangSendiContent) {
+                tulangSendiContent.classList.add('active');
+                tulangSendiContent.style.display = 'flex';
+                tulangSendiContent.style.flexDirection = 'column';
+                tulangSendiContent.style.opacity = '1';
+                
+                // Ensure the iframe for Kenali Tulang & Sendi campaign is properly loaded
+                const tulangSendiIframe = tulangSendiContent.querySelector('iframe');
+                if (tulangSendiIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = tulangSendiIframe.src;
+                    tulangSendiIframe.src = '';
+                    setTimeout(() => {
+                        tulangSendiIframe.src = currentSrc || 'https://32be6010-ada8-4560-8330-60e2e195cfbe.vip.gensparksite.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Oct: Kenali Tulang & Sendi Anda content activated');
+            } else {
+                console.warn('⚠️ Kenali Tulang & Sendi content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Kenali Tulang & Sendi activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -779,9 +815,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Pesta Promo Merdeka campaign tab (preferred default - latest campaign) or use first available
+                // Find the Kenali Tulang & Sendi campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'pesta-promo-merdeka'
+                    tab.dataset && tab.dataset.campaign === 'kenali-tulang-sendi'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
