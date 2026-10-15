@@ -3,7 +3,7 @@ class StaticDashboardManager {
     constructor() {
         console.log('🔧 Starting static dashboard initialization...');
         this.currentUser = null;
-        this.currentTab = 'homepage';
+        this.currentTab = 'campaign';  // Changed default from 'homepage' to 'campaign'
         this.isStatic = true;
         
         // Google Sheets configuration
@@ -324,6 +324,12 @@ class StaticDashboardManager {
             }
             
             console.log('✅ User info updated safely');
+            
+            // Switch to campaign tab as default after login
+            setTimeout(() => {
+                console.log('🎯 Switching to default Campaign tab');
+                this.safeTabSwitch('campaign');
+            }, 100);
         } catch (error) {
             console.error('⚠️ Error in safeUpdateUserInfo:', error);
         }
