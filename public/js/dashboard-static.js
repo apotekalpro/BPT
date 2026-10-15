@@ -3,7 +3,7 @@ class StaticDashboardManager {
     constructor() {
         console.log('🔧 Starting static dashboard initialization...');
         this.currentUser = null;
-        this.currentTab = 'homepage';
+        this.currentTab = 'campaign';  // Changed default from 'homepage' to 'campaign'
         this.isStatic = true;
         
         // Google Sheets configuration
@@ -141,6 +141,16 @@ class StaticDashboardManager {
         }
     }
 
+    // Check if running inside an iframe
+    isInIframe() {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            // If we can't access window.top due to cross-origin, we're definitely in an iframe
+            return true;
+        }
+    }
+
     safeCheckAuth() {
         try {
             console.log('🔐 Safely checking static authentication...');
@@ -153,11 +163,74 @@ class StaticDashboardManager {
                 return;
             }
             
+            // Check if running inside an iframe - Auto-login for embedded dashboards
+            if (this.isInIframe()) {
+                console.log('🖼️ Running inside iframe - enabling auto-login bypass');
+                
+                // Check for URL parameters first (for passing user info from parent)
+                const urlParams = new URLSearchParams(window.location.search);
+                const autoLoginToken = urlParams.get('autoLogin');
+                const userType = urlParams.get('userType') || 'guest';
+                const userName = urlParams.get('userName') || 'Guest User';
+                
+                if (autoLoginToken === 'true' || autoLoginToken === '1') {
+                    // Auto-login with URL parameters
+                    console.log('🔓 Auto-login enabled via URL parameter');
+                    this.currentUser = {
+                        type: userType,
+                        displayName: userName,
+                        fullStoreName: userName,
+                        isAutoLogin: true,
+                        isIframeEmbedded: true
+                    };
+                    localStorage.setItem('apotek_alpro_user', JSON.stringify(this.currentUser));
+                    this.safeUpdateUserInfo();
+                    return;
+                }
+                
+                // Check if already auto-logged in from previous iframe session
+                const savedUser = localStorage.getItem('apotek_alpro_user');
+                if (savedUser) {
+                    try {
+                        const userData = JSON.parse(savedUser);
+                        if (userData.isIframeEmbedded) {
+                            console.log('🔓 Iframe auto-login session found');
+                            this.currentUser = userData;
+                            this.safeUpdateUserInfo();
+                            return;
+                        }
+                    } catch (e) {
+                        console.error('🔐 Error parsing saved user:', e);
+                    }
+                }
+                
+                // Default iframe auto-login (no authentication required)
+                console.log('🔓 Auto-login for iframe without URL parameters');
+                this.currentUser = {
+                    type: 'guest',
+                    displayName: 'Guest User',
+                    fullStoreName: 'Dashboard Viewer',
+                    isAutoLogin: true,
+                    isIframeEmbedded: true
+                };
+                localStorage.setItem('apotek_alpro_user', JSON.stringify(this.currentUser));
+                this.safeUpdateUserInfo();
+                return;
+            }
+            
+            // Normal authentication flow for direct access (not in iframe)
             // Check localStorage for saved user session
             const savedUser = localStorage.getItem('apotek_alpro_user');
             if (savedUser) {
                 try {
                     this.currentUser = JSON.parse(savedUser);
+                    // If it's an auto-login session but not in iframe, force re-login
+                    if (this.currentUser.isAutoLogin && !this.isInIframe()) {
+                        console.log('🔐 Auto-login session detected outside iframe - requiring login');
+                        localStorage.removeItem('apotek_alpro_user');
+                        this.safeShowLoginPrompt();
+                        return;
+                    }
                     console.log('🔐 User loaded from localStorage:', this.currentUser);
                     this.safeUpdateUserInfo();
                     return;
@@ -251,6 +324,12 @@ class StaticDashboardManager {
             }
             
             console.log('✅ User info updated safely');
+            
+            // Switch to campaign tab as default after login
+            setTimeout(() => {
+                console.log('🎯 Switching to default Campaign tab');
+                this.safeTabSwitch('campaign');
+            }, 100);
         } catch (error) {
             console.error('⚠️ Error in safeUpdateUserInfo:', error);
         }
