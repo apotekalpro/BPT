@@ -524,6 +524,9 @@ class StaticDashboardManager {
                 case 'kenali-tulang-sendi':
                     this.activateKenaliTulangSendiContent();
                     break;
+                case 'kenali-gula-anda':
+                    this.activateKenaliGulaAndaContent();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -868,6 +871,37 @@ class StaticDashboardManager {
         }
     }
 
+    activateKenaliGulaAndaContent() {
+        try {
+            const gulaContent = document.getElementById('kenali-gula-anda') || 
+                              document.querySelector('[id="kenali-gula-anda"]');
+            
+            if (gulaContent) {
+                gulaContent.classList.add('active');
+                gulaContent.style.display = 'flex';
+                gulaContent.style.flexDirection = 'column';
+                gulaContent.style.opacity = '1';
+                
+                // Ensure the iframe for Kenali Gula Anda campaign is properly loaded
+                const gulaIframe = gulaContent.querySelector('iframe');
+                if (gulaIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = gulaIframe.src;
+                    gulaIframe.src = '';
+                    setTimeout(() => {
+                        gulaIframe.src = currentSrc || 'https://7186149f-82f1-4d2e-8f09-61aa92e0168c.vip.gensparksite.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ Nov: Kenali Gula Anda content activated');
+            } else {
+                console.warn('⚠️ Kenali Gula Anda content not found');
+            }
+        } catch (error) {
+            console.error('🎯 Kenali Gula Anda activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -894,9 +928,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Kenali Tulang & Sendi campaign tab (preferred default - latest campaign) or use first available
+                // Find the Kenali Gula Anda campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'kenali-tulang-sendi'
+                    tab.dataset && tab.dataset.campaign === 'kenali-gula-anda'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
