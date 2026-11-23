@@ -359,8 +359,9 @@
 <div class="modal-bg" id="modalBg">
   <div class="modal">
     <h3>GitHub Token Diperlukan</h3>
-    <p>Masukkan GitHub Personal Access Token (PAT) dengan scope <strong>workflow</strong>. Token disimpan di browser Anda.<br>
-    <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank" rel="noopener">Buat token baru →</a></p>
+    <p>Masukkan GitHub Personal Access Token (PAT) dengan scope <strong>workflow</strong>.<br>
+    Token <strong>disimpan otomatis</strong> — hanya perlu dimasukkan sekali.<br>
+    <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank" rel="noopener">Cara buat token: GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → centang <strong>workflow</strong> → Generate &amp; salin token (ghp_xxx)</a></p>
     <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Batal</button>
@@ -515,9 +516,15 @@ async function load(notify) {
   }
 }
 
-// ── Token ──
-function getToken() { try { return localStorage.getItem('gh_token')||''; } catch { return ''; } }
-function setToken(t) { try { localStorage.setItem('gh_token',t); } catch {} }
+// ── Token ── (localStorage primary, sessionStorage fallback for strict iframe policies)
+function getToken() {
+  try { const v=localStorage.getItem('gh_token'); if(v) return v; } catch {}
+  try { return sessionStorage.getItem('gh_token')||''; } catch { return ''; }
+}
+function setToken(t) {
+  try { localStorage.setItem('gh_token',t); } catch {}
+  try { sessionStorage.setItem('gh_token',t); } catch {}
+}
 function openModal() { document.getElementById('modalBg').classList.add('show'); document.getElementById('tokenInput').value=getToken(); setTimeout(()=>document.getElementById('tokenInput').focus(),80); }
 function closeModal() { document.getElementById('modalBg').classList.remove('show'); }
 function saveToken() {
