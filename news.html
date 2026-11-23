@@ -472,9 +472,14 @@ function render() {
 
   el.innerHTML = items.map(a => {
     const c = a.color || col(a.source);
-    // Clean up summary: skip if it looks like a raw URL or is just the title
+    // Clean up summary: skip raw URLs, HTML artifacts, or near-duplicate of title
     const rawSum = (a.summary || '').trim();
-    const showSum = rawSum && !rawSum.startsWith('http') && rawSum !== a.title && rawSum.length > 20;
+    const showSum = rawSum
+      && !rawSum.startsWith('http')
+      && !rawSum.startsWith('a href')
+      && !rawSum.startsWith('&lt;')
+      && rawSum !== a.title
+      && rawSum.length > 20;
 
     return `<a class="item" href="${esc(a.url)}" target="_blank" rel="noopener">
       <div class="thumb">${thumbHtml(a.image, a.source, c, 'large')}</div>
