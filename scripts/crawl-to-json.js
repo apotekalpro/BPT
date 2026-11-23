@@ -46,7 +46,9 @@ function extractCDATA(str) {
 function decodeEntities(str) {
   return (str || '')
     .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(n));
+    .replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+    .replace(/&nbsp;/g, ' ').replace(/&thinsp;/g, ' ').replace(/&ensp;/g, ' ').replace(/&emsp;/g, ' ')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(n));
 }
 
 function stripHtml(html) {
@@ -73,7 +75,9 @@ function parseItems(xml) {
     })();
     const pubDate = parseXmlText(block, 'pubDate');
     const rawDesc = extractCDATA(parseXmlText(block, 'description'));
-    const summary = stripHtml(rawDesc).slice(0, 300);
+    const summary = stripHtml(rawDesc)
+      .replace(/\s{2,}\S+\.(com|id|co\.id|net|org)\s*$/i, '')  // strip trailing "  Source.com" (Google News)
+      .trim().slice(0, 300);
     let image = (() => {
       const enc = block.match(/<enclosure[^>]+url="([^"]+)"/i);
       if (enc) return enc[1];
@@ -179,31 +183,50 @@ async function main() {
 
   const results = await Promise.all(tasks);
 
-  // Deduplicate by title
-  const seen = new Set();
+  // Deduplicate by title — preserve trending:true from any duplicate
+  const seen = new Map(); // title → index in articles[]
   const articles = [];
   for (const batch of results) {
     for (const a of batch) {
-      if (a.title && !seen.has(a.title)) {
-        seen.add(a.title);
+      if (!a.title) continue;
+      if (!seen.has(a.title)) {
+        seen.set(a.title, articles.length);
         articles.push(a);
+      } else if (a.trending) {
+        articles[seen.get(a.title)].trending = true; // propagate flag to whichever version won
       }
     }
   }
 
+  // Filter out non-health articles
+  const HEALTH_KW = [
+    'sehat','kesehatan','penyakit','obat','dokter','rumah sakit','medis','klinik',
+    'nutrisi','gizi','vitamin','vaksin','virus','bakteri','kanker','diabetes',
+    'hipertensi','jantung','stroke','apotek','farmasi','bpjs','diet','kalori',
+    'lemak','gula darah','tulang','kulit','mata','gigi','hamil','bayi','balita',
+    'lansia','imun','infeksi','demam','flu','batuk','asma','alergi','mental',
+    'depresi','stres','tidur','olahraga','fitness','sanitasi','hygiene',
+    'detik health','kesehatan.kompas','liputan6.com/health','halodoc','alodokter',
+  ];
+  const healthArticles = articles.filter(a => {
+    const text = ((a.title||'') + ' ' + (a.summary||'') + ' ' + (a.source||'')).toLowerCase();
+    return HEALTH_KW.some(kw => text.includes(kw));
+  });
+  console.log(`[Crawl] Health filter: ${healthArticles.length} of ${articles.length} articles kept`);
+
   // Sort newest first, then filter to last 7 days
-  articles.sort((a, b) => {
+  healthArticles.sort((a, b) => {
     const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
     const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
     return tb - ta;
   });
 
   const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const recent = articles.filter(a => {
+  const recent = healthArticles.filter(a => {
     if (!a.publishedAt) return false;
     return new Date(a.publishedAt).getTime() >= cutoff;
   });
-  console.log(`[Crawl] 7-day filter: ${recent.length} of ${articles.length} articles kept`);
+  console.log(`[Crawl] 7-day filter: ${recent.length} of ${healthArticles.length} articles kept`);
 
   // Fetch OG image+description for articles missing images (up to 60, in parallel batches)
   const needsOG = recent.filter(a => !a.image);
