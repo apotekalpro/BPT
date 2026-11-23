@@ -31,9 +31,48 @@
       font-size: 13px; font-weight: 500; transition: background .2s;
     }
     .btn-refresh:hover { background: rgba(255,255,255,.28); }
+    .btn-refresh:disabled { opacity: .55; cursor: default; }
     .btn-refresh.spin svg { animation: spin .8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .last-upd { color: rgba(255,255,255,.65); font-size: 11px; }
+
+    /* Token modal */
+    .modal-bg {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45);
+      z-index: 500; align-items: center; justify-content: center;
+    }
+    .modal-bg.show { display: flex; }
+    .modal {
+      background: #fff; border-radius: 14px; padding: 28px 28px 24px;
+      max-width: 440px; width: 92%; box-shadow: 0 20px 60px rgba(0,0,0,.2);
+    }
+    .modal h3 { font-size: 16px; margin-bottom: 6px; }
+    .modal p { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.55; }
+    .modal label { font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 5px; }
+    .modal input[type=password], .modal input[type=text] {
+      width: 100%; border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 9px 12px; font-size: 13px; outline: none; margin-bottom: 14px;
+    }
+    .modal input:focus { border-color: var(--brand); }
+    .modal-hint { font-size: 11.5px; color: var(--text-muted); margin-bottom: 18px; }
+    .modal-hint a { color: var(--brand); }
+    .modal-btns { display: flex; gap: 10px; justify-content: flex-end; }
+    .modal-btns button { padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+    .btn-cancel { background: var(--surface-alt); color: var(--text-muted); }
+    .btn-save { background: var(--brand); color: #fff; }
+    .btn-save:hover { background: var(--brand-dark); }
+
+    /* Progress bar */
+    .progress-bar {
+      display: none; height: 3px; background: var(--border);
+      border-radius: 0; overflow: hidden;
+    }
+    .progress-bar.show { display: block; }
+    .progress-fill {
+      height: 100%; background: var(--brand);
+      animation: prog 90s linear forwards;
+    }
+    @keyframes prog { from { width: 0% } to { width: 95% } }
 
     .container { max-width: 1400px; margin: 0 auto; padding: 22px 18px; }
 
@@ -151,15 +190,35 @@
   </div>
   <div class="header-right">
     <span class="last-upd" id="lu">—</span>
-    <button class="btn-refresh" id="btnR" onclick="reload()">
+    <button class="btn-refresh" id="btnR" onclick="triggerCrawl()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
         <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
       </svg>
-      Refresh
+      <span id="btnTxt">Crawl Sekarang</span>
     </button>
   </div>
 </header>
+
+<!-- Progress bar shown while crawl is running -->
+<div class="progress-bar" id="progBar"><div class="progress-fill" id="progFill"></div></div>
+
+<!-- GitHub Token modal -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h3>🔑 GitHub Token diperlukan</h3>
+    <p>Untuk memicu crawl baru, masukkan <strong>GitHub Personal Access Token</strong> dengan izin <code>workflow</code>. Token disimpan di browser (localStorage) dan tidak dikirim ke mana-mana selain GitHub API.</p>
+    <label>Personal Access Token (classic)</label>
+    <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+    <div class="modal-hint">
+      Buat token di: <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank">github.com/settings/tokens</a> → centang scope <strong>workflow</strong>
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">Batal</button>
+      <button class="btn-save" onclick="saveToken()">Simpan & Crawl</button>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="info-bar">
@@ -190,28 +249,26 @@
 <div class="toast" id="toast"></div>
 
 <script>
+// ── Constants ────────────────────────────────────────────────────────────────
+const REPO   = 'apotekalpro/BPT';
+const BRANCH = 'genspark_ai_developer';
+const WF     = 'crawl-news.yml';
+
 const COLORS = {
   detik:'#e63a2e', kompas:'#c0392b', liputan:'#e67e22', tribun:'#d35400',
   tempo:'#2c3e50', cnbc:'#0056b3', republika:'#1a7c47', halodoc:'#00b4d8',
   kemenkes:'#2d6a4f', antara:'#2980b9'
 };
 
+// ── Utilities ────────────────────────────────────────────────────────────────
 function col(src) {
   if (!src) return '#6c757d';
   const s = src.toLowerCase();
   for (const [k,c] of Object.entries(COLORS)) if (s.includes(k)) return c;
   return '#6c757d';
 }
-
-function ini(src) {
-  if (!src) return '?';
-  return src.replace(/\.(com|co\.id|id)$/i,'').slice(0,2).toUpperCase();
-}
-
-function esc(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
+function ini(src) { return (src||'?').replace(/\.(com|co\.id|id)$/i,'').slice(0,2).toUpperCase(); }
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function ago(ts) {
   if (!ts) return '';
   const d = (Date.now() - new Date(ts).getTime()) / 1000;
@@ -220,13 +277,30 @@ function ago(ts) {
   if (d < 86400) return Math.floor(d/3600) + ' jam lalu';
   return Math.floor(d/86400) + ' hari lalu';
 }
+function isLight(hex) {
+  try { const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16); return (r*299+g*587+b*114)/1000>180; } catch { return false; }
+}
+function dataUrl() {
+  const base = location.href.replace(/\/news\.html.*$/, '');
+  return base + '/public/news-data.json';
+}
 
-let all=[], fsrc='all', fq='';
+// ── State ────────────────────────────────────────────────────────────────────
+let all=[], fsrc='all', fq='', lastCrawledAt='', pollTimer=null;
 
+// ── Card rendering ───────────────────────────────────────────────────────────
+function noPic(src, c) {
+  const bg=c||'#6c757d', tc=isLight(bg)?'#333':'#fff';
+  return `<div class="nopic" style="background:${bg}18"><div class="ini" style="background:${bg};color:${tc}">${ini(src)}</div><span class="sn" style="color:${bg}">${esc(src||'')}</span></div>`;
+}
+function imgErr(el, src, c) {
+  const badge = el.closest('.thumb').querySelector('.badge');
+  el.closest('.thumb').innerHTML = noPic(src,c) + (badge ? badge.outerHTML : '');
+}
 function card(a) {
   const c = a.color || col(a.source);
   const thumb = a.image
-    ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="imgErr(this,'${esc(a.source)}','${c}')">`
+    ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="imgErr(this,'${esc(a.source).replace(/'/g,"\\'")}','${c}')">`
     : noPic(a.source, c);
   return `<article class="card">
     <div class="thumb">${thumb}<div class="badge"><span class="dot" style="background:${c}"></span>${esc(a.source||'Berita')}</div></div>
@@ -248,23 +322,6 @@ function card(a) {
   </article>`;
 }
 
-function noPic(src, c) {
-  const bg = c || '#6c757d';
-  const tc = isLight(bg) ? '#333' : '#fff';
-  return `<div class="nopic" style="background:${bg}18">
-    <div class="ini" style="background:${bg};color:${tc}">${ini(src)}</div>
-    <span class="sn" style="color:${bg}">${esc(src||'')}</span>
-  </div>`;
-}
-
-function imgErr(el, src, c) {
-  el.closest('.thumb').innerHTML = noPic(src, c) + el.closest('.thumb').querySelector('.badge').outerHTML;
-}
-
-function isLight(hex) {
-  try { const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16); return (r*299+g*587+b*114)/1000>180; } catch { return false; }
-}
-
 function filtered() {
   let items = all;
   if (fsrc !== 'all') items = items.filter(a => (a.source||'').toLowerCase().includes(fsrc.toLowerCase()));
@@ -283,55 +340,159 @@ function render() {
 }
 
 function sf(src, btn) {
-  fsrc = src;
-  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  render();
+  fsrc=src; document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); render();
 }
+function sq(v) { fq=v.trim(); render(); }
 
-function sq(v) { fq = v.trim(); render(); }
-
-// Determine base path for the data file (works both on GitHub Pages and locally)
-function dataUrl() {
-  const base = location.href.replace(/\/news\.html.*$/, '');
-  return base + '/public/news-data.json';
-}
-
-async function load(showToast) {
+// ── Data loading ─────────────────────────────────────────────────────────────
+async function load(notify) {
   try {
     const r = await fetch(dataUrl() + '?t=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const d = await r.json();
+    const changed = d.crawledAt !== lastCrawledAt;
     all = d.articles || [];
+    lastCrawledAt = d.crawledAt || '';
     render();
-    // Stats
-    const src = {};
-    all.forEach(a => { src[a.source] = (src[a.source]||0)+1; });
+    const src={};
+    all.forEach(a => { src[a.source]=(src[a.source]||0)+1; });
     const top = Object.entries(src).sort((a,b)=>b[1]-a[1]).slice(0,8);
     document.getElementById('stats').innerHTML = [
       `<div class="spill"><strong>${all.length}</strong>&nbsp;berita</div>`,
-      ...top.map(([s,n]) => `<div class="spill"><span class="dot" style="background:${col(s)}"></span>${esc(s)}: <strong>${n}</strong></div>`)
+      ...top.map(([s,n])=>`<div class="spill"><span class="dot" style="background:${col(s)}"></span>${esc(s)}: <strong>${n}</strong></div>`)
     ].join('');
     document.getElementById('lu').textContent = d.crawledAt ? 'Update: ' + ago(d.crawledAt) : '—';
-    if (showToast) toast('✓ Data diperbarui', 'ok');
+    if (notify && changed) toast('✓ Berita terbaru berhasil dimuat!', 'ok');
+    return changed;
   } catch(e) {
-    document.getElementById('grid').innerHTML = `<div class="state"><div style="font-size:40px">⚠️</div><strong>Gagal memuat data</strong><p>${esc(e.message)}</p></div>`;
-    if (showToast) toast('Gagal: ' + e.message, 'err');
+    if (notify) toast('Gagal memuat: ' + e.message, 'err');
+    return false;
   }
 }
 
-function reload() {
+// ── Token management ─────────────────────────────────────────────────────────
+function getToken() { try { return localStorage.getItem('gh_token') || ''; } catch { return ''; } }
+function setToken(t) { try { localStorage.setItem('gh_token', t); } catch {} }
+
+function openModal() { document.getElementById('modalBg').classList.add('show'); document.getElementById('tokenInput').value = getToken(); setTimeout(()=>document.getElementById('tokenInput').focus(),100); }
+function closeModal() { document.getElementById('modalBg').classList.remove('show'); }
+function saveToken() {
+  const t = document.getElementById('tokenInput').value.trim();
+  if (!t) { toast('Token tidak boleh kosong', 'err'); return; }
+  setToken(t); closeModal(); startCrawl(t);
+}
+
+// Close modal on background click
+document.getElementById('modalBg').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+// ── Crawl trigger ─────────────────────────────────────────────────────────────
+function triggerCrawl() {
+  const token = getToken();
+  if (!token) { openModal(); return; }
+  startCrawl(token);
+}
+
+async function startCrawl(token) {
   const btn = document.getElementById('btnR');
-  btn.classList.add('spin'); btn.disabled = true;
-  load(true).finally(() => { btn.classList.remove('spin'); btn.disabled = false; });
+  const txt = document.getElementById('btnTxt');
+  btn.disabled = true; btn.classList.add('spin');
+  txt.textContent = 'Memulai crawl...';
+  showProgress(true);
+
+  try {
+    // Trigger GitHub Actions workflow_dispatch
+    const res = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${WF}/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+      body: JSON.stringify({ ref: BRANCH }),
+    });
+
+    if (res.status === 401 || res.status === 403) {
+      // Bad token — clear it and ask again
+      setToken('');
+      toast('Token tidak valid atau kadaluarsa. Masukkan token baru.', 'err');
+      resetBtn();
+      openModal();
+      return;
+    }
+    if (res.status === 404) {
+      toast('Workflow tidak ditemukan. Pastikan workflow sudah di-push ke repo.', 'err');
+      resetBtn(); return;
+    }
+    if (!res.ok) {
+      const err = await res.json().catch(()=>({}));
+      throw new Error(err.message || 'HTTP ' + res.status);
+    }
+
+    // Workflow started (204 No Content = success)
+    toast('🚀 Crawl dimulai! Memantau update (~1–2 menit)...', '');
+    txt.textContent = 'Menunggu data...';
+    pollForUpdate();
+
+  } catch(e) {
+    toast('Gagal memulai crawl: ' + e.message, 'err');
+    resetBtn();
+  }
+}
+
+// Poll news-data.json every 20s until crawledAt changes (max 3 min)
+function pollForUpdate() {
+  clearTimeout(pollTimer);
+  let attempts = 0;
+  const maxAttempts = 9; // 9 × 20s = 3 min
+
+  async function check() {
+    attempts++;
+    const changed = await load(false);
+    if (changed) {
+      toast('✅ Berita baru berhasil dimuat!', 'ok');
+      resetBtn();
+      showProgress(false);
+    } else if (attempts >= maxAttempts) {
+      toast('Crawl selesai. Klik lagi untuk memuat ulang.', '');
+      resetBtn();
+      showProgress(false);
+    } else {
+      document.getElementById('btnTxt').textContent = `Menunggu… (${attempts * 20}s)`;
+      pollTimer = setTimeout(check, 20000);
+    }
+  }
+
+  pollTimer = setTimeout(check, 20000); // first check after 20s
+}
+
+function resetBtn() {
+  const btn = document.getElementById('btnR');
+  btn.disabled = false; btn.classList.remove('spin');
+  document.getElementById('btnTxt').textContent = 'Crawl Sekarang';
+}
+
+function showProgress(on) {
+  const bar = document.getElementById('progBar');
+  if (on) {
+    bar.classList.add('show');
+    // Reset animation
+    const fill = document.getElementById('progFill');
+    fill.style.animation = 'none';
+    void fill.offsetWidth;
+    fill.style.animation = '';
+  } else {
+    bar.classList.remove('show');
+  }
 }
 
 function toast(msg, type) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.className = 'toast show' + (type ? ' '+type : '');
-  clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 3500);
+  clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 5000);
 }
 
+// ── Init ─────────────────────────────────────────────────────────────────────
 setInterval(render, 60000);
 load(false);
 </script>
