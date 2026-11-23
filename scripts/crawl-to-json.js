@@ -75,8 +75,13 @@ function parseItems(xml) {
     })();
     const pubDate = parseXmlText(block, 'pubDate');
     const rawDesc = extractCDATA(parseXmlText(block, 'description'));
+    // Google News RSS embeds the real article URL in description's first <a href>
+    const actualLink = (() => {
+      const ahref = rawDesc.match(/<a[^>]+href="(https?:\/\/[^"]+)"/i);
+      return (ahref && !ahref[1].includes('news.google.com')) ? ahref[1].trim() : null;
+    })();
     const summary = stripHtml(rawDesc)
-      .replace(/\s{2,}\S+\.(com|id|co\.id|net|org)\s*$/i, '')  // strip trailing "  Source.com" (Google News)
+      .replace(/\s{2,}\S+\.(com|id|co\.id|net|org)\s*$/i, '')
       .trim().slice(0, 300);
     let image = (() => {
       const enc = block.match(/<enclosure[^>]+url="([^"]+)"/i);
@@ -89,8 +94,9 @@ function parseItems(xml) {
     })();
     const sourceTag = block.match(/<source[^>]*>([^<]+)<\/source>/i);
     const source = sourceTag ? sourceTag[1].trim() : null;
-    if (title && link && link.startsWith('http')) {
-      items.push({ title, url: link, image, summary, pubDate, source });
+    const finalUrl = actualLink || link; // prefer real article URL over Google News redirect
+    if (title && finalUrl && finalUrl.startsWith('http')) {
+      items.push({ title, url: finalUrl, image, summary, pubDate, source });
     }
   }
   return items;
@@ -134,8 +140,12 @@ async function fetchOGData(url) {
                   body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
     const image = imgM ? imgM[1].trim() : null;
     const rawDesc = descM ? decodeEntities(descM[1]).trim() : null;
-    // Reject images/descriptions from Google News intermediate page
-    const badImg = image && (image.includes('news.google.com') || image.includes('gstatic.com'));
+    // Reject images from Google CDN/branding (News icon, app logos on redirect pages)
+    const badImg = image && (
+      image.includes('news.google.com') ||
+      image.includes('gstatic.com') ||
+      image.includes('googleusercontent.com')
+    );
     const googleDesc = /liputan berita terbaru yang komprehensif|comprehensive.*up-to-date news|google berita/i;
     const description = rawDesc && !googleDesc.test(rawDesc) ? rawDesc.slice(0, 300) : null;
     return { image: badImg ? null : image, description };
@@ -196,10 +206,8 @@ async function crawlGNews(query) {
     const title = srcName
       ? item.title.replace(new RegExp(' - ' + srcName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '').trim()
       : item.title;
-    // Decode the actual article URL from Google News base64 blob (avoids JS-redirect wall)
-    const actualUrl = decodeGoogleNewsUrl(item.url) || item.url;
     return {
-      title, url: actualUrl, image: item.image || null,
+      title, url: item.url, image: item.image || null,
       summary: item.summary, publishedAt: item.pubDate,
       source: srcName || 'Google News', color: colorFor(srcName),
       trending: query.trending && idx < 5 ? true : undefined,
