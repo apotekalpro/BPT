@@ -127,3 +127,8 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+
+# SQLite database (auto-generated at runtime)
+*.db
+*.sqlite
+*.sqlite3
