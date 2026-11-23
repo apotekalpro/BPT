@@ -168,17 +168,24 @@ async function main() {
     }
   }
 
-  // Sort newest first
+  // Sort newest first, then filter to last 14 days
   articles.sort((a, b) => {
     const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
     const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
     return tb - ta;
   });
 
+  const cutoff = Date.now() - 14 * 24 * 60 * 60 * 1000;
+  const recent = articles.filter(a => {
+    if (!a.publishedAt) return false;
+    return new Date(a.publishedAt).getTime() >= cutoff;
+  });
+  console.log(`[Crawl] Filtered to last 14 days: ${recent.length} of ${articles.length} articles`);
+
   const output = {
     crawledAt: new Date().toISOString(),
-    count: articles.length,
-    articles,
+    count: recent.length,
+    articles: recent,
   };
 
   const outPath = path.join(__dirname, '..', 'public', 'news-data.json');
