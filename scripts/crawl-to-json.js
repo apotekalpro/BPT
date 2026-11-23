@@ -96,6 +96,29 @@ function parseItems(xml) {
   return items;
 }
 
+// ── Google News URL decoder ───────────────────────────────────────────────────
+// Google News RSS links are news.google.com/rss/articles/CBMi... where the
+// base64 blob is a protobuf that embeds the real article URL as plain ASCII.
+function decodeGoogleNewsUrl(gnUrl) {
+  try {
+    const match = gnUrl.match(/\/articles\/(CB[A-Za-z0-9_+/=-]+)/);
+    if (!match) return null;
+    let b64 = match[1].replace(/-/g, '+').replace(/_/g, '/');
+    b64 += '==='.slice((b64.length + 3) % 4);
+    const bytes = Buffer.from(b64, 'base64');
+    const str = bytes.toString('latin1');
+    const start = str.indexOf('https://');
+    if (start < 0) return null;
+    let url = '';
+    for (let i = start; i < str.length; i++) {
+      const c = str.charCodeAt(i);
+      if (c < 32 || c > 126) break;
+      url += str[i];
+    }
+    return url || null;
+  } catch { return null; }
+}
+
 // ── OG data fetching ──────────────────────────────────────────────────────────
 
 async function fetchOGData(url) {
@@ -110,9 +133,11 @@ async function fetchOGData(url) {
                   body.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i) ||
                   body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
     const image = imgM ? imgM[1].trim() : null;
-    const description = descM ? decodeEntities(descM[1]).trim().slice(0, 300) : null;
-    // Reject images that are Google News / generic branding
+    const rawDesc = descM ? decodeEntities(descM[1]).trim() : null;
+    // Reject images/descriptions from Google News intermediate page
     const badImg = image && (image.includes('news.google.com') || image.includes('gstatic.com'));
+    const googleDesc = /liputan berita terbaru yang komprehensif|comprehensive.*up-to-date news|google berita/i;
+    const description = rawDesc && !googleDesc.test(rawDesc) ? rawDesc.slice(0, 300) : null;
     return { image: badImg ? null : image, description };
   } catch {
     return { image: null, description: null };
@@ -171,8 +196,10 @@ async function crawlGNews(query) {
     const title = srcName
       ? item.title.replace(new RegExp(' - ' + srcName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '').trim()
       : item.title;
+    // Decode the actual article URL from Google News base64 blob (avoids JS-redirect wall)
+    const actualUrl = decodeGoogleNewsUrl(item.url) || item.url;
     return {
-      title, url: item.url, image: item.image || null,
+      title, url: actualUrl, image: item.image || null,
       summary: item.summary, publishedAt: item.pubDate,
       source: srcName || 'Google News', color: colorFor(srcName),
       trending: query.trending && idx < 5 ? true : undefined,
