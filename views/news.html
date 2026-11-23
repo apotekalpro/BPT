@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health News – Apotek Alpro</title>
+  <style>
+    :root {
+      --brand: #1a7c47; --brand-light: #e8f5ef; --brand-dark: #135c34;
+      --text: #1e2027; --text-muted: #6b7280;
+      --surface: #ffffff; --surface-alt: #f4f6f9; --border: #e5e7eb;
+      --radius: 12px; --shadow: 0 2px 10px rgba(0,0,0,.07);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,.13);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--surface-alt); color: var(--text); min-height: 100vh; }
+
+    /* Header */
+    .header {
+      background: var(--brand); padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    }
+    .header-brand { display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 700; font-size: 17px; text-decoration: none; }
+    .header-title { color: rgba(255,255,255,.8); font-size: 12px; font-weight: 400; margin-top: 1px; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .btn-refresh {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3);
+      color: #fff; padding: 7px 14px; border-radius: 8px; cursor: pointer;
+      font-size: 13px; font-weight: 500; transition: background .2s;
+    }
+    .btn-refresh:hover { background: rgba(255,255,255,.28); }
+    .btn-refresh:disabled { opacity: .6; cursor: default; }
+    .btn-refresh.loading .spin { animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .last-update { color: rgba(255,255,255,.65); font-size: 12px; white-space: nowrap; }
+
+    /* Layout */
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
+
+    /* Info banner */
+    .info-banner {
+      background: var(--brand-light); border: 1px solid #c3e0d0; border-radius: 10px;
+      padding: 10px 16px; margin-bottom: 20px; font-size: 13px; color: var(--brand-dark);
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    /* Filter bar */
+    .filter-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .filter-label { font-size: 13px; color: var(--text-muted); font-weight: 500; margin-right: 2px; }
+    .filter-btn {
+      padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
+      border: 1.5px solid var(--border); background: var(--surface); color: var(--text-muted);
+      cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: 5px;
+    }
+    .filter-btn:hover { border-color: var(--brand); color: var(--brand); }
+    .filter-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .search-wrap { margin-left: auto; position: relative; }
+    .search-wrap input {
+      border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 7px 12px 7px 36px; font-size: 13px; width: 220px;
+      outline: none; background: var(--surface); transition: border-color .15s;
+    }
+    .search-wrap input:focus { border-color: var(--brand); }
+    .search-wrap svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+
+    /* Stats */
+    .stats-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; align-items: center; }
+    .stat-pill {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 6px 12px; font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px;
+    }
+    .stat-pill strong { color: var(--text); font-size: 14px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    /* Grid */
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(295px, 1fr)); gap: 18px; }
+
+    /* Card */
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+
+    /* Thumbnail */
+    .thumb { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; }
+    .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+    .card:hover .thumb img { transform: scale(1.04); }
+    .thumb-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    }
+    .thumb-placeholder .src-initial {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -1px;
+    }
+    .thumb-placeholder .src-name { font-size: 11px; font-weight: 600; }
+
+    /* Source badge */
+    .src-badge {
+      position: absolute; top: 8px; left: 8px;
+      background: rgba(0,0,0,.72); color: #fff;
+      font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px;
+      display: flex; align-items: center; gap: 4px; backdrop-filter: blur(4px);
+      max-width: calc(100% - 16px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* Card body */
+    .card-body { padding: 14px 16px; flex: 1; display: flex; flex-direction: column; gap: 7px; }
+    .card-title {
+      font-size: 14px; font-weight: 600; line-height: 1.45; color: var(--text);
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-summary {
+      font-size: 12.5px; color: var(--text-muted); line-height: 1.55;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1;
+    }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
+    .card-time { font-size: 11px; color: var(--text-muted); }
+    .card-src { font-size: 11px; font-weight: 600; }
+
+    /* CTA button */
+    .card-cta {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      margin: 0 16px 14px; padding: 9px; border-radius: 8px;
+      background: var(--brand-light); color: var(--brand);
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      transition: all .15s; border: 1.5px solid transparent;
+    }
+    .card-cta:hover { background: var(--brand); color: #fff; }
+
+    /* States */
+    .state { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .state .icon { font-size: 44px; margin-bottom: 10px; }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--brand); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 14px; }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #1e2027; color: #fff; padding: 12px 18px;
+      border-radius: 10px; font-size: 13px; box-shadow: 0 4px 20px rgba(0,0,0,.2);
+      z-index: 999; transform: translateY(80px); opacity: 0; transition: all .3s;
+      max-width: 320px;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.ok { background: var(--brand); }
+    .toast.err { background: #c53030; }
+
+    @media (max-width: 600px) {
+      .header { padding: 0 14px; }
+      .container { padding: 16px 12px; }
+      .search-wrap input { width: 150px; }
+      .last-update { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/dashboard" class="header-brand">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
+    <div>
+      <div>Apotek Alpro</div>
+      <div class="header-title">Health News Monitor</div>
+    </div>
+  </a>
+  <div class="header-right">
+    <span class="last-update" id="lastUpdate">—</span>
+    <button class="btn-refresh" id="btnRefresh" onclick="doRefresh()">
+      <svg class="spin" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+      </svg>
+      Refresh
+    </button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="info-banner">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    Berita dikumpulkan otomatis setiap pukul <strong>07:00</strong>, <strong>11:00</strong>, dan <strong>15:00</strong> WIB dari berbagai sumber media kesehatan Indonesia.
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-src="all" onclick="setSource('all',this)">Semua</button>
+    <button class="filter-btn" data-src="Detik" onclick="setSource('Detik',this)">
+      <span class="dot" style="background:#e63a2e"></span>Detik
+    </button>
+    <button class="filter-btn" data-src="Kompas" onclick="setSource('Kompas',this)">
+      <span class="dot" style="background:#c0392b"></span>Kompas
+    </button>
+    <button class="filter-btn" data-src="Liputan6" onclick="setSource('Liputan6',this)">
+      <span class="dot" style="background:#e67e22"></span>Liputan6
+    </button>
+    <button class="filter-btn" data-src="Tribun" onclick="setSource('Tribun',this)">
+      <span class="dot" style="background:#d35400"></span>Tribun
+    </button>
+    <button class="filter-btn" data-src="Tempo" onclick="setSource('Tempo',this)">
+      <span class="dot" style="background:#2c3e50"></span>Tempo
+    </button>
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="q" type="text" placeholder="Cari berita..." oninput="onSearch(this.value)">
+    </div>
+  </div>
+
+  <div class="stats-row" id="statsRow"></div>
+
+  <div class="news-grid" id="grid">
+    <div class="state"><div class="spinner"></div><p>Memuat berita kesehatan terbaru...</p></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SOURCE_COLORS = {
+  detik:    '#e63a2e', kompas:   '#c0392b', liputan:  '#e67e22',
+  tribun:   '#d35400', tempo:    '#2c3e50', cnbc:     '#0056b3',
+  republika:'#1a7c47', halodoc:  '#00b4d8', kemenkes: '#2d6a4f',
+  antara:   '#2980b9', default:  '#6c757d'
+};
+
+function srcColor(src) {
+  if (!src) return SOURCE_COLORS.default;
+  const s = src.toLowerCase();
+  for (const [k, c] of Object.entries(SOURCE_COLORS)) {
+    if (s.includes(k)) return c;
+  }
+  return SOURCE_COLORS.default;
+}
+
+function srcInitial(src) {
+  if (!src) return '?';
+  const clean = src.replace(/\.(com|co\.id|id)$/i, '').replace(/\..*/, '');
+  return clean.slice(0, 2).toUpperCase();
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function timeAgo(ts) {
+  if (!ts) return '';
+  const diff = (Date.now() - new Date(ts).getTime()) / 1000;
+  if (diff < 60) return 'Baru saja';
+  if (diff < 3600) return Math.floor(diff/60) + ' mnt lalu';
+  if (diff < 86400) return Math.floor(diff/3600) + ' jam lalu';
+  return Math.floor(diff/86400) + ' hari lalu';
+}
+
+let allArticles = [], filterSrc = 'all', filterQ = '';
+
+function renderCard(a) {
+  const color = srcColor(a.source);
+  const hasImg = !!a.image;
+  const thumbBg = `hsl(${Math.abs(hashStr(a.source||'')) % 360}, 30%, 90%)`;
+
+  const thumb = hasImg
+    ? `<img src="${esc(a.image)}" alt="" loading="lazy"
+         onerror="this.closest('.thumb').innerHTML='${makePlaceholder(a.source, color).replace(/'/g,"\\'")}'"/>`
+    : makePlaceholder(a.source, color);
+
+  return `<article class="card">
+    <div class="thumb">
+      ${thumb}
+      <div class="src-badge">
+        <span class="dot" style="background:${color}"></span>
+        ${esc(a.source || 'Berita')}
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">${esc(a.title)}</div>
+      ${a.summary ? `<div class="card-summary">${esc(a.summary)}</div>` : ''}
+      <div class="card-meta">
+        <span class="card-time">${timeAgo(a.crawled_at)}</span>
+        <span class="card-src" style="color:${color}">${esc(a.source||'')}</span>
+      </div>
+    </div>
+    <a class="card-cta" href="${esc(a.url)}" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+      Baca Berita Lengkap
+    </a>
+  </article>`;
+}
+
+function makePlaceholder(src, color) {
+  const bg = color || '#6c757d';
+  const textColor = isLight(bg) ? '#333' : '#fff';
+  const init = srcInitial(src || 'N');
+  return `<div class="thumb-placeholder" style="background:${bg}18">
+    <div class="src-initial" style="background:${bg};color:${textColor}">${init}</div>
+    <span class="src-name" style="color:${bg}">${esc(src||'')}</span>
+  </div>`;
+}
+
+function isLight(hex) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return (r*299 + g*587 + b*114) / 1000 > 180;
+}
+
+function hashStr(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = Math.imul(31, h) + s.charCodeAt(i) | 0;
+  return h;
+}
+
+function filtered() {
+  let items = allArticles;
+  if (filterSrc !== 'all') items = items.filter(a => (a.source||'').toLowerCase().includes(filterSrc.toLowerCase()));
+  if (filterQ) { const q = filterQ.toLowerCase(); items = items.filter(a => a.title.toLowerCase().includes(q) || (a.summary||'').toLowerCase().includes(q)); }
+  return items;
+}
+
+function render() {
+  const items = filtered();
+  const grid = document.getElementById('grid');
+  if (!items.length) {
+    grid.innerHTML = `<div class="state"><div class="icon">🔍</div><strong>Tidak ada berita ditemukan</strong><p>Coba ubah filter atau klik Refresh.</p></div>`;
+    return;
+  }
+  grid.innerHTML = items.map(renderCard).join('');
+}
+
+function setSource(src, btn) {
+  filterSrc = src;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function onSearch(v) { filterQ = v.trim(); render(); }
+
+async function loadArticles() {
+  try {
+    const r = await fetch('/api/news?limit=200');
+    const d = await r.json();
+    allArticles = d.articles || [];
+    render();
+    loadStats();
+  } catch(e) {
+    document.getElementById('grid').innerHTML = `<div class="state"><div class="icon">⚠️</div><strong>Gagal memuat</strong><p>${esc(e.message)}</p></div>`;
+  }
+}
+
+async function loadStats() {
+  try {
+    const r = await fetch('/api/news/stats');
+    const d = await r.json();
+    document.getElementById('lastUpdate').textContent = d.lastCrawl ? 'Update: ' + timeAgo(d.lastCrawl) : '—';
+    const top = (d.bySource||[]).sort((a,b)=>b.count-a.count).slice(0,8);
+    document.getElementById('statsRow').innerHTML = [
+      `<div class="stat-pill"><strong>${d.total}</strong> berita</div>`,
+      ...top.map(s => `<div class="stat-pill"><span class="dot" style="background:${srcColor(s.source)}"></span>${esc(s.source)}: <strong>${s.count}</strong></div>`)
+    ].join('');
+  } catch {}
+}
+
+async function doRefresh() {
+  const btn = document.getElementById('btnRefresh');
+  btn.classList.add('loading'); btn.disabled = true;
+  showToast('Mengambil berita terbaru…', '');
+  try {
+    const r = await fetch('/api/news/refresh', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      showToast(`✓ ${d.inserted} berita baru dimuat`, 'ok');
+      await loadArticles();
+    } else {
+      showToast('Gagal: ' + d.error, 'err');
+    }
+  } catch(e) {
+    showToast('Error: ' + e.message, 'err');
+  } finally {
+    btn.classList.remove('loading'); btn.disabled = false;
+  }
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type ? ' ' + type : '');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// Refresh "X menit lalu" display every minute
+setInterval(render, 60000);
+
+loadArticles();
+</script>
+</body>
+</html>
