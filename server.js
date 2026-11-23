@@ -3,6 +3,9 @@ const session = require('express-session');
 const cors = require('cors');
 const axios = require('axios');
 const path = require('path');
+const cron = require('node-cron');
+const { crawlAll } = require('./news-crawler');
+const { upsertArticles, getArticles, getStats, pruneOld } = require('./news-db');
 require('dotenv').config();
 
 const app = express();
@@ -210,7 +213,54 @@ app.post('/api/logout', (req, res) => {
     res.json({ success: true });
 });
 
-// Start server
+// ─── Health News API ─────────────────────────────────────────────────────────
+
+async function runCrawl() {
+    try {
+        const articles = await crawlAll();
+        const inserted = upsertArticles(articles);
+        pruneOld(7);
+        console.log(`[News] Crawl done: ${inserted} new articles`);
+        return { ok: true, inserted, total: articles.length };
+    } catch (err) {
+        console.error('[News] Crawl error:', err);
+        return { ok: false, error: err.message };
+    }
+}
+
+// Serve news page
+app.get('/news', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'news.html'));
+});
+
+// API: get articles
+app.get('/api/news', (req, res) => {
+    const { source, limit = 60, offset = 0 } = req.query;
+    const articles = getArticles({ source, limit: parseInt(limit), offset: parseInt(offset) });
+    res.json({ ok: true, articles });
+});
+
+// API: stats + last crawl time
+app.get('/api/news/stats', (req, res) => {
+    const stats = getStats();
+    res.json({ ok: true, ...stats });
+});
+
+// API: manual refresh trigger (admin only or allow from app)
+app.post('/api/news/refresh', async (req, res) => {
+    const result = await runCrawl();
+    res.json(result);
+});
+
+// Cron: 07:00, 11:00, 15:00 WIB (Asia/Jakarta)
+cron.schedule('0 7 * * *',  runCrawl, { timezone: 'Asia/Jakarta' });
+cron.schedule('0 11 * * *', runCrawl, { timezone: 'Asia/Jakarta' });
+cron.schedule('0 15 * * *', runCrawl, { timezone: 'Asia/Jakarta' });
+
+// Run once on startup
+setTimeout(runCrawl, 3000);
+
+// ─── Start server ─────────────────────────────────────────────────────────────
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Apotek Alpro server running on port ${PORT}`);
 });
