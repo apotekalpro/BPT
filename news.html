@@ -456,12 +456,17 @@ function render() {
 
   el.innerHTML = items.map(a => {
     const c = a.color || col(a.source);
-    const rawSum = (a.summary || '').replace(/\s{2,}\S+\.(com|co\.id|id|net|org)\s*$/i, '').trim();
+    const rawSum = (a.summary || '')
+      .replace(/&nbsp;/g, ' ').replace(/ /g, ' ')   // decode non-breaking spaces
+      .replace(/\s{2,}\S+\.(com|co\.id|id|net|org)\s*$/i, '') // strip "  Source.com" suffix
+      .trim();
+    const titleStart = (a.title || '').substring(0, 50);
     const showSum = rawSum
       && !rawSum.startsWith('http')
       && !rawSum.startsWith('a href')
       && !rawSum.startsWith('&lt;')
-      && rawSum !== a.title
+      && rawSum !== (a.title || '').trim()
+      && !rawSum.startsWith(titleStart)   // hide if summary is just title (Google News pattern)
       && rawSum.length > 20;
 
     return `<a class="item" href="${esc(a.url)}" target="_blank" rel="noopener">

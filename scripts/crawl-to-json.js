@@ -102,16 +102,31 @@ async function fetchOGData(url) {
   try {
     const { body } = await fetchUrl(url);
     const imgM = body.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
-                 body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+                 body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ||
+                 body.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ||
+                 body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
     const descM = body.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["']/i) ||
-                  body.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i);
-    return {
-      image: imgM ? imgM[1].trim() : null,
-      description: descM ? decodeEntities(descM[1]).trim().slice(0, 300) : null,
-    };
+                  body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:description["']/i) ||
+                  body.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i) ||
+                  body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
+    const image = imgM ? imgM[1].trim() : null;
+    const description = descM ? decodeEntities(descM[1]).trim().slice(0, 300) : null;
+    // Reject images that are Google News / generic branding
+    const badImg = image && (image.includes('news.google.com') || image.includes('gstatic.com'));
+    return { image: badImg ? null : image, description };
   } catch {
     return { image: null, description: null };
   }
+}
+
+function summaryLooksLikeTitle(summary, title) {
+  if (!summary || !title) return true;
+  const s = summary.trim(); const t = title.trim();
+  if (s.length < 30) return true;
+  if (s === t) return true;
+  if (s.startsWith(t.substring(0, Math.min(50, t.length)))) return true;
+  if (t.startsWith(s.substring(0, Math.min(50, s.length)))) return true;
+  return false;
 }
 
 // ── Source colors ─────────────────────────────────────────────────────────────
@@ -228,21 +243,24 @@ async function main() {
   });
   console.log(`[Crawl] 7-day filter: ${recent.length} of ${healthArticles.length} articles kept`);
 
-  // Fetch OG image+description for articles missing images (up to 60, in parallel batches)
-  const needsOG = recent.filter(a => !a.image);
+  // Fetch OG image+description for articles missing images OR with bad (title-like) descriptions
+  const needsOG = recent.filter(a => !a.image || summaryLooksLikeTitle(a.summary, a.title));
   if (needsOG.length > 0) {
-    const toFetch = needsOG.slice(0, 60);
-    console.log(`[Crawl] Fetching OG data for ${toFetch.length} articles...`);
+    const toFetch = needsOG.slice(0, 100);
+    console.log(`[Crawl] Fetching OG data for ${toFetch.length} articles (${recent.filter(a=>!a.image).length} no-image, ${recent.filter(a=>summaryLooksLikeTitle(a.summary,a.title)).length} bad-desc)...`);
     const BATCH = 10;
     for (let i = 0; i < toFetch.length; i += BATCH) {
       await Promise.allSettled(toFetch.slice(i, i + BATCH).map(async a => {
         const { image, description } = await fetchOGData(a.url);
-        if (image) a.image = image;
-        if (description && (!a.summary || a.summary.length < 30)) a.summary = description;
+        if (image && !a.image) a.image = image;
+        if (description && description.length > 30 && summaryLooksLikeTitle(a.summary, a.title)) {
+          a.summary = description;
+        }
       }));
     }
     const got = recent.filter(a => a.image).length;
-    console.log(`[Crawl] OG fetch done — ${got} articles now have images`);
+    const goodDesc = recent.filter(a => !summaryLooksLikeTitle(a.summary, a.title)).length;
+    console.log(`[Crawl] OG fetch done — ${got} articles with images, ${goodDesc} with real descriptions`);
   }
 
   const output = {
