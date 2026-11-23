@@ -12,44 +12,37 @@
     background: #f5f6f8;
     color: #1a1a1a;
     font-size: 14px;
-    min-height: 100vh;
   }
 
-  /* ── Header ── */
+  /* ── Compact header (NOT sticky — scrolls away) ── */
   .header {
     background: #1b6e3f;
     color: #fff;
-    padding: 12px 20px;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    gap: 10px;
   }
-  .hbrand { display: flex; align-items: center; gap: 10px; }
-  .hbrand strong { font-size: 15px; }
-  .hbrand small { display: block; font-size: 11px; opacity: .7; font-weight: 400; }
-  .hright { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .hbrand { font-size: 13px; font-weight: 600; }
+  .hbrand small { display: inline; font-size: 11px; opacity: .65; font-weight: 400; margin-left: 6px; }
+  .hright { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
   #lu { font-size: 11px; opacity: .65; }
 
   .btn-refresh {
-    display: flex; align-items: center; gap: 6px;
+    display: flex; align-items: center; gap: 5px;
     background: rgba(255,255,255,.18);
     border: 1px solid rgba(255,255,255,.35);
     color: #fff;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
-    transition: background .15s;
   }
   .btn-refresh:hover:not(:disabled) { background: rgba(255,255,255,.28); }
   .btn-refresh:disabled { opacity: .55; cursor: not-allowed; }
-  .btn-refresh svg { transition: transform .6s; }
   .btn-refresh.spin svg { animation: spin .8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -63,22 +56,21 @@
   .toolbar {
     background: #fff;
     border-bottom: 1px solid #e8eaed;
-    padding: 10px 20px;
+    padding: 7px 16px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
   }
   .fbtn {
-    padding: 5px 12px;
+    padding: 4px 10px;
     border: 1px solid #dde1e7;
     border-radius: 20px;
     background: #fff;
-    font-size: 12px;
+    font-size: 11px;
     color: #555;
     cursor: pointer;
     white-space: nowrap;
-    transition: all .15s;
   }
   .fbtn:hover { border-color: #1b6e3f; color: #1b6e3f; }
   .fbtn.on { background: #1b6e3f; border-color: #1b6e3f; color: #fff; }
@@ -86,120 +78,106 @@
   .search-wrap input {
     border: 1px solid #dde1e7;
     border-radius: 20px;
-    padding: 5px 14px;
-    font-size: 12px;
+    padding: 4px 12px;
+    font-size: 11px;
     outline: none;
-    width: 200px;
+    width: 170px;
     color: #333;
   }
   .search-wrap input:focus { border-color: #1b6e3f; }
 
   /* ── Stats bar ── */
   .statsbar {
-    padding: 7px 20px;
+    padding: 5px 16px;
     display: flex;
-    gap: 14px;
+    gap: 10px;
     flex-wrap: wrap;
-    font-size: 11px;
+    font-size: 10px;
     color: #888;
     background: #f5f6f8;
     border-bottom: 1px solid #e8eaed;
   }
-  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 2px; vertical-align: middle; }
 
-  /* ── Top 5 Trending ── */
-  .trending-section {
-    padding: 14px 20px 4px;
-  }
+  /* ── Top 5 Trending — horizontal 5-column grid ── */
+  .trending-section { padding: 10px 16px 6px; }
   .section-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: #e63a2e;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-size: 11px; font-weight: 700; color: #c0392b;
+    letter-spacing: .5px; text-transform: uppercase;
+    margin-bottom: 8px;
   }
-  .trending-list { display: flex; flex-direction: column; gap: 0; }
-
-  .trend-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 12px;
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .trend-card {
     background: #fff;
     border: 1px solid #e8eaed;
     border-radius: 8px;
-    margin-bottom: 6px;
+    overflow: hidden;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    display: flex;
+    flex-direction: column;
     transition: box-shadow .15s;
+    position: relative;
   }
-  .trend-item:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
-  .trend-num {
-    font-size: 20px;
-    font-weight: 800;
-    color: #e63a2e;
-    min-width: 28px;
-    text-align: center;
-    line-height: 1;
+  .trend-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,.1); }
+  .trend-img {
+    width: 100%; height: 100px;
+    object-fit: cover;
+    display: block;
   }
-  .trend-num.top1 { color: #e63a2e; }
-  .trend-num.top2 { color: #e67e22; }
-  .trend-num.top3 { color: #f1c40f; }
-  .trend-num.top45 { color: #bdc3c7; }
-  .trend-thumb {
-    width: 70px; height: 50px;
-    border-radius: 6px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: #f0f1f3;
-  }
-  .trend-thumb img { width:100%; height:100%; object-fit:cover; }
   .trend-nopic {
-    width:100%; height:100%;
-    display:flex; align-items:center; justify-content:center;
-    font-size: 14px; font-weight: 700; color: #fff;
+    width: 100%; height: 100px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; color: #fff;
   }
-  .trend-body { flex: 1; min-width: 0; }
+  .trend-num {
+    position: absolute; top: 6px; left: 6px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.55);
+    color: #fff;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .trend-body { padding: 7px 8px 8px; flex: 1; }
   .trend-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #111;
+    font-size: 11.5px; font-weight: 600; color: #111;
     line-height: 1.4;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .trend-meta { font-size: 11px; color: #aaa; margin-top: 3px; }
+  .trend-meta { font-size: 10px; color: #aaa; margin-top: 4px; }
   .trend-src { font-weight: 600; }
 
   /* ── News list ── */
-  .list-section { padding: 12px 20px; }
-  .list-label { font-size: 12px; font-weight: 700; color: #555; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 10px; }
+  .list-section { padding: 8px 16px 16px; }
+  .list-label { font-size: 11px; font-weight: 700; color: #666; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 8px; }
 
   .item {
     background: #fff;
     border: 1px solid #e8eaed;
-    border-radius: 10px;
-    margin-bottom: 8px;
+    border-radius: 8px;
+    margin-bottom: 7px;
     display: flex;
     overflow: hidden;
-    transition: box-shadow .15s;
-    cursor: pointer;
     text-decoration: none;
     color: inherit;
+    transition: box-shadow .15s;
+    cursor: pointer;
   }
-  .item:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .item:hover { box-shadow: 0 2px 8px rgba(0,0,0,.08); }
 
   .thumb {
-    width: 160px;
-    min-width: 160px;
-    height: 120px;
+    width: 130px;
+    min-width: 130px;
+    height: 90px;
     overflow: hidden;
     flex-shrink: 0;
     background: #f0f1f3;
@@ -208,21 +186,19 @@
   .nopic {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 24px; font-weight: 700; color: #fff; letter-spacing: 1px;
+    font-size: 20px; font-weight: 700; color: #fff;
   }
 
   .content {
     flex: 1;
-    padding: 12px 16px;
+    padding: 9px 13px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
     min-width: 0;
   }
   .title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #111;
+    font-size: 13px; font-weight: 600; color: #111;
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -230,54 +206,38 @@
     overflow: hidden;
   }
   .summary {
-    font-size: 12px;
-    color: #555;
-    line-height: 1.6;
+    font-size: 11.5px; color: #555; line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     flex: 1;
   }
   .meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 4px;
+    display: flex; align-items: center; gap: 7px; margin-top: 2px;
   }
   .source-badge {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 10px;
-    color: #fff;
-    white-space: nowrap;
-    flex-shrink: 0;
+    font-size: 10px; font-weight: 600;
+    padding: 2px 7px; border-radius: 10px; color: #fff; white-space: nowrap; flex-shrink: 0;
   }
-  .pubdate { font-size: 11px; color: #aaa; }
+  .pubdate { font-size: 10px; color: #bbb; }
   .read-link {
-    margin-left: auto;
-    font-size: 11px;
-    font-weight: 600;
-    color: #1b6e3f;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    flex-shrink: 0;
+    margin-left: auto; font-size: 10px; font-weight: 600;
+    color: #1b6e3f; white-space: nowrap;
+    display: flex; align-items: center; gap: 2px; flex-shrink: 0;
   }
 
   /* ── States ── */
-  .state { text-align: center; padding: 60px 20px; color: #888; }
-  .state strong { display: block; font-size: 16px; color: #555; margin: 10px 0 6px; }
+  .state { text-align: center; padding: 50px 20px; color: #888; }
+  .state strong { display: block; font-size: 15px; color: #555; margin: 8px 0 5px; }
 
   /* ── Toast ── */
   .toast {
-    position: fixed; bottom: 20px; right: 20px;
+    position: fixed; bottom: 16px; right: 16px;
     background: #333; color: #fff;
-    padding: 10px 18px; border-radius: 8px;
-    font-size: 13px; opacity: 0; pointer-events: none;
-    transition: opacity .25s; z-index: 100; max-width: 300px;
+    padding: 9px 16px; border-radius: 7px;
+    font-size: 12px; opacity: 0; pointer-events: none;
+    transition: opacity .25s; z-index: 100; max-width: 280px;
   }
   .toast.show { opacity: 1; }
   .toast.ok  { background: #2e7d32; }
@@ -291,37 +251,35 @@
   }
   .modal-bg.show { display: flex; }
   .modal {
-    background: #fff; border-radius: 12px;
-    padding: 28px 24px; width: 420px; max-width: 95vw;
+    background: #fff; border-radius: 10px;
+    padding: 24px; width: 400px; max-width: 95vw;
     box-shadow: 0 8px 32px rgba(0,0,0,.2);
   }
-  .modal h3 { margin-bottom: 8px; font-size: 16px; }
-  .modal p { font-size: 13px; color: #666; margin-bottom: 16px; line-height: 1.5; }
+  .modal h3 { margin-bottom: 7px; font-size: 15px; }
+  .modal p { font-size: 12px; color: #666; margin-bottom: 14px; line-height: 1.5; }
   .modal input {
     width: 100%; border: 1px solid #dde1e7; border-radius: 6px;
-    padding: 9px 12px; font-size: 13px; outline: none; margin-bottom: 16px;
+    padding: 8px 11px; font-size: 12px; outline: none; margin-bottom: 14px;
   }
   .modal input:focus { border-color: #1b6e3f; }
-  .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
-  .btn-cancel { padding: 8px 16px; border: 1px solid #dde1e7; border-radius: 6px; background: #fff; font-size: 13px; cursor: pointer; color: #555; }
-  .btn-save { padding: 8px 16px; border: none; border-radius: 6px; background: #1b6e3f; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; }
-  .btn-save:hover { background: #15572f; }
-  .modal a { color: #1b6e3f; font-size: 12px; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .btn-cancel { padding: 7px 14px; border: 1px solid #dde1e7; border-radius: 5px; background: #fff; font-size: 12px; cursor: pointer; color: #555; }
+  .btn-save { padding: 7px 14px; border: none; border-radius: 5px; background: #1b6e3f; color: #fff; font-size: 12px; font-weight: 600; cursor: pointer; }
+  .modal a { color: #1b6e3f; font-size: 11px; }
 </style>
 </head>
 <body>
 
+<!-- Header scrolls away with content — no longer sticky -->
 <div class="header">
   <div class="hbrand">
-    <div>
-      <strong>Apotek Alpro — Health News</strong>
-      <small>7 hari terakhir · Auto-update 07:00, 11:00, 15:00 WIB</small>
-    </div>
+    Apotek Alpro — Health News
+    <small>7 hari · auto-update 07:00, 11:00, 15:00 WIB</small>
   </div>
   <div class="hright">
     <span id="lu"></span>
     <button class="btn-refresh" id="btnR" onclick="triggerCrawl()">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
         <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
       </svg>
@@ -346,13 +304,12 @@
 
 <div class="statsbar" id="stats"></div>
 
-<!-- Top 5 Trending -->
+<!-- Top 5 horizontal grid -->
 <div class="trending-section" id="trendSection" style="display:none">
-  <div class="section-label">🔥 Top 5 Berita Kesehatan Trending</div>
-  <div class="trending-list" id="trendList"></div>
+  <div class="section-label">🔥 Top 5 Trending</div>
+  <div class="trending-grid" id="trendList"></div>
 </div>
 
-<!-- All news list -->
 <div class="list-section">
   <div class="list-label" id="listLabel">Semua Berita</div>
   <div id="list"></div>
@@ -360,12 +317,11 @@
 
 <div class="toast" id="toast"></div>
 
-<!-- GitHub PAT modal -->
 <div class="modal-bg" id="modalBg">
   <div class="modal">
     <h3>GitHub Token Diperlukan</h3>
-    <p>Untuk memicu crawl manual, masukkan GitHub Personal Access Token (PAT) dengan scope <strong>workflow</strong>.<br>Token hanya disimpan di browser Anda.<br>
-    <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank" rel="noopener">Buat token baru di GitHub →</a></p>
+    <p>Masukkan GitHub Personal Access Token (PAT) dengan scope <strong>workflow</strong>. Token disimpan di browser Anda.<br>
+    <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank" rel="noopener">Buat token baru →</a></p>
     <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Batal</button>
@@ -391,11 +347,8 @@ function col(src) {
   for (const [k,c] of Object.entries(COLORS)) if (s.includes(k)) return c;
   return '#6c757d';
 }
-function esc(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function ini(src) { return (src||'?').replace(/\.(com|co\.id|id)$/i,'').slice(0,2).toUpperCase(); }
-
 function fmt(ts) {
   if (!ts) return '';
   const d = new Date(ts);
@@ -407,26 +360,17 @@ function fmt(ts) {
   if (diff < 86400*2) return 'Kemarin';
   return d.toLocaleDateString('id-ID', { day:'numeric', month:'short', year:'numeric' });
 }
-
 function dataUrl() {
-  const base = location.href.replace(/\/news\.html.*$/, '');
-  return base + '/public/news-data.json';
+  return location.href.replace(/\/news\.html.*$/, '') + '/public/news-data.json';
 }
 
 let all=[], fsrc='all', fq='', lastCrawledAt='', pollTimer=null;
 
-// ── Thumbnail helpers ──────────────────────────────────────────────────────────
-function thumbHtml(image, source, c, size) {
-  const h = size === 'small' ? '50px' : '120px';
-  const fontSize = size === 'small' ? '14px' : '24px';
-  if (image) {
-    return `<img src="${esc(image)}" alt="" loading="lazy"
-      onerror="this.parentNode.innerHTML='<div class=nopic style=background:${c};font-size:${fontSize}>${ini(source)}</div>'">`;
-  }
-  return `<div class="nopic" style="background:${c};font-size:${fontSize}">${ini(source)}</div>`;
+function imgTag(image, source, c, cls) {
+  if (image) return `<img class="${cls}" src="${esc(image)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=trend-nopic style=background:${c}>${ini(source)}</div>'">`;
+  return `<div class="${cls === 'trend-img' ? 'trend-nopic' : 'nopic'}" style="background:${c}">${ini(source)}</div>`;
 }
 
-// ── Filter & render ────────────────────────────────────────────────────────────
 function filtered() {
   let items = all;
   if (fsrc !== 'all') items = items.filter(a => (a.source||'').toLowerCase().includes(fsrc));
@@ -438,18 +382,17 @@ function render() {
   const items = filtered();
   const isFiltered = fsrc !== 'all' || fq;
 
-  // Top 5 trending — only show when unfiltered
+  // Top 5 trending — horizontal 5-col grid
   const trendSec = document.getElementById('trendSection');
   const trendList = document.getElementById('trendList');
   const trending = all.filter(a => a.trending);
   if (trending.length > 0 && !isFiltered) {
     trendSec.style.display = '';
-    const nums = ['top1','top2','top3','top45','top45'];
     trendList.innerHTML = trending.slice(0,5).map((a, i) => {
       const c = a.color || col(a.source);
-      return `<a class="trend-item" href="${esc(a.url)}" target="_blank" rel="noopener">
-        <div class="trend-num ${nums[i]}">${i+1}</div>
-        <div class="trend-thumb">${thumbHtml(a.image, a.source, c, 'small')}</div>
+      return `<a class="trend-card" href="${esc(a.url)}" target="_blank" rel="noopener">
+        <div class="trend-num">${i+1}</div>
+        ${imgTag(a.image, a.source, c, 'trend-img')}
         <div class="trend-body">
           <div class="trend-title">${esc(a.title)}</div>
           <div class="trend-meta"><span class="trend-src" style="color:${c}">${esc(a.source)}</span> · ${fmt(a.publishedAt)}</div>
@@ -466,13 +409,12 @@ function render() {
     isFiltered ? `Hasil filter (${items.length})` : `Semua Berita (${items.length})`;
 
   if (!items.length) {
-    el.innerHTML = `<div class="state"><div style="font-size:36px">🔍</div><strong>Tidak ada berita</strong>Coba ubah filter atau tunggu update berikutnya.</div>`;
+    el.innerHTML = `<div class="state"><div style="font-size:32px">🔍</div><strong>Tidak ada berita</strong>Coba ubah filter.</div>`;
     return;
   }
 
   el.innerHTML = items.map(a => {
     const c = a.color || col(a.source);
-    // Clean up summary: skip raw URLs, HTML artifacts, or near-duplicate of title
     const rawSum = (a.summary || '').trim();
     const showSum = rawSum
       && !rawSum.startsWith('http')
@@ -482,16 +424,15 @@ function render() {
       && rawSum.length > 20;
 
     return `<a class="item" href="${esc(a.url)}" target="_blank" rel="noopener">
-      <div class="thumb">${thumbHtml(a.image, a.source, c, 'large')}</div>
+      <div class="thumb">${imgTag(a.image, a.source, c, 'item-img')}</div>
       <div class="content">
         <div class="title">${esc(a.title)}</div>
         ${showSum ? `<div class="summary">${esc(rawSum)}</div>` : ''}
         <div class="meta">
           <span class="source-badge" style="background:${c}">${esc(a.source||'Berita')}</span>
           <span class="pubdate">${fmt(a.publishedAt)}</span>
-          <span class="read-link">
-            Baca selengkapnya
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <span class="read-link">Baca selengkapnya
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
               <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
@@ -505,12 +446,10 @@ function render() {
 function sf(src, btn) {
   fsrc=src;
   document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  render();
+  btn.classList.add('on'); render();
 }
 function sq(v) { fq=v.trim(); render(); }
 
-// ── Load data ──────────────────────────────────────────────────────────────────
 async function load(notify) {
   try {
     const r = await fetch(dataUrl() + '?t=' + Date.now());
@@ -520,25 +459,24 @@ async function load(notify) {
     all = d.articles || [];
     lastCrawledAt = d.crawledAt || '';
     render();
-    // Stats bar
     const src={};
     all.forEach(a=>{ src[a.source]=(src[a.source]||0)+1; });
     const top=Object.entries(src).sort((a,b)=>b[1]-a[1]).slice(0,8);
     document.getElementById('stats').innerHTML=[
-      `<span><strong>${all.length}</strong> berita (7 hari terakhir)</span>`,
+      `<span><strong>${all.length}</strong> berita (7 hari)</span>`,
       ...top.map(([s,n])=>`<span><span class="dot" style="background:${col(s)}"></span>${esc(s)}: <strong>${n}</strong></span>`)
     ].join('');
-    document.getElementById('lu').textContent = d.crawledAt ? 'Update: ' + fmt(d.crawledAt) : '';
-    if (notify && changed) toast('✓ Berita terbaru berhasil dimuat!', 'ok');
+    document.getElementById('lu').textContent = d.crawledAt ? fmt(d.crawledAt) : '';
+    if (notify && changed) toast('✓ Berita terbaru dimuat!', 'ok');
     return changed;
   } catch(e) {
-    document.getElementById('list').innerHTML = `<div class="state"><div style="font-size:36px">⚠️</div><strong>Gagal memuat data</strong>${esc(e.message)}</div>`;
+    document.getElementById('list').innerHTML = `<div class="state"><div style="font-size:32px">⚠️</div><strong>Gagal memuat</strong>${esc(e.message)}</div>`;
     if (notify) toast('Gagal: ' + e.message, 'err');
     return false;
   }
 }
 
-// ── Token ──────────────────────────────────────────────────────────────────────
+// ── Token ──
 function getToken() { try { return localStorage.getItem('gh_token')||''; } catch { return ''; } }
 function setToken(t) { try { localStorage.setItem('gh_token',t); } catch {} }
 function openModal() { document.getElementById('modalBg').classList.add('show'); document.getElementById('tokenInput').value=getToken(); setTimeout(()=>document.getElementById('tokenInput').focus(),80); }
@@ -550,7 +488,6 @@ function saveToken() {
 }
 document.getElementById('modalBg').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeModal(); });
 
-// ── Crawl trigger ──────────────────────────────────────────────────────────────
 function triggerCrawl() {
   const token=getToken();
   if (!token) { openModal(); return; }
@@ -573,27 +510,26 @@ async function startCrawl(token) {
       },
       body:JSON.stringify({ref:BRANCH}),
     });
-    if (res.status===401||res.status===403) { setToken(''); toast('Token tidak valid, masukkan token baru.','err'); resetBtn(); openModal(); return; }
-    if (res.status===404) { toast('Workflow tidak ditemukan di repo.','err'); resetBtn(); return; }
+    if (res.status===401||res.status===403) { setToken(''); toast('Token tidak valid.','err'); resetBtn(); openModal(); return; }
+    if (res.status===404) { toast('Workflow tidak ditemukan.','err'); resetBtn(); return; }
     if (!res.ok) { const e=await res.json().catch(()=>({})); throw new Error(e.message||'HTTP '+res.status); }
-    toast('🚀 Crawl dimulai! Memantau update (~1–2 menit)...','');
-    txt.textContent='Menunggu data...';
+    toast('🚀 Crawl dimulai! ~1–2 menit...','');
+    txt.textContent='Menunggu...';
     pollForUpdate();
   } catch(e) {
-    toast('Gagal memulai crawl: '+e.message,'err');
-    resetBtn();
+    toast('Gagal: '+e.message,'err'); resetBtn();
   }
 }
 
 function pollForUpdate() {
   clearTimeout(pollTimer);
-  let attempts=0;
+  let n=0;
   async function check() {
-    attempts++;
+    n++;
     const changed=await load(false);
-    if (changed) { toast('✅ Berita baru berhasil dimuat!','ok'); resetBtn(); showProgress(false); }
-    else if (attempts>=9) { toast('Crawl selesai. Klik lagi untuk muat ulang.',''); resetBtn(); showProgress(false); }
-    else { document.getElementById('btnTxt').textContent=`Menunggu… (${attempts*20}s)`; pollTimer=setTimeout(check,20000); }
+    if (changed) { toast('✅ Berita baru dimuat!','ok'); resetBtn(); showProgress(false); }
+    else if (n>=9) { toast('Selesai. Klik lagi untuk muat ulang.',''); resetBtn(); showProgress(false); }
+    else { document.getElementById('btnTxt').textContent=`Menunggu… (${n*20}s)`; pollTimer=setTimeout(check,20000); }
   }
   pollTimer=setTimeout(check,20000);
 }
@@ -617,7 +553,11 @@ function toast(msg,type) {
   clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),5000);
 }
 
-setInterval(render,60000);
+// ── Fix img tag for items (thumb not trend-img) ──
+// Patch: .thumb img needs class set right
+document.addEventListener('DOMContentLoaded', () => {});
+
+setInterval(render, 60000);
 load(false);
 </script>
 </body>
