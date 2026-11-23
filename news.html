@@ -12,6 +12,7 @@
     background: #f5f6f8;
     color: #1a1a1a;
     font-size: 14px;
+    min-height: 100vh;
   }
 
   /* ── Header ── */
@@ -28,7 +29,6 @@
     z-index: 10;
   }
   .hbrand { display: flex; align-items: center; gap: 10px; }
-  .hbrand svg { opacity: .85; flex-shrink: 0; }
   .hbrand strong { font-size: 15px; }
   .hbrand small { display: block; font-size: 11px; opacity: .7; font-weight: 400; }
   .hright { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
@@ -54,17 +54,9 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 
   /* ── Progress bar ── */
-  .progress-bar {
-    height: 3px;
-    background: #e8f5e9;
-    display: none;
-  }
+  .progress-bar { height: 3px; background: #e8f5e9; display: none; }
   .progress-bar.show { display: block; }
-  .progress-fill {
-    height: 100%; width: 0%;
-    background: #4caf50;
-    animation: prog 90s linear forwards;
-  }
+  .progress-fill { height: 100%; width: 0%; background: #4caf50; animation: prog 90s linear forwards; }
   @keyframes prog { to { width: 92%; } }
 
   /* ── Toolbar ── */
@@ -104,54 +96,119 @@
 
   /* ── Stats bar ── */
   .statsbar {
-    padding: 8px 20px;
+    padding: 7px 20px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
     font-size: 11px;
     color: #888;
     background: #f5f6f8;
+    border-bottom: 1px solid #e8eaed;
   }
   .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
 
+  /* ── Top 5 Trending ── */
+  .trending-section {
+    padding: 14px 20px 4px;
+  }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e63a2e;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .trending-list { display: flex; flex-direction: column; gap: 0; }
+
+  .trend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow .15s;
+  }
+  .trend-item:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .trend-num {
+    font-size: 20px;
+    font-weight: 800;
+    color: #e63a2e;
+    min-width: 28px;
+    text-align: center;
+    line-height: 1;
+  }
+  .trend-num.top1 { color: #e63a2e; }
+  .trend-num.top2 { color: #e67e22; }
+  .trend-num.top3 { color: #f1c40f; }
+  .trend-num.top45 { color: #bdc3c7; }
+  .trend-thumb {
+    width: 70px; height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f0f1f3;
+  }
+  .trend-thumb img { width:100%; height:100%; object-fit:cover; }
+  .trend-nopic {
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 14px; font-weight: 700; color: #fff;
+  }
+  .trend-body { flex: 1; min-width: 0; }
+  .trend-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .trend-meta { font-size: 11px; color: #aaa; margin-top: 3px; }
+  .trend-src { font-weight: 600; }
+
   /* ── News list ── */
-  .list { padding: 12px 20px; display: flex; flex-direction: column; gap: 0; }
+  .list-section { padding: 12px 20px; }
+  .list-label { font-size: 12px; font-weight: 700; color: #555; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 10px; }
 
   .item {
     background: #fff;
     border: 1px solid #e8eaed;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: flex;
-    gap: 0;
     overflow: hidden;
     transition: box-shadow .15s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
   }
   .item:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
 
   .thumb {
     width: 160px;
     min-width: 160px;
-    height: 110px;
+    height: 120px;
     overflow: hidden;
     flex-shrink: 0;
     background: #f0f1f3;
-    position: relative;
   }
-  .thumb img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .nopic {
     width: 100%; height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 1px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 700; color: #fff; letter-spacing: 1px;
   }
 
   .content {
@@ -162,7 +219,6 @@
     gap: 5px;
     min-width: 0;
   }
-
   .title {
     font-size: 14px;
     font-weight: 600;
@@ -173,23 +229,21 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   .summary {
     font-size: 12px;
-    color: #666;
-    line-height: 1.5;
+    color: #555;
+    line-height: 1.6;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     flex: 1;
   }
-
   .meta {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 2px;
+    gap: 8px;
+    margin-top: 4px;
   }
   .source-badge {
     font-size: 11px;
@@ -198,6 +252,7 @@
     border-radius: 10px;
     color: #fff;
     white-space: nowrap;
+    flex-shrink: 0;
   }
   .pubdate { font-size: 11px; color: #aaa; }
   .read-link {
@@ -205,22 +260,15 @@
     font-size: 11px;
     font-weight: 600;
     color: #1b6e3f;
-    text-decoration: none;
     white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 3px;
     flex-shrink: 0;
   }
-  .read-link:hover { text-decoration: underline; }
 
   /* ── States ── */
-  .state {
-    text-align: center;
-    padding: 60px 20px;
-    color: #888;
-    font-size: 14px;
-  }
+  .state { text-align: center; padding: 60px 20px; color: #888; }
   .state strong { display: block; font-size: 16px; color: #555; margin: 10px 0 6px; }
 
   /* ── Toast ── */
@@ -229,8 +277,7 @@
     background: #333; color: #fff;
     padding: 10px 18px; border-radius: 8px;
     font-size: 13px; opacity: 0; pointer-events: none;
-    transition: opacity .25s; z-index: 100;
-    max-width: 300px;
+    transition: opacity .25s; z-index: 100; max-width: 300px;
   }
   .toast.show { opacity: 1; }
   .toast.ok  { background: #2e7d32; }
@@ -256,15 +303,8 @@
   }
   .modal input:focus { border-color: #1b6e3f; }
   .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
-  .btn-cancel {
-    padding: 8px 16px; border: 1px solid #dde1e7; border-radius: 6px;
-    background: #fff; font-size: 13px; cursor: pointer; color: #555;
-  }
-  .btn-save {
-    padding: 8px 16px; border: none; border-radius: 6px;
-    background: #1b6e3f; color: #fff; font-size: 13px;
-    font-weight: 600; cursor: pointer;
-  }
+  .btn-cancel { padding: 8px 16px; border: 1px solid #dde1e7; border-radius: 6px; background: #fff; font-size: 13px; cursor: pointer; color: #555; }
+  .btn-save { padding: 8px 16px; border: none; border-radius: 6px; background: #1b6e3f; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; }
   .btn-save:hover { background: #15572f; }
   .modal a { color: #1b6e3f; font-size: 12px; }
 </style>
@@ -273,12 +313,9 @@
 
 <div class="header">
   <div class="hbrand">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 6h16M4 10h16M4 14h10"/>
-    </svg>
     <div>
-      <strong>Apotek Alpro</strong>
-      <small>Health News Monitor</small>
+      <strong>Apotek Alpro — Health News</strong>
+      <small>7 hari terakhir · Auto-update 07:00, 11:00, 15:00 WIB</small>
     </div>
   </div>
   <div class="hright">
@@ -309,7 +346,17 @@
 
 <div class="statsbar" id="stats"></div>
 
-<div class="list" id="list"></div>
+<!-- Top 5 Trending -->
+<div class="trending-section" id="trendSection" style="display:none">
+  <div class="section-label">🔥 Top 5 Berita Kesehatan Trending</div>
+  <div class="trending-list" id="trendList"></div>
+</div>
+
+<!-- All news list -->
+<div class="list-section">
+  <div class="list-label" id="listLabel">Semua Berita</div>
+  <div id="list"></div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -317,8 +364,7 @@
 <div class="modal-bg" id="modalBg">
   <div class="modal">
     <h3>GitHub Token Diperlukan</h3>
-    <p>Untuk memicu crawl, masukkan GitHub Personal Access Token (PAT) dengan scope <strong>workflow</strong>.<br>
-    Token disimpan di browser Anda saja.<br>
+    <p>Untuk memicu crawl manual, masukkan GitHub Personal Access Token (PAT) dengan scope <strong>workflow</strong>.<br>Token hanya disimpan di browser Anda.<br>
     <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank" rel="noopener">Buat token baru di GitHub →</a></p>
     <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
     <div class="modal-actions">
@@ -345,7 +391,9 @@ function col(src) {
   for (const [k,c] of Object.entries(COLORS)) if (s.includes(k)) return c;
   return '#6c757d';
 }
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
 function ini(src) { return (src||'?').replace(/\.(com|co\.id|id)$/i,'').slice(0,2).toUpperCase(); }
 
 function fmt(ts) {
@@ -357,7 +405,6 @@ function fmt(ts) {
   if (diff < 3600) return Math.floor(diff/60) + ' mnt lalu';
   if (diff < 86400) return Math.floor(diff/3600) + ' jam lalu';
   if (diff < 86400*2) return 'Kemarin';
-  // Format: "23 Nov 2026"
   return d.toLocaleDateString('id-ID', { day:'numeric', month:'short', year:'numeric' });
 }
 
@@ -368,6 +415,18 @@ function dataUrl() {
 
 let all=[], fsrc='all', fq='', lastCrawledAt='', pollTimer=null;
 
+// ── Thumbnail helpers ──────────────────────────────────────────────────────────
+function thumbHtml(image, source, c, size) {
+  const h = size === 'small' ? '50px' : '120px';
+  const fontSize = size === 'small' ? '14px' : '24px';
+  if (image) {
+    return `<img src="${esc(image)}" alt="" loading="lazy"
+      onerror="this.parentNode.innerHTML='<div class=nopic style=background:${c};font-size:${fontSize}>${ini(source)}</div>'">`;
+  }
+  return `<div class="nopic" style="background:${c};font-size:${fontSize}">${ini(source)}</div>`;
+}
+
+// ── Filter & render ────────────────────────────────────────────────────────────
 function filtered() {
   let items = all;
   if (fsrc !== 'all') items = items.filter(a => (a.source||'').toLowerCase().includes(fsrc));
@@ -377,34 +436,64 @@ function filtered() {
 
 function render() {
   const items = filtered();
+  const isFiltered = fsrc !== 'all' || fq;
+
+  // Top 5 trending — only show when unfiltered
+  const trendSec = document.getElementById('trendSection');
+  const trendList = document.getElementById('trendList');
+  const trending = all.filter(a => a.trending);
+  if (trending.length > 0 && !isFiltered) {
+    trendSec.style.display = '';
+    const nums = ['top1','top2','top3','top45','top45'];
+    trendList.innerHTML = trending.slice(0,5).map((a, i) => {
+      const c = a.color || col(a.source);
+      return `<a class="trend-item" href="${esc(a.url)}" target="_blank" rel="noopener">
+        <div class="trend-num ${nums[i]}">${i+1}</div>
+        <div class="trend-thumb">${thumbHtml(a.image, a.source, c, 'small')}</div>
+        <div class="trend-body">
+          <div class="trend-title">${esc(a.title)}</div>
+          <div class="trend-meta"><span class="trend-src" style="color:${c}">${esc(a.source)}</span> · ${fmt(a.publishedAt)}</div>
+        </div>
+      </a>`;
+    }).join('');
+  } else {
+    trendSec.style.display = 'none';
+  }
+
+  // Main list
   const el = document.getElementById('list');
+  document.getElementById('listLabel').textContent =
+    isFiltered ? `Hasil filter (${items.length})` : `Semua Berita (${items.length})`;
+
   if (!items.length) {
     el.innerHTML = `<div class="state"><div style="font-size:36px">🔍</div><strong>Tidak ada berita</strong>Coba ubah filter atau tunggu update berikutnya.</div>`;
     return;
   }
+
   el.innerHTML = items.map(a => {
     const c = a.color || col(a.source);
-    const thumb = a.image
-      ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div class=nopic style=background:${c}>${ini(a.source)}</div>'">`
-      : `<div class="nopic" style="background:${c}">${ini(a.source)}</div>`;
-    return `<div class="item">
-      <div class="thumb">${thumb}</div>
+    // Clean up summary: skip if it looks like a raw URL or is just the title
+    const rawSum = (a.summary || '').trim();
+    const showSum = rawSum && !rawSum.startsWith('http') && rawSum !== a.title && rawSum.length > 20;
+
+    return `<a class="item" href="${esc(a.url)}" target="_blank" rel="noopener">
+      <div class="thumb">${thumbHtml(a.image, a.source, c, 'large')}</div>
       <div class="content">
         <div class="title">${esc(a.title)}</div>
-        ${a.summary ? `<div class="summary">${esc(a.summary)}</div>` : ''}
+        ${showSum ? `<div class="summary">${esc(rawSum)}</div>` : ''}
         <div class="meta">
           <span class="source-badge" style="background:${c}">${esc(a.source||'Berita')}</span>
           <span class="pubdate">${fmt(a.publishedAt)}</span>
-          <a class="read-link" href="${esc(a.url)}" target="_blank" rel="noopener">
+          <span class="read-link">
             Baca selengkapnya
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
               <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
-          </a>
+          </span>
         </div>
       </div>
-    </div>`;
+    </a>`;
   }).join('');
 }
 
@@ -416,6 +505,7 @@ function sf(src, btn) {
 }
 function sq(v) { fq=v.trim(); render(); }
 
+// ── Load data ──────────────────────────────────────────────────────────────────
 async function load(notify) {
   try {
     const r = await fetch(dataUrl() + '?t=' + Date.now());
@@ -425,12 +515,12 @@ async function load(notify) {
     all = d.articles || [];
     lastCrawledAt = d.crawledAt || '';
     render();
-    // Stats
+    // Stats bar
     const src={};
     all.forEach(a=>{ src[a.source]=(src[a.source]||0)+1; });
     const top=Object.entries(src).sort((a,b)=>b[1]-a[1]).slice(0,8);
     document.getElementById('stats').innerHTML=[
-      `<span><strong>${all.length}</strong> berita (14 hari terakhir)</span>`,
+      `<span><strong>${all.length}</strong> berita (7 hari terakhir)</span>`,
       ...top.map(([s,n])=>`<span><span class="dot" style="background:${col(s)}"></span>${esc(s)}: <strong>${n}</strong></span>`)
     ].join('');
     document.getElementById('lu').textContent = d.crawledAt ? 'Update: ' + fmt(d.crawledAt) : '';
@@ -443,7 +533,7 @@ async function load(notify) {
   }
 }
 
-// ── Token ──
+// ── Token ──────────────────────────────────────────────────────────────────────
 function getToken() { try { return localStorage.getItem('gh_token')||''; } catch { return ''; } }
 function setToken(t) { try { localStorage.setItem('gh_token',t); } catch {} }
 function openModal() { document.getElementById('modalBg').classList.add('show'); document.getElementById('tokenInput').value=getToken(); setTimeout(()=>document.getElementById('tokenInput').focus(),80); }
@@ -453,9 +543,9 @@ function saveToken() {
   if (!t) { toast('Token tidak boleh kosong','err'); return; }
   setToken(t); closeModal(); startCrawl(t);
 }
-document.getElementById('modalBg').addEventListener('click',e=>{ if (e.target===e.currentTarget) closeModal(); });
+document.getElementById('modalBg').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeModal(); });
 
-// ── Crawl ──
+// ── Crawl trigger ──────────────────────────────────────────────────────────────
 function triggerCrawl() {
   const token=getToken();
   if (!token) { openModal(); return; }
@@ -465,8 +555,7 @@ function triggerCrawl() {
 async function startCrawl(token) {
   const btn=document.getElementById('btnR');
   const txt=document.getElementById('btnTxt');
-  btn.disabled=true; btn.classList.add('spin');
-  txt.textContent='Memulai...';
+  btn.disabled=true; btn.classList.add('spin'); txt.textContent='Memulai...';
   showProgress(true);
   try {
     const res=await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${WF}/dispatches`,{
@@ -498,7 +587,7 @@ function pollForUpdate() {
     attempts++;
     const changed=await load(false);
     if (changed) { toast('✅ Berita baru berhasil dimuat!','ok'); resetBtn(); showProgress(false); }
-    else if (attempts>=9) { toast('Crawl selesai. Klik lagi untuk memuat ulang.',''); resetBtn(); showProgress(false); }
+    else if (attempts>=9) { toast('Crawl selesai. Klik lagi untuk muat ulang.',''); resetBtn(); showProgress(false); }
     else { document.getElementById('btnTxt').textContent=`Menunggu… (${attempts*20}s)`; pollTimer=setTimeout(check,20000); }
   }
   pollTimer=setTimeout(check,20000);

@@ -1,16 +1,7 @@
 {
   "crawledAt": "2026-11-23T02:46:13.576Z",
-  "count": 354,
+  "count": 353,
   "articles": [
-    {
-      "title": "Waspada Super Flu: Kenali Gejala dan Cara Menanganinya",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNd3lkclk4NzNDenZLdzhwTEw2TEcyV3pDdnlYYlFGdVdTLWt0RmZBUGVPWEV4c1Z5SUEyYlpOT1hqZzBzZVVYY3pkQnBSWmhDRW9hMmtYWURkS2hxNHMzLVJpanlYSDYtRFB6WjhabUdQOXV0NXRCRHFPR3EtZHJTTlZNVDRDSVNWM0hqVUVR?oc=5",
-      "image": null,
-      "summary": "Waspada Super Flu: Kenali Gejala dan Cara Menanganinya Halodoc",
-      "publishedAt": "Wed, 11 Nov 2026 08:00:00 GMT",
-      "source": "Halodoc",
-      "color": null
-    },
     {
       "title": "Banyuwangi Hadirkan Dokter Spesialis Gratis di 25 Puskesmas",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTFBXR3RyREFWX1ViRXdyWU1kS2N1d1hjby1lQVE1RUh0NkJBbWtra2VNZWl3MFpNMGQ2N3ZILTh5QllqVUJ5S0JqdU8yUkw3R3dpX2ZESWJjSjlnbDdiVVZkQm96OGZpZVQwOTV1d1otdnQ5c1lhZWxqVjRwMnROT0lCd2k2TnA5RWhmTmVKZkQzVDkwNmZXaFlVVEdweDk1cElvbdIBnAFBVV95cUxPc25OQmo5LWhFUUpQaHlDODN1SzhPSDBtM0l6TkpNVnU1Z2VxcVFCVU1KUHh5em1yUnpmWEpIdXR0eGxHVFc4NmlQWm5hOHVEZFJXLWVOQnM5aEZTZDd2WVg3VTBKQUYtenZpTWJkcWJYX0pjQVp3TWJYZ2JwVXZlZk84YjZ5RmhfTzJReS1DQ0c4cW1SWU1BdkJQbEc?oc=5",
@@ -18,7 +9,8 @@
       "summary": "Banyuwangi Hadirkan Dokter Spesialis Gratis di 25 Puskesmas Liputan6.com",
       "publishedAt": "Mon, 16 Nov 2026 12:14:10 GMT",
       "source": "Liputan6.com",
-      "color": null
+      "color": null,
+      "trending": true
     },
     {
       "title": "Kejagung Bakal Periksa Wali Kota Bekasi, Usut Korupsi Migas",
@@ -27,7 +19,8 @@
       "summary": "Kejagung Bakal Periksa Wali Kota Bekasi, Usut Korupsi Migas Liputan6.com",
       "publishedAt": "Mon, 16 Nov 2026 16:03:49 GMT",
       "source": "Liputan6.com",
-      "color": null
+      "color": null,
+      "trending": true
     },
     {
       "title": "10 Persen dari 5.123 Peserta EKG Heartology Terindikasi Kelainan Jantung",
@@ -36,7 +29,8 @@
       "summary": "10 Persen dari 5.123 Peserta EKG Heartology Terindikasi Kelainan Jantung Liputan6.com",
       "publishedAt": "Mon, 16 Nov 2026 23:00:55 GMT",
       "source": "Liputan6.com",
-      "color": null
+      "color": null,
+      "trending": true
     },
     {
       "title": "Tempo Scan Tuntaskan Bantuan Kemanusiaan, Hadirkan Air Bersih hingga Ambulans Klinik",
@@ -45,7 +39,8 @@
       "summary": "Tempo Scan Tuntaskan Bantuan Kemanusiaan, Hadirkan Air Bersih hingga Ambulans Klinik Liputan6.com",
       "publishedAt": "Tue, 17 Nov 2026 07:32:26 GMT",
       "source": "Liputan6.com",
-      "color": null
+      "color": null,
+      "trending": true
     },
     {
       "title": "Bukan Hanya Bebas Penyakit, Anak Juga Perlu Sehat Mental dan Sosial",
@@ -54,7 +49,8 @@
       "summary": "Bukan Hanya Bebas Penyakit, Anak Juga Perlu Sehat Mental dan Sosial Liputan6.com",
       "publishedAt": "Tue, 17 Nov 2026 09:00:58 GMT",
       "source": "Liputan6.com",
-      "color": null
+      "color": null,
+      "trending": true
     },
     {
       "title": "Video: IDAI Ingatkan Pentingnya Memantau Kesehatan Mental Anak",
