@@ -557,6 +557,19 @@ function toast(msg,type) {
 // Patch: .thumb img needs class set right
 document.addEventListener('DOMContentLoaded', () => {});
 
+function reportHeight() {
+  if (window.parent === window) return;
+  const h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+  window.parent.postMessage({ type: 'newsIframeHeight', height: h }, '*');
+}
+// Debounced MutationObserver: fires whenever news cards are rendered
+const _rObs = new MutationObserver(function() {
+  clearTimeout(_rObs._t);
+  _rObs._t = setTimeout(reportHeight, 150);
+});
+_rObs.observe(document.body, { childList: true, subtree: true });
+window.addEventListener('load', reportHeight);
+
 setInterval(render, 60000);
 load(false);
 </script>

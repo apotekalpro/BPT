@@ -872,23 +872,14 @@
         <!-- Health News Tab -->
         <div class="tab-content" id="health-news">
             <div class="health-news-container">
-                <div class="health-news-header">
-                    <div class="health-news-title">
-                        <i class="fas fa-newspaper"></i>
-                        <h2>Health News & Updates</h2>
-                    </div>
-                    <div class="health-news-subtitle">
-                        <p>Stay updated with the latest health news, medical breakthroughs, and pharmacy insights</p>
-                    </div>
-                </div>
                 <div class="health-news-content">
                     <iframe
+                        id="newsIframe"
                         src="news.html"
                         class="health-news-iframe"
                         title="Health News"
                         frameborder="0"
-                        allowfullscreen
-                        style="width:100%;height:calc(100vh - 160px);border:none;display:block;">
+                        allowfullscreen>
                     </iframe>
                 </div>
             </div>
@@ -955,5 +946,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Load Static Dashboard System (No Backend Required) -->
     <script src="public/js/dashboard-static.js"></script>
+    <script>
+      // Auto-resize the news iframe to its full content height
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.type === 'newsIframeHeight') {
+          var iframe = document.getElementById('newsIframe');
+          if (iframe) iframe.style.height = (e.data.height + 40) + 'px';
+        }
+      });
+    </script>
 </body>
 </html>
