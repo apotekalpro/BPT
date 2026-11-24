@@ -1,5 +1,5 @@
 {
-  "crawledAt": "2026-11-24T14:36:56.952Z",
+  "crawledAt": "2026-11-24T19:25:08.326Z",
   "count": 40,
   "articles": [
     {
@@ -282,15 +282,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "BPJS Kesehatan Ingatkan Peserta JKN Manfaatkan WhatsApp Blast",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPMlV0T05MZkhNa01RSm1ibm82dXJfNFNmQ0s4QXFJRFRYSHBrYVhGLUFiOHpqZjlfd0M4c19GYVl3YWVZYmFaYy1nd3pxMW1rZmlhZFpBVDd1bzdXb3NndjNJUkIxNDl5Nm1BYndwUHNyUTV0TldzWmZtT282Q0c1Rm1jVjZyRGNfUW5SMDhJaTdmNWFaZndZ?oc=5",
-      "image": null,
-      "summary": "BPJS Kesehatan Ingatkan Peserta JKN Manfaatkan WhatsApp Blast Koreri",
-      "publishedAt": "Tue, 24 Nov 2026 00:20:23 GMT",
-      "source": "Koreri",
-      "color": "#6c757d"
-    },
-    {
       "title": "Kakek 70 Tahun Baru Tahu Punya '5 Ruang Jantung' usai Alami Nyeri Dada",
       "url": "https://health.detik.com/true-story/d-8766523/kakek-70-tahun-baru-tahu-punya-5-ruang-jantung-usai-alami-nyeri-dada",
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/09/22/ilustrasi-jantung-1790061263892_169.jpeg?w=360&amp;q=90",
@@ -359,6 +350,15 @@
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/23/kepala-bpom-taruna-ikrar-1795421293098_169.jpeg?w=360&amp;q=90",
       "summary": "Setiap negara memiliki standar masing-masing terkait batas maksimum residu pestisida pada pangan. RI mengacu pada standar internasional Codex Alimentarius.",
       "publishedAt": "Mon, 23 Nov 2026 16:03:23 +0700",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "BPOM Sudah Uji Sampel Merica Bubuk 'Ladaku', Hasil Keluar Minggu Ini",
+      "url": "https://health.detik.com/berita-detikhealth/d-8765880/bpom-sudah-uji-sampel-merica-bubuk-ladaku-hasil-keluar-minggu-ini",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/23/ladaku-merica-bubuk-1795420340737_43.png?w=360&amp;q=90",
+      "summary": "BPOM RI telah memanggil produsen merica bubuk 'Ladaku' yakni PT Motasa Indonesia. Pengujian sampel laboratorium sudah dilakukan, hasil keluar minggu ini.",
+      "publishedAt": "Mon, 23 Nov 2026 15:07:49 +0700",
       "source": "Detik Health",
       "color": "#e63a2e"
     }
