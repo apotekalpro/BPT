@@ -127,28 +127,75 @@ function decodeGoogleNewsUrl(gnUrl) {
 
 // ── OG data fetching ──────────────────────────────────────────────────────────
 
+function isGoogleUrl(url) {
+  try { return /(?:^|\.)google\.com$/.test(new URL(url).hostname); } catch { return false; }
+}
+
+// Google News intermediate pages JS-redirect to the real article.
+// Extract that target URL from the page HTML so we can fetch it directly.
+function extractFromGooglePage(html) {
+  // JS redirect: window.location.href = 'https://...', window.location = '...', location.replace('...')
+  const jsRedir =
+    html.match(/window\.location(?:\.href)?\s*=\s*["'](https?:\/\/[^"']+)["']/i) ||
+    html.match(/location\.replace\s*\(\s*["'](https?:\/\/[^"']+)["']/i);
+  if (jsRedir && !isGoogleUrl(jsRedir[1])) return jsRedir[1].trim();
+
+  // og:url pointing to actual article
+  const ogUrl =
+    html.match(/<meta[^>]+property=["']og:url["'][^>]+content=["']([^"']+)["']/i) ||
+    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:url["']/i);
+  if (ogUrl && !isGoogleUrl(ogUrl[1]) && ogUrl[1].startsWith('http')) return ogUrl[1].trim();
+
+  // canonical href
+  const canon =
+    html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) ||
+    html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i);
+  if (canon && !isGoogleUrl(canon[1]) && canon[1].startsWith('http')) return canon[1].trim();
+
+  // "url":"https://non-google-domain/long-path" in embedded JSON
+  const jsonUrl = html.match(/"url"\s*:\s*"(https?:\/\/(?![^"]*google\.com)[^"]{30,})"/);
+  if (jsonUrl) return jsonUrl[1].trim();
+
+  return null;
+}
+
+function extractOGFromBody(body) {
+  const imgM = body.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+               body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ||
+               body.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ||
+               body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
+  const descM = body.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["']/i) ||
+                body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:description["']/i) ||
+                body.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i) ||
+                body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
+  const image = imgM ? imgM[1].trim() : null;
+  const rawDesc = descM ? decodeEntities(descM[1]).trim() : null;
+  const badImg = image && (
+    image.includes('google.com') || image.includes('gstatic.com') || image.includes('googleusercontent.com')
+  );
+  const googleDesc = /liputan berita terbaru yang komprehensif|comprehensive.*up-to-date news|google berita/i;
+  const description = rawDesc && !googleDesc.test(rawDesc) ? rawDesc.slice(0, 300) : null;
+  return { image: badImg ? null : image, description };
+}
+
 async function fetchOGData(url) {
   try {
-    const { body } = await fetchUrl(url);
-    const imgM = body.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
-                 body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ||
-                 body.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ||
-                 body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
-    const descM = body.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["']/i) ||
-                  body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:description["']/i) ||
-                  body.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i) ||
-                  body.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
-    const image = imgM ? imgM[1].trim() : null;
-    const rawDesc = descM ? decodeEntities(descM[1]).trim() : null;
-    // Reject images from Google CDN/branding (News icon, app logos on redirect pages)
-    const badImg = image && (
-      image.includes('news.google.com') ||
-      image.includes('gstatic.com') ||
-      image.includes('googleusercontent.com')
-    );
-    const googleDesc = /liputan berita terbaru yang komprehensif|comprehensive.*up-to-date news|google berita/i;
-    const description = rawDesc && !googleDesc.test(rawDesc) ? rawDesc.slice(0, 300) : null;
-    return { image: badImg ? null : image, description };
+    const r1 = await fetchUrl(url);
+
+    // If HTTP redirects left us on a Google page, look for the real article URL in the HTML
+    if (isGoogleUrl(r1.url)) {
+      const realUrl = extractFromGooglePage(r1.body);
+      if (realUrl) {
+        try {
+          const r2 = await fetchUrl(realUrl);
+          if (!isGoogleUrl(r2.url)) return extractOGFromBody(r2.body);
+        } catch { /* fall through to Google page content */ }
+      }
+      // Google intermediate page gave no usable data
+      return { image: null, description: null };
+    }
+
+    return extractOGFromBody(r1.body);
   } catch {
     return { image: null, description: null };
   }
