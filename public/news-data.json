@@ -1,11 +1,317 @@
 {
-  "crawledAt": "2026-11-23T09:35:42.422Z",
-  "count": 251,
+  "crawledAt": "2026-11-23T19:57:42.487Z",
+  "count": 259,
   "articles": [
+    {
+      "title": "Berat Badan Turun Tanpa Sebab dan Mata Menguning, Waspadai Tanda Kanker Pankreas",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeHR5bkEyTDJCajl6N0lRaGp1Q3Z5MEhVY1NYU2QxWUpka3ZveVdKUjh2M2lfeHQxX05vTE9TOU1raXNFeGxnRWtQQzBCS1ZKWV9JdFlrT01BelZzbU5PMEhQdXFud0VxMG14S0VGUGFFcmhOZWppNk56em52Q1BRemQ4SWRHai1aS2JLOFNac0ExNVJnUU00WGl2cVYzT2I0T1YxU1hxVVoyTjhIWXhSUUpuNVZZYnJ1SnNXdmtNMGt3dw?oc=5",
+      "image": null,
+      "summary": "Berat Badan Turun Tanpa Sebab dan Mata Menguning, Waspadai Tanda Kanker Pankreas Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 19:09:32 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Video: Tes Kesehatan Amran dan Sugiono di RSPAD Kamis 26 November",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcS1ycG9KM2JHN0psTWRyQVhfQ2dNTmc1c0hRQnRNQzE2WDJMZjRKNURlRzN1bmJPM0tQZVc5dDBXY0drYUlzTVlUbGZsR21VWVBwZDgxUThBTU5EYzVjcFZrblI3OU9nSnNBUmxWaXJnWEhWSWNuMTdzbjg4Z1pfUzZUOE1fRjFLRG5Rd2kyU1lOVm5EZjVnLUtEVzhTWFlsR3dVMFpJX1l0RG9oTDQ3NlFSal9YTGs?oc=5",
+      "image": null,
+      "summary": "Video: Tes Kesehatan Amran dan Sugiono di RSPAD Kamis 26 November 20detik",
+      "publishedAt": "Mon, 23 Nov 2026 18:48:12 GMT",
+      "source": "20detik",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Terungkap Ada Kelebihan Bayar Iuran BPJS Kesehatan Rp700 Jutaan di Deli Serdang, Kok Bisa?",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUzl0cGlYRmJKUHZuX0Yta29uZUhGbEMtSk9fNjhVMnBmYkFpSFJ2aURxalYzV2Z1SkZodWpEMDNUUkJpZE13eXZYdWV2bTBRZEFVMmd3aXpDd2RCWEZVTWppbXJOcnR6Y2hzTm1kZTRWaVJRamxiX2wwYmxfdXp1NjF0MVBUbjJ4eVE4MmdONlRhbldTX20ySF9PRF80elhVT1UyTm5qNGFibU9HWjAwLXJMOEZWcE1taWpSYzhiY1QwZ0pacDJrbkxB?oc=5",
+      "image": null,
+      "summary": "Terungkap Ada Kelebihan Bayar Iuran BPJS Kesehatan Rp700 Jutaan di Deli Serdang, Kok Bisa? Tribun-medan.com",
+      "publishedAt": "Mon, 23 Nov 2026 16:49:06 GMT",
+      "source": "Tribun-medan.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "630 Warga Depok Dibayari Iuran BPJS Kesehatan, Pemkot Kejar UHC Prioritas pada 2027",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb3N5RS1Zd3dtaHM2TlFQNFJMcEVtSHF5bXNEVkRMMjYwTHhQOWRod2h4a3Rrd2R3ekhuaU82ZURyWHJvT0dIVEZqc3RHSFhCUXdZdm9McEIwTUZ4TExwQnF0RDl1TVFsNjRQSnVGdVhrTnhvNmdXdHhaZTBBcV9pWEVkQktOYjM0cE9xdmg2OGJjZkRjTGh3clhoTkhWcTlrbkR4NTFES0FmdktsYTJ5REg1RFktbjhHMUluYXZQeGFRVmRWRTE0?oc=5",
+      "image": null,
+      "summary": "630 Warga Depok Dibayari Iuran BPJS Kesehatan, Pemkot Kejar UHC Prioritas pada 2027 Wartakotalive.com",
+      "publishedAt": "Mon, 23 Nov 2026 16:03:31 GMT",
+      "source": "Wartakotalive.com",
+      "color": "#6c757d"
+    },
+    {
+      "title": "Wujudkan Kota Sehat, Wamendagri Minta Pemda Perkuat Budaya Kerja Inovatif",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU1lMYW5SbHh6VWd6bl9jUUttWl83T2oyQ1dDOEdZbmJXU28wTFpSc3lsTll0N3doVXR3cVFBdmgzU2tVM0VBUWtjTlFJSXFEWkFsQk1WeDRNdzBjZHdqRXY1Z2lnRkFpcjZTRElKR3E4N0lqTnhURklNWGpnNHdYSFRSUDBwWlB5OEhZMEFxN0pOVzlfc1R2UlhHV0VKQ3pJdHlGYUFjaE1CSVlwbFRXX1lB0gG3AUFVX3lxTFBhUmhXdlJsS09JbjV4SzcwUXJnelpZaVpiOVhvX3VsUDBrME95TUMyZFNtRzRHTzYtNnFJeEJRZzdSLXdTRm1mZHIzZGJNVUZkaWN3LTF0anVsaTdrc1NILTYwU3JLT2JsSU5oanVtbFFTcHRJVzRLa0NxWUh3aEVXcDlwMTdGRjRUSWNQWlhfZDVHTVBVcWR5UUtKdWpCa1VfNjllRUY3N1JWNVduSWhLY01OOTJkbw?oc=5",
+      "image": null,
+      "summary": "Wujudkan Kota Sehat, Wamendagri Minta Pemda Perkuat Budaya Kerja Inovatif detikNews",
+      "publishedAt": "Mon, 23 Nov 2026 16:01:47 GMT",
+      "source": "detikNews",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Sambut Kampung SAE 2.0, RSUD Cideres Edukasi Warga soal Hidup Sehat",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZHFEdFNJVDRUS21ia2wybl9XODJXX09EOVFUblRvS3YtZThyM2NlQnBQVUJsTUE5Rm1DeHpmMTRHc0NZQVZnQkhfS0xVUUhUdER0S3AxWERMeDBTYTlpTWFWd1VEQkY0c2ZiMGVYMS1YQkJpZ0VWTE5EcktRek5RMzhLX0hZb1FmQ2t5RzdJU091SE15WU9maXlWWkJWU2Z6VzhtanJlUHAyTXlfYlZEMFBJM1E1TTR20gG-AUFVX3lxTE1SQkZfYlRkZnJfSFRwM25ReXFUMVE1WFczbzFXNnpMQV9NV1ZHTUVBekNNSUlUWGJEVEZpMHhLWW9aX2k2Q2tMNWJSMjgwY3dkREJrR05GdW16cWswd2sxdks3QlgwOFFQUFpWRWdiQ3BEZUplXzIwMnBNYWcyNzd0S3Myd2hjTV9LaENYOTFoY01zQjlla1BFalJ3ZE55VDJxbFRpWkZrd0EteEdqa1B4cWpSeXBUWHRTaUpsV1E?oc=5",
+      "image": null,
+      "summary": "Sambut Kampung SAE 2.0, RSUD Cideres Edukasi Warga soal Hidup Sehat detikcom",
+      "publishedAt": "Mon, 23 Nov 2026 15:31:11 GMT",
+      "source": "detikcom",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Jadi Cawapres, Amran dan Sugiono akan Tes Kesehatan di RSPAD",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZ2J3a2RxaGdLMC1lSllIdm9TQS1DZi1IN0lxUWdjYlJFX0hUQVpwOFFSanNPNkRqNWxDRWNWNW1iU3cwSFViLVdLTkE5Q1k1Y1ZPUjBFQ29iZHB2V2R4SmVOQnlFM3pWOUg0MGxWdVgxT19GQTBJa2o4X1NSbHJmbnlzV2FUc05yYlNwWWt2SWtRT1NPbG12ZFB1TldQZ0ZXZU83bTZoYmdZd9IBnAFBVV95cUxPMDFYZkhjQ2ZIeWZONUVLNDctMFZxR0hEYU1SRHJ2d0o5bkNhTXJIRG8zcm1NZEEwTk4wNHRVMHdpb09ad1lQSEkxN3M5QjRBUUZLV0ktWW0wbWdXbmw1d0J2T2FxclF4SEtxX0FsNkJ3RTRNZ05tcWhlTDVGQ1EzZWRXRVZTcUxLMVMxYWxRUDNfNmNyaXlTbnU3Yzg?oc=5",
+      "image": null,
+      "summary": "Jadi Cawapres, Amran dan Sugiono akan Tes Kesehatan di RSPAD Liputan6.com",
+      "publishedAt": "Mon, 23 Nov 2026 15:23:46 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
+    },
+    {
+      "title": "Suarakan Anti-Perang di Belgia, Massa Tuntut Dana Pendidikan & Kesehatan daripada Senjata",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOE5oVkdxSkJ1Ni1va0JLU3o1S0wxaTBZNlBuVlc4MEJqOEhfU1J5azJRNGhyR0R4QmQ5VDdieGpmRW0wa3Y2dFc3Rmt5eHo3eTRLRGwtSUN5RzdEaTNKeEhlSWlBdUhwXzc5TjRKUXR5VGhRNDNiajlXZDRCb1Z5dGZFYUZqSXVEMEVuWXlKQkdTT0V6eVUtOS1PZU9mUFM2M3RWRDlrQnRUT2ptV0tteDl6VDhCN043TEhhVjN3NS1lUDQ?oc=5",
+      "image": null,
+      "summary": "Suarakan Anti-Perang di Belgia, Massa Tuntut Dana Pendidikan & Kesehatan daripada Senjata TribunWow.com",
+      "publishedAt": "Mon, 23 Nov 2026 15:06:28 GMT",
+      "source": "TribunWow.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Tindak Lanjuti Aspirasi Masyarakat Menuju Kebijakan: DPD RI Sumsel Kawal Mutu Kesehatan di OKI",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNWmxKcEVOb1VSNHdENTF2N2tMVHJNY1JxUFlyMEV0WU9JNEgwZXFPZ05HVmFKNC03RjVnUzlWTE9od2ZGRm1DNUJjQUotUmZqNGUzN0ZlT29vU2Yxb2JCdUNja0Yzd2JsSUhvN1REaTQtR1c4anZyUjNtVXJhRERzZk4wZVUyUkt3ZEZfMjFEN2dpeWQ5LVNoRVRLSUZRTGNBUEFrckVzUzFxUEVLeHlSeXY4akhBd3ZYOVFKdlFnOWdLbFpIbkZjazBOWmZrQWl1?oc=5",
+      "image": null,
+      "summary": "Tindak Lanjuti Aspirasi Masyarakat Menuju Kebijakan: DPD RI Sumsel Kawal Mutu Kesehatan di OKI Tribunsumsel.com",
+      "publishedAt": "Mon, 23 Nov 2026 14:45:05 GMT",
+      "source": "Tribunsumsel.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "BPK Temukan Kelebihan Bayar Iuran BPJS Kesehatan Rp 700 Juta, Orang Meninggal Masih Dibayar",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOVzhjbVYzVGstYS11QXJjT2ZmSnB1bVM0NEFwNDkwaGswYzRZVWx5UjVHdWxLR3BuLVNhaEVmX0IwSTRORVAwT3hIZ3psV2tkSW9mekNmQ0JxUFYyX3pfQ0pmYjlEMGloMVVaOTJzLXpOcUZPeUptVmlmaUlmZm1vcEhKN0tUNTFPOFJUMFNibGtyNWtSTVVpUk43TDFqN1B2Wm81NkhlX0tlcFhlYUREY29odzJVQ1lCSzVZZFdCNm5jVzFsLU9CdkN0SGppSXNhVllKeUN3?oc=5",
+      "image": null,
+      "summary": "BPK Temukan Kelebihan Bayar Iuran BPJS Kesehatan Rp 700 Juta, Orang Meninggal Masih Dibayar Tribun-medan.com",
+      "publishedAt": "Mon, 23 Nov 2026 13:55:39 GMT",
+      "source": "Tribun-medan.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "MPR: Tes Kesehatan Cawapres Amran-Sugiono Digelar 26 November di RSPAD",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNeUs4VVhsVW94ZjJmd3JENm5reXZqQ0g2el8zVUN3bnZGMk9qeGtMSU1oUmRMMWVVUXZKU01QeFJoRmNMZW9kaWM3MWtYVmpxbms0M0JDNjdvQkhUUjJrZFVpQ3FBcF8zNDB0eVJJcWpFcDA2VG5FdTFiYjBibkZNY3J1QUJUTzF3cTRNakoxYmkyalcxYl9ZZlRKd2NzMzViTmd6NVQ1Z29oUTNncDhRbm5MNzFUSU1rcVJrVVJkWQ?oc=5",
+      "image": null,
+      "summary": "MPR: Tes Kesehatan Cawapres Amran-Sugiono Digelar 26 November di RSPAD Kompas.com",
+      "publishedAt": "Mon, 23 Nov 2026 13:51:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
+    {
+      "title": "Meriahkan HUT Golkar, Warga Padati Jalan Sehat dan Pengobatan Gratis di Sigli",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMHNGcFJSTTJCOS1FSExqblBpRnVzdUtvZjBpYTBHaFlkT1Q0bGJ5UHAwSVczWE5UTloza1ZTSXNHc3RTS3FxS21IRS1TYUt6QXVQcko3ZVJabm5OamF4SGJyRy1MOTAtSmlpYVh4T09pWWlRamVNbjI3aFVPcW5mX3o4eWRaVlM1bUcxQzFNenpnM1lrV1FKYng4WTBVTXd6RWF3QVc0UWMtel84cGMzVlI2YW8yQnEwUHNmdzdR?oc=5",
+      "image": null,
+      "summary": "Meriahkan HUT Golkar, Warga Padati Jalan Sehat dan Pengobatan Gratis di Sigli Serambinews.com",
+      "publishedAt": "Mon, 23 Nov 2026 13:45:16 GMT",
+      "source": "Serambinews.com",
+      "color": "#6c757d"
+    },
+    {
+      "title": "Tes Kesehatan Amran dan Sugiono di RSPAD Kamis 26 November",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMUxvRHN5N0FPY3lSWE5CZS12ZVNXTUNXQjgyajgwT1M0TkxmTzdrZUtjRjRXYXZHTVhIWGFpMkE0Q0VyNVVHLUdXNXVLYUx2amg0ckF3VV9IRU9hRkhmSDJZMVViTl9QUDg0bTByMkxSclZMaUtLU2VpNjRmbWZJNldISnJVNmd3eklaamFKRTh6OXpvRUhBVGVpbDNpWnfSAaQBQVVfeXFMTVhyeG14cnQ0Q2xyX1J3QURMUGQ4VkJvVUpPR0Z0ZGJXZ19xc3FSMUhielB6N1prSGdmeGtKX1h6NFJLbG84WnJyazY4dElfUlFEeHVZeGpQaW9QZTVLZk42a3JTZFI2VEFWc2NFNmhwWEdmRU9NQ2swQUFZVW5TakdjdkU5d1FWOGlLQ0xjMUpUWm0wN3QwRmtqTkx6VzdQeGtIYUw?oc=5",
+      "image": null,
+      "summary": "Tes Kesehatan Amran dan Sugiono di RSPAD Kamis 26 November detikNews",
+      "publishedAt": "Mon, 23 Nov 2026 13:35:08 GMT",
+      "source": "detikNews",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Calon Wapres Sugiono dan Amran Sulaiman Akan Jalani Tes Kesehatan di RSPAD Kamis 26 November 2026",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPX2pkeW85LXFGVlJDZENMdEZkdTFCT2RNdnV2cTNNYjhKTmFHazBnUXk2VXpuT1NwaG9NbFhncV9OZjRHSkdZWFRsYXdUelVnandPc0RNODZOUVpaLVpkSmlkakV4YlVKRkdSMzktbUw0Q0Q4ZXpLekgta3VfOWYzZjg3b2N6ZGFBS1dBRlN2LU5KekkzYnhIbHlIeUVpMVE3Z2h2YkFoOVl3emxOS0ZsWGRMVWg0Q09aV2pXLXllRXU0ZExpdnVVby1mOThDdWxmdkVHd216cDM?oc=5",
+      "image": null,
+      "summary": "Calon Wapres Sugiono dan Amran Sulaiman Akan Jalani Tes Kesehatan di RSPAD Kamis 26 November 2026 Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 13:33:41 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Sering Begadang? Ini Organ Tubuh yang Paling Terdampak dan Risiko Penyakitnya",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSlQwdkVXVW5zQzUtSWFqRXl6VGUtQVlOVlRaWVFwSEV2bm5hMFFic3pqTWJNUm9kNGFFdGN1RWZ4X0JDejVHZ0tqbWRBYVlVLTBDRXJGaGhNRS1aa2ZpaV9jTkVZYl83VzdfSWk1Yzc4cTJWcWxubk5ZTnpiVWVOV1Z3U2RYUlg4cU9aRjNjeEhpel9iUHJHUE5LbU03SWZLWFdxX2MyeGNKZDlTQkQtbHF5RWplcVRUajV5Tkln?oc=5",
+      "image": null,
+      "summary": "Sering Begadang? Ini Organ Tubuh yang Paling Terdampak dan Risiko Penyakitnya Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 13:25:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Ilmuwan Temukan Petunjuk Baru Penyebab Kasus Kanker Usus Meningkat di Usia Muda",
+      "url": "https://health.detik.com/berita-detikhealth/d-8766488/ilmuwan-temukan-petunjuk-baru-penyebab-kasus-kanker-usus-meningkat-di-usia-muda",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2022/11/24/ilustrasi-peran-usus-dalam-tubuh-1_169.jpeg?w=360&amp;q=90",
+      "summary": "Ilmuan menemukan petunjuk baru terkait penyebab kasus kanker usus meningkat di usia muda. Diduga akibat paparan toksin yang dihasilkan bakteri ini.",
+      "publishedAt": "Mon, 23 Nov 2026 20:08:29 +0700",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Hasil Audit Bayi Meninggal di RSUD Jakut, Menunggu Ambulans 5 Jam Lebih",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPcEpocWFXb0Rac1NmNmZKQTAyeXZPRWI2c0o3UnZ6U2FQQlZRc2lDblNNOTRuUl9pSVAyU2xZUXkyWVJ3ajF3d0x0UkV4aHZETWlDOWVZYkJxanF3UGpQRTJtUi1TUWp1NXZzUE5XdTBtMFJHakJLU2NGcmxtSDRhZkVHU3VPQmk4YVlyc0tBd1lGWkJxMXFRV1FHRS0wVXE0eGZUMjJlM2F6aXVHR2poalJWY29faUo0dVU0VE1vemczUnBY?oc=5",
+      "image": null,
+      "summary": "Hasil Audit Bayi Meninggal di RSUD Jakut, Menunggu Ambulans 5 Jam Lebih Kompas.com",
+      "publishedAt": "Mon, 23 Nov 2026 12:51:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
+    {
+      "title": "Sisa Makanan Picu Plak Pada Gigi, Jika Dibiarkan Jadi Awal Peradangan Gusi",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQV2o4R0ZvSXZKVEZISVQ5SU1lbExIMkZxRnZyZUNZeVZsOW9iMUVoSnMxVUlZb2ctajhZa3VaQzNHT3hUQmtDQWpObkJnTEt2TmFlMm9mV3l2eGZKOEpodVBtLXFRby1VSmFnTl8xSnQzQ3FFMXdKbHV4aEw5TEJqeWU0Y2pFWlQyb2VqRENmYTUwNVQ5bnVIZmRBbm51bmpVMFhESWw4dmg1cWNycGg4cWZqRFpDSU1qZ3c?oc=5",
+      "image": null,
+      "summary": "Sisa Makanan Picu Plak Pada Gigi, Jika Dibiarkan Jadi Awal Peradangan Gusi Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 12:35:36 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "3 Penyebab Utama Stroke yang Perlu Diwaspadai, Hipertensi hingga Penyakit Jantung",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOakdYMkRWNFRUdXF2c0lOU0ZEM1kzbl9STldodXppbUxLN1JUTDlFYXdTRkpYMVFaeEI1emprT2lHMzhxLS1PeC1EQzdYRFJtVkhfWWVGb0RsMTFELWpXVnhOM2JzX3NzYXN3akFQQlFjYVpwYmx2MzF4d3k5MjdGczNkR3I2MXJGNVFZeEpDVWNMaU5ISjItNUZtbmwtcjdmdlpjVS14WTFDWEJvTUZtZWxjRHNBclJGQXZNZjBPR1Vaam8?oc=5",
+      "image": null,
+      "summary": "3 Penyebab Utama Stroke yang Perlu Diwaspadai, Hipertensi hingga Penyakit Jantung Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 12:35:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "5 Manfaat Ikan Kakap Putih bagi Kesehatan, Kaya Omega-3 dan Protein hingga Rendah Merkuri",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNbFViMjBhUngzR3pEdmUyZkVjVS1fWDV5a1NackdtdklidkpVZENOeTdteUlKU0RKZjZtQlBJTjBPMkVTTExzWmJWcTVBcXAyNDVMSFlfeHpnT25oVzFqd1prbnNDX0hMbGt4MmhONjNhOS1YMDZCRXpWOXdSLWZyX093TmlhR0RIYlJXT3dYQ21pUXJYUmtmdmM0TjRiOFViZ19zZTlhLTBtSVRLUWFlbThIV2FtdVRpOHRvSVRaY19tOE5JQlhMblB2RmZQZw?oc=5",
+      "image": null,
+      "summary": "5 Manfaat Ikan Kakap Putih bagi Kesehatan, Kaya Omega-3 dan Protein hingga Rendah Merkuri Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 12:31:25 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Jangan Hanya Istri, Suami Juga Perlu Jaga Kesehatan saat Program Hamil",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWl9meS1ZRXY1TzB4WnFlS1JlMUNaTEhYTUdRVVE5dE9fOVN5aDFnSExFSC1MTEhKRDdpNmNKall1NDRyYlg5RjA4M1RfLTNFQUhEdWlvY2sxUkgxOUlZSTdKZ1cyakV4bGlhOFlPam1DZVZ5TzJoTWpHTVdjUFlvSkQ5cUtEZFp6SUpUcldtTlpZQUV4YURHV0dZRmVVZFAtaFVoQWsxVmxCVWhESUxfa0dCMzhMdw?oc=5",
+      "image": null,
+      "summary": "Jangan Hanya Istri, Suami Juga Perlu Jaga Kesehatan saat Program Hamil Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 12:30:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Kata Androlog soal 'No Nut November', Pria Ditantang Sebulan Tak Masturbasi",
+      "url": "https://health.detik.com/sexual-health/d-8766395/kata-androlog-soal-no-nut-november-pria-ditantang-sebulan-tak-masturbasi",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2025/05/16/ilustrasi-seks-1747380884184_169.jpeg?w=360&amp;q=90",
+      "summary": "Tantangan 'No Nut November' mengajak pria menahan ejakulasi sebulan. Ahli andrologi menjelaskan dampak dan fakta seputar kesehatan reproduksi pria.",
+      "publishedAt": "Mon, 23 Nov 2026 19:05:42 +0700",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Alasan Perempuan Lebih Rentan Mengalami Gangguan Tidur, dari Hormon hingga Stres",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQeUpSeHM1S2l3Nk5aN2ZyZl9WdTlIdjVKMkhPdEVhZHdUbm9JRk5XMVRRTXJha3hoMkR4NW5sUGt6Vm01YkppRlA2b1JjVUhUbmxDN0pQb3NOM2dvSGtkNWQyNTdkWXFKWGxsY1dnZkRzU3BkVjZFbTkzWFNtaEFxU1ZaQ3AwMU9XY280d1hPdG05RXFMNV9BbEEyN3VZVXpNM3BjWUlkZlVOWnFtUlpDQThrSy12d1RlWWUxcDZkRDBMY0dnZXY4?oc=5",
+      "image": null,
+      "summary": "Alasan Perempuan Lebih Rentan Mengalami Gangguan Tidur, dari Hormon hingga Stres Kompas.com",
+      "publishedAt": "Mon, 23 Nov 2026 12:03:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
+    {
+      "title": "Hasil Audit Bayi Meninggal Usai Lahir di RSUD Jakut: Persalinan Sesuai Standar",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOd295V3dWam9Ga1ViZUprV0RSaXdxc3FrQzRmSk54bEhnVUxCNUVqUUREQldZTDJOdEFNLXZadWdGZGc2XzJaZzRvUHJCbXk2WlJhY0kyWkF6MVFsNXlHOTYyZkhIX1lMOFF0VVhLbXdaSE00UEJOQlhLMTZWMTRmVDA5cWtHdlFBLUhkdDFQTEd2bWVtQW5CME4zcG1jWmprMXo0N3k3NEtrakVGOFV6T3VRZmRXX3dkbFJSRndIQWx5VW8?oc=5",
+      "image": null,
+      "summary": "Hasil Audit Bayi Meninggal Usai Lahir di RSUD Jakut: Persalinan Sesuai Standar Kompas.com",
+      "publishedAt": "Mon, 23 Nov 2026 11:10:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
+    {
+      "title": "65,78 Persen Calon Jamaah Haji Makassar Sudah Melunasi Bipih 2027, 419 Orang Terkendala Kesehatan",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQ2Y5UTdBQUFjLUc5SG92U1B5R2J1Rlk0Ymo0STFNVHY0WUdNQUlkblQxVFVJZG5KNDZxTzZ3NEtpTDZYU3VUczk4S3dWTER4enF3dEtxcE9JZ2VwQ0xPMUVtM2JzMlliNHFVT0cwWE5LajlOaGFfU0ctZ0NIdDJnLU1hQWFmbGRiWkRFVEdmdDBxNDJJUlI5WTdHbEpuVWRTYjdqYWI0Uks1eEg4bGwwS3c5eHlfblZ5bWduakFoaHRuM1BCY2piMDY0ZnNqVkhXMXVfckhVYWczWW1M?oc=5",
+      "image": null,
+      "summary": "65,78 Persen Calon Jamaah Haji Makassar Sudah Melunasi Bipih 2027, 419 Orang Terkendala Kesehatan Tribun-timur.com",
+      "publishedAt": "Mon, 23 Nov 2026 11:06:11 GMT",
+      "source": "Tribun-timur.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Batasi Gula Sejak Kecil, Efeknya Bikin Usia Biologis Lebih Muda saat 50-an",
+      "url": "https://health.detik.com/berita-detikhealth/d-8766293/batasi-gula-sejak-kecil-efeknya-bikin-usia-biologis-lebih-muda-saat-50-an",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/03/13/ilustrasi-cut-off-gula-1773374024594_169.jpeg?w=360&amp;q=90",
+      "summary": "Studi terbaru menunjukkan pembatasan asupan gula sejak dalam kandungan, dapat membuat usia biologis lebih muda hingga 5 bulan saat memasuki usia 50-an.",
+      "publishedAt": "Mon, 23 Nov 2026 18:04:07 +0700",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Anak Polisi Asal Makassar Lulus Seleksi IPDN Tapi Dipulangkan saat Diksar, Alasan Kesehatan",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNR2JZZF9TajJSUVpTVnZQRDZuaDF0OXlZNFhxaldlSDY1Wm5BQ2hoNmUxZFVWXzhWRlg5Z2F3UXMzNW1KdW1IMVZZa0ZjenhySnFyOHBoODlPZl8ydWxrYl9tUFc1SHdxT09jUWhLbWM4OEJ2bEFyR1M4d21tQWZmX3c4a3BVWGVNSk83cThzNUMwaE9lNXFkN3F1dm16ZDhhS3YxWkNJekhwNmF1OUZpbjdxRVFNcUlaZXZQeERFM1lkbHU0VEFOMEhYakplWGxOUmZ1TnlR?oc=5",
+      "image": null,
+      "summary": "Anak Polisi Asal Makassar Lulus Seleksi IPDN Tapi Dipulangkan saat Diksar, Alasan Kesehatan Tribun-timur.com",
+      "publishedAt": "Mon, 23 Nov 2026 10:56:09 GMT",
+      "source": "Tribun-timur.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Penurunan Daya Ingat Bukan Sekadar Faktor Usia, Simak Lima Kebiasaan untuk Menjaga Kesehatan Otak",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNSzFCOTJhYk1udURERXBrZElsbnVUcUdxMm9pTFVFbWZNWjJsZWd1QTZEa000VWtkUFVld3BiZ1B5UVNnS0Q5cDc0Q01KOHFxMHhCQ1BEY3E2UktBNFVweGY0OEE3RlpxRkc0czVJSEtKMGhXMGVqV0FxQmdjelNLdE5xZUtqM0dUd2dfVVpyS29pc0QxcUl4S1h3a21oMm1GUEtDQk1QcE0tT3gyZHY5NUZZblRGWXBOV2p3TGltVzFUMjU2RDlKZ1dTcEZiYnA5aDBPXy01dUc?oc=5",
+      "image": null,
+      "summary": "Penurunan Daya Ingat Bukan Sekadar Faktor Usia, Simak Lima Kebiasaan untuk Menjaga Kesehatan Otak Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 10:30:13 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Gigi Berlubang Tak Selalu Terasa Sakit, Kenali Tanda Kerusakan Sebelum Mengenai Saraf",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNUTNWRXNaSkhjTUtMQXo3SEJ4Y1RRMmJreHhhN29DeUlrUXhjUmtEN05OcW1jZTdwczJYam4zeUFFeHF3VXVfUWlmbE9FVHdHbm4zYS1Pb0RBajVHWU1wdEtETlJVRlEzQXVxM0piRmpmM0QtcGo0bXZITDVva3l2dGk0YUpRUGxpZVFnR3dpYjdOb2I2WlVhUE5qdUdvQ09XV2VVRzcxa3FFT2VDT01XOVdrb01haXBBUWFveFFqN3lVdG1aejhROTVLQQ?oc=5",
+      "image": null,
+      "summary": "Gigi Berlubang Tak Selalu Terasa Sakit, Kenali Tanda Kerusakan Sebelum Mengenai Saraf Tribunjabar.id",
+      "publishedAt": "Mon, 23 Nov 2026 10:23:46 GMT",
+      "source": "Tribunjabar.id",
+      "color": "#d35400"
+    },
+    {
+      "title": "Benjolan di Pankreas Tak Selalu Kanker Ganas, Pemeriksaan Jaringan Jadi Penentu Kepastian Diagnosis",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPemR6OC10cXVOdDhZdFBCWFdkcEFSdktWZ1NJV1dsekJ0WjRMN21pN0NYRE53aVUyS3ZRUHhhYnhlUDZELU96MkFOLTBiUkFNOGtvYUtFU2hISEdKQWNvdmw4aVdSVXhXVFNoX29iWUx2T3FKU0E2VEY0Q1ZXS3U5LTlSQXBVZHRCbkF6eVVkTzlRY2Y3NnJEN3p6VFhmbGZaWkRJdEg1TF9oUEhhV0J5NERiRzZEWDZucWFuZ21LeVZKa2YxTUFYcmFrdk9VUHp3YjdmamRMY1JvTjA?oc=5",
+      "image": null,
+      "summary": "Benjolan di Pankreas Tak Selalu Kanker Ganas, Pemeriksaan Jaringan Jadi Penentu Kepastian Diagnosis Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 10:15:11 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Respons BGN soal Usulan Menu Ikan 2 Kali Seminggu untuk MBG",
+      "url": "https://health.detik.com/berita-detikhealth/d-8766180/respons-bgn-soal-usulan-menu-ikan-2-kali-seminggu-untuk-mbg",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/13/makan-bergizi-gratis-makin-meluas-27485-sppg-layani-582-juta-penerima-1794551259383_169.jpeg?w=360&amp;q=90",
+      "summary": "Respons Badan Gizi Nasional (BGN) terkait usulan agar menu ikan dihadirkan dalam program Makan Bergizi Gratis (MBG) minimal dua kali dalam sepekan.",
+      "publishedAt": "Mon, 23 Nov 2026 17:07:54 +0700",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Ini yang Terjadi pada Kualitas Tidur Jika Melewatkan Makan Malam",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWVdjVGVVQnZaZHc4QkpKVEhKUzB3S0NRSE9IdVJTX014WjlkTnVDRnJNbjl4N1FldlFhM3hyOFhiTmJ4aW9WbXJTY1pWZWQzMTRwU2phWFZDalNhSE5JQWM1bmZHeVB1UWlfYXV1cEQxazBDMGR6d2NtMzY5STN4SnUzYTk2ckRPSWFzYmtnWHpVMUNZeFVzaTZBR0J1VjRwZlNXQmxCQnVpWm9GWGdJMm4ySUthcy1CQ0Iw?oc=5",
+      "image": null,
+      "summary": "Ini yang Terjadi pada Kualitas Tidur Jika Melewatkan Makan Malam Kompas.com",
+      "publishedAt": "Mon, 23 Nov 2026 10:03:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
+    {
+      "title": "Usia Muda Juga Bisa Berisiko Terkena Stroke, Kenali Faktor Penyebabnya",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPU2Qzbmh5U2dGbl9QOElkMzJDNDdhaXVLZUQ1Y1lxemUyMldLc0QweHNIeWhCcDdhd3NrWE9nMGpCUDZZcFp0OUlYeW0yS2t4aXVSRFoxclNpenpaVi1wVkRiZVBwLTF5dEZlMk5uS1l0RlMzckdwc1N4aXptN0RmMTFpd3NzdGpuWXc0QU1yN2xTTDM1Ml9RLXBlZXI3eXd5TE5Pd19mZWpIN2JyQmdHdEs3d18?oc=5",
+      "image": null,
+      "summary": "Usia Muda Juga Bisa Berisiko Terkena Stroke, Kenali Faktor Penyebabnya Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 09:31:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "YJI Kutai Barat Bentuk Klub Jantung Sehat di 3 Sekolah, Sasar Pelajar SD hingga SMA",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxORmJHRER3a3d4eUotZ1ZxTGxpbEhaX1ZBN3dHYWtHUXhPVDFxUUJNWXFPR1l2SzRlNThsd0ZfcnVNenZnMGpfU09xVWR0aXhuTUR1WmZYZE1yMHUwMGpuY2RIUWpaQ1c3REFfU2VINmFPZ1J2VWo4elE1WVVoLV9BOE5paG0wak9JVnBoUWE0ZF85VWI4V1FzYU9vUldNZ2I4TEF0M2tUTV9paEtqdUN4bDd4TzctLTFrc01ON29COXVRSDMzT3c?oc=5",
+      "image": null,
+      "summary": "YJI Kutai Barat Bentuk Klub Jantung Sehat di 3 Sekolah, Sasar Pelajar SD hingga SMA Tribunkaltara.com",
+      "publishedAt": "Mon, 23 Nov 2026 09:23:38 GMT",
+      "source": "Tribunkaltara.com",
+      "color": "#d35400"
+    },
     {
       "title": "Kudus Ajukan 400 Formasi CPNS, Terbanyak untuk Guru dan Tenaga Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaFBkN3BQdG5fZTAwVFBPa0E1dHRUSGNZdjJUcU5OcHl3VkVwU1lOcmR1SFVwYktnX2Vtd2JrR1RDbFJ1VGE0aVZHLWwyUF8xLWtrNmp4UWthLV8wcWdFSXFmVDc4V2t5VDVUR0Z6QTE1OENuOEFGc3o2ay1nVEFFakFfSnktdDIwNVo2enhlQ3pqMG9RZW5QOVdwNEY4UEhnMWRPT2owYy0yR0tiNnRKMm9lbTl1d0RpTzhNOUNwaFJoLTg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kudus Ajukan 400 Formasi CPNS, Terbanyak untuk Guru dan Tenaga Kesehatan Kompas.com",
       "publishedAt": "Mon, 23 Nov 2026 09:20:00 GMT",
       "source": "Kompas.com",
@@ -23,7 +329,7 @@
     {
       "title": "Dinkes Ungkap Audit Bayi Meninggal di RSUD Priok: Nunggu Ambulans Berjam-jam",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPei1tTVk3QTgzUEIwV3R4VlpGdzFGUXl6ODJlVjZqYTBpMThsNzQxX2xEX29CSlhuLVlPZVFTZFQyWlk0NURPanJTZHlWR0JFQ1ZCMVhDZjV3NUV0YkNYajlUWVhicDY3aTNDVzJUYTRMQVVLV2loS1V6empmb1lzdEdZcldUZFp5cDZIUWQ0NnlRNXFMYkJtcXo1cEVUYjBWUmgySlptQVUzT2trSXJtTnlGV3VFZ9IBuwFBVV95cUxPeFJWcER0cWxORjBVSHUxUFJ0cjVZaTI1N3dwMGRyQlUtNmxHMDdGTjlJeC02U0NXZ1ZYQkJTZmU2U0twWjJzR3lzMWZqck9QOEJnNmdBWTNSR1VKVnVWUEsxUHdsaXFBaXk3bnNzbzkybGhoZy1RUEZVVVJpWmV5eUlTN2xLT3dZd3RnVG9XbWJTXzZ4cnMxNVJjSzJYUi1LcjBtTEJPby0wV2tfU01zNTdqTENGR0FqbmxB?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Dinkes Ungkap Audit Bayi Meninggal di RSUD Priok: Nunggu Ambulans Berjam-jam detikNews",
       "publishedAt": "Mon, 23 Nov 2026 08:38:25 GMT",
       "source": "detikNews",
@@ -32,7 +338,7 @@
     {
       "title": "Daftar Formasi CPNS Jatim 2026, Pemprov Usulkan 2.100 Posisi untuk Guru dan Tenaga Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMmNGcFFzT0hfVHZTQ3JxOHh6R1Y5RHJaSE05cU5sakUwcFhuWEs0ckZDLXRwNTJRRnJvS1ZnTFBYN0RIZmpJQktDNWpmaHN4c1Bxcnc4U2EyQVZCd0wtRDI0cVhXMWdDS0c4eEhIOENmTUNIN0FBWjhTNzhmUmloVGdpS3MtWlRtcjJGaGdVSEZteWtrMXdKQlljLVNJdW8zeVljd2hqSWxyb0Z5MkdCbTN1MXVrMl94RlBRMkpNVWJiNnNaMzdZVkJZVjQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Daftar Formasi CPNS Jatim 2026, Pemprov Usulkan 2.100 Posisi untuk Guru dan Tenaga Kesehatan Tribunjatim.com",
       "publishedAt": "Mon, 23 Nov 2026 08:26:00 GMT",
       "source": "Tribunjatim.com",
@@ -41,11 +347,20 @@
     {
       "title": "Otot Pegal Setelah Olahraga? Kenali DOMS dan Metode Pemulihannya",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNX0NjYWY4STY2SFdRRDdIaDk5TEZpdVNDYzBuUGJUT2wtd2UxUjJIOTZaR3Q0T0NZQkVYWWFxZ3ZtY2hqMTlLalgtMXV3TGFqQ0trTjI0bGxyRnp2SmF2eEg0SnJzM0pKOFRqVXQxWDFRb1lGdUdLWWdWVFc0U011Y3BkN1phYVJ0Nmk4cnJJWVV1SHAxSDB5YW83SWtsaXpoV3VDc2JIZDdybVdp?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Otot Pegal Setelah Olahraga? Kenali DOMS dan Metode Pemulihannya Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 08:25:00 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
+    },
+    {
+      "title": "IPM Bone Era Andi Asman Tumbuh Tertinggi di Sulsel, Tembus 72,60",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMkxhclpDakZFYjR0RXA0THRreE90V2Q0SVNLTGNzb012dllGeWtOcnl6WTBQeVJIQW9yc0lCMWN0cXVMSEhrc3lXQWhqSFpIeklyMmNMNTNGWWVZWEVLZVdOMmk2NzZ3QnVnWmhvbG9GYWpCSjFnM0h4NlJWcExLLVl1aGQ4NWlHaXNpdXpEcExoQUtUaFRoblpUb3NqZUNVdWMzNlBOMUlRekNwZ0ozR3JR?oc=5",
+      "image": null,
+      "summary": "IPM Bone Era Andi Asman Tumbuh Tertinggi di Sulsel, Tembus 72,60 detikcom",
+      "publishedAt": "Mon, 23 Nov 2026 08:18:05 GMT",
+      "source": "detikcom",
+      "color": "#e63a2e"
     },
     {
       "title": "BPOM Sudah Uji Sampel Merica Bubuk 'Ladaku', Hasil Keluar Minggu Ini",
@@ -57,18 +372,9 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Aksi Anti-Perang di Belgia, Demonstran Tuntut Dana Pendidikan dan Kesehatan Bukan untuk Senjata",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPLVJsLVdJcHdIRU1TanpRSExPVGtFWW1TUHRsYmhzeWVvQ1Jrd2RRc3JFSk50NlhCdW1EU3AxUXV0eFVYMGFfRW1ZeVhwc01lcFZqV050ZVhvOEVEYjd4RkN6bDBLaEoxcl9Xa1J3bUY3WUpkM05CNmFaaE40d1BMRWhpQldjdUlFQ3J0aDNIQ3lpbk9YR1NrRzhkRnpzZ3pvQW1fWFJKMDQ4LWNVX3RXSWFDcUN4bUo5al9mYkZiOUtia0FfX0lwRmotM2NwTkxQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Aksi Anti-Perang di Belgia, Demonstran Tuntut Dana Pendidikan dan Kesehatan Bukan untuk Senjata Tribun Video",
-      "publishedAt": "Mon, 23 Nov 2026 08:06:01 GMT",
-      "source": "Tribun Video",
-      "color": "#d35400"
-    },
-    {
       "title": "Hasim Adnan Bantu Warga Hadapi Kendala BPJS PBI Nonaktif, Pastikan Jenazah Dibawa Pulang Keluarga",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPYkh4MGxTbDJsVGpldDYzLVhJZE1IOTdramRta2dPZF9XMHVZNm91T01vZEVWY3N6VkFpYVQ3akNnd3d3NFhSanlpRDJhemRXWEhSSWVkMnI5VFg1YVNVTUFjZUdtcDk0QXFLY09qVUh1eEJldXZEaHNoZ2hUSnRmZkRPZ3UzbGdYSENLRHlqTTFWay05UUNFbHpCUTVJa2RJN21hV2Zja0FDS0didDUxeThSQnF2Q2hTQnNuQkljYkpEa3JYc3JtM2k0Z1ZfSElTT041Z19JT0hmUWhRTTV1QlUxdWh3Zw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Hasim Adnan Bantu Warga Hadapi Kendala BPJS PBI Nonaktif, Pastikan Jenazah Dibawa Pulang Keluarga Tribunjabar.id",
       "publishedAt": "Mon, 23 Nov 2026 07:50:34 GMT",
       "source": "Tribunjabar.id",
@@ -77,34 +383,16 @@
     {
       "title": "5 Cara Menjaga Kulit Tetap Sehat saat Musim Hujan, Jangan Asal Pilih Skincare",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOODRXNjVOamw4cVFFaWE3eC1GT0FELXlDcTVDVGNsWmRiUzNfVTZDaVE2TWQxa1pqcWc4N3BSSExBMGZ2NXlYZFZKX3VudE43eGdqQVZHYnY5R1gySnRxNVpYMW8zalh1Rng0X0E4cG94alZXd3VvYU4zMklNamtDRXVNaXhPVDRSbUo5eTBYbG9DcUZycDBaMWtyVlB1OWZOdU9zaUJpbGE2ZUV4aTJ2eDg0Q1Z6OU9H?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "5 Cara Menjaga Kulit Tetap Sehat saat Musim Hujan, Jangan Asal Pilih Skincare Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 07:49:12 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
     },
     {
-      "title": "Anak Muda Jangan Alergi Politik, Perubahan Butuh Keterlibatan",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZ2R0UHJiZkx6bXEyaHZza2tYUFBUTWdKV180SFRpd240ekZ3QjNtMWlPekI5b1lib19GWXY5d1JwOVZrVHpXQUNPXy1rNjRvNkZJUldNUzBvUHZGSkU3YktnVHB6dms0UWp6Y1lFcTBQNEt4eGVOdnRmNjFPMm5oc3RnM0dPakhrRzNadGpqRzBNSVN1Z0NSclNoOTIwQQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Anak Muda Jangan Alergi Politik, Perubahan Butuh Keterlibatan Tempo.co",
-      "publishedAt": "Mon, 23 Nov 2026 07:23:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
-      "title": "DPRD DKI Usul Anggaran 5 Abad Jakarta Rp 400 Miliar Dialihkan Bayar BPJS Warga Miskin",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWVg1alpfcWwxeGFvb1J0MFV1Uy01dVFFU3loT0U4VzBKM0ZOeWh2eDNYNUlHREVlZGVuLVVObEFxelp5d05jYWJVTjF2UWVQUjNqR2JHcUs1WWFLbUtMV1dQTkt0QWVGX2Izb2NZMVhjc2RfNnNfRUJnWFF5Ui1VRHNnVGptNGhIU1RaWlBrNHVCRG1xRFhxeDVGQVBEcTUweXF4aFdUX2VHeDVrV3hGUEk5bWd1NEhQSjg1MnR3T3RiN3NQNEhr?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "DPRD DKI Usul Anggaran 5 Abad Jakarta Rp 400 Miliar Dialihkan Bayar BPJS Warga Miskin Kompas.com",
-      "publishedAt": "Mon, 23 Nov 2026 07:15:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
-    },
-    {
       "title": "Apakah Penderita Lupus Harus Minum Obat Seumur Hidup? Begini Penjelasan Dokter",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOYjFtQ0R6YmJITkpfcUVycEdGek1HX3ZSd2lmRWMxdUctLXZlcGRmd1YtZmQ4aEJYRno0LWpRTFlCVUpaQzUyVy1QUHYxUExKclBSR1ZtUHcxeUtlUy15OUR6OXpnNVpSQWRGRElQajVSNUgzQUZTTUphek1mS2FTYWNIZFVZTnNNR3JoZzNzTFcxc25kMVVNWHZVNGxVb1ZKMmZNMW1SNmMxMW5BblpEQmNoRUZYVHQzbEN3cVhXUQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Apakah Penderita Lupus Harus Minum Obat Seumur Hidup? Begini Penjelasan Dokter Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 07:14:00 GMT",
       "source": "Tribunnews.com",
@@ -113,7 +401,7 @@
     {
       "title": "Apa Bedanya Alat Kontrasepsi Hormonal dan Non-Hormonal? Ini Penjelasan Dokter",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQOWZ4UU1uOW1aT2kyZEhad0JhZzl3WTRwUTNEVmdNWE9rVGVOQkR2eFQ4Nkl6MGk1ZVZUMWhhdzZoSzdQM01ZcTMtWjNLdmZvckx5ajgzbWVBQ1kwTGUzNkpBYXhRSlBHamtoZ1ZrYzQ4R2I3WkVaV0VYcWNlSElhUHdmM3BIczJHaTZBOUJfNDM0X19iMFpGRHg1cmZDYnF6b05qaUh0eWZkX3FtbnJTU2JveWNPYUhrRmpnZDhB?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Apa Bedanya Alat Kontrasepsi Hormonal dan Non-Hormonal? Ini Penjelasan Dokter Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 07:11:00 GMT",
       "source": "Tribunnews.com",
@@ -122,7 +410,7 @@
     {
       "title": "Kanker Anak Bukan Hanya Menyakiti Pasien, tapi Satu Keluarga",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZ1dVTnlYeEQ1aFBkS0k5R2JMbEZHMmlBQ1I2R1c1bGYzSWZyVUxYV0hSd1ZGaU9WcGVGcTd4UFcwMC1sZVRwQkUyQXRvbWZvc3NSSG5SMUxJM01HREIxNTVfUk8zbGdHbFE3dkxHTU03N0JnYjhzaEl0cjNyWlRTZ0RoOXZMeWQtV3lOb3RQMXpxUHNJYzRXdmtpeVF4RzNfUWl3MnAtRjUtd01HQUpQeHViVWg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kanker Anak Bukan Hanya Menyakiti Pasien, tapi Satu Keluarga Kompas.com",
       "publishedAt": "Mon, 23 Nov 2026 07:05:00 GMT",
       "source": "Kompas.com",
@@ -140,7 +428,7 @@
     {
       "title": "Bukan Cuma DHA, Bayi Prematur Juga Berisiko Kekurangan Nutrisi Ini",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQV3NxZ0lUMUtEamt1QTZvQk85SGxFbC1XR1UzT3pUdGxQQ0hLYXdMaWQ0eFhwa05SNTB2NklzemM2UGxrdTBEOGlHZGZnTnZvcVhQYi1DelJGS2w3MzVheDNPS2g0MldrV18zUXg0bVlZeklCRmlPOGZSM1FDd3JUTW1CcXR5VWh4RUR6MWVfSElmWVJ4UnhqZS1TS0pOWXdBUVRVaXRBX043Ulk5TTJHcXljY0p4TFNsNjdaLTFsUQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Bukan Cuma DHA, Bayi Prematur Juga Berisiko Kekurangan Nutrisi Ini Liputan6.com",
       "publishedAt": "Mon, 23 Nov 2026 07:00:15 GMT",
       "source": "Liputan6.com",
@@ -149,7 +437,7 @@
     {
       "title": "Ingin Terhindar dari Stroke? Ini 4 Tips Kebiasaan Sehat dari Dokter",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNVk9XTmludzhiRG5EdW45SnRRTlA0bXhSTk9rMzdGZTgyVU10YS10eVR1eUJ0MndPaUtKQ29lN1ZOcU8yWXlNenlqRUpWb01ZWGJzOW9FNTJFd3NLaERTM0dyV0NUaG83LTVjU1RrbWV4bWgwaWY2OFJibjRtTVdwNlg5dFJIVVp0LTZiSmV6UUtNeFdLV3llaU9TaEU3WkwxUzZIdDdKRVd0bXZjWXlYNg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Ingin Terhindar dari Stroke? Ini 4 Tips Kebiasaan Sehat dari Dokter Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 06:58:00 GMT",
       "source": "Tribunnews.com",
@@ -158,7 +446,7 @@
     {
       "title": "Peringati HKN, BRI Peduli Salurkan 843 Ambulans-Gelar Cek Kesehatan Gratis",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQM1NTckI2VTFTdGtjRzZNZ0FxMU00N09UQlJUWkMxOTdKbU1BVl9kcUxkS1d4MlVnVHZNNlBCRVItRzB3QVAyUTlwTHRXR09PdllhbTBSSlFZRGVXdHFjcVJodFRuVnNRSWExeVlaUDgtQlpQLXE4UUlFQnUyVTQzWXdwTGJxandpa05YdU5GaHBFYTY1bjlwdDIyZDZ5Q21zZjVEd0I0UkdNWnJURHB3YlhtUdIBuAFBVV95cUxQVEl4RTVKN2pHVnNLcVVrMGhWOG0wWkhjUWk0YWZicVdnYnhKMXM5T3hhXzd3NlRNR2ZUWmx5ZVhueE8yelJJSmFRWElHTUFCc0tWMmlZR2M1VkNLenpaWjNQUHFPbURNUkx0bUlFYXVRd0xBNzE2M2kyMlllSERTZjR3UGdSajZIRFJXbmQtV3RlWDVycGt0ZXhKZ2k3Y3pXck9vQno3eHpKMUVfRWRuak1GRnFCVWJy?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Peringati HKN, BRI Peduli Salurkan 843 Ambulans-Gelar Cek Kesehatan Gratis detikNews",
       "publishedAt": "Mon, 23 Nov 2026 06:49:17 GMT",
       "source": "detikNews",
@@ -167,16 +455,25 @@
     {
       "title": "Merasa Sehat tapi Dinyatakan Unfit Saat MCU Kerja, Kok Bisa?",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPLUtsbnlCRGFVRGk2WW1fQ1Z5MElLd0M5ZkI1bDVCU2xDSFJzLVkzR0s4WGVPcjRpVFViclpGS2N3d09BWUJPcEcxWkwzUFc4bndvN3p3Znd6U1NUNTlUeHhyM0ptMm1WOFlNZ0NMWEM2d3BhUlMyWHR4d083M05Yb2RtSFhHNDhjdXYzbDI0TWdpeXlvSHgxV2NKM1lpS0Rz?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Merasa Sehat tapi Dinyatakan Unfit Saat MCU Kerja, Kok Bisa? Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 06:47:37 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
     },
     {
+      "title": "Punya Riwayat Keluarga Terkena Stroke, Apakah Anak Berisiko Mengalaminya? Ini Penjelasan Dokter",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUnA2ZDBHVnY4YTJBTFJMX0RPVThQZnU2WkNJbE5TbGxMajM5ZUNfdGpxVTlsRnFRV3U5ZEYyU1ZwekQzNkNGbWF0MmpoS0czXzFrel9sTnNWV1dfQmVsWVpMdmgyUEFKMTN4cHpDOUNlX2ZITXZTWG1kUGJ4OEJxTlNCYUpELXhYTjItd2M3dnJGMF9FT3VkTGxfeGhkS3BvakVNdWYxMk9tYlM5b2o1VmVrclVfYk1KSTJUSmFpNXU5Vll6d0F5NUdxaEdwTmNXWVR0Sw?oc=5",
+      "image": null,
+      "summary": "Punya Riwayat Keluarga Terkena Stroke, Apakah Anak Berisiko Mengalaminya? Ini Penjelasan Dokter Tribunnews.com",
+      "publishedAt": "Mon, 23 Nov 2026 06:23:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
       "title": "Jaga Kesiapan di Lapangan, Personel Operasi Zebra Tinombala 2026 Jalani Pemeriksaan Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPSXJXSm1rVXFyNUpYXzdtT3k2UVRJQ3pjQkVjdDRKbFV2NnZ3R3ZjSWJIZU5wVTJXTTk2RmVRZV9YYlNITzB6OWgtaUVVMHR3MjNOWG1aTGFERHZEeGJwenpNUEJROHAzWlZsN2J2RkNaUGlKM0Q4aGJ4QU1mRXZTckFMUVdNMW45MnhBWjNoWVJSekhQMGt4cmF1bURzN08tdU1WZmNkR1Y2UkhzVE1URzZXZ0FiVGc3YUh4YmoxeGpObmdZUm5GcWdEOGFvQVdh?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Jaga Kesiapan di Lapangan, Personel Operasi Zebra Tinombala 2026 Jalani Pemeriksaan Kesehatan Tribunpalu.com",
       "publishedAt": "Mon, 23 Nov 2026 06:07:58 GMT",
       "source": "Tribunpalu.com",
@@ -194,7 +491,7 @@
     {
       "title": "Jawa Timur Catat Prevalensi Kebutaan Tertinggi di Indonesia, Akses Layanan Mata Perlu Diperkuat",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQeHdPZnNka0hkRDFXVU9FZnBHM3BVOGdjWFVHV1ZSZEo0RFYwZWtDSDRaSF9xUWVqTnhydk9yX3FaaFo1V05xbWRfMzdCWXlUbnZ1SWlpcFJTZDJ4elZoc3dfT1huclItTUxjYVBXUWFCUlEtVzdnVG9zMkZsQkNMdW5CQmxDMVBLMTM2QWk1MGdybFJfOTNKQmpaWWRjMUdXb0xXYkRBV000blZGU1VtRlpUenBQMTVpQUFVLVk0cWFQcWpCWHczMEN3R2FrZ1B0eF9CalRB?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Jawa Timur Catat Prevalensi Kebutaan Tertinggi di Indonesia, Akses Layanan Mata Perlu Diperkuat Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 05:44:00 GMT",
       "source": "Tribunnews.com",
@@ -202,8 +499,8 @@
     },
     {
       "title": "Studi: Pasien Jantung Tidur 9 Jam atau Lebih Dikaitkan dengan Naiknya Risiko Kematian",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOcWNwdXJ0RVhWbkNXeDJPaDkwT255aVotR3EwNGUwcDNtZ2I3UHI3ZE5vVlVmVV9vT0htYTNTQlp5UE1aZG1oX2hJdHp3WW5MV0NvTFNjZm43c3JYeDdzOVJoWTIwMDBxSzRfelZ6YjBFdTEwZmVYZzB2MkVaUUpzM0lSZGZabUpZVnN2RFNrLUd4SW13QnFKRnphUUZ5STBxemZ5ZGNXQzZpTHM1YjFmdnBkSjZEa280TExEYkVpMUx0bnhXdHZyT2E5UmdXRkItQkV2aVRR?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQb3E2VE93Tlc2THVWd1Q5aGtFMnp4LWxURURaTTBkWUJpSUlhZmw0cUkxZjhYYmRTZVV0ZDZ0b1h2T0ZKZng1TEwzb1hiNTljcUxIRU00emFLVlA2Z1NZZ2FjcU1PRWQ0bFQ4Z3FoTERQUnM5RUM2UkJmZEtxdVV3ZG1hdWtsVS11VU9JTFVnOF9vREw5U1ZlOURQWXJYemF0RjlqX2RCRUpTZWhIZFk0dDlYSlZ3aHdlYXJhWnVn?oc=5",
+      "image": null,
       "summary": "Studi: Pasien Jantung Tidur 9 Jam atau Lebih Dikaitkan dengan Naiknya Risiko Kematian Kompas.com",
       "publishedAt": "Mon, 23 Nov 2026 05:37:00 GMT",
       "source": "Kompas.com",
@@ -212,7 +509,7 @@
     {
       "title": "WHO: 1 dari 6 Infeksi Bakteri di Dunia Kebal Antibiotik, Pasien Berisiko Salah Pengobatan",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQS0p4SlMzWm03dGNJSmthSk5ISDBDSEU4M2RWd3FHeW5CVmZOeGszMzRleWdiSW5CVndzcXZQMXNtTEZTaXVwZ2twb1RaRTU5T0dsU0I3NjFiZXUzc2Q5OHdmYUM4U2o2UjZuRDhvam04YkdQSTl4TUxpRU5BSVlLU28wS3RmeFYzUHlCTlRzLVlhZU1uSTRkTlRYc2xVVk8xemVwMHJtVzhaSldpNEVibHROY0dIZTFMZUFIX1JDZWt0OFhyQ2RodVBlRm4?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "WHO: 1 dari 6 Infeksi Bakteri di Dunia Kebal Antibiotik, Pasien Berisiko Salah Pengobatan Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 05:32:45 GMT",
       "source": "Tribunnews.com",
@@ -221,7 +518,7 @@
     {
       "title": "Enzy Storia Masuk RS karena Infeksi, Curiga karena Makan Salad Mentah",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQUxhdmk0OFcteGJvWGp5WkVvSXFQUkZCVU5zR2J5UlJKVXNoSGs2MVRyOXlwc19EZThHWGdVVmo1UWpYbGZkcG5takthdnZ5bGhEbFE4dTN1Sld3VHg1T2hVZDBmNXNKNV83cUhrbmFJU0QybkpVeFdRQVk0MHhZbDBZdnc1WE0tNHJaMnVwa2d6T2FZeGtpN2JBZURqTlIzM0psY2FtUzgtd9IBrwFBVV95cUxQLTd5enRlRm5LeVZIZG4zTFY4VW1TNDVvaXhJY2VfQTlyRS1IN1A3NzlrTWtnaUhyQ0wzaV85V0lEWDlPZEhCTTE1VEd6MjF6djE4UzAyUWl2dXNIYWVqMFZ3NEotU1NyRktqd3VpSVlld19ORVZtU05BcVVWV3Vndmk1NExzY3d1QlpiYzZJTFMxQzB0VTlXaTk5ZUlUUm5vcTVhNm1KeG1yMHRMaHJj?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Enzy Storia Masuk RS karena Infeksi, Curiga karena Makan Salad Mentah detikHOT",
       "publishedAt": "Mon, 23 Nov 2026 05:26:18 GMT",
       "source": "detikHOT",
@@ -230,7 +527,7 @@
     {
       "title": "Diet Suntik Bukan Segalanya, Dokter Ingatkan Pentingnya Olahraga dan Pola Makan Sehat",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPdS1IRjBlVXZhSzNsY3prbWhaaklsNGJtNmw4VXVlaGN2ZDU5RVlLX3ZBZm4xenAtb0NnWV9oOXhHcWpaWTNrOUk3UUpNRi01VlZnSWRBdHp0c0hmZ0ZHaURUc180aVhvSXNUVmxEVWUyS2VwaWlfTXNGcUk4YVZRZXluUHJuTnBrdG40SEJxbWcwdVltSzh1LS1sOXljUjNhclVpLTdlakdQcjJUUXN5TDUxYnNidlVRYmtENjU1MVBITVNRZHBmYQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Diet Suntik Bukan Segalanya, Dokter Ingatkan Pentingnya Olahraga dan Pola Makan Sehat Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 05:13:00 GMT",
       "source": "Tribunnews.com",
@@ -248,7 +545,7 @@
     {
       "title": "Awas, Terobsesi Cek Skor Health Tracker Justru Picu Stres",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPLW42cWhSb0s3SEFBVm1uYjZSdE1rUGVudUZOSGJ5Vm5OMzZqdlVacmR1M1ZJd3d2U0VqWUVEdHFFcmNXSzBMb2Z4Vzdna1g0WEFvNHNKLUF5bllCRmU2TXg4Wl9kN214Qm1rSGRLb0k3cUxYZFlsWTNBenhkWWd4a3VMaFh2RnVNRHUxcnFmU1FlM0FRdzhJVDl6NG5TSkViV1lRZEZMREN2Mk45c3pyYg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Awas, Terobsesi Cek Skor Health Tracker Justru Picu Stres Kompas.com",
       "publishedAt": "Mon, 23 Nov 2026 05:01:00 GMT",
       "source": "Kompas.com",
@@ -257,7 +554,7 @@
     {
       "title": "Kapan Bayi Prematur Boleh Pulang dari RS? Ini Syaratnya",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWUVHVkYwODFTaE43X2hCWlo2QzFwRTNHd1BOc2R6VDhzQ0pqUnppZXVNNVR0QUx1RFN5SDNiOW5LMEd3d0RMamh2MzlBQWRtUDc0X1NKb1hsbGNRcEV2RVRhU1VHY3hLY0thaEx3V1JEV2YtWGdfUUh1dWg3UG5aUFVRUC0yMWJFb2k2R2l1ZVhJWjUzT1UzMlZLZzJlRGdNcUNZOF9DV1VzVzNveE1tUA?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kapan Bayi Prematur Boleh Pulang dari RS? Ini Syaratnya Liputan6.com",
       "publishedAt": "Mon, 23 Nov 2026 05:00:44 GMT",
       "source": "Liputan6.com",
@@ -266,7 +563,7 @@
     {
       "title": "Bukan Cuma Fisik, MCU Karyawan Kini Juga Perhatikan Kesehatan Mental",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNN1E1Q1oxcWVZYmhDY0VCQmFHaXJRTVJjS3VPbF81ZmlKX1QwOGhILWY4RlRuTURpbXQwVV9KWjRMYWxXSXpUSU1QUExIcEdOcXhEQ0R4STVmTEdvemJvWW1LbjRTM2lQck9qZVNTajVZZ0hGVzBGdzhNanN4N3VveUNCLUNkb3I0M0RMV09mNjFtN01ZUk1PM3JJU0hBTUdoU1VwaTNsS3JtRzFJ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Bukan Cuma Fisik, MCU Karyawan Kini Juga Perhatikan Kesehatan Mental Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 04:59:37 GMT",
       "source": "Tribunnews.com",
@@ -284,7 +581,7 @@
     {
       "title": "Puskesmas Kutaraja Cek Kesehatan Gratis Warga di Warkop",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWnYtbGstbEZxbzBobkVNdVJjOXZ6RnRkRldxRmgyV3V4RTVSMG9QeXQtNnVOVHA4Ukg1dHRGdGxvckg4MFY0Zm90eTlxVWRYY3JmZW5abldDMVVMSFFQaFBPdzJFTVNoSHNGa09hZkFxRzRON3YteWNtWjBjckx0NlJCQUxSN2dfWnhJNVMyMkh3bTNkbzN6LUtmRW0zMUNfY2c?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Puskesmas Kutaraja Cek Kesehatan Gratis Warga di Warkop Serambinews.com",
       "publishedAt": "Mon, 23 Nov 2026 04:04:10 GMT",
       "source": "Serambinews.com",
@@ -293,7 +590,7 @@
     {
       "title": "Orang Tua Perlu Latihan Merawat Bayi Prematur Sejak di Ruang NICU",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdWRQTkc1LU4zUlZyZl9nUTNEWkJKbE1kamxfQVgwaDFKNUp1dWpQbGlXTFBJR3ZZRlRVbVNKOUlMb0Z0S2dyLTJJdlVjbGNtNHdpS2ZyMW1GN0VJOHE4Vl9fU1JuVEdEMGtERkd4N3NJQ3d4OG11V240T0JjX0dHQzNvVkZLWUJUVnZpdVlNN3V2TlFaWDJFRGRjUVg3X3I1dEw4MGNyRGt6cmY0ZDMwZHVkR3JVYzN3Nl82UWVnSdIBrAFBVV95cUxPME5qYTFIZDVCSDFMX2ViYXF1YWJFZ0QzNDNKZXZ4Z0ZhMmh5TVRJUWRjaWUyZTF0NklmOHlDdER6WEpyQ2x1Nm4yeXZobjFrRzNIczZVLVJSd0h5elBGaDROR2JRUks5Q09NNjYwWXJ4MWktQnN4MFg3U2lHMmJsUnpXajBQS3BFVjJXTHU3ekFrOGxvV1pOZ0xBS1BMYnhoa2FhVUtuYzFEcFRV?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Orang Tua Perlu Latihan Merawat Bayi Prematur Sejak di Ruang NICU Liputan6.com",
       "publishedAt": "Mon, 23 Nov 2026 04:00:57 GMT",
       "source": "Liputan6.com",
@@ -302,7 +599,7 @@
     {
       "title": "5 Kebiasaan Sehari-hari yang Diam-diam Bisa Membahayakan Kesehatan Jantung",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTGpPMGdfdDFtck9BU2U1VUo5ZHJhcVI5Wm05R2NxdC0zcms0YkNSbDZRYlZ5MFpCcXg4N1JqemdiVElHNHBqQ0lnVlk4VlRudkcwcUIzQUU4aFFSbzBOWTh1QXJQWmcycVZxUFJVS2dURHE5VU9yZ1ZiVjBUaEwxQUgzWEU4dmMzZWFuMGYwR1o1VDhvM2NvOFJEOGdfbWl2ZzVBQl9wVmVqZnlUbEYwZkRiVWkxdw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "5 Kebiasaan Sehari-hari yang Diam-diam Bisa Membahayakan Kesehatan Jantung Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 03:52:05 GMT",
       "source": "Tribunnews.com",
@@ -320,7 +617,7 @@
     {
       "title": "Dokter Ungkap Pendekatan Regeneratif dalam Perawatan Kulit, Tak Sekadar Atasi Tanda Penuaan",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdmRFRUJkMzJ3NENMejRwZTV5NHdvUzlNSXFkZERhRFpTcngtOW8wOXBQYnN3ZnRyTV9JMmpWMHRNLUxMcnQwdTBNcEhWVkh2MVBJNjYxdXJvY2ItQndUajN3V21jREMzQ2JmVk1JekI3QzJiZThwWWJVOEc0aDlCQUFrdnVETjlzVDlKODl6b29nX3lLMGtDU1pPUWpKVERNeldRay03MWZrZTNFUWhYSEIzeWVsS2QxYVpCN2R0Z2hQR045cGFRNVdSV2pMU3hr?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Dokter Ungkap Pendekatan Regeneratif dalam Perawatan Kulit, Tak Sekadar Atasi Tanda Penuaan Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 03:27:34 GMT",
       "source": "Tribunnews.com",
@@ -336,18 +633,9 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Jangan Salah Penanganan, Dokter Ungkap Pertolongan Pertama saat Menemukan Orang Terkena Stroke",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQTDdnSVhjaTAxcG84VWtaa2NwLTVSUjhmSXRnUGVRMXk4dHB5RXZ3RG50dVhkaGlLYm1XZEdocVotMjZRX1EwamRxUWItMUhSbjlUZjVvcV9VYUlObDRhUXg3T2lROGo2cURJZXZvT3hQRW9SLVBHSDhjcDV1SnZQVVM0Q3J5MXpITl9IYWdERHBpVVlINmFKU2tRa1JMaFZxWVhDSjlKSXJnOE1nTHQ5QjFWRWhaaHM1NHVsSURUT1BNeV9FVTVPVXJ4dWdJWXcxcEFuVw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Jangan Salah Penanganan, Dokter Ungkap Pertolongan Pertama saat Menemukan Orang Terkena Stroke Tribunnews.com",
-      "publishedAt": "Mon, 23 Nov 2026 03:08:00 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
-    },
-    {
       "title": "12 Kebiasaan Sederhana untuk Menjaga Kebersihan dan Kesehatan Perempuan",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNb1UyWlpQVnpBUy1vVXVpLWUzNDJLVmM1SEFSd1VPME54TnRwb2F4cmkyOE9qTnhhcjNHVjh0ZWM1T2MyeFRjTF83Sld2VG5UT3V0V251ZUZmdU5uY01WUXRzbDc0SnA0UlRsbHFmU1dNdm5zSXJjU2N6dFFMSkh4YzhXTDM0RWtsbmQ5TW9iaUVrZ1FkWGYwemNBbmJ1bjQwQnd3eXBkZ3l4X2JFY2F0X3lB?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "12 Kebiasaan Sederhana untuk Menjaga Kebersihan dan Kesehatan Perempuan TribunStyle.com",
       "publishedAt": "Mon, 23 Nov 2026 03:07:07 GMT",
       "source": "TribunStyle.com",
@@ -356,7 +644,7 @@
     {
       "title": "7 Tanda Kamu Belum Merawat Kesehatan Jantung dengan Baik",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbDhXbWdIZUNCb292R25WelNydFlnQkg5eHRHaFlBdGpnMjQyN0FDc0YzbjdmdV93TzVkTW1GeEo2aEdwNVl5V0YwdkRrWTNlM2ZwQXlnbnI0dEdhNExwUVo1cFRxY01VaW9Fd0tkTWFxNmVMdU5Gd2p6TGEzeWVtUTY3Z0V2aWFVeTdpOTF5NkxQY211dER4TWhCakd6b1RkWU8yaWJ6cmdJcHhva28yZg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "7 Tanda Kamu Belum Merawat Kesehatan Jantung dengan Baik Kompas.com",
       "publishedAt": "Mon, 23 Nov 2026 03:01:00 GMT",
       "source": "Kompas.com",
@@ -365,7 +653,7 @@
     {
       "title": "Skinification, Tren Perawatan Kulit Kepala yang Tak Kalah Penting dari Skincare Wajah",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQUMtSjZ3Um1tQWotMzVIMmlaT2JBdEppeTVDTlpwdXNJdVpZN1Rfemp4enNJb0FrOU5lR1ZPaFpFeGc5c0ZOaWhKb0VZbkdqLWRidkd4RzNQNGZLQlFTTzdGb0VWMHR4Xzl4RG9lWUI3MGZfM3h5Z3h2RFJMNjZYWFZIeFJDTlNMZGxpR3Q3dU1TcTlSTlE4ZlpPUXVncF9Bcjg5RGhYc09PYndobVJUOUlyTWNoTVBiMG9uckN5d3ZsTkdHZ19UWXpNWjI?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Skinification, Tren Perawatan Kulit Kepala yang Tak Kalah Penting dari Skincare Wajah Liputan6.com",
       "publishedAt": "Mon, 23 Nov 2026 03:00:00 GMT",
       "source": "Liputan6.com",
@@ -381,18 +669,9 @@
       "color": "#e63a2e"
     },
     {
-      "title": "7 Tips Menjaga Kolagen Kulit, Bisa Lewat Makanan hingga Perawatan",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNY2NaM0JqSzVLUWZtamdVZWJWY2tvQzZQdmdVQjZ0c2RLNGtjN2NaUGlHYWJzM2cxTGkweUVvMUlWLU52TzNqUkRNalBIM1dvalNTWUxkVFFtXzQ1dE52ZTZ4MHYwVWV4T1Y5NGlDUWYyUHdIc2ZQRjRobEF1VzlOYWlnNE5XcWxBM3JmZFg2Mm1sQXpYRDNPbFgtNXBvN09mbEo5M3VZXzA?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "7 Tips Menjaga Kolagen Kulit, Bisa Lewat Makanan hingga Perawatan TribunStyle.com",
-      "publishedAt": "Mon, 23 Nov 2026 01:59:53 GMT",
-      "source": "TribunStyle.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Alasan Kesehatan Mental Pekerja Perlu Masuk K3",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdDhoTkk1WFhUdXVBRTJQQkhGOUN2TUIyMnRwbDM0bmI5SnlwS1F1OG5HS3RaSk1wMEJtek9XWDJJaUtaUHFFTDIteGZoY2hUVjVweW5jZkxuNGl6aFR0WVdGZ1lGSFVmelFOX1oxc1N3S1JKUWN1SGtqU2I2aF9jQWptcVNLQzRLOGtN?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Alasan Kesehatan Mental Pekerja Perlu Masuk K3 Tempo.co",
       "publishedAt": "Mon, 23 Nov 2026 01:30:00 GMT",
       "source": "Tempo.co",
@@ -410,7 +689,7 @@
     {
       "title": "Kista Ovarium pada Anak Perempuan, Seberapa Besar Pengaruhnya bagi Kesehatan Reproduksi?",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPOUYyTWJya1hRc0FBMnYwUk1vaVNxR3J1OERYUTV6V2laaTZQeXlKME1La2FlVU5CTElfb3BFQmlkU0ZMRlU4eFZOTkVNRDNjTDN5aTJlODJSVGdSUEd4d19xNlkzMzU2bnBDZjRCckV5cEVzeTZYMDRMeUp4Sk9RdDlQUElwY3J5eWJueFNQSXMtR2p5SUxnaG9sWXFmVVlMUHlHVmVDVWFRbEpDLTM5RUVROUVXd2lsVV9yUk9ST3RyMHhtODFZNDJXVk1FY2c?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kista Ovarium pada Anak Perempuan, Seberapa Besar Pengaruhnya bagi Kesehatan Reproduksi? Tribunnews.com",
       "publishedAt": "Mon, 23 Nov 2026 00:42:37 GMT",
       "source": "Tribunnews.com",
@@ -437,7 +716,7 @@
     {
       "title": "Mana yang Lebih Baik untuk Turunkan Tekanan Darah, Olahraga Pagi atau Sore?",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcVZyVU8zdlp1aDNrcGVINEJJVHJTYWRWc3B6d092SGxyQTVwSGx1UzB0dkVLdFVEWFN3WEJ2TzVYSW9GVF8xMTh1OXRVZjgyQ00tR0VsWHJoR1IwajN0VUQ1QmM3QlgwU1E4UzlBOGpYaTlyRXdUbTdEQ05YdE1BVUtLUUhMN2hWSTY0YWxWZlViWVAwbWxsWmFNRnhkZlI5aTcyUFZSYV9OUG5TLWxNbG5IekZEem9WbFHSAb8BQVVfeXFMT2ViVTJhTlp1dkJic3FKb2pmMHc1Um8tODlZM25WTGhsUFlMZjZkVHpWZFN5cFBnUkUySGFFTGo5d2FtTGYtRktCTUpCQnF3UkJOZkI0LWpiaUF1dXNoN280TUtlbnRaWFlWUzUwdFpZMjFpeFEyTEVjVk9zeGRhVFdqZFJuUXgwd1Z6UEFVMXl1V3prRTY1S2FMT0VTa1VaZkNkdXVGOF9QbE5VWDBDTFJDSHQ4S1JvQkllQjc0bXM?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Mana yang Lebih Baik untuk Turunkan Tekanan Darah, Olahraga Pagi atau Sore? detikcom",
       "publishedAt": "Sun, 22 Nov 2026 23:00:31 GMT",
       "source": "detikcom",
@@ -453,18 +732,18 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Takut Salah Pilih Empeng untuk Bayi? Kenali 6 Hal Penting Sebelum Membeli",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVE14TVZpMXJtQmhBaVlTbW5nUWg5ak0tbWxHenNxZ3VHeUR3dFI0YUY3eXlMNVM0MXM3LUNEUnRoaEktVTBPckVBdHJJRkJyb25iTXFvS09MQzc1ZkZQV3FmcHI2UklEemlaVXZESFZXd1RWS2t3bm90SEc5LTd5eEtabHJRS1I3VGRKdXUzMkc3UlU3Y2ZJVlluOE41MVNlRUM1SHdrN1g4X0lLSGM4Z0tibWpUNHFKekRocTZR?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Takut Salah Pilih Empeng untuk Bayi? Kenali 6 Hal Penting Sebelum Membeli Rekomendit",
-      "publishedAt": "Sun, 22 Nov 2026 19:08:03 GMT",
+      "title": "Bayi Baru Lahir Sulit Minum dari Botol? Kenali Bentuk Dot yang Tepat",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOdXJja3Q0b25sZHNvRFBKMUNxckxEdXR2T1pTN05vM0VxMWJaQXBiM0x0bFExblVHRGNGMHI1QUc5aGF6a05CQ1JmLUNYcjViRUZacXJNQnBrWi16YW4xWkdoNWExd2V3SFVqTzdxRWY4dkFsY3lDdmg0SlRvM1YwX2UxR2ppS3ZGdWVJdDBLTXE0QXY4MVY3QUlUYi1lMk9RQWVmQTNBXzA3ZkJkX3RhVTRoVE9JTEk?oc=5",
+      "image": null,
+      "summary": "Bayi Baru Lahir Sulit Minum dari Botol? Kenali Bentuk Dot yang Tepat Rekomendit",
+      "publishedAt": "Sun, 22 Nov 2026 20:02:21 GMT",
       "source": "Rekomendit",
       "color": "#6c757d"
     },
     {
       "title": "Jangan Asal Pakai Obat Diet Suntik, Dokter Ungkap Risiko Kehilangan Massa Otot",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdFlEZkEtTDg5aElVajd0TldyQzlNalFCNXRTc0hTV21uVldOV1hHUUNVYlpXYzh1MjJ6bF9RTkM1ZDM3RkhIbEpUOEo3bV9kckhQRDRDWGY3cWdaLXpMSHduV3J4bFc0NkhaNWlKeG1HWFIyYk1rYldvMUlGZmVQVy1wQzc5WVNoWjBRRTJRVTFUQ1JxWjJxRll3dGZSS01taV9JLVFzUWlDNmp0aUJYbHZpd0Q5WnQ2WkRMVkJwbw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Jangan Asal Pakai Obat Diet Suntik, Dokter Ungkap Risiko Kehilangan Massa Otot Tribunnews.com",
       "publishedAt": "Sun, 22 Nov 2026 19:02:00 GMT",
       "source": "Tribunnews.com",
@@ -473,7 +752,7 @@
     {
       "title": "Sering Catokan Bikin Rambut Kasar? Pilih Vitamin Rambut Kapsul dengan Kandungan Ini",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNeEJJcU9fUWpwSzhPZEVlZ25TN0ctYm1aQldTZFVhbWI5STdtZ0ZfV1ZPV3ROM09mSHFjS2dUckwzb3Z3ZXpuTGNOVGR0Q3k4TnRoNUJzREtweVdtU1QzdUliQkt6Zk9MOE15TFpNbWxkLXZpaG1jNUM0WElaUWc5S0xaOXFiXzgzUmVmQWU3dnBheUgtdXp6c0hFeVUtWC1EWEJiQTg3ekZKOFZqNXVMWk94VVRLQ2gyampTYmgxa29yNHEtUXZYQUptekQ5Y2p6dkdwZ1BNeEY?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Sering Catokan Bikin Rambut Kasar? Pilih Vitamin Rambut Kapsul dengan Kandungan Ini Rekomendit",
       "publishedAt": "Sun, 22 Nov 2026 18:05:24 GMT",
       "source": "Rekomendit",
@@ -482,7 +761,7 @@
     {
       "title": "Angka Stunting Natuna Turun 0,67 Persen, Data Dinas Kesehatan dalam Dua Tahun Terakhir",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRjFPcXBxWnpYRks3clpQV2tYUDFmMXNWckZzM05INEhfc1BQOXU1OHJnQlY1LWw1cmE2V3g3aFV5ZHpnazd1U1lkb2lqTjVEamtCd0M3UC03cjAtMTZCdGFWMWFFNWRQRG8wNHpsTU04WFhBU251Tm0ycGdTaUFIZDdlSGJ6TDdKY1Z5OFY2QVRIVVZYdkJTeU5GczJTTkI2SXFveU1HU01UY0szMG5KbkhncmtiZlNTMnZrWXhpWkM5eW1IMnc?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Angka Stunting Natuna Turun 0,67 Persen, Data Dinas Kesehatan dalam Dua Tahun Terakhir Tribunbatam.id",
       "publishedAt": "Sun, 22 Nov 2026 16:24:33 GMT",
       "source": "Tribunbatam.id",
@@ -491,7 +770,7 @@
     {
       "title": "Chongqing Sasar Pasien ASEAN, Tawarkan Wisata Medis dengan Teknologi Modern",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeDZyM2lzcDIzQmc4TTJHcUk2TDZmcUVVbS1nNEhVZEUzb0FTcXFIODJTZjdKQ19LNXAtU1hBODBjdDBmNVF2cGtZY0U4S0JiRmhnVFNQU3N5SkdCN0VpNVRQdGo3NkV5ZDAweXBmRU1NRnlKT2FlWXpIaVJrSFpwSndGdE9wN3BGeHltN3YxWUVhWHRGM21JOVJRVEZhbjJlVUt1RjVpU1o2ZElBYklOZERXbFTSAboBQVVfeXFMTXNaOXZaX1owVF9KTjBYNV9BNkQwcWtJMEZzc1laUW1iODYtdDh6RzFfRTA4SWFIUmdVYzBWcUN3bzZoc1kyM3Zud2NaLWp1aGlEMmlESzMyVlpGNWhEbUROanVPV2Q0ZEd4bTBQTTM3dWdOZ21jTmkwTU54VEh0TjJsNFlGY0VpS2diUm5IeGhlUnJic2NhZ0VsZFdhMnZCajQ5cm1wVmFseG5ib0VrT0lLX1FpUlB5b193?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Chongqing Sasar Pasien ASEAN, Tawarkan Wisata Medis dengan Teknologi Modern detikNews",
       "publishedAt": "Sun, 22 Nov 2026 16:04:11 GMT",
       "source": "detikNews",
@@ -500,7 +779,7 @@
     {
       "title": "Studi: Berbagi Momen Bahagia dengan Pasangan Turunkan Hormon Stres",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVGpKOU5Fdll2bGdIOGw4RnBTdUZNVlJsX2RvaWtaN09TQmxkZ09jQ2h4aGZac1dBNmRoSzBOWXZLSDFKdHQ4WFFmeWxteG14aHdRQ2RaU0tHMkV2Um1OMkw2ZG9oRHl5R2JaM3d5TExWT2lqcUZFTGdnZk8xd3F6eXkxa0tLTl91ZnhaSlJMYzNfVE0zSFpBQ2tmVFc4MzEzWHB3N0s0b01SeG9fdFVELWswUEUxdFJPOG1IYUJ3?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Studi: Berbagi Momen Bahagia dengan Pasangan Turunkan Hormon Stres Kompas.com",
       "publishedAt": "Sun, 22 Nov 2026 14:00:00 GMT",
       "source": "Kompas.com",
@@ -509,7 +788,7 @@
     {
       "title": "DCB Jadi Alternatif Tindakan Jantung bagi Pasien Lansia",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWVlvZXMwSHNlSk1YdHRITHZfRnNEVTZaZU0yWFBwYVRLdGgyTncweHNJWHVqaXc5VkdNaUlIbkNxcWQyNy1yWnFTNzBaNUg2TG9UTnNSWHotU3kzSno0ZTkyZWVZSHlNU1hZOUQ1bUlxTUU5RnNqSDJsRlFiRzl3UEN0Ymt0MXJPT0FkUGJ3N1lxVjMwLUJmSWd5R2VSdExySUprbTRwZ1o?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "DCB Jadi Alternatif Tindakan Jantung bagi Pasien Lansia Wartakotalive.com",
       "publishedAt": "Sun, 22 Nov 2026 13:34:39 GMT",
       "source": "Wartakotalive.com",
@@ -518,7 +797,7 @@
     {
       "title": "Faktor Risiko Penyakit Jantung yang Perlu Diwaspadai",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPM3FILU96ZUpjenl1OFEwVnBUZ2pwOFB0OEIya0dhMEFEal9RTW9yVjljbm9ZSE1PVHBySzVGU054SU53MlB4MFBGcU1CQmNyZlk1N3dFS1N0cTZNTk8tQnp1NEF4OFd4MVd1dHlPdXhkOW1fc2NIcWlYM21vWFFyWTdpOFZhWW9QNzVkVGpuZjI4eXhXdTh3enlJN2JPajA?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Faktor Risiko Penyakit Jantung yang Perlu Diwaspadai Kompas.com",
       "publishedAt": "Sun, 22 Nov 2026 13:32:00 GMT",
       "source": "Kompas.com",
@@ -527,7 +806,7 @@
     {
       "title": "Miliki Peran Strategis, Perusahaan Migas Diingatkan Dampak Eksplorasi Kesehatan Masyarakat",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOU2xKMUVoeWVrRUNhSnlzVHd3N2FIWlZzRk5MNXF1UXBORGVaSi1WTVhwTkdOTDBrY1dPTEkzaHg4SWRxQkpRQ1FURFN5WEpjNnl5OE94bkFpMlY2VVZpak1zODJaSHVoSHEwXzdhOGlGRGVSd3ZuNDc2UnlXSXBrdENsTU4tM0lCRlFOaWxDV0NwNDZyU1VHZFRNMnlOOEt3Q0luS1hFbmowRHc2Q0pxY215cS1uaXVtSGQyaGc5bWNZQmxFclNUUVNPd005b2c?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Miliki Peran Strategis, Perusahaan Migas Diingatkan Dampak Eksplorasi Kesehatan Masyarakat Tribun-medan.com",
       "publishedAt": "Sun, 22 Nov 2026 13:11:50 GMT",
       "source": "Tribun-medan.com",
@@ -545,7 +824,7 @@
     {
       "title": "CFD Nagan Raya Diserbu Warga, Ada Cek Kesehatan Gratis hingga Hiburan",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNVd0ZzFDX0lwaWZxSFc3cWR0OXE4cjVhVWRKVTg3UXR3YlRxU3dlSTNPeHBZUHpBUXBlLV9iNG0wd2QybzYxakxhUG5uX1ItVUtZZ21xZVJabUJjY2R2S1FLZWRia09LRnczYjg0cHJnSW4xcTRGdndhTzA1cVpaMURNTDNXXzBfWlY0Y0laY1NseC16ODFiTndBQmhBRGdVTGRfeUV6Mnoxd19FNEVuUmlfOA?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "CFD Nagan Raya Diserbu Warga, Ada Cek Kesehatan Gratis hingga Hiburan Serambinews.com",
       "publishedAt": "Sun, 22 Nov 2026 13:02:14 GMT",
       "source": "Serambinews.com",
@@ -561,15 +840,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "El-Sayed 'Olah-olah' soal Jaminan Kesehatan Trumpcare, Langsung Direspons Trump",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPa25TR1hBOW85dEZibXNQY0F5bGZXZTNfZG5YdmVRdEhUMVRzMVVPcF9yWGo3ek9kTEF1Y1lLbkxUaG5KRnhGWU9yMWlvMGJTUW5ibVYxWGhzVnhzQ3FvRzlVLWFhbWs3NkpLcGg4al80NWJVNWdQU1VSbWxBRmRLcWNScm1GYVhzNFV6b19Kc2RPT2lCSEM4Z2RGaXBqOV9TQjdFaXFEWVc0MU1Id3p6V1pCQTlZQUJoOTloXzN5NFfSAcYBQVVfeXFMUFVNRDI0dVhocXlwMnZxdERENmFCb2RMc2tRaldBMDEyal9hbThxeHRSaTV6T0kxM1NqSy1UVVJGMk5sS05nS2ZQaVJCTmQ0NUpwZVNfUTctY2hYZVh5dVAxU1lXMEpOSEdKRldGRGJZb3pUOWRUWW92eUJPWmFXdGNralo0QVc4NzN1eTRDZHowYVNxbFlWYURWbU5JbFlhbmYxNUtGaDVKUC1fMUFTR3BMVUxiX2JtRXpndGVvQTFiWkZjRkFn?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "El-Sayed 'Olah-olah' soal Jaminan Kesehatan Trumpcare, Langsung Direspons Trump detikNews",
-      "publishedAt": "Sun, 22 Nov 2026 11:36:41 GMT",
-      "source": "detikNews",
-      "color": "#e63a2e"
-    },
-    {
       "title": "Pagi Vs Sore, Kapan Waktu Olahraga Terbaik untuk Menurunkan Tekanan Darah?",
       "url": "https://health.detik.com/berita-detikhealth/d-8764726/pagi-vs-sore-kapan-waktu-olahraga-terbaik-untuk-menurunkan-tekanan-darah",
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/10/16/ilustrasi-jalan-kaki-1792160022244_169.jpeg?w=360&amp;q=90",
@@ -581,7 +851,7 @@
     {
       "title": "Aktivitas Seksual Pria Lansia Bermanfaat bagi Jantung, Redakan Stres hingga Panjang Umur",
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNV3JHWTVFRjA2WUFJUU1Za19hWl82STlYUmtiWEdVek5NUXM4Q2dvaUdvOU91TFVGSmN4YUFKMjFyT3EycXNDZlpQbjZMZjNYckFWU19mUUtweFdZVnpOR3BUb1BlblVMa0g2X2M5VnhkVjdMTjBVekJxVGFNYnZGYWxKeVl3b2pGV0hJU20wNkxYSVZaTURreWFzZTZNMWxXVld0b1VlcnJVNHFEME1lN0xIdE1aYk5yVUluRlhUZlVDUS1YT1F6UnBlM3pPVldYX0JZ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Aktivitas Seksual Pria Lansia Bermanfaat bagi Jantung, Redakan Stres hingga Panjang Umur Surya.co.id",
       "publishedAt": "Sun, 22 Nov 2026 11:09:40 GMT",
       "source": "Surya.co.id",
@@ -597,9 +867,18 @@
       "color": "#e63a2e"
     },
     {
+      "title": "El-Sayed 'Olah-olah' soal Jaminan Kesehatan Trumpcare, Langsung Direspons Trump",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPa25TR1hBOW85dEZibXNQY0F5bGZXZTNfZG5YdmVRdEhUMVRzMVVPcF9yWGo3ek9kTEF1Y1lLbkxUaG5KRnhGWU9yMWlvMGJTUW5ibVYxWGhzVnhzQ3FvRzlVLWFhbWs3NkpLcGg4al80NWJVNWdQU1VSbWxBRmRLcWNScm1GYVhzNFV6b19Kc2RPT2lCSEM4Z2RGaXBqOV9TQjdFaXFEWVc0MU1Id3p6V1pCQTlZQUJoOTloXzN5NFfSAcYBQVVfeXFMUFVNRDI0dVhocXlwMnZxdERENmFCb2RMc2tRaldBMDEyal9hbThxeHRSaTV6T0kxM1NqSy1UVVJGMk5sS05nS2ZQaVJCTmQ0NUpwZVNfUTctY2hYZVh5dVAxU1lXMEpOSEdKRldGRGJZb3pUOWRUWW92eUJPWmFXdGNralo0QVc4NzN1eTRDZHowYVNxbFlWYURWbU5JbFlhbmYxNUtGaDVKUC1fMUFTR3BMVUxiX2JtRXpndGVvQTFiWkZjRkFn?oc=5",
+      "image": null,
+      "summary": "El-Sayed 'Olah-olah' soal Jaminan Kesehatan Trumpcare, Langsung Direspons Trump detikNews",
+      "publishedAt": "Sun, 22 Nov 2026 09:47:07 GMT",
+      "source": "detikNews",
+      "color": "#e63a2e"
+    },
+    {
       "title": "Penyakit Jantung Bawaan pada Anak, Banyak Kasus Belum Terdiagnosis",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY0MwWmlBUWNWRm9NOV9YU1g5UTJ0ZFN2TGJaQ01oTUEta1ZqaUE3SkxzaDd0amtOVVh2UWJjZnZ2YWVUQm44TU5rUjVYYjRaOXhRaVVVNk5nOVNIYWpCUEJPQzZkS0NUQkhuam9pOENfTXFTTmVLem1LdllicG42Zm5SeFRSN3VxRzRfVXpIaXpCaWNlVmwwek1XeW8xcERHTjJ4OFg1VlpuS3M0amc5Zg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Penyakit Jantung Bawaan pada Anak, Banyak Kasus Belum Terdiagnosis Kompas.com",
       "publishedAt": "Sun, 22 Nov 2026 09:28:00 GMT",
       "source": "Kompas.com",
@@ -617,7 +896,7 @@
     {
       "title": "Aaliyah Massaid Belajar Memahami Fondasi Imunitas Anak Sejak Dini",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMlItZ1dkOGgzV082X0NVblU5cmtSak1saUpfZF9VS1ZsSk1WNnJ0NFd4bVZ4UjUwa2Y4MHZmY2ZRNEp4dTVHbjVHLUU5UVlKeXZYWUFRNmlpb0dJZDhLUmhsSHkxZFh1WEs1Q21SaW8zRUZWWlVyeDh0M0E3MjhQZXI2Y3BjTXg2c1plMi1SVWFsbWVQZXZCY0pwX1ZOWkJzWmhrR3RlTnhQdmxUakl0TkZTMEZNOS1F0gGsAUFVX3lxTFBoWEpydWxITWJ5cUhxcnRQSzQ1UFRNY2tTWGhYYkdFWDctZHhIOUo5YmRBSURNUzhsaXE4TVZsSW9RcEFhbWp5QmZadkFJSzRuT3NBaVJNX3hBT2pDNFJHakpvdVlsNTJTZlo3bXdPd0VwQTFNQ3VfXzQtNVBrbGdjZVFuZDJNYm9rRnhfbUozR3hJT2xUellhMWVLTGVhemtvVl9lbGxuZnl4Tms?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Aaliyah Massaid Belajar Memahami Fondasi Imunitas Anak Sejak Dini Liputan6.com",
       "publishedAt": "Sun, 22 Nov 2026 09:00:00 GMT",
       "source": "Liputan6.com",
@@ -626,7 +905,7 @@
     {
       "title": "Berat Badan Anak Sulit Naik Meski Makan Banyak? Kenali Empat Penyebabnya Menurut Dokter Spesialis",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPSG43d0t3OHluQmdSVzdrR0ZnZngyd0ZfSm52a25vNmw5VFF2d3l0ZG9CZUUtOHk2VFZ1RHluLVY2MENKZ0FoQmxOZWZyQk91bk83VlJQNVZwMlpwVHdSbHFkMEdkMlR0RjRQVm5kZWdZT1NFTFNKY2c0Wk5YbWNjcWo3bzd5aXJDZmZGSlZ0Xzc2NzRsQ1RCampETGpPaFBGZGxNVlFjQUdZWWpBeUt4cjgzYm1TdGswYVQ2RUxwZ1hNd1lxeEltVGZ3R2Y4RXpCeWk0NlhmNDY?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Berat Badan Anak Sulit Naik Meski Makan Banyak? Kenali Empat Penyebabnya Menurut Dokter Spesialis Tribunnews.com",
       "publishedAt": "Sun, 22 Nov 2026 08:59:05 GMT",
       "source": "Tribunnews.com",
@@ -635,7 +914,7 @@
     {
       "title": "Penyakit Jantung Koroner Tak Bisa Disamaratakan, Dokter Ungkap Peran Teknologi Medis",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNMUhGaWFNMTBGajFMTllkSC1sVHM2b0RNaHlMZjhqcGU5bGlXLXVzLUN4el9Gd0hVQ0o1RjJhRHA5VGhoRjJyMXZLRUVOSUY1X1JpRFY4a25mQlpyZXBYQU9JM2N6Nmw0R0ZXZlJrSWZJNnZhX3Z1M1hwWUNGcE0zdEVvZTh1dUhRS3NFVV96cUN3SFdrcGxFZzA5eTNNV09YdVlxVFJkMUZGdWlnQ1lJNmtjN2h1bEgycV9kNkNRNXMtc091a2pV?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Penyakit Jantung Koroner Tak Bisa Disamaratakan, Dokter Ungkap Peran Teknologi Medis Tribunnews.com",
       "publishedAt": "Sun, 22 Nov 2026 08:46:00 GMT",
       "source": "Tribunnews.com",
@@ -662,7 +941,7 @@
     {
       "title": "Warga Kabupaten Bekasi Bisa Berobat Gratis Tanpa Lihat Desil, Ini Penjelasan Bupati",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRzdxWjRiaVpRXzJWUFVrYVowOEhXZGlOR0ZHWUltWldDRUtvWXhJaEQ1dXJpNDRTNjhoM3Q4OVVFcDE0WHFqOXRYZHN0dDVWbG9WWXUtdVdwb2I1M0J1NWt0UXl2eDRnclVmbHRlWE8yREo3cnl4cmhWWWVkeERrRGZvSzRxcno2bkVDUFZUREtmVHFZX3B4dGMxNHBodmNTWlNNaWNjUzQtNW93dmtYcUVIVjRjX0pqbGZYaw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Warga Kabupaten Bekasi Bisa Berobat Gratis Tanpa Lihat Desil, Ini Penjelasan Bupati Kompas.com",
       "publishedAt": "Sun, 22 Nov 2026 06:41:00 GMT",
       "source": "Kompas.com",
@@ -689,7 +968,7 @@
     {
       "title": "Hipertensi Jadi Faktor Risiko Nomor Satu Serangan Jantung",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRTFPR2hEdm1IS0Fld1pUcmNNNS1CX2ZkM3dLM3ZPdHhkZ3Nfb0pJU1hhTnNncjdXVTdZSVpOOTdJVzI2RkZIdmFoek9paTk0NmRtN1g2ZUpkWU9uaXFpTDNlZEhGcFEzMWV5SXUyQzFZNHFtNG0wZVZFX211S1BJaTdseExacFE2TkFSSWloanpIVXhoNzE4ZThOZWFYYktwTWYzWlFn?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Hipertensi Jadi Faktor Risiko Nomor Satu Serangan Jantung Kompas.com",
       "publishedAt": "Sun, 22 Nov 2026 05:52:00 GMT",
       "source": "Kompas.com",
@@ -698,20 +977,11 @@
     {
       "title": "Ruben Onsu Siap Cabut Gugatan Hak Asuh Anak demi Damai, Sarwendah Minta Tes Kesehatan - Video",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMTI3eU5iZkN0eExjbzk5Q2xKS2ZoTXg5ZFdoTGxxTVVVSlozTUpnSW1FV2t5UUszcVlTODB2XzJjNkRlRzFZQ0dUMzVqN1ItVEFUb2RYTG9IV0NHZTIxZ05feW9hVE1ubDlVWTNQWTVKcVY0dUxPRWV0LTZiZTd1OEFVU3FkQ2RYLTNwN1V1MV9YQUdBZXNUeHFCbmVQeWlBYXFna2VkWDIxODN4NGtHRXRnb1VudUpaM2tRelRvdVpGQXdVVThVSU1JbG9fYjBW?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Ruben Onsu Siap Cabut Gugatan Hak Asuh Anak demi Damai, Sarwendah Minta Tes Kesehatan - Video Posbelitung.co",
       "publishedAt": "Sun, 22 Nov 2026 05:19:00 GMT",
       "source": "Posbelitung.co",
       "color": "#6c757d"
-    },
-    {
-      "title": "Medical Check Up Sebelum Masuk Kerja, Apa Saja yang Diperiksa? Ini Penjelasan Dokter",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxORzdTbmRSRVZzUVh1SGJxLWtFOWF6LTVUQXVheVl5azJsVVU3UGlESzFFUDhiNklMRkgtOUU3NTlhajA5VEZJZ2luejNQNFFvRWJvNEFYUDlwWFhDRFNHWnZVZTczbWdtMkgwbzlENEdRTWIwYnktX0VlNDZmaWJlMGpWQVZzdUQ2QWZ1Wi1sSGUyNl9LWHVkRVl0aVQ0b053MldfcF9CUXMyVGo2MjlSNU11d0RBU09GOV81NUtfZnluZm9SSUE?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Medical Check Up Sebelum Masuk Kerja, Apa Saja yang Diperiksa? Ini Penjelasan Dokter Tribunnews.com",
-      "publishedAt": "Sun, 22 Nov 2026 05:17:00 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
     },
     {
       "title": "Hati-hati! Gejala Serangan Jantung Kerap Dikira Cuma Sakit Gigi",
@@ -725,7 +995,7 @@
     {
       "title": "Ammar Zoni Sulit Keluhkan Kesehatan di Nusakambangan, Keluarga Minta Status High Risk Diturunkan",
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSmNMeDc4SEk0NklyV0Z0NFNhNmdKRmVKbFR4Q1JITWtaVlN4c2lIY2laMGlfYVFhMXBqdVNvR0daVm5XMzJuTXUyYkp1Nlp6Y05WbTNSUy1wSnNqYUZ4NktCU2tnWFhQLWVnQUpleHQwc1lTOEhva0o3OS16R1RtSE5GMkx2ZzZfekd4cmYyc3EwQ2xDMFE0Y0Nqa2ZOWjlzd1lGZEM2eVFjZ3d5cG1rOWJXVW5wNXcxNDJVVUNqWjhfQnFlU2s4UmNCSzFabm1URXVJ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Ammar Zoni Sulit Keluhkan Kesehatan di Nusakambangan, Keluarga Minta Status High Risk Diturunkan Tribunjatim.com",
       "publishedAt": "Sun, 22 Nov 2026 04:57:00 GMT",
       "source": "Tribunjatim.com",
@@ -734,7 +1004,7 @@
     {
       "title": "Biaya Kuliah Jurusan Kedokteran Telkom University 2027, sampai Lulus Bisa Tembus Rp 500 Juta",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUEZodU9NNkZnbFpFYWtlbmhqYnA3Y1FEbUxZMnUyUklrT1dSenRpYlpqUUlUV2xXY0ZfeElBVGlDNFBzQUVyZDM0RFBWSHBZaVRmdjFia0s3UHg2V094aW1xR29XaWs0b1owdWZ6TjJkeUVxLVdnbWt4enVpM0NzQ3lvdTdSQWdmREM3RnZBT3FUOGdGajhGeU0ydE92c1V1VXdYOUQtN01RbzQwbXdsVXMxY0g2NThKWXNyVjlfZFMtMmM?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Biaya Kuliah Jurusan Kedokteran Telkom University 2027, sampai Lulus Bisa Tembus Rp 500 Juta Kompas.com",
       "publishedAt": "Sun, 22 Nov 2026 04:56:00 GMT",
       "source": "Kompas.com",
@@ -759,15 +1029,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Deteksi Dini Jadi Kunci Tangani Stunting, Nestlé Dorong Intervensi Gizi Berbasis Bukti Ilmiah",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUhkazZGRlV4d2FscWJkUElJTXhwblY2RXZtbkU4cHY1dV9QOTZXMUd3RGljNzVrR1pwZzQ1eWlsOWtmMXM1aVpUMGFxQkotb3BVMHBKZ1Q5MWFDQkRBRlpHc2RleEpsM1RQVXJUakszMDNlTWVMOXZqV1ZVeXRvaDFCQXdqNklIZkV4eGs2c1pQOXg0Ulk3cVJJNGdBOFoyTWRZNHpxRXhZTkJGNGVmeXhvRjFLbjhkS2NKQ1dsa0ZGeU00MUlYTGU3eF9EUzJzRDhScUJNckw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Deteksi Dini Jadi Kunci Tangani Stunting, Nestlé Dorong Intervensi Gizi Berbasis Bukti Ilmiah Surya.co.id",
-      "publishedAt": "Sun, 22 Nov 2026 02:57:26 GMT",
-      "source": "Surya.co.id",
-      "color": "#6c757d"
-    },
-    {
       "title": "Cek Tekanan Darah! 51 Persen Pasien Serangan Jantung Punya Hipertensi",
       "url": "https://health.detik.com/berita-detikhealth/d-8763802/cek-tekanan-darah-51-persen-pasien-serangan-jantung-punya-hipertensi",
       "image": "https://akcdn.detik.net.id/community/media/visual/2023/08/29/ilustrasi-tensi_169.jpeg?w=360&amp;q=90",
@@ -788,7 +1049,7 @@
     {
       "title": "Petugas Keamanan Rumah Sakit di Australia Bakal Dilengkapi Kamera Tubuh",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOc2djMGxGb3Zxc3VlNXlOZk1KSExBeDJtUE1nRWFZR1phYW42bU5lOE1sX2duSlJ2UXBEeEZmdXF5UjVqWFVCZ2RhblhSSG9taXcwZnZ1a0NVT0FnV1dDSFdoSkxwbDBCQXRFRFNhclJMbGhVMzZrY2ZiclYwVkptZTQzWmMyc3RBTnhOMkdzUU45MDZBdmZwQ2o5VjhjdjRjUDZZOWxsbTlUNWJIaVF4LV9tTDNBdUM5cnJqNTZVSlBBSjN10gG0AUFVX3lxTE5KclJyUGVzY04ta3BmUzNpYUhOZFJPM0ZpaWRBb3lydUdZekhZTTRBVUlnSnMyQ2VDVVM2ZEZuSTRUVWtWa1ZaZzE4YlBjalhKdDk0Z2lzNFZ1OW5YalA3RWo1V19qY2NzUXI1N2ZwNjVWV0VKMC1EeGJGclZBVUN6X3pCYlFUeHFjYTEwZEE1emhPRFpvdlFBQzZIZDhNTXJPNHVfRXAyek12T3U5RmJmZUxfdw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Petugas Keamanan Rumah Sakit di Australia Bakal Dilengkapi Kamera Tubuh Liputan6.com",
       "publishedAt": "Sun, 22 Nov 2026 01:00:02 GMT",
       "source": "Liputan6.com",
@@ -813,6 +1074,15 @@
       "color": "#e63a2e"
     },
     {
+      "title": "Perankan Rashta di The Remarried Empress, Lee Se-young Diet Karbo",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZEhKZmFjaktvdnItWVpZUHo0SFZkckFaeUhjWGVYZlVHTHNxVEhJOVJBNEhpUUc2WUN3ajRuaUdIazBrbElxQjlyZGpHM1FlU3lSVEh6azVQV0VxWDRmc0ZhTTN3UmhHZ1VTTGpjdW1CQ21xTzhLTURtOWpSbzJLM3VlNDdBd29PMDB4M3l6aTd3emxIMFBVaEN6Umg0RGF3dVYyZWk2Vmx0Rjh2NlNlb1M2eV9wZVHSAasBQVVfeXFMTWdaSHBXMFpUNUUtN2ZNanZ6TEhJS3BheUZTb09EY09YQ18yb0tFTzZTeU55aC16dEU3aDV0bGZENDk3VElCb3FxdHp3MC1hall4WFRJY19qWTBwTDQtcUpXenQ3dU9UMWxFY1MwU05zNFJPSl90RDV1Uy1ZQTNDRUVtZ2FvMng2ZXN1NUxNeHhLTkZJTWVhU3B6LXFoWDcyU2FfTW1XbnNKWF9Z?oc=5",
+      "image": null,
+      "summary": "Perankan Rashta di The Remarried Empress, Lee Se-young Diet Karbo Liputan6.com",
+      "publishedAt": "Sat, 21 Nov 2026 23:00:03 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
+    },
+    {
       "title": "Cuma 1 Menit, Aktivitas Simpel Ini Bisa Turunkan Lonjakan Gula Darah hingga 40 Persen",
       "url": "https://health.detik.com/kebugaran/d-8763575/cuma-1-menit-aktivitas-simpel-ini-bisa-turunkan-lonjakan-gula-darah-hingga-40-persen",
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/10/07/cek-kesehatan-gratis-makin-diminati-peserta-tembus-991-juta-orang-1791347701770_169.jpeg?w=360&amp;q=90",
@@ -824,25 +1094,16 @@
     {
       "title": "Konsumsi Makanan Berlemak Bikin Kolesterol Tinggi? Ini 6 Mitos yang Masih Keliru",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXFfMXNIMHBTbU1pZFBlUS1uNGVvMG5YbFFmaVZ2SzJzZmt3SDczQ1JidXEzMVhFZWhhd29iclZ1aTdYMkN3NzFMaG1LU2hQbFJ2MzZjaVNvd2NVYkU3TFAwQm90TUNpZDRPRUpfbmlmOVlPX3lDd1FteHlRNmRSMVJ4RUdyU3FFNlRtSTllWDR2YXQ3Y293ek1wMWdIeWhmWmZ5VXh4RGVoU2doYmRkcWMxSmFkRTgtLTFxbXFTVGbSAcYBQVVfeXFMTldkWjBwem1WWGFxcUw4Q2RiLXkzRWpiTWpxaE5CSmwycURfbUR1NkxRSGJhM0N1ZDVFd1BwU2gzTFNSNjdZVFZWSW95aS1aV2JqWWtZbUJicmRINjBZZ1pSeTFfZU8tUHh5Um5uUUlPU1RTczBVR0NibnE4a1MxSjQxakRNNmNXMlVCZEFIX3pkaUZFemxIaXpwUjE4RUVOWl9TV2RxS05naVhIZlIzX2lPemV4dGktZ3VGLWx3d3FERGVISExB?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Konsumsi Makanan Berlemak Bikin Kolesterol Tinggi? Ini 6 Mitos yang Masih Keliru detikFood",
       "publishedAt": "Sat, 21 Nov 2026 22:00:00 GMT",
       "source": "detikFood",
       "color": "#e63a2e"
     },
     {
-      "title": "HKN ke-62, Akses Obat dan Keberlanjutan Pembiayaan JKN Jadi Tantangan",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUkNBeXRrYmw4SkhwbTczTzhWOUlYNmFYNXIydU91eW5idFo4a3FlaDdQY0h2cEx0SDJ0M3FJam5CT0tCZUVNNENfLXdycldTejNGRk5yOXo4MXNiblI5VWFwZk1lXzVJbk9hUnNJTnRnM2Y2YXN0UFdvNDBZck9nTjZpYjVUMHc1RHZBZjZYcFlZd1VYOUJJUldPNlV0b0thSEhjRTQxU3NzUGIxWEUzOEZn?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "HKN ke-62, Akses Obat dan Keberlanjutan Pembiayaan JKN Jadi Tantangan Tribunnews.com",
-      "publishedAt": "Sat, 21 Nov 2026 16:20:17 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Perkuat Literasi JKN, BPJS Kesehatan Gandeng FKM UI Edukasi Masyarakat Lewat Program Sigap",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRkk3U2JPbV9xWFhPVG80eFh5VG11OWJfVFVTXzlNM2YzTVZKSU1laGdWR2JiUldxUUVROU40UnIyRktzV0toZXg2X0QwQ28telBTNTFnWDFMQ3VoaVFYRTZvckN6T3VlckxCZTRZVG45TkV1RUxPRnRFcXhZUUtaMmwxaDM1WTFSMTREaFBMajZjOUM4RDFoYmV2a01jUVM4b2VYRDBuR25nanFzZTdPSUFLUGlITzdlYjFneVh0WUo4ajc2M3hadA?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Perkuat Literasi JKN, BPJS Kesehatan Gandeng FKM UI Edukasi Masyarakat Lewat Program Sigap Tribunnewsdepok.com",
       "publishedAt": "Sat, 21 Nov 2026 16:12:30 GMT",
       "source": "Tribunnewsdepok.com",
@@ -851,7 +1112,7 @@
     {
       "title": "Kemauan Politik Memajukan Pendidikan dan Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRk9SemRKQ0pjSU5rbUFMeWsyX1VTaFB5RW42TVl3RWRtaFJnVGFiRzNfZm9pLXh3RUpxbnJFdl9NVWZhYTR5bURjNEh0VDUzYlFTb3Y5dVBSWGxOQkxqNW5Gb3g3TVNYdjZaSXB4eTVFOW83LVpJaF9ncldBQkRqSEwwNHRyS2VTbFRtbGxPVzM?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kemauan Politik Memajukan Pendidikan dan Kesehatan Tempo.co",
       "publishedAt": "Sat, 21 Nov 2026 16:00:00 GMT",
       "source": "Tempo.co",
@@ -860,7 +1121,7 @@
     {
       "title": "Gandeng FKM UI, BPJS Kesehatan Libatkan Akademisi Jadi Garda Terdepan Lawan Hoaks JKN",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQc3lmQU5OS1JvU2hUZjZ6NGlRcGFuNXduY0VVVmNrM2ZTaVBLT0Y0aGwxTjFMYmdVeDVJbXI3dnVlaVNnZ1ZZdEp1MzVYNzM4TjNEZ0xRN2U5bkltc3RpcW0zUERTbkpsTUpkNV9NLUFNQUg2dTlsa3dxbnc2bXViVnpRQ2tDYy0tUjRLbWo4bFhpenZoc2wzLTZQQk9od21KU1IzaGJ2OGhYQ3NEdXh1aHcyc3E3VEF4YzdHYVRvMU5IVjRGdV90TU9n?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Gandeng FKM UI, BPJS Kesehatan Libatkan Akademisi Jadi Garda Terdepan Lawan Hoaks JKN Wartakotalive.com",
       "publishedAt": "Sat, 21 Nov 2026 13:54:25 GMT",
       "source": "Wartakotalive.com",
@@ -869,7 +1130,7 @@
     {
       "title": "PLN UID Banten Bantu 44 Keluarga Baduy Korban Kebakaran dan Bangun Posko Kesehatan Darurat",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbGFSVkhBRHlETVZDc29vUUM0YjllakxwcHNrN085ak1LUUtzRXRTX1lEeDNVN0plMUVTcFRZSUoxTnFWLUozNEg4M0pvMGJrdUNuWWFpdk54RFVPQzZVeUpUV0h1NUEtdkNPWHlFa2N0aWtza3FlaFJ1YW9WeVplMTdRa3FOaUg5N0dJeVFBSVBZQlY3ZkdyaXFLWkxSOGU4QVBDUzVuemhicEM0OFViWThrZTJnZmJFM1d6dTFNekJiQ2NaTlNEUkR0QWJ4ZFFr?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "PLN UID Banten Bantu 44 Keluarga Baduy Korban Kebakaran dan Bangun Posko Kesehatan Darurat Wartakotalive.com",
       "publishedAt": "Sat, 21 Nov 2026 13:44:55 GMT",
       "source": "Wartakotalive.com",
@@ -878,7 +1139,7 @@
     {
       "title": "PLN UID Banten Bantu 44 Keluarga Baduy Korban Kebakaran dan Dirikan Posko Kesehatan Darurat",
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQamlUMnZNWlVvbkp3RGdWbzBJV0JWNjNBVWtrX2dpV1hnckFGV01SVDhYSC1jc3h3bm1kcWJTTTFoNl9JcnZJeGZaQUlGU245VjN5RlBCclY3UVVJemszbTk3ZG16VS13cjJFaFpJWTd5RmVfc3JkY0tyR2Noc1lOc0E0Z3Z5LUphWGVyY3RiR3Z6V1I3Nkt6UkE5TVUxSXU3MHJFeHNxZFAxRjRRejhTUG00a0VwSV9zY1BTajROOGp4MGM4TDdPNDNzSGhCRXVBMFUxUGx6WEY4MFdyS3c?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "PLN UID Banten Bantu 44 Keluarga Baduy Korban Kebakaran dan Dirikan Posko Kesehatan Darurat Tribunnews.com",
       "publishedAt": "Sat, 21 Nov 2026 13:44:53 GMT",
       "source": "Tribunnews.com",
@@ -887,7 +1148,7 @@
     {
       "title": "Vape Lebih Aman dari Rokok? Dokter Spesialis Paru Ungkap Fakta Sebenarnya",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcXYxQ19FVlFORm1lWnJsd1dxejV4bFdwT1YyUmQtY0FPUU5XbTI0SnNzUG1KWUlmZFBjNUhYdlNmTWl0N21jTl9fUkNEczc1LU9zRkVHVW5jZHM0NTFZTE1TVEdCZGhMUjlTT0dJSXIyMmFNa19YQWg3eVBkVll1cjZMZ0xuV2U1N0JlUE9tRWhmaDUyVzkzOUJIZ0MwMmduX2RFenl3aUJfamtkSFNiMlR1c0xBYUFC0gG-AUFVX3lxTE43ZE9hcERzbWtUVG16M2pVTXZLREVsSlBLNjdKb2dIR1NVWkt3a1RQWmlOc2FGaUg4b1FScnZvMWFwd1pYRHk5OEtHUnV2QjFQek9FNTRaZUMyZnJKTnRRWDJNRjhMY05GWFE1WHF2VzM2a0poRWFqVHZOVVI2QjNKQlJpMW1PNUJiMFZkbm11dUZ2WWlhdEdwYjdDYzlqRUFDcGx3S3JBU2ZQdXhwM3pBR3REalJkR3FkNDF1aWc?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Vape Lebih Aman dari Rokok? Dokter Spesialis Paru Ungkap Fakta Sebenarnya detikcom",
       "publishedAt": "Sat, 21 Nov 2026 13:30:35 GMT",
       "source": "detikcom",
@@ -901,15 +1162,6 @@
       "publishedAt": "Sat, 21 Nov 2026 20:03:22 +0700",
       "source": "Detik Health",
       "color": "#e63a2e"
-    },
-    {
-      "title": "PLN UID Banten Gerak Cepat Bantu 44 Keluarga Baduy Terdampak Kebakaran, Dirikan Posko Kesehatan",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcmtyeHBOQ0M5TmJGSDlfRGtBLVQteTBYR0prMThJaC0tQ1M0dHB0X3RLLUtZNHdyMXdQRl9OWnU1dWhtOU9oWmFXbjF0NDdPUUpTTXhRaERxZnZyRmNoVDRwTWR5bUpLMzlwUG9EM2c2VXZMUVlsckxKVlNhTVJtTU03bFA3V1R0M2pFVEJWMm9hSjFIamJ6T0R0MHdSc1BwcGtoUUNiWFZ0c211ZExrdVdQZk1qRm5LNks4ZURLT1JwZUxjcmsxUFliSEl6c2NPQUh2dWR6dXJLcVluRFZF?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "PLN UID Banten Gerak Cepat Bantu 44 Keluarga Baduy Terdampak Kebakaran, Dirikan Posko Kesehatan Tribunbanten.com",
-      "publishedAt": "Sat, 21 Nov 2026 13:03:04 GMT",
-      "source": "Tribunbanten.com",
-      "color": "#d35400"
     },
     {
       "title": "Vaksinasi Gratis dan Pawai Kesehatan Edukasi Masyarakat Hidup Sehat",
@@ -930,15 +1182,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Ibu Muda Rentan Stres hingga Depresi, 150 Kader Posyandu Dilatih Di Semarang",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVGxzVjZseFZLd05YYk9HNlFxX29CRDlXakE1SVE1cUNpanJyU1hDVEpYVHVKN2dlQ0l1NE1pSFdxZlR2cl90V013UmdVU1JWY2h1cUhjYVM2amtCa29EZWpxTTdnbE4yaU9NNEdyYmNRRG1RYTFjd05UZEYzNDhiVEQxbld4NGpVaUgtcGhoWXJOb29UcDF0RnpNZ0lSSXljbnJzRmZObm9nNEdtS1RWc1Y1clJKMFNickltSUxvRQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Ibu Muda Rentan Stres hingga Depresi, 150 Kader Posyandu Dilatih Di Semarang Tribunjateng.com",
-      "publishedAt": "Sat, 21 Nov 2026 12:34:11 GMT",
-      "source": "Tribunjateng.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Perawatan Bayi Prematur Tak Berhenti Setelah Keluar dari NICU",
       "url": "https://health.detik.com/fotohealth/d-8763654/perawatan-bayi-prematur-tak-berhenti-setelah-keluar-dari-nicu",
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/21/diskusi-bayi-prematur-1795263024845_169.jpeg?w=360&amp;q=90",
@@ -946,6 +1189,15 @@
       "publishedAt": "Sat, 21 Nov 2026 19:31:47 +0700",
       "source": "Detik Health",
       "color": "#e63a2e"
+    },
+    {
+      "title": "5 Manfaat Bersyukur bagi Kesehatan Mental, Bukan Sekadar Membuat Bahagia",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPclJMejBseEVsUG9sOVVqZFJyMV9WTHRoVGJiVXJ5SWJhd2VYOWdHSDFMQ04yX3A2akpIWENRWUlfaU1rN2dBU2xtT1dTQjlRVFhGUUhNRUZvQkg0VTg3SWJsekFLdlNVS1R6VEJGRDc1dVYwRjJMd0lDTDlLellOd0hFY0doMFRrRUprQ00xUG5XTXFndUhpUmloZmpXcFNFaTF1N2pxWFl3blVqc2JMd3NvSGxTZ0N0SHJja0ZWT3dod0Y0?oc=5",
+      "image": null,
+      "summary": "5 Manfaat Bersyukur bagi Kesehatan Mental, Bukan Sekadar Membuat Bahagia Kompas.com",
+      "publishedAt": "Sat, 21 Nov 2026 12:30:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
     },
     {
       "title": "BPOM Ungkap Daftar Obat Herbal Berbahaya, Ada Produk Pelangsing dan Asam Urat",
@@ -959,7 +1211,7 @@
     {
       "title": "Kumur Air Garam Hanya Meredakan Nyeri Bukan Menyembuhkan Sakit Gigi, Dokter Jelaskan",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNLUhWcFFTd3Fzc1BoTm5EdUVTa0RiT2k2YlAwZmUyUXFWZDAxbFdZX05RUklGNEI5Mng1T3NXemd5Z0xvYjR6UUMtZ213MGV2ODIxOWo4WW1MQ3FwOEQ2VFh0cXlIQmJfTFA4b3ducHlPWFZyR01Rak95ajYxVE1naWJSdTNVYU1pRExiNmJHdHpURnRTWEhSM19jSEtvY3ZGQVhlNUUzWm9mRWFUWTVtaExFUXRoUzNPbFBpQldhLU5zSE10cTBJYw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kumur Air Garam Hanya Meredakan Nyeri Bukan Menyembuhkan Sakit Gigi, Dokter Jelaskan Kompas.com",
       "publishedAt": "Sat, 21 Nov 2026 12:03:00 GMT",
       "source": "Kompas.com",
@@ -975,15 +1227,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "10 Manfaat Ikan Kembung untuk Kesehatan, Kaya Omega-3 hingga Bantu Jaga Kesehatan Jantung dan Otak",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUUM0TkY4clZSRGJfbkt5MllISFB6dmFIaWYzN3RKejJSRFlDNUo0YXE4VjZCWlNlTXVSYXA0R2dsY2NvUDUyQk5LT1o5Yk94dE5mYU1YTS1FRnFOeXBpaHpDNmJFVFR0eXFqM3BxLS1xUmRESl9GMEc3WVBMbWRTTE5pTGdmVnZCM0wxQTlLWXBRZFczRmlwLVB4ZVB5VUwwNkZld282SWtTcXl0WXMyV243RngtZTFweWc2aEpPblZSaC1xLUhRanBjWE9oT3FqWm1PaTBsVG4xUQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "10 Manfaat Ikan Kembung untuk Kesehatan, Kaya Omega-3 hingga Bantu Jaga Kesehatan Jantung dan Otak Tribunnews.com",
-      "publishedAt": "Sat, 21 Nov 2026 10:36:43 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Ada Residu Pestisida di Ladaku, Merica Butiran Lebih Aman? Ah, Nggak Juga",
       "url": "https://health.detik.com/berita-detikhealth/d-8763085/ada-residu-pestisida-di-ladaku-merica-butiran-lebih-aman-ah-nggak-juga",
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/21/477888167-1795237728478_169.jpeg?w=360&amp;q=90",
@@ -993,22 +1236,13 @@
       "color": "#e63a2e"
     },
     {
-      "title": "5 Manfaat Memaafkan Orang Lain bagi Kesehatan Mental, Bantu Mengurangi Stres",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNOVJZaDUxRzRNRUpRSjdjb1YzLXpfZFhrdzBJQXZFX3VDSXZVelZQVG9haVQ4c1Vndk13Y25pNjJPRGdEMDJIb2ZIYUpjRVdKc1VMMG80V19ieW9LN29xbXhxczViTF9xNGNVY0tWZ3Z1eGR6LUthX0lJaFNheGtaSWtYRG9xVHpSakNhNWFVbUZReGFMc08td2V0elJjd1R6ZWFtWFBzUzF6LXZSSHNNZldyWlJyb0JUVlBWbEZwcEhyUQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "5 Manfaat Memaafkan Orang Lain bagi Kesehatan Mental, Bantu Mengurangi Stres Kompas.com",
-      "publishedAt": "Sat, 21 Nov 2026 10:00:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
-    },
-    {
-      "title": "Bupati Blora Arief Rohman Soroti Kurangnya Dokter Spesialis",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYWdBXzhrUE1wRDVWVUtZeGY1WmVLdGNPMUo2RkdMUkVPS2xGQnVnRGN5alpFVFRvQmt4MnV5S19paElWQjVOUWk3cGpjYy1RNERRbVRxOGVTRXhkZHd1QW5zZktLWi1IcHRTTFJKVWdRbWpscnNtSDZvTVo4SVo5NEtFUkxrMFlHdUU4alY0bGxXMWZiRnBGRmt0ZjRCeDVtQ18zRC1hcnJKQlpTUVlodnNzaHg?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Bupati Blora Arief Rohman Soroti Kurangnya Dokter Spesialis Tribunjateng.com",
-      "publishedAt": "Sat, 21 Nov 2026 09:29:46 GMT",
-      "source": "Tribunjateng.com",
-      "color": "#d35400"
+      "title": "Peluang Adopsi Telemedicine AI Korsel untuk Klinik Indonesia",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOV00weDBpMF9fRXNFY3QtSUcwcUwtSklxY2ZGQzZhTWZjRVVqQnZSNjliYkk4dkx3Q3RLNTRCai1LLVFiY25RNE1OTWNXTUJUc0lzYko1S2xFQlZiNXA3VTh2anZQRXRJa013dVYxR0tMcEY0QjlPZFJlX09XUW9XMGNGTWdHT25iR2NPemhhaTNMTDl3d3RRS2ttUXVJZw?oc=5",
+      "image": null,
+      "summary": "Peluang Adopsi Telemedicine AI Korsel untuk Klinik Indonesia Tempo.co",
+      "publishedAt": "Sat, 21 Nov 2026 09:45:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
     },
     {
       "title": "Gaduh Residu Pestisida di Merica Bubuk Ladaku, Kontaminasi dari Mana?",
@@ -1022,7 +1256,7 @@
     {
       "title": "Viral Kasus Ladaku di Taiwan Apakah Aman Dikonsumsi? Ini Penjelasan Dokter",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSVloZllXS09qQmZZcVlIU25CcVlWSUJ5VWxHMS1tOG9LWHRPTmhXa1EtT2ptWkptU3BQRE5nTFJ0WEI4dk9WQkdJdDhnTUpqSGlpTjh3a3lrVU9Yc3Z5cV9oT3NVNV9RcGp5aFZEWFo0YTlfaUJsUXotdkhxYlRXMVNxdEoyUDVoTnJKWjE5SHY4cFV1UmU5MTV3LWNZY1lBeXFYTXZ2NmlXVEJQZERhVl9CbmF2TDEwWjRN0gHAAUFVX3lxTE5rNWlLaURib1EzR25pdUxQMlhMTDlXa2o1bldRRnNzVURnNG1ZLWpfOGhuVHUwcDk4aElkaDhOOEVRUTlRNHJhbVFBSEtPRHFpVnBzQ0c1WllJUVdpb2hYcEY4ZDZ0c1pFbWQ1eUhLQ21KckF0RVdxTnA2YXZycUhyTWx1a0swNWY0TjdwZDB2Ynl3aGR4RVVLOXp6TFpXWnZ5ZTFFOFVvUHd4c0Z3MzhQNG9EREtCeG9BNGJySlJONQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Viral Kasus Ladaku di Taiwan Apakah Aman Dikonsumsi? Ini Penjelasan Dokter detikFood",
       "publishedAt": "Sat, 21 Nov 2026 09:00:57 GMT",
       "source": "detikFood",
@@ -1040,7 +1274,7 @@
     {
       "title": "Kronologi Casis Bintara TNI Ditikam Rekannya Saat Tes Kesehatan, Sempat Diajak Berkelahi",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeWozbXVQRXh2cG9pUnJKZEVHY2U3NVRScExKZG5HRXI3Yjd1LTZDT2JYNmp4R2NOUUdtNmFtVXNMMTl6T1I5cEJlVVpRZ0JyNXdjNlpBV0tzVWF0TmpoNmlqQWdCd19CYnlENGxqdm1ZTG45OUN1Q3o0M05CaTRPblNhR1RSNGhDakVoN0xqV0d6eXg2LVhoX3VZY3FCZUFNVjVFX1h1X0VtZmR2eGlpOHFPazY4aDRhNjRvWkNBbUhCdw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kronologi Casis Bintara TNI Ditikam Rekannya Saat Tes Kesehatan, Sempat Diajak Berkelahi Kompas.com",
       "publishedAt": "Sat, 21 Nov 2026 07:45:00 GMT",
       "source": "Kompas.com",
@@ -1049,7 +1283,7 @@
     {
       "title": "Gandeng FKM UI, BPJS Kesehatan Kerahkan Akademisi Jadi Garda Terdepan Lawan Hoaks JKN",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZDZlOUdiOVhpbVhYdllKNTI0Yi1PdG5FRlUwTUpuMml5UHVXeXR1S0hkYU5YcVowNmdZZENYeE1HOVR2WVB1RXMycUk0ZmlkTVhJSWpTLTg2RGhrc0ppNzl4aUxIeFRrbGI3TUtGU2Y5a25NMklmUkt0TXNxbUZmQWlST044UzlNUkdBaDlDalBZVXZRcFhTTkpSUVhqYjgwMnNMT3FEOXNFVGlfbXpzNkMtbEdFWklWY011OEdPTEdvQQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Gandeng FKM UI, BPJS Kesehatan Kerahkan Akademisi Jadi Garda Terdepan Lawan Hoaks JKN Tribunnewsdepok.com",
       "publishedAt": "Sat, 21 Nov 2026 07:36:06 GMT",
       "source": "Tribunnewsdepok.com",
@@ -1065,31 +1299,13 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Dr Aisyah Dahlan Ungkap Manfaat Wudhu untuk Kecantikan Wajah, Bikin Kulit Lebih Segar dan Bercahaya",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOUHNSank2UDBjMGZzNmQ1ZDc3Qkk1X3IydzRkR0N6NjgwRmpPOVJOVzhhb0xaeW1RSHd4RW1xRG0ycmVPc2N6VXdCRU13WThBbVI2amtnNV9vN19RN3pvSS04UHY1TmswR1UwWXRqLWhwZUdJNXVlWDU4d05pMjZSZm9rbTM3R2RYTkY5X2c2RzZnMTV4M0FNcDdtc1k5ZEduM0tGOTQ0dHd3b3dSVDdQOGpuT1E0Nl8td0U3WHZPcXpGbHJMbHp0LVlfSWJfSFN6WTJUa01OQlJGcVNl?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Dr Aisyah Dahlan Ungkap Manfaat Wudhu untuk Kecantikan Wajah, Bikin Kulit Lebih Segar dan Bercahaya Serambinews.com",
-      "publishedAt": "Sat, 21 Nov 2026 07:01:23 GMT",
-      "source": "Serambinews.com",
-      "color": "#6c757d"
-    },
-    {
       "title": "Kemenkes Minta Perusahaan Masukkan Kesehatan Mental dalam Sistem Keselamatan Kerja",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPZzFESk5hTTNQYzZXcFpxeGoxa1g3ZWVsXzBjS3hQSG5pejFoTnl6ajVEUVVGRWYwSk9HSElSR0F0cHlPM0hYX2tjbkppZWJVclhFUGotQXhLM2psZDVVU1FRY1hPMjVzWDY1WUNuNmVHRnpIY1UwcE1FZ1NxQUl0VWpwenlWc29XSC1qZmFaZTlkMEp5SHN2Q0RLUHJGdXQzMWZZckoxdzRNb3JaUmk2RXJyUmkwZkFBSDJXWmp2NzJkTkFn?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kemenkes Minta Perusahaan Masukkan Kesehatan Mental dalam Sistem Keselamatan Kerja Tribunnews.com",
       "publishedAt": "Sat, 21 Nov 2026 06:49:00 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
-    },
-    {
-      "title": "Perluas Layanan Kesehatan di Banten, Bethsaida Hospital Serang Hadirkan Teknologi Jantung Modern",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNTlPXzV4WWRnWmJPNjlRRDVoRk5NUHZqVU5HSjMtSzhHVUlNUXl5SmFEdDZmR0ZxcDJiYi1hVDZ3bWVxMExUMmVTdllMX3dKTVdqdDg4dDdtck40UGlzMzBJTFVmaVZTWkJWclRsanFnY21SVGd3ZnFSeGZPVURCTk9IZzd5T2VieTZrRTlrc29WQ09TWkJEQXNHcDBCZWxmTWM4Qzh5am9nYmZkVjZ2aENRY1RRUjN0UW00cE9jZ2Rhb3d2WjhXU0RTeG5FanUtbXJWM3FuWExIUQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Perluas Layanan Kesehatan di Banten, Bethsaida Hospital Serang Hadirkan Teknologi Jantung Modern Wartakotalive.com",
-      "publishedAt": "Sat, 21 Nov 2026 06:15:46 GMT",
-      "source": "Wartakotalive.com",
-      "color": "#6c757d"
     },
     {
       "title": "Polemik Telemedicine Berlanjut, Mungkinkah Satu Dokter Online di Banyak HP?",
@@ -1101,18 +1317,9 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Kemenkes Perluas Akses Program Cek Kesehatan Gratis Sasar Kelompok Pekerja",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQS1kdmNENWpNWFNlQ0wyemgwbFNFYTlkYmZIUVladnVRSEZQZnpNLTZDUG8xQkNuS21NMHZPWThtWVBraFBzVEd3Qkhnb2wyQk5RQWI1UnFPejNaR1k2UW1OVXNfR2NudnR3QnZxRU5Fd3AzcXloR2FhQUZnVjhEVmRUNHYzUXREcFJaTTFuNTJ3Nnlod2Eya2JpN1JPVFVMWVNGYkIxRHNpeEx5UWVvMXlVSjBwQXFRbTFTVGY3dWZRSTQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Kemenkes Perluas Akses Program Cek Kesehatan Gratis Sasar Kelompok Pekerja Tribunkaltara.com",
-      "publishedAt": "Sat, 21 Nov 2026 06:04:07 GMT",
-      "source": "Tribunkaltara.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Kementerian Kesehatan dan WHO Ungkap Total Belanja Kesehatan Nasional Capai Rp 639,9 Triliun",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWWJ5My14UHRtUWFMRkU0dVd2Rkh4SWtUUWIzS1NTS01nd1ZHNVhMQWVBVWt5d2pLUmctWXdPeDRnQVJZUWlwTHFMSUdDRHFoTEFiUmhMYTUyZXJWYWVEelBTRm1ib0NONkpxNFFMZVl1QjluWkdPVDlRaTY2S2JBQzFGSjFXX2xLQnZ2SXRDTWtEZEw5ZF9VZFFxcWpwNzB4SVJvdzVIT3U0UkNQcUJyRTBkaHVhaW90T2ItNWJFNTVfZWJOdjhuV3BpdWpMc0xhRDRQeHdB?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Kementerian Kesehatan dan WHO Ungkap Total Belanja Kesehatan Nasional Capai Rp 639,9 Triliun Tribunjateng.com",
       "publishedAt": "Sat, 21 Nov 2026 05:28:22 GMT",
       "source": "Tribunjateng.com",
@@ -1130,16 +1337,25 @@
     {
       "title": "Keanggotaan Indonesia di IARC Buka Peluang Kolaborasi Riset Kanker Global",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSFNyYlVoQmR6V0Y5WWNkWmg5STJFRVRnT0NCTGZudFdXb2E5Z1QyTVdqdWlDU19lM2FhdnA5Q1NUZnB0cVo2RUhlLXVMaTUycVF5a3RTbWNuUFlMVVZDX1hkNVE3WThmYTEzb2NRX1I5TkFYQUZUZFYxVWktOG5jVEFVSUs1UFppTk5ablBMR2JudmJBMUNfWjNwOXh1bmVZdGxyYWlIMmg5dnN5TlhUUE9QM3dQb0VwX1lhdkFpQjF6RlEzRmlN0gG3AUFVX3lxTE55RTNVYTBncTBHczRibGtwM3pkZ19UUXVwaFIzTzlaN1UxbTVwZERPeGdiNmw3QU8xcVdKTkdjT3JhWVdPaGUyMlZoUjRSWTJxRU9HNkVBM1Z0c2RfUVZ6bEYtNXRoT1hKUTU1UktNLTVxdExYLTU3NUtMaFZVSlFvc2VkaUQyWFdsSk5GWWlZYTN1SHl4Sm5peE5pV2FPSEdqamx3U2JiNG82ZllRY2lBUXFIR0ZMSQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Keanggotaan Indonesia di IARC Buka Peluang Kolaborasi Riset Kanker Global Liputan6.com",
       "publishedAt": "Sat, 21 Nov 2026 05:00:00 GMT",
       "source": "Liputan6.com",
       "color": "#e67e22"
     },
     {
+      "title": "Mengapa Gigi Masih Ngilu Setelah Ditambal? Ini Kata Dokter",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcXdneW9Jdm83elBUeU5jTE1sclRQdXY0LXJfajZfeEkzUFA1TlZEaWdLUG5ybDlzam04TXhvQmtSb0RNQl90SHZjZ1VtTzljZHNuX1FOa18xRURSWmRibGx0bEVPUWRkelVJekZqaEhSWTBFbUU0eUxCdHdkZ1YtbGFrSDRNbTlzRFZuQmxILXZoci1PbWowUDRIWnBZZTE0eTNaQl9R?oc=5",
+      "image": null,
+      "summary": "Mengapa Gigi Masih Ngilu Setelah Ditambal? Ini Kata Dokter Kompas.com",
+      "publishedAt": "Sat, 21 Nov 2026 04:35:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
+    {
       "title": "SPPG Disetop Usai 22 Siswa SMK Kesehatan Malang Keracunan MBG",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSGFuV0ozTFl3X1lOTkMyWGo0UnczYm9RbWdzZTNNUk5meEpzS092QnQ1eEpJQ1NyS2pKRkpDYWQwMUtQSGZxUWFzTzFRR0J1TDhzemFGV2hycUhYX3U1S0VJVkowVmhQWHExOU1MUWxzdTl2bjMzSlN2YUliWWFiZHJRZW9qNzRoVi0xQk9OVHBrSF9HVVhSV0NkUGxac2ZrekJSbWRIdERNQdIBrwFBVV95cUxQQWxNWTI0WF9lOEdMYm1GYXVjQjE1dzlnazViX1dVdW1PR0JvR0w2Y3VWQXlyM0tVQnZHYnB2Qy1ZTXBuN04tUmY3cTNpMnJRcW5FYlJpTEdYV0FTVndqaDF5UEVxZXo0cFV6VGV6WlZ2VHlRc3NybVBPNmpyMmlDeDIwcktXdThCOXdWMnU3YWRFQ1d5MkRQSnFZanRxQ2hCd0xmMDdGSHUwN2UtNXlR?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "SPPG Disetop Usai 22 Siswa SMK Kesehatan Malang Keracunan MBG detikcom",
       "publishedAt": "Sat, 21 Nov 2026 04:20:52 GMT",
       "source": "detikcom",
@@ -1157,7 +1373,7 @@
     {
       "title": "Komisi VIII DPR Desak Kemenhaj Percepat Istithaah Kesehatan Haji 2027",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSFRyNFRlRDdKQ20tckc5aHZLWWl5WmpDdFhYcUxRMWhhbVdvbENVT25yX1dsUUNzT0NUTWVMbW11N1hJYktOU29lTjhpVmtXdXdJVm54YjRGSTJxYkJMZ1hqakJSdEdSV0Q1WWtxMEx4WHQ5RlVJOXRFRV9CVEJVbUhITmc3TkhBNzNBU1FHZThtZ1p6NUFOcFhRTi1LczRqSHBrak1GNlhQZGpwM2VhWTh2R09KVFpG?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Komisi VIII DPR Desak Kemenhaj Percepat Istithaah Kesehatan Haji 2027 Kompas.com",
       "publishedAt": "Sat, 21 Nov 2026 03:44:00 GMT",
       "source": "Kompas.com",
@@ -1173,22 +1389,13 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Dukung Eliminasi TBC 2030, Srikandi PLN UID Banten Berikan Pendampingan Kesehatan bagi Warga Baduy",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNZ0lvLXFaT1VrSkE4dXd1TEoxc2M2UjhITlhLS2F1WlkxRk81MndGa3N4T25DeVp2OFFsbFoxWDR4X2FydlJSb2RpbEwwOGdYZTdkc0pGNFB3RGptdUgxTUhvWENHOVdiYkNyWGtHVjZUT2duWU1WZDFQbmlZRy15ZVRwNkZNaDhqUll4bEhPSTBwNDJXazloUXFydmYyZ2k1TUF4UkN4bjZwaUdLUF9MNENlX2xUTFVLNm95Rmxpb1JCNERlc09hc01iUzRkVUF6bWFReW5Ic2ptdw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Dukung Eliminasi TBC 2030, Srikandi PLN UID Banten Berikan Pendampingan Kesehatan bagi Warga Baduy Wartakotalive.com",
-      "publishedAt": "Sat, 21 Nov 2026 02:39:14 GMT",
-      "source": "Wartakotalive.com",
-      "color": "#6c757d"
-    },
-    {
-      "title": "Dukung Eliminasi TBC 2030, Srikandi PLN Banten Beri Pendampingan Kesehatan bagi Warga Baduy",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxONk1fcEhmdDBleU82R1l2RXRWVU5OVHdLdzZXQVFxNEtSOExOWUpqWTZzRFkxWkRIekw5Y04xbTVnNzhhQTJxQ2R0TWxFdUN4bVg0cUE4cE9oSjRidUxud3I2ODBuUVVqUnk1bG1VcFR3YWtPNWR1c2xGV20tN21MUk5rQk51UjZXaE5xU0JGQzIxNnBHWkJ5dlJOTVdNYUxraE9HQUl3bkZYTVhWVzdOT2JvUS1rN2k3UTNvSWRKVFBoaUlYVDFNTnpZUVk4eFB5YnIwZFFkSWZfQTky?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Dukung Eliminasi TBC 2030, Srikandi PLN Banten Beri Pendampingan Kesehatan bagi Warga Baduy Tribunnews.com",
-      "publishedAt": "Sat, 21 Nov 2026 02:38:54 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
+      "title": "Tidur dalam Kondisi Terang Bisa Mengubah Struktur Otot Jantung",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUkpqUV9zbW9OR1d4U3VMdm5fZHZ6WVQ0dmxRd2oxTkRZaXVxNHZCUG9zYmVjSHY5YU9FVncxUGJYMkc0UUZPLWV0U2gtUTdzemtyVEdDRXpYN1dHOXMyMUltdVI0WHBJbFpibFlnWXVRc3ZXQllHMjBOd3k3M0I3WDBtNXR4bk1pZ0JNblR5Ym1BMWhrWEJDVlQ0VFNUTzJwdlZkLTVmdGtXZ21mT0FiVUlXdkhEZ09O0gGoAUFVX3lxTFBfblVHVzhIanhYai1Bd0dsWkZPSTZKZGVZTnpER0NoUHZ5ZDFteC11RzloUzBZZXdtbkxiMkpOeVptQWN4Q1JyM0tlUEd2VEZkZGpsTWdSc0EzM1dfMHVnNURmMjhjRDhMdUIyVjBQREplXzNNeTI1VEROei12T1E1UDI0YmRWMHlCal9yOGp4bDhacm53NVZpWlp1NG9jOWxVc251RnkwOQ?oc=5",
+      "image": null,
+      "summary": "Tidur dalam Kondisi Terang Bisa Mengubah Struktur Otot Jantung Liputan6.com",
+      "publishedAt": "Sat, 21 Nov 2026 03:00:00 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
     },
     {
       "title": "Tanda Tanya di Balik Viral 'Imunisasi Gigi' Anak SD, Apa yang Sebenarnya Diberikan?",
@@ -1207,15 +1414,6 @@
       "publishedAt": "Sat, 21 Nov 2026 09:18:40 +0700",
       "source": "Detik Health",
       "color": "#e63a2e"
-    },
-    {
-      "title": "Merasa Sehat Bukan Berarti Bebas Penyakit, Ini Pentingnya MCU",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaHM0WUxYTThyeFp5Nkdnc2JFMDdNb2c1MFZUcnJlX3BydmJDZkRYVVVyZjFwRVZHanA0TU91Z0NfY0dFaW5ocU45cTMtVDRzUzRVNmxnTXF1ZjJRblFIc2NELWpKVU9PRTY5R1RSYU96ODNTay1MX25waF9wUm91M3ZaYzRGb05iMmlwdHVoY3ljcERBWS1sNjZaT1NLSm1aV05N?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Merasa Sehat Bukan Berarti Bebas Penyakit, Ini Pentingnya MCU Tribunnews.com",
-      "publishedAt": "Sat, 21 Nov 2026 02:16:02 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
     },
     {
       "title": "Pameran Medis di Jakarta Tawarkan Beragam Pemeriksaan Kesehatan Gratis",
@@ -1247,7 +1445,7 @@
     {
       "title": "5 Racikan Kopi Paling Sehat Menurut Ahli, Ada Americano hingga Cold Brew",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMUptaTNhOGo1aENFUVF0T3FpaVdYa3dWZG00LVhRek80T3BPaW5md3c5LUt3UWNFTTdiNzl0eDZOTVhKMlZaRGhaWWVfbklBbVl1eF9vYjV3NGw3WUJkRGFaWUhBS1J0MTJJLVVPaHVfZE1vMU9CYVhwaENIQzNTMEh5dnV1alMxQVAxOFZaR1RSNjllWE9BWU5TRmkta0hZWWNuQTJQd2pzdlZQMkVzVDJnZU1scEpB0gG-AUFVX3lxTE9FR2NNVXVaNVNTc3YyQWdmNXA5dklNNzVwWHoyRkh4em5wd0prWkhBQmhPVDE1emFyQTM3YVVtbUhyNHdpZmhZZmJrVnpJclQ0Y1VNd0dUelhDWHZvekdLbUU4ZjJaTWhXa092N3dfeTBoSWVqUE1BblkzV2hnZXJ1Q0hqOWk1OFlpei1acmVzc3FKd3pfQkh6VWJrZGRLUzB4OWdpbDZlZC1aNkVsNTZzdllLVHdTbFFNelNVbHc?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "5 Racikan Kopi Paling Sehat Menurut Ahli, Ada Americano hingga Cold Brew detikFood",
       "publishedAt": "Sat, 21 Nov 2026 00:00:10 GMT",
       "source": "detikFood",
@@ -1272,12 +1470,12 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Terungkap! Buah Beri Paling Sehat yang Ampuh Jaga Jantung hingga Otak",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMmU2V1pONU5Zd1M4YkxOTWJwc0FYdkw5eVM2QzdKU0twRXd2b1Zxdkk1YnF5dm9HZUhZS1pidHRHQmkxbmtnVEx6STRMemFSWXpleXpSTWpLMFh0VzlJcFE1dm1iTmJVTUtvb3UtQUgtSVVwQUxFVW9wMi1MWFQtNnB1bF93YnVlUjU5OWpBeXhCdnZYa0s4UkhXbmZ5MENWZWpOaGF3SkQ1VGhqRjFrQmdB0gG3AUFVX3lxTE1QV0dYNl9CWUdfREdKUXFsU3Q2dWhZNmo4U0pudVhwS2c1Zk9EMlR6UnRoN0lXTTRlc1AzcE9ic21udXd1VUdKc2lGZGs1bm90a0p5a3ZWSlU4YVhJTEx1U2gyQmNzbWlSMG1sbzRYX3VFZkhZcUFleUdUR1ZUcm5NQjl3dzlORzFTbXY0TG14VVBHWnU5dy1aWE92azEtempvMXRCa1VKVTJXZzJ6d29yMF9HWjVsZw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Terungkap! Buah Beri Paling Sehat yang Ampuh Jaga Jantung hingga Otak detikFood",
-      "publishedAt": "Fri, 20 Nov 2026 22:00:00 GMT",
-      "source": "detikFood",
+      "title": "PT BMH Terima Penghargaan CSR Bidang Kesehatan OKI",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOa3I0S2trUlFsaTJfOXh1d2RxQlVzdkVSY1pCZGk1Rm9nUGQzOXpWRkZ3R0dHYllfNUhYRnU5YmNlbVBMRjdseDJtY1cxQ3NHOFV0WXp3akJsUnV3R1JwNjRKVVRMaWY2Q3pMclFhYVpMcTdNb2F6WmtWYW9DU2M3WU04LURDNERQRTZBWDYwS2s1QUpCNlBkTVFFTG94RGdB0gGmAUFVX3lxTE9SRVE0LTdRR3JuT2h6di1aelpHQVJRQnlWbGJOdmlobWZueS1KZkh1QzVEdlRYWkl4cTVXLWtyc0wxTFBQVklxQWNEaUZvU25YTWlUZ3R0bWtqZFpGYkdybDFrRkJKNE91WDMwdFNXUVV4STBSV005ZzFEUVUyTDRFN2lWa1hIeTdoSU53eHJEWFNVejc2V0UxX3hTdDNoNk1yRmRRdVE?oc=5",
+      "image": null,
+      "summary": "PT BMH Terima Penghargaan CSR Bidang Kesehatan OKI detikcom",
+      "publishedAt": "Fri, 20 Nov 2026 15:40:15 GMT",
+      "source": "detikcom",
       "color": "#e63a2e"
     },
     {
@@ -1290,27 +1488,9 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Nasdem Jabar Sebar 150 Ambulans Gratis 24 Jam, Warga Bisa Mengakses Layanan Kesehatan Tanpa Biaya",
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPdHRQcEZkb2JxM0FoRC12MElTcVRoSDN1anE4dXNoUzhYaC1SRk1WbElKZGhJUVJXbnNXckpWazVDZWR6WU9ZbG5yUGYtT2hZNXJBeW5hNU1jM3U5bF9sZGFkUnFpNnFRd29ZUXJac0VwbVNPbXhfQWRSNGVyZUhOMjJWTXdUVWEwNDhEcWE0S3pXeDJSRGxlOWFoTGpJYkJMSUhpc3E1TlhBZlUwcTI1Z2J5WTFCZGI3MTFoTllsQklsTXh0aHNVSDNlZlhEME9Wd2MtaDhZV3JnUG80WUtfcw?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Nasdem Jabar Sebar 150 Ambulans Gratis 24 Jam, Warga Bisa Mengakses Layanan Kesehatan Tanpa Biaya Tribunjabar.id",
-      "publishedAt": "Fri, 20 Nov 2026 14:16:32 GMT",
-      "source": "Tribunjabar.id",
-      "color": "#d35400"
-    },
-    {
-      "title": "Mengapa Kekerasan terhadap Tenaga Kesehatan Masih Dianggap Bagian dari Risiko Pekerjaan?",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTnhub0pCeEI0R19FemJTb3RycnlqTjVkblgxanpseExGb0N0R2Z5eXNTdmpWamc3bHpuUUdBT3RidThDQjUweEU3ZjNlRXpSS2hteWxCeUxIWjhoN2VCcGVsZEd1eXcySW50TnpoOTFwc2VmWHhsYlVlZEdSLXg2ajd5QnY3NlJRcHV4Q3ZSdDRBYk8yZGRGYW00YlJsb05qOTdaWnRMMWx5aENrUno5LUQyT2lZdTlJNHJpYUR0NDJ4clpINk9GRQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Mengapa Kekerasan terhadap Tenaga Kesehatan Masih Dianggap Bagian dari Risiko Pekerjaan? Serambinews.com",
-      "publishedAt": "Fri, 20 Nov 2026 14:06:42 GMT",
-      "source": "Serambinews.com",
-      "color": "#6c757d"
-    },
-    {
       "title": "Widya Esthetic Clinic Raih Liputan6 Good Impact Awards 2026 Kategori Inovasi Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPa1BmYVF3RURJaV9ReUczUW9tQXJsNUN3ZWNicVdYODdxSHBuUmc2QjJybXZFamotOW1nQnhydEo1V3kwUHdxNFQ2aDY3bk1fcHlVYndQcUNTd0tJUXBKeWF1aE1idV9USHc0MkJDM0YwVTY3TkZWRUdnZ3ZPR0Q2ejVTSTJlaWNzQlVFLWxBMzBlLXM5bWlIS2hTUkM5Q3k4ajNUV2Q3bldkUGU5LWJnSUdlcENzMGlHTnlmTEtOOHpfb3pwYzhYZEpjTHNILUXSAcABQVVfeXFMUG1mSnZQX21pZkRSeHJiSU1pUUVaczB3WTc5dUtFRXRPT29fYl9ORWh2ei1OWVRQSFNEX2JOdGNNMWZGR2c3SWxrR3hicnlWRnZBMTZBS0dhc2paSmxsQVRkZEFaQWN6WTNBQkFGSGFWVDZ6MVY0NFc2Y21abFdfQmVYVEsxMnIwUkN5SF9qWVB3LVhGa3Q5RHZxcDF2eGhYdlBqUk9NdGJVQ0VwdWt4aGpTMWRlbERfUXVPZlg1aF9z?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Widya Esthetic Clinic Raih Liputan6 Good Impact Awards 2026 Kategori Inovasi Kesehatan Liputan6.com",
       "publishedAt": "Fri, 20 Nov 2026 13:45:40 GMT",
       "source": "Liputan6.com",
@@ -1326,18 +1506,9 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Datang ke Kediri, Indra Sjafri Soroti Pentingnya Kesehatan Mata untuk Pemain Sepak Bola",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNLTRwbjdRdlFkamp6bXJwSk1UbGRXS0FBRnNHbDZBeE8wMGlZUmczWjV4UVpQX2tRLVdKSC1MUFBvcUFXR0RXMzdfUWxIY2F5dEtmNFFKcVVLQzJXcmtSX2NmTkhDbVlXYmdYUW5MRlFBY0dtM243MnlWY3pneFJjTjdlcTNZZjVBaVUxUUY2ZlJCLUlmWEo1VVFDMVU3V2J5bzFtcmJOdXhkQ2xtekNibHJSeDBnV0RHelpFSmRna183SC1ERnhvUA?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "Datang ke Kediri, Indra Sjafri Soroti Pentingnya Kesehatan Mata untuk Pemain Sepak Bola Tribunjatim.com",
-      "publishedAt": "Fri, 20 Nov 2026 12:54:14 GMT",
-      "source": "Tribunjatim.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Gangguan Seksual Tak Selalu karena Stres, Periksa Gula Darah dan Kolesterol",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeHdHY0tZT05OX05YSm1yV3hlalJFZGlqMDMyY3NMVDhuYVdQd0VBUXU1RmJTUHdoRmhkcXVZZEJVVGpkRXI1MTljSFhEdGdfbER3aXhyTWVSS045T2lXOHdwcUd4eDlGRFViOVFNemxSZkhLX08zekgySnRyVklVY2UtN0hGa0Ffd0ZsMERGellwb1lDeWk1MDFfZVBRZzVtd1p6Mk9CMjNHa21NaEtiN0pDRUtrQQ?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Gangguan Seksual Tak Selalu karena Stres, Periksa Gula Darah dan Kolesterol Tribunnews.com",
       "publishedAt": "Fri, 20 Nov 2026 12:30:30 GMT",
       "source": "Tribunnews.com",
@@ -1351,15 +1522,6 @@
       "publishedAt": "Fri, 20 Nov 2026 19:01:39 +0700",
       "source": "Detik Health",
       "color": "#e63a2e"
-    },
-    {
-      "title": "3 Kebiasaan Malam Hari yang Bantu Pria Tetap Sehat di Usia 50",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTzdld1hfUzRqNWM0UWNjS0xfaFFDVi0tc2IzbTdmT0RVMWQ1VEY3SmZYSWpXOXN0LWdJVHJRV2JJZFhXVmR4aHhvWUlIMXYwaGZPa3Q0bDJOd2tHRmdzV1lrYmNDMXN0NmoyU3JvV1Bwalh5cDBDTWlWRENLWG1qMFFLLTk5QTQ1Qmx3U2wtYWhtVVRUYXQzbGZZZGNjYk5sQ09saWJjdjU2QXhlLVBFN0NOSHFmQlHSAacBQVVfeXFMUElCQlJGMExoUk85Z3hwTVlGSXFHaG5LeWktQk1WYUtfQzZSa2hYaVF5dTBYZUY0NkQzNmk4ZVZZQWJnN0lrTHZrb0xSNjdMZ1YzaWgxZHR4cmpPUzJXNDY3UG5NZ3hnTHRaWW9oVkFLX2Y3bXViZWttdmlzY0FrTGxDR2RtclVNTlNqZlFNaDF3d3ZQdzdqMDNERWVZZGlBS3ZvNlgzWFE?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "summary": "3 Kebiasaan Malam Hari yang Bantu Pria Tetap Sehat di Usia 50 Liputan6.com",
-      "publishedAt": "Fri, 20 Nov 2026 12:00:27 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
     },
     {
       "title": "Gandeng Pebasket Ojol, Zee Ajak Remaja Kenali Pentingnya Aktivitas Fisik",
@@ -1391,7 +1553,7 @@
     {
       "title": "Sambut Hari Guru, PT TIMAH Gelar Pemeriksaan Kesehatan Gratis untuk 114 Guru di Bangka Tengah",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNWjZqSTVRSTBaTzJWV0VJdjFvdjhNLWVPZVZsYjhWdmdzWVVPWkl4YWtoYUJIaExRdHVrcnF0QWpfd3c2NktnZndJVndDVDdRdFpsNDkwcmFIQTZjcVVQbVpYamVPMVdPdk5TRnd4TEpLMjhaNkxwcXRSVDJ6LW1OU1FQdE1TT09sS3VrbGF0RmJ3b256clUtdFJTdjFJWFFrbG1oY3BjbU5yQ1RXenk4bm9GeElTVWVPalBFdFNrQVlLV01zQm9vYjNXTV9ZdlE?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Sambut Hari Guru, PT TIMAH Gelar Pemeriksaan Kesehatan Gratis untuk 114 Guru di Bangka Tengah Bangkapos.com",
       "publishedAt": "Fri, 20 Nov 2026 10:17:38 GMT",
       "source": "Bangkapos.com",
@@ -1400,7 +1562,7 @@
     {
       "title": "114 Guru di Lubuk Besar Ikuti Pemeriksaan Kesehatan Gratis dari PT TIMAH Sambut Hari Guru",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbW9mQnpDYll6Z0dkbjhnYXhVSTdvU25hLWRvWXlMNUZfVnR2V3VmR1dNUGtIa1dXNUNPcmRVSlRxQ1ktcUZfSWdVMFpsMW80Q1duMXZtWU9McUtVcVJRb2JYT3E4T3lHLUVVZFM0eUtCOFlYdTB6ZzV1VmV3RkwzQk1nUU1KVzlIYS1DV25ZM3hndnF5UHV3RTZZRVR1a1lic2hJeDVtZUhMcVpwLVp6cDZGazVMOHJiamdaeTVLcjBfd0JDYWxzNDEyT2c?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "114 Guru di Lubuk Besar Ikuti Pemeriksaan Kesehatan Gratis dari PT TIMAH Sambut Hari Guru Posbelitung.co",
       "publishedAt": "Fri, 20 Nov 2026 10:16:38 GMT",
       "source": "Posbelitung.co",
@@ -1418,7 +1580,7 @@
     {
       "title": "Cak Imin Sebut Pemerintah Butuh Rp 110 Triliun untuk Jamin Kesehatan Warga Miskin",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaE03TE5HTnllZkREUndPRmZuSTIydGY3bGM4VWVtTzBiWkpiUjVsX2c2Y081cVh2UXdBd0xBVnFWaUZuMGVvRnU1UkV1RXgtZkR1bDI0Y0wtUURmRzNpZHZZVkZmWE9HSUNudTlUZ1hZVVpsZjl3WUJ6eXFTZTI0QUxUcVhadkZPbDJOMVNGTDNyTFFjWU1aV1VvejRUVXMxQWZBSWhfZ2xXUGpOZ0F4eERyVTE5Q0xQNUVySUpuYWIxLVk3VkE?oc=5",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "image": null,
       "summary": "Cak Imin Sebut Pemerintah Butuh Rp 110 Triliun untuk Jamin Kesehatan Warga Miskin Kompas.com",
       "publishedAt": "Fri, 20 Nov 2026 09:30:00 GMT",
       "source": "Kompas.com",
@@ -1515,6 +1677,15 @@
       "color": "#e63a2e"
     },
     {
+      "title": "Kader Kesehatan Ike Nimah Tatimu Raih Liputan6 Good Impact Award 2026",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVlJnTWgzU0FFM2ZEQWJEdGs0dnBVRzR4UFBjT0RuMnFCWkJROUdrZFgzUDFGNFNLSVdqS3hPODE4R3F4dEtKd25BUWl1b2Z0NG1yTW1VZXpnV0VZdFotTGxQOHRyendBTG5qd3VuTW9INGpnNkpjR0htaHdSZ2ZnY0tKT3R2WXVZN3MyZWlsbVloMmZETzQ0ZE9mUG56NDNUYmxpUkJ5T1Bka1o2djktRktR0gGqAUFVX3lxTE1rd3FaVHB2cmFkRlQ1c29tYUVfLWhIYWNVTU1CS1RCOWFaWU5yVmpDdzlvTHcwZGlvV1d3eWxjVTNFUXI3U0RHUnAxTFpta1V2ei1jWlNrWEpWdnh3RHF2c1JJaFBsWExfYXFIb05VY2JyalhES1JwRFU1SzVDZ1RIOVBqNkhtZ2UzWm1GZVI3YzBqQmk5WmZFYXJiRTdiSEdaWkFoWmdFaUdn?oc=5",
+      "image": null,
+      "summary": "Kader Kesehatan Ike Nimah Tatimu Raih Liputan6 Good Impact Award 2026 Liputan6.com",
+      "publishedAt": "Fri, 20 Nov 2026 05:05:57 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
+    },
+    {
       "title": "Casis Bintara TNI Tikam Rekannya saat Tes Kesehatan di RS Jambi",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWGxERDJwNUdRSlYyWUIzb0JxVk12MkhkQUdWdFdaaDFHekN4TExTcVlESVdzLXRiQ0E1ZXJaeFJSZlIxckk2bVVZU3NkYzd3eWxCek5QLWhKOFNpTjJIemY5aTE0Mi1TNy1zMmtLbi1PR25jbWt1aUl2T2I3a1dXbGE2MlJxNmh4RUtyUnVUSTBJQ3QxaFhEU2NFUF9SMU0xcEJJdktIclpWSU1VRjJqUmlCYXEtYjd6?oc=5",
       "image": null,
@@ -1533,22 +1704,22 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Walkot Palembang Resmikan Laboratorium Kesehatan Masyarakat, Ini Harapannya",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQLUFhdVp0WVdIWUpTMEJQMUY3SUM0RUtnbTRkQjRhWndhMVdBdVdpMW03Smg5MlFlRUM3dTR6V1d4eWtKTU9XRzlPWVloM0FMLVhOSGVVVkxzZFItY0lYbkRtX2RVU2FlRWVON2F2MWpxT2YxcUVTYkl0aENOVWR3YmRFMUxXOXN6bW5rQWFWLTMxdy1GWW5HZDQxU0ZpajQyeUlqOHI4TUNFTno4UWpBVFhsR0xLcjY1WVdLcXJiNjPSAcYBQVVfeXFMT2JnaGlYVTV0WDFKcUpvWkt1NjVfSlZ3OTV5LXNpNmplR2FoYUs4dGtEdlhvb29RNVptN01QNVRtV2dBMF9YY3dFTmt6X0Y4cFk2R1g1VEtuZjllcmZpLXl1SERaQ253b0FoLXRUZ0dhbThta0FReC1aazlUVTh6elFfNm5nSjBwakRqbVFvaEFlZ0M0SUJrLWlQY0ROQzVZQWFVZHExbHhsLUJFV1hmNmk5azljWXZHRWhId0FPTDFjTDFtbVpB?oc=5",
+      "title": "Usai Banjir akibat Sungai Plumbon Semarang Meluap, Warga Mulai Mengeluh Hipertensi hingga ISPA",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQT0dQMlJNaDhnaWdhamYyaklZaGQyM05GbjlVTTFWMGdpbEo0OEFXU1dhNmZJaUpFYTFBSFFMcktzOFptZHNvTUJxdG1uU1FwRnpDWmpfbGJsazlsYlZMcVljQXhYbXVzdVdaejJramlFa1BhcW92bnJZUEZCdXBOZDVzZEZTQjhaMkJ0bEZaZC1jNno1bnBUV0dGWWhlRmhUNTF3eDVWUHZtSV9ONFlsRlhJYmZNamxCTUt5MEpBNzZSQQ?oc=5",
       "image": null,
-      "summary": "Walkot Palembang Resmikan Laboratorium Kesehatan Masyarakat, Ini Harapannya detikcom",
-      "publishedAt": "Fri, 20 Nov 2026 03:30:41 GMT",
-      "source": "detikcom",
-      "color": "#e63a2e"
+      "summary": "Usai Banjir akibat Sungai Plumbon Semarang Meluap, Warga Mulai Mengeluh Hipertensi hingga ISPA Kompas.com",
+      "publishedAt": "Fri, 20 Nov 2026 04:18:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
     },
     {
-      "title": "Rencana Bantuan Jaminan Kesehatan untuk Hewan di Jakarta",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQkNqY0JxRERKTy1NSHZsOEJHMVJxTk5vQ2VPTmdiYml4ZXBnMElUNXlPQzZpdjBuZTdVTS1oVzFHT0EybktDWnp3XzNienZMdlVEeHUwMHhwaFI3VkgxbFNkUmtaYk0xT0h4TklEQXVISjhMYnhnVXdEcWhSMnBMR1NUbHp4MU1vdXREUVln?oc=5",
+      "title": "Dokter Ingatkan Bahaya Malas Gerak bagi Kesehatan, Tingkatkan Risiko Stroke",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdDNwSDd4MVVxZzZNYWFqRVk2MmphM0F3WTVYN2RfWGRwcDd0TFhEeDBLWnFxQkQzb1NZbEFvYk5nakdLczRCaG5yQjNIY2JsRGx0QmY4NGJNMVllRnctS3lKOGFkcWg4VUs2NTB3QW5VMkdCMmVOaEZJZ0dmT04wNGRYRnFPS2xDUjI3Zmh1ZC0wZkpISjFyN2Q2M1BrSnhDYlpiVHliOEJvTUxtUE9WQXhWNWpBZw?oc=5",
       "image": null,
-      "summary": "Rencana Bantuan Jaminan Kesehatan untuk Hewan di Jakarta Tempo.co",
-      "publishedAt": "Fri, 20 Nov 2026 03:15:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
+      "summary": "Dokter Ingatkan Bahaya Malas Gerak bagi Kesehatan, Tingkatkan Risiko Stroke Tribunnews.com",
+      "publishedAt": "Fri, 20 Nov 2026 03:20:42 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
     },
     {
       "title": "BGS Minta Maaf ke Malaysia soal Karhutla di Sela QnA Calon Dirjen WHO",
@@ -1561,11 +1732,11 @@
     },
     {
       "title": "Video Aktivis Kanker Lemparkan 'Abu' ke Muka Pimpinan Kesehatan Uni Eropa",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdlBOZVMwd2RhNmxMZDkwRW5rMmpSd2RlcnJYclduSGxkdEg1VTZPZEdjY3FyVVUwTklMMEMzUHRjWkgxZFRaaEtlbE11Rk5rT1JHZkRTN0lQaHhNWGswY2xrUzFGRG9sTEFZM0xSSF92ZFhBVEdhTm1nMTV0X1dFaGVrY2lFcVpUcms4U1ZVVmIxc0FlY2otRlc5YzlSZENxV1FJUmQ0MUxSZUhRdVdLWkc5cmTSAboBQVVfeXFMUHc4TThPNW5IRkg2Sm9RNFl0ZmhnOWc0SUw3bHROTjJrYTA4R1czNnJMSzkzQThONHd4YWpiU3RlQnhtZUlnNDFqY3hERWhZLUkwZ3BSNGdRMWtSZFJ1OXdYUjBZWDBwdTl5UF9FOEQyV1lHcS05NVJ0cTBJdHdSVWlWLTNKQ0RyU3RvZmJfUEVCTV9TNWhqd3lyRTdmYzh4UnRaNThvVnJZMTVBZHMzUTYwcHB4U0tnTlNn?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPX01RSDVhME9ZWFFCWmpWd1VJNjVlWUloQUgyd3ZZaXp1d21CYUl5NHJmUG40Tk5RVW56dzF2aG9iTkhvVDZGejRqYl9NQ3BJUUkzanBLc2ZKeVd0YWtwZGp3MXE5REw0X3dtLVF3azZTZmtiWjNPSzdsZW9pRmJSR2lfeURrUk1ScHNZeWxkc2pYcWQtaXlqMmJRQzA4clhfVzlSQmFVMkJiSlN0VGFzclBHVEw5SzlhaXlSbXBnTlE?oc=5",
       "image": null,
-      "summary": "Video Aktivis Kanker Lemparkan 'Abu' ke Muka Pimpinan Kesehatan Uni Eropa detikHealth",
-      "publishedAt": "Fri, 20 Nov 2026 02:41:59 GMT",
-      "source": "detikHealth",
+      "summary": "Video Aktivis Kanker Lemparkan 'Abu' ke Muka Pimpinan Kesehatan Uni Eropa 20detik",
+      "publishedAt": "Fri, 20 Nov 2026 02:42:00 GMT",
+      "source": "20detik",
       "color": "#e63a2e"
     },
     {
@@ -1584,15 +1755,6 @@
       "summary": "Menteri Kesehatan Budi Gunadi Sadikin mengusulkan kedaulatan kesehatan global jika terpilih sebagai Dirjen WHO. Ia fokus pada solidaritas dan kesetaraan.",
       "publishedAt": "Fri, 20 Nov 2026 07:45:49 +0700",
       "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Badung Siapkan Kartu Khusus, Petani Bakal Dapat Akses Kesehatan-Beasiswa",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPbW9NcENUeGhwX3JuN0dBTFdlV2ZhRHkzam1hOXZBUmFJTmNvU1lISzdPV3B4Q0lzSDNzRURwMHlWSEpQbG9mYzhzdzNxQnNSanZ5VS1VYWZHbHJwZWNSVDNtSGMyeUprMkZwRXlpa1VwNmhxdEZtekZXN3VMWGM1VXhKYmxsb1V0bERKbE92cnh0SmRuVTBpVlJ5eHIwczFhdWN2NnBNdDZqcWNaU3FRbFlRc2Q4Z9IBuwFBVV95cUxNUFFKeWhmYUxnOTd2VnU1NWxuY1kxSFhoc0tzTzEwSWhSZGJtMWtCeDZHcFRMLURQSDdIc24tcFJSTHZhYVdHVTNkTTg1UGVKRERrOXE1UTh0ZmdWNzVTUmVnVjJQdjRKRl83bVl6VTJKWG53LVo1UzdzVVZJTVMzZ0FHUVhZckxOZHVDbUlfcjA5THlRNXJqd19JT2tlcjNIbWlHaWRPZ3A4QVFyLV9qcFRhMzgySVZ3SDM4?oc=5",
-      "image": null,
-      "summary": "Badung Siapkan Kartu Khusus, Petani Bakal Dapat Akses Kesehatan-Beasiswa detikcom",
-      "publishedAt": "Fri, 20 Nov 2026 00:30:44 GMT",
-      "source": "detikcom",
       "color": "#e63a2e"
     },
     {
@@ -1641,22 +1803,13 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Video: Pria Tetap Sehat dan Bugar di Usia Matang, Apa Rahasianya?",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRkpWXzlXTTRnY2RVVG5GdXRILXh4R1oyUEhCYS1yTk4zMmhkNFoyeWRGLUpiRUUwNWVHQk5XNDBObzQteVprVUJ5bHd1Mi10Q0FvOTN3Y2FzQnZINlh2dnZYSWFWaVFtVl9xVEIxMXFERkoxdkR6UzVTVllXckNaTUxGXzZxQUJybHBKa2RabWlVX1F2eFlDRE5RUUx4aWtERUYwZk82OUh4bDdZakNCVUgwcw?oc=5",
+      "title": "Bupati Jember Raih detikcom Awards 2026 Tokoh Inovasi Pelayanan Sosial dan Kesehatan Daerah",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNNVN1bUlxTFh3aXQyRjB3akxBT0lHZGZKT3Fna3l0dkJ2WlBoWWJNSHVaZi0yN05JT2tzclBQR29PS2dLVUhEZ0FZZENmWWJuRWM1aTl5M1pFNElnMWU2NUxEaW52ZWhiT3NuNjBTdkxPc09WOEpHbUROeWRsdjNaQzNKSTUycWZmcUY5ZUpqdmFGTVdJbnhuUFNRbUdYNWd0YzBUeENqLS10OFJyMU8wN1lMRWZMSTFBX0llWTFJbjNOV2l2TjR3TlpWQdIB0AFBVV95cUxObkRVVTc3NHJ1a2hocWt6T2ZPWDR3c2pXQ3hoNmhoaHZxMmVhV3F4Q0RnXzlqb0VJdFppeDBHaGN6eXA5MzlaTXJRdGZ1dDhvQ0MxemFRSHRBUzgtb1N1dDhHMnNURnU1aTlPZkNJYkJEREo1N3Q5djVTbUlrR0lpZElqdlM2cDJET3l3NU9odnoxQVFkcXFZckJLWi1vYUhkWWxmVEZQUVVxWTBKc0h3cU1ZV213X3BDMjZrX0s1QVB2bVNoSmxTVVd1SWJfR2Nn?oc=5",
       "image": null,
-      "summary": "Video: Pria Tetap Sehat dan Bugar di Usia Matang, Apa Rahasianya? 20detik",
-      "publishedAt": "Thu, 19 Nov 2026 15:08:00 GMT",
-      "source": "20detik",
+      "summary": "Bupati Jember Raih detikcom Awards 2026 Tokoh Inovasi Pelayanan Sosial dan Kesehatan Daerah detikNews",
+      "publishedAt": "Thu, 19 Nov 2026 15:06:39 GMT",
+      "source": "detikNews",
       "color": "#e63a2e"
-    },
-    {
-      "title": "Bupati Banyuwangi Dekatkan Layanan Kesehatan ke Desa, Warga Bisa Konsultasi Dokter Spesialis Gratis",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPUUNITHE0YllMbmN4WjNWdXRNVENPSVN4dTN6VXNQTUs5M1Q5RjhUeGNaUEpKRmMtcEZ6a1ZaMHhtQXB2VEVIbjJib2pnUmlZem5kei1NVXRrb3MwNjRUd2FuRlEwMWlSbzlCU25BaF81RkpQc3VPYW4zb3pxVmpxV3pFUDhaVWdGS09WdkFmbHBJV210bHhpNXMyTS1XbHVPRk8ydG5iYkZvLW9jT3JnM3NCTjktSmVMakpKUlNEdzd3eWgzMXQzWUQ2bVJpTnZObkxSVFhn?oc=5",
-      "image": null,
-      "summary": "Bupati Banyuwangi Dekatkan Layanan Kesehatan ke Desa, Warga Bisa Konsultasi Dokter Spesialis Gratis Tribunjatim.com",
-      "publishedAt": "Thu, 19 Nov 2026 14:47:16 GMT",
-      "source": "Tribunjatim.com",
-      "color": "#d35400"
     },
     {
       "title": "Sido Muncul Perkuat Inovasi Jamu Berbasis Riset dan Kebutuhan Masyarakat",
@@ -1821,15 +1974,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Ketika Kesadaran Kanker Payudara Menjadi Bagian dari Gaya Hidup Sehari-hari",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbWJxbFYzYkRKbExtbldmTFpEZ2FVdzctRnJLdmVnZFZvVF9MdmJZMmJIWGF1RWJVUXlKaEs0ZzdFT0tWRDFJNjlkbHRqTmRsbkxfNUt4WE10UjI2aDhlT0VtbWlOVjc3dVJUNDBGTksxOV9heXNNMEg2dkdnRmVnWEpQXzNxekwxSGJwZ3ZEa1paT01TZGhvaENTYV9rek44VER2RXlvb3AtOUk2STRaOXlTMlNyN3FxaTdGTTE1VULSAbIBQVVfeXFMT19CQ3k5OGw4QzF3ZHM5RFRXeE5DR19hMk04bnA3eXhCaWZ6eUg3eEpNbzMwOUtWYmRmWW42cjh6cUoyc3M2Rmk2bWNrZmU2cmxRVGFGdHNWNGFBVFZ4VzRrNXFlbllfSmJYVE94cG9BS1FITWc0Yk1WTy1CVG9XSVk5dmpqdG5OTm5pQmZTdXdQS1AwUHI3YnZleGNVQUNnNXZ1RWtFTkxzZDk3dTVZcFNxZw?oc=5",
-      "image": null,
-      "summary": "Ketika Kesadaran Kanker Payudara Menjadi Bagian dari Gaya Hidup Sehari-hari Liputan6.com",
-      "publishedAt": "Thu, 19 Nov 2026 10:30:00 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
-    },
-    {
       "title": "Usulkan 2.100 Formasi CPNS, Pemprov Jatim Prioritaskan Guru dan Tenaga Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNeEVfSHdjeTViR3lKUG1vNHk3ZUdpTFlFSlFtSEpNVGRuYjMyLS1lc0RoSmoxZWFRbUZYbG4xemdGMEpPb3p5OTBsWEwySlFmNmowa1RqX0VDcjYzSGR2eHdzbGxYUmNRZG54SlNTSXFnUE4yS1hOVUhYTUVHUWt4aDVXVEx2ZWxIWG1yOV9KYnAtSUVkbkJfeUZDeDdWZjhZUGlaeE02SXRaVGFycG8zcDhmZ0pLMWhqVzRiWWV5V0M?oc=5",
       "image": null,
@@ -1902,6 +2046,15 @@
       "color": "#e63a2e"
     },
     {
+      "title": "Konsisten Tingkatkan Gizi Anak, Alfamart Raih detikcom Awards 2026",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYmhfM3g1VGxORjYwaXNNSmZ2bmwxQ0gwQm5mSU5ocmt0dUJBaF9meW9DX3N3YXZTdHlRVmVWNFlvUjdrOUR0UzZsSDZNX3BhV05sZ0FFRy0tT1NSOXJqaTBoM0RSbmVZMzV1U0NXLUFmaHJXV1lYcHVNOENTZG9sVEtHWkNkUXVwRjBxekh3d0xrMWFnUlN4QzU1ZmpfTFMzRmFjcnRReHNYZlBUdENCR3RULW9BSHhNXzhXZU9mb0vSAcYBQVVfeXFMTlJqNEhxRGtnbGRQQkVKZFBlSThVU0VVN19QVXVrTlJMUllFSk9IWW5SM1AxRlA2bjdYQlMyVTczSlVVcmY2Rkd6LVNZcC11bEpGTjF0MHhLaHpLaVRYUnZMVGl0enVxdFdzV0JBQlVnQlhLeGZCUk9IdDI4VV8xbFFzaFhXU1pvbzV2ei0yOXJEQTBjZkE4WkVmWkNOMUtUSHVFOFVHTFZuTzJQMmZITmF1eTVFZmNzengwal92MXVmU1RtXzZn?oc=5",
+      "image": null,
+      "summary": "Konsisten Tingkatkan Gizi Anak, Alfamart Raih detikcom Awards 2026 detikFinance",
+      "publishedAt": "Thu, 19 Nov 2026 07:46:04 GMT",
+      "source": "detikFinance",
+      "color": "#e63a2e"
+    },
+    {
       "title": "Waspadai Tanda Kanker Usus yang Muncul saat BAB, Sering Dikira Wasir",
       "url": "https://health.detik.com/berita-detikhealth/d-8760043/waspadai-tanda-kanker-usus-yang-muncul-saat-bab-sering-dikira-wasir",
       "image": "https://akcdn.detik.net.id/community/media/visual/2022/11/24/ilustrasi-peran-usus-dalam-tubuh-1_169.jpeg?w=360&amp;q=90",
@@ -1938,15 +2091,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "2 Varian Natur Hair Tonic dan Manfaatnya untuk Merawat Kesehatan Rambut",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOWc5U2NXYjhkRmdGSnB5YTVGek1mUW5LVElCc0lEQzA1LXZaM29wd1FoNktzdi1sNHd3eTAyUGVmMV9OVmt4OWVpenpQbnZOSXNBZEVEYmstMmFiRXJwVk11T3JKOU9iaG93Z2kzMFpyYW1VLXoxYTZkWEtOODEtY3BuSm9NcENSZVZyYUNPMFI5TWpySExHY1Z1M0xXczU1UHl6aWo2MGFZRVNSVC1LY3psMlc?oc=5",
-      "image": null,
-      "summary": "2 Varian Natur Hair Tonic dan Manfaatnya untuk Merawat Kesehatan Rambut Tribunnews.com",
-      "publishedAt": "Thu, 19 Nov 2026 05:04:22 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
-    },
-    {
       "title": "El Niño Kuat Bisa Picu Krisis Pangan dan Kesehatan Global",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMTZOQUlaRG9tWHJvWVRjU3lpekl0Y1dINWdUVW8wQTB6X0RFSXpSeEV2YlAwVURzWjFiQnBlZTJUcVlaXzYxckRDY2pIRWNSVERibTV4TFJMZzJaejE1V3pkZG1uUHBWdWhmS1AxcjlUUXFYLVhrcFFoeU5FZEZkRlhWNUVKeVRkRFhJbV9OWGN0OGpzS0RvXzdWX0pSWm41WmpSUnZESVlaMlktQVZZ?oc=5",
       "image": null,
@@ -1972,15 +2116,6 @@
       "publishedAt": "Thu, 19 Nov 2026 04:30:01 GMT",
       "source": "Liputan6.com",
       "color": "#e67e22"
-    },
-    {
-      "title": "Illiza: Sanitasi Bukan Sekadar Infrastruktur, tetapi Menyangkut Kesehatan dan Martabat Masyarakat",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOVJWSENlTTBlT091Vmw2cmFOSGlXLUxNN0NBaXFQMVB6X0RQNzh5MDYxdGdPR0ZjTV95VVhxcW5sMzNKb05Rc2gxNXEtcXlxTldQenZvUkhTaVJGYVRGZmFZNHFNQzY4T2tUU1hnV2NzSU1ocjJEbnhUckRGbVBfR3RJVlE4SmVyMmd1ZmRMWFZ2Y3hUZVIwN1ZqSjNHYm5RSng5NVh0YS05bXlHVzF6SndEbUp2OHcxclZuVzN2S3M2dzhiZ3JlU09lZjQxNG1wcThaeUtYcHo?oc=5",
-      "image": null,
-      "summary": "Illiza: Sanitasi Bukan Sekadar Infrastruktur, tetapi Menyangkut Kesehatan dan Martabat Masyarakat Prohaba.co",
-      "publishedAt": "Thu, 19 Nov 2026 04:13:28 GMT",
-      "source": "Prohaba.co",
-      "color": "#6c757d"
     },
     {
       "title": "Studi Baru Ungkap 2 Cara Ini Sembuhkan Pasien Diabetes Tipe 2",
@@ -2064,42 +2199,6 @@
       "color": "#e63a2e"
     },
     {
-      "title": "IDAI Minta Anak di Bawah 2 Tahun Nol Screen Time Biar Tak Speech Delay",
-      "url": "https://health.detik.com/berita-detikhealth/d-8758989/idai-minta-anak-di-bawah-2-tahun-nol-screen-time-biar-tak-speech-delay",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2024/05/02/ilustrasi-anak-bayi-main-gadget-1_169.jpeg?w=360&amp;q=90",
-      "summary": "Gadget maupun televisi sering kali dijadikan jalan pintas untuk menenangkan anak yang rewel. Ternyata, hal itu bisa berdampak pada tumbuh kembangnya.",
-      "publishedAt": "Thu, 19 Nov 2026 06:02:20 +0700",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Kasus Campak Melonjak, AS Kehilangan Status Eliminasi Setelah 26 Tahun",
-      "url": "https://health.detik.com/berita-detikhealth/d-8758988/kasus-campak-melonjak-as-kehilangan-status-eliminasi-setelah-26-tahun",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/03/05/campak-1772697940016_169.jpeg?w=360&amp;q=90",
-      "summary": "Amerika Serikat kehilangan status eliminasi campak setelah 26 tahun. PAHO mengungkapkan lonjakan kasus dan perlunya rencana tindakan untuk mengendalikannya.",
-      "publishedAt": "Thu, 19 Nov 2026 05:15:58 +0700",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Pria 38 Tahun Mendadak Stroke saat Bangun Malam, Begini Kronologinya",
-      "url": "https://health.detik.com/true-story/d-8758985/pria-38-tahun-mendadak-stroke-saat-bangun-malam-begini-kronologinya",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2023/01/17/ilustrasi-stroke_169.jpeg?w=360&amp;q=90",
-      "summary": "Seorang pria berusia 38 tahun mengalami stroke mendadak saat terbangun malam. Ia termasuk orang yang sehat dan tiba-tiba pusing hebat hingga tak sanggup jalan.",
-      "publishedAt": "Wed, 18 Nov 2026 20:17:37 +0700",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Perubahan pada Kuku Ini Bisa Jadi Sinyal Kanker, Jangan Diabaikan!",
-      "url": "https://health.detik.com/berita-detikhealth/d-8758984/perubahan-pada-kuku-ini-bisa-jadi-sinyal-kanker-jangan-diabaikan",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2025/07/14/ilustrasi-potong-kuku-1752487619563_169.jpeg?w=360&amp;q=90",
-      "summary": "Perubahan warna kuku bisa jadi tanda awal acral lentiginous melanoma, kanker kulit langka. Kenali gejalanya dan segera konsultasi ke dokter.",
-      "publishedAt": "Wed, 18 Nov 2026 19:35:42 +0700",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
       "title": "Video: BPJS Kesehatan Klaim Cegah Kecurangan Rp 6,5 Triliun",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUmtXUzlWbEo2TzVZaU5kWEJkemFGUVJ6bk1HaDJNZXdnWDVrWGRwb2g0OFYtVzAwcTNjekwxalhnT2JEd1dJeVU1TXlhcXo3TXpIVm5jY1d5WWJNV3J6enIweFBCMjNXcmlLbjU3T2hRYjVFUDhUaUlLaWN2US1SRkJzYkt5V0NjR2t0RTV6NkZZQllhZVZUNW41Um8tRFBkY2llME1BSlN3Vnp0VEZr?oc=5",
       "image": null,
@@ -2107,15 +2206,6 @@
       "publishedAt": "Wed, 18 Nov 2026 12:33:00 GMT",
       "source": "20detik",
       "color": "#e63a2e"
-    },
-    {
-      "title": "Ingin Otak Tetap Tajam? Coba 5 Olahraga Ini",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMll2Q0VSakZMTE9zRGtEXzF4Q1JXb2ZRRW5fVGZ4X2t3aFpDNzF4aTJiV2J2cGNfYzhhekI2ZUxVWlJzd3pCMWZhbEpVZjFDem56OWlTTkloOUc0R0lpeHp4eEZHTGsyb0pyZ0lyblVQcF93MzN5WFh0cHBCRml3NjhZUUJaaEUxYmVYX3hpRkw5dE1WN3RZbjBTVU41Zw?oc=5",
-      "image": null,
-      "summary": "Ingin Otak Tetap Tajam? Coba 5 Olahraga Ini Kompas.com",
-      "publishedAt": "Wed, 18 Nov 2026 12:01:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
     },
     {
       "title": "Bos BPJS Pastikan Dana Hibah Rp 10 T Tak Terganggu Meski Setoran Pajak Kurang",
@@ -2181,24 +2271,6 @@
       "color": "#c0392b"
     },
     {
-      "title": "Layanan Kesehatan Keliling untuk Hewan Peliharaan di Jakarta",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSFhpT0ZVdmV1THhKWkNobUZMOWJTM1hTRkNTSWU2blRtRTVXY0xPakZLYUtLakh0LWtoaFgxUEZnMlBLc01hS3V1RXYzTC0zc0hHbS10LTlNdXRpbC10b1ZpWGFXQU9MVjNfbWR0MXpNeVVzcDRfZDdKRFZhbzJlS2hXWXRnUlpYMXlsNm1ub1IxNG1UNVk1NXVOVVo4WkJfdGc?oc=5",
-      "image": null,
-      "summary": "Layanan Kesehatan Keliling untuk Hewan Peliharaan di Jakarta Tempo.co",
-      "publishedAt": "Wed, 18 Nov 2026 07:10:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
-      "title": "Duduk Berjam-jam Tetap Berisiko bagi Jantung Meski Rutin Olahraga",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQjYtdXVnbnp2Q20tVUJnWEh4Q252SU9TUGkxWFA1MWU2Q213aDI2Y3BidTZqY3NjaVYxamY5VTZxd0s3N2lOWGxWQmdsVmFmdTRXQmxTMzJteDR3RjgxZ21NQVpSWVY4UTNIUzFYT0YtanRTc3ZaeEFnR1Q1Zk9yOTdVWTU0U2FJVjN3UFFUY2xiMkx5WTdHREVFV2laX2RlcU1xal9PQWdRZ05VdUNyRQ?oc=5",
-      "image": null,
-      "summary": "Duduk Berjam-jam Tetap Berisiko bagi Jantung Meski Rutin Olahraga Kompas.com",
-      "publishedAt": "Wed, 18 Nov 2026 05:13:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
-    },
-    {
       "title": "Video: Prabowo Dorong Kerja Sama Farmasi RI-India Perkuat Kesehatan",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMXVyYU50SUVtNy1hcUZNcl9qZ0lIX1NJbDZiSFJEd3QtZEFiZVJXVkk3aVZtY0tkZ1doZ0M4VjBnLVJxZ1F4NzZGYkdFVEo4NllnR2xyNkZQTHhlWmZMTWJDUGF1d1N1a0Q5NmhnZjJ6ZHpyNjN3WXZIVU9CM1REcGtVV3V6eGc0WjhtcHN0Q2JWUXBrUm5PQUVHTTRFS0l5MmJidmFGd0NTdVB0SV81d0tCYURoLXZVTEE?oc=5",
       "image": null,
@@ -2215,6 +2287,15 @@
       "publishedAt": "Wed, 18 Nov 2026 01:18:00 GMT",
       "source": "Kompas.com",
       "color": "#c0392b"
+    },
+    {
+      "title": "Jumpscare Film Horor Bisa Picu Detak Jantung Meningkat Mendadak",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSXZNUXBwZEo4X2JfMlNBVVBQb1RFd1lJRkJxUnpOR1RMRC1peXROdk9feUxzcXBlZnRxWDllZWRGbXdyUjRyTVNNRUlrWmJUd0QtdnBfaGxZLTVhZ0laTEJEV0JnSVFpelZjQWZ2eExJNXNPWXd5eGgwMm4zWExPWlZVS3pFLWtwLUl6OFFSTFlzZ1ZHQmYxUTJxM3BKU3E5UnJ0OTYwVllyQTZkR0UyZThrNi1La01DZXfSAaoBQVVfeXFMTVBxa0V2bTM4Y085WVotc2luNVJzQnFUU0xDWWxPTXVqa2NIRjU1ZWFPdGpFV2VOSU4wTzd5c1FUdnZScW5LVGJZallWMjQzb2J6WGZWanpFSHJ3TUVzbmlTc1JuWjN0ZUxxaUt1WVVxNGpBYUdha1FOb1ZsNTRzb3FwNENRYlEyVF83d3N6dXUwNms4NU5jN1pHV2pWOWZ3Q3JmWGxET1JUdmc?oc=5",
+      "image": null,
+      "summary": "Jumpscare Film Horor Bisa Picu Detak Jantung Meningkat Mendadak Liputan6.com",
+      "publishedAt": "Wed, 18 Nov 2026 00:00:00 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
     },
     {
       "title": "Biaya Medis Diproyeksi Naik 17,8 Persen, Simak Lima Cara Melindungi Keuangan Keluarga",
@@ -2244,20 +2325,11 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Tempo Scan Tuntaskan Bantuan Kemanusiaan, Hadirkan Air Bersih hingga Ambulans Klinik",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLUxJNU1Pcm1JSGluYUNQU0gtOGt0cWlDcEpuNHg4UmdWQjhja0lPeHhmRzBsMkQ0a3ZIY1ctNU5uRDBSYjdxazU0STYxY2xoclFJcUFZU3F0V25MSTY0ODEwWWF0dFVXU0JLbFJtTF9zVFg5eFNlOUhtOEZ6RmRCNWNMbjl3YTRTV1R2eHJfNEJFY0E4MjZJcHplZmpzSzY1dVBTSkJyOXZRckdBN1JkUU1wVDlzMmpMY0l0aW9mTlJkV0FaYXJz0gG8AUFVX3lxTE5SbnkyTUkyME91bkI5am1YZXRRSTN6U3VCSlcwVTY1TFppa3lDU25PMUNrVlhCWl9iQXVQSml2SThLbFY4R3EwcjZLSi1JclVJWkt6TzRMekw0V05RZXZadlp6YndYSFVSczZxaTQxZVhxVy1lZVhRRzRWb1lkNGQ1Z0tvSERuUjh2QWZDZmpMMGtIQWtYbjhiQWpzYkZ5ZS1MZGFJdGNhYnhYalFnTGRVWjRYOTFfdnI1am5q?oc=5",
+      "title": "Cek Fakta: Hoaks BPJS Kesehatan Keluarkan Dana Bantuan Rp 25 Triliun",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPS0FFZEFJNFZHSzBtLTU4c0xMalpCRDA3MGx5MEVWRm95N0lQS05qeXpWd0o3VmdXeFNTanNqc2hIdV9PVENxX0VOWThoTm1wY2Vwd3I1QTFIMFlMTUlRb01tRnUxeUxkNFhyNzRJTGd1WWNlU09Jc2ExcGQzU2xkdDJJbVV2c0lQUmtxR0Q5X0tWQmpMLXN1cU9Wa0V4VTRZcFk4a2otT0g4UTM1RFJlZnNHbUkxUdIBpwFBVV95cUxPb2VXWXZKaTltYktwQ0t5cWh2eUZrM2UtUVo3N0xIUVNZNXNvclItbk9OX2Nsbmoxc1FtVWpZUXFfVm9KR25UcDRWYTVLUmVRUzZZYjd0SlhiQXE1aFZsYXd5eTNlM0N6R25OZ1M2enZmTXN6MVNvWUdQd2M3VC1EX1R1YXV5S1ZlYlphM2k1VHZZNkJkblhGZF9zRm9mVXFmWHBEUUhlbw?oc=5",
       "image": null,
-      "summary": "Tempo Scan Tuntaskan Bantuan Kemanusiaan, Hadirkan Air Bersih hingga Ambulans Klinik Liputan6.com",
-      "publishedAt": "Tue, 17 Nov 2026 07:32:26 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
-    },
-    {
-      "title": "Banyuwangi Hadirkan Dokter Spesialis Gratis di 25 Puskesmas",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTFBXR3RyREFWX1ViRXdyWU1kS2N1d1hjby1lQVE1RUh0NkJBbWtra2VNZWl3MFpNMGQ2N3ZILTh5QllqVUJ5S0JqdU8yUkw3R3dpX2ZESWJjSjlnbDdiVVZkQm96OGZpZVQwOTV1d1otdnQ5c1lhZWxqVjRwMnROT0lCd2k2TnA5RWhmTmVKZkQzVDkwNmZXaFlVVEdweDk1cElvbdIBnAFBVV95cUxPc25OQmo5LWhFUUpQaHlDODN1SzhPSDBtM0l6TkpNVnU1Z2VxcVFCVU1KUHh5em1yUnpmWEpIdXR0eGxHVFc4NmlQWm5hOHVEZFJXLWVOQnM5aEZTZDd2WVg3VTBKQUYtenZpTWJkcWJYX0pjQVp3TWJYZ2JwVXZlZk84YjZ5RmhfTzJReS1DQ0c4cW1SWU1BdkJQbEc?oc=5",
-      "image": null,
-      "summary": "Banyuwangi Hadirkan Dokter Spesialis Gratis di 25 Puskesmas Liputan6.com",
-      "publishedAt": "Mon, 16 Nov 2026 12:14:10 GMT",
+      "summary": "Cek Fakta: Hoaks BPJS Kesehatan Keluarkan Dana Bantuan Rp 25 Triliun Liputan6.com",
+      "publishedAt": "Tue, 17 Nov 2026 06:03:52 GMT",
       "source": "Liputan6.com",
       "color": "#e67e22"
     }
