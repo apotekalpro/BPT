@@ -133,12 +133,31 @@ function isGoogleUrl(url) {
 
 // Google News intermediate pages JS-redirect to the real article.
 // Extract that target URL from the page HTML so we can fetch it directly.
+let _htmlDumped = false;
 function extractFromGooglePage(html) {
-  // JS redirect: window.location.href = 'https://...', window.location = '...', location.replace('...')
+  // Log first 2000 chars of one Google page to understand format
+  if (!_htmlDumped) {
+    _htmlDumped = true;
+    console.log('[Crawl] Google page HTML sample (first 2000 chars):\n' + html.slice(0, 2000));
+  }
+
+  // JS redirect: window.location.href = '...', location.replace('...')
   const jsRedir =
     html.match(/window\.location(?:\.href)?\s*=\s*["'](https?:\/\/[^"']+)["']/i) ||
     html.match(/location\.replace\s*\(\s*["'](https?:\/\/[^"']+)["']/i);
   if (jsRedir && !isGoogleUrl(jsRedir[1])) return jsRedir[1].trim();
+
+  // Meta-refresh redirect
+  const metaRedir =
+    html.match(/<meta[^>]+http-equiv=["']refresh["'][^>]+content=["'][^"']*url=(https?:\/\/[^"'&; ]+)/i) ||
+    html.match(/<meta[^>]+content=["'][^"']*url=(https?:\/\/[^"'&; ]+)[^>]+http-equiv=["']refresh["']/i);
+  if (metaRedir && !isGoogleUrl(metaRedir[1])) return metaRedir[1].trim();
+
+  // Any <a href> pointing to a non-Google domain (noscript fallback / article card link)
+  const allLinks = [...html.matchAll(/<a[^>]+href=["'](https?:\/\/[^"']{20,})["']/gi)];
+  for (const m of allLinks) {
+    if (!isGoogleUrl(m[1])) return m[1].trim();
+  }
 
   // og:url pointing to actual article
   const ogUrl =
@@ -152,9 +171,11 @@ function extractFromGooglePage(html) {
     html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i);
   if (canon && !isGoogleUrl(canon[1]) && canon[1].startsWith('http')) return canon[1].trim();
 
-  // "url":"https://non-google-domain/long-path" in embedded JSON
-  const jsonUrl = html.match(/"url"\s*:\s*"(https?:\/\/(?![^"]*google\.com)[^"]{30,})"/);
-  if (jsonUrl) return jsonUrl[1].trim();
+  // JSON field patterns
+  for (const key of ['url','articleUrl','originalUrl','targetUrl','redirectUrl']) {
+    const m = html.match(new RegExp(`"${key}"\\s*:\\s*"(https?:\\/\\/(?![^"]*google\\.com)[^"]{30,})"`, 'i'));
+    if (m && !isGoogleUrl(m[1])) return m[1].trim();
+  }
 
   return null;
 }
