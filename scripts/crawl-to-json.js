@@ -178,20 +178,27 @@ function extractOGFromBody(body) {
   return { image: badImg ? null : image, description };
 }
 
+let _ogGoogleLanded = 0, _ogResolved = 0, _ogFailed = 0;
+
 async function fetchOGData(url) {
   try {
     const r1 = await fetchUrl(url);
 
     // If HTTP redirects left us on a Google page, look for the real article URL in the HTML
     if (isGoogleUrl(r1.url)) {
+      _ogGoogleLanded++;
       const realUrl = extractFromGooglePage(r1.body);
       if (realUrl) {
         try {
           const r2 = await fetchUrl(realUrl);
-          if (!isGoogleUrl(r2.url)) return extractOGFromBody(r2.body);
-        } catch { /* fall through to Google page content */ }
+          if (!isGoogleUrl(r2.url)) {
+            _ogResolved++;
+            return extractOGFromBody(r2.body);
+          }
+        } catch { /* fall through */ }
+      } else {
+        _ogFailed++;
       }
-      // Google intermediate page gave no usable data
       return { image: null, description: null };
     }
 
@@ -343,6 +350,7 @@ async function main() {
     const got = recent.filter(a => a.image).length;
     const goodDesc = recent.filter(a => !summaryLooksLikeTitle(a.summary, a.title)).length;
     console.log(`[Crawl] OG fetch done — ${got} articles with images, ${goodDesc} with real descriptions`);
+    console.log(`[Crawl] Google redirect stats — landed: ${_ogGoogleLanded}, resolved: ${_ogResolved}, no-pattern: ${_ogFailed}`);
   }
 
   const output = {
