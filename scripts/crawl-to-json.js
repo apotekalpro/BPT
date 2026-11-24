@@ -254,24 +254,32 @@ function colorFor(src) {
   return '#6c757d';
 }
 
-// ── Sources ───────────────────────────────────────────────────────────────────
+// ── Direct RSS sources (give real article URLs + images in feed) ──────────────
 
-const GNEWS_QUERIES = [
-  { q: 'berita+kesehatan+terbaru+indonesia',                           label: 'Berita Kesehatan', trending: true },
-  { q: 'site:health.detik.com+OR+site:detik.com+kesehatan',           label: 'Detik Health'     },
-  { q: 'site:kompas.com+OR+site:liputan6.com+kesehatan',              label: 'Kompas & Liputan6'},
-  { q: 'site:tribunnews.com+OR+site:tempo.co+kesehatan',              label: 'Tribun & Tempo'   },
-  { q: 'penyakit+obat+tips+sehat+apotek+indonesia',                   label: 'Tips & Penyakit'  },
+const DIRECT_RSS = [
+  { url: 'https://health.detik.com/rss',                        source: 'Detik Health',   color: '#e63a2e' },
+  { url: 'https://health.kompas.com/rss/',                      source: 'Kompas.com',     color: '#c0392b' },
+  { url: 'https://www.liputan6.com/rss/kesehatan',              source: 'Liputan6.com',   color: '#e67e22' },
+  { url: 'https://www.tribunnews.com/rss/kesehatan',            source: 'Tribunnews.com', color: '#d35400' },
+  { url: 'https://www.cnnindonesia.com/rss/gaya-hidup.xml',     source: 'CNN Indonesia',  color: '#cc0000' },
+  { url: 'https://www.republika.co.id/rss/pendidikan/kesehatan',source: 'Republika.co.id',color: '#1a7c47' },
 ];
 
-async function crawlDetikRSS() {
-  const { body } = await fetchUrl('https://health.detik.com/rss');
+async function crawlRSS({ url, source, color }) {
+  const { body } = await fetchUrl(url);
   return parseItems(body).map(item => ({
     title: item.title, url: item.url, image: item.image,
     summary: item.summary, publishedAt: item.pubDate,
-    source: 'Detik Health', color: '#e63a2e',
+    source, color,
   }));
 }
+
+// ── Google News only for trending detection ───────────────────────────────────
+
+const GNEWS_TRENDING = [
+  { q: 'berita+kesehatan+terbaru+indonesia', label: 'Trending Kesehatan', trending: true },
+  { q: 'penyakit+obat+tips+sehat+apotek+indonesia', label: 'Tips & Penyakit' },
+];
 
 async function crawlGNews(query) {
   const url = `https://news.google.com/rss/search?q=${query.q}&hl=id&gl=ID&ceid=ID:id`;
@@ -285,7 +293,7 @@ async function crawlGNews(query) {
       title, url: item.url, image: item.image || null,
       summary: item.summary, publishedAt: item.pubDate,
       source: srcName || 'Google News', color: colorFor(srcName),
-      trending: query.trending && idx < 5 ? true : undefined,
+      trending: query.trending && idx < 10 ? true : undefined,
     };
   });
 }
@@ -296,10 +304,14 @@ async function main() {
   console.log('[Crawl] Starting at', new Date().toISOString());
 
   const tasks = [
-    crawlDetikRSS()
-      .then(a => { console.log(`  Detik RSS: ${a.length}`); return a; })
-      .catch(e => { console.error(`  Detik RSS failed: ${e.message}`); return []; }),
-    ...GNEWS_QUERIES.map(q =>
+    // Direct RSS feeds — give real URLs and often include images in the feed
+    ...DIRECT_RSS.map(src =>
+      crawlRSS(src)
+        .then(a => { console.log(`  RSS "${src.source}": ${a.length}`); return a; })
+        .catch(e => { console.error(`  RSS "${src.source}" failed: ${e.message}`); return []; })
+    ),
+    // Google News for trending signals only
+    ...GNEWS_TRENDING.map(q =>
       crawlGNews(q)
         .then(a => { console.log(`  GNews "${q.label}": ${a.length}`); return a; })
         .catch(e => { console.error(`  GNews "${q.label}" failed: ${e.message}`); return []; })
@@ -347,16 +359,18 @@ async function main() {
   });
 
   const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const recent = healthArticles.filter(a => {
+  const recentAll = healthArticles.filter(a => {
     if (!a.publishedAt) return false;
     return new Date(a.publishedAt).getTime() >= cutoff;
   });
-  console.log(`[Crawl] 7-day filter: ${recent.length} of ${healthArticles.length} articles kept`);
+  // Keep top 40 newest articles
+  const recent = recentAll.slice(0, 40);
+  console.log(`[Crawl] 7-day filter: ${recentAll.length} articles → capped at ${recent.length}`);
 
   // Fetch OG image+description for articles missing images OR with bad (title-like) descriptions
   const needsOG = recent.filter(a => !a.image || summaryLooksLikeTitle(a.summary, a.title));
   if (needsOG.length > 0) {
-    const toFetch = needsOG.slice(0, 100);
+    const toFetch = needsOG.slice(0, 40);
     console.log(`[Crawl] Fetching OG data for ${toFetch.length} articles (${recent.filter(a=>!a.image).length} no-image, ${recent.filter(a=>summaryLooksLikeTitle(a.summary,a.title)).length} bad-desc)...`);
     const BATCH = 10;
     for (let i = 0; i < toFetch.length; i += BATCH) {

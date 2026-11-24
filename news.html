@@ -124,7 +124,7 @@
   }
   .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 2px; vertical-align: middle; }
 
-  /* ── Top 5 Trending — horizontal 5-column grid ── */
+  /* ── Top 10 Trending — two rows of 5 ── */
   .trending-section { padding: 10px 16px 6px; }
   .section-label {
     font-size: 11px; font-weight: 700; color: #c0392b;
@@ -343,9 +343,9 @@
 
 <div class="statsbar" id="stats"></div>
 
-<!-- Top 5 horizontal grid -->
+<!-- Top 10 horizontal grid (2 rows × 5) -->
 <div class="trending-section" id="trendSection" style="display:none">
-  <div class="section-label">🔥 Top 5 Trending</div>
+  <div class="section-label">🔥 Top 10 Trending</div>
   <div class="trending-grid" id="trendList"></div>
 </div>
 
@@ -422,14 +422,14 @@ function render() {
   const items = filtered();
   const isFiltered = fsrc !== 'all' || fq;
 
-  // Top 5 trending — horizontal 5-col grid
+  // Top 10 trending — two rows of 5
   const trendSec = document.getElementById('trendSection');
   const trendList = document.getElementById('trendList');
   const flagged = all.filter(a => a.trending);
-  const trending = flagged.length > 0 ? flagged : all.slice(0, 5); // fallback to first 5
+  const trending = flagged.length > 0 ? flagged : all.slice(0, 10); // fallback to first 10
   if (trending.length > 0 && !isFiltered) {
     trendSec.style.display = '';
-    trendList.innerHTML = trending.slice(0,5).map((a, i) => {
+    trendList.innerHTML = trending.slice(0,10).map((a, i) => {
       const c = a.color || col(a.source);
       return `<a class="trend-card" href="${esc(a.url)}" target="_blank" rel="noopener">
         <div class="trend-num">${i+1}</div>
