@@ -121,7 +121,9 @@ function parseItems(xml) {
     })();
     const sourceTag = block.match(/<source[^>]*>([^<]+)<\/source>/i);
     const source = sourceTag ? sourceTag[1].trim() : null;
-    const finalUrl = actualLink || link; // prefer real article URL over Google News redirect
+    // prefer real article URL; fall back to decoding the base64 Google News blob
+    const decodedGnUrl = (!actualLink && link.includes('news.google.com')) ? decodeGoogleNewsUrl(link) : null;
+    const finalUrl = actualLink || decodedGnUrl || link;
     if (title && finalUrl && finalUrl.startsWith('http')) {
       items.push({ title, url: finalUrl, image, summary, pubDate, source });
     }
@@ -226,7 +228,7 @@ function extractOGFromBody(body) {
   return { image: badImg ? null : image, description };
 }
 
-let _ogGoogleLanded = 0, _ogResolved = 0, _ogFailed = 0;
+let _ogGoogleLanded = 0, _ogResolved = 0, _ogFailed = 0, _ogDebugCount = 0;
 
 // Many sites whitelist these UAs for social preview / SEO crawlers
 const OG_UA_STRATEGIES = [
@@ -237,17 +239,26 @@ const OG_UA_STRATEGIES = [
   { 'User-Agent': 'Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36' },
 ];
 
-async function fetchOGData(url) {
+async function fetchOGData(url, debugLabel) {
+  const doDebug = !!debugLabel && _ogDebugCount < 8;
+  if (doDebug) _ogDebugCount++;
   try {
     let siteHost = '';
     try { siteHost = new URL(url).host; } catch {}
     const referer = siteHost ? `https://${siteHost}/` : '';
 
-    for (const extraHeaders of OG_UA_STRATEGIES) {
+    for (let si = 0; si < OG_UA_STRATEGIES.length; si++) {
+      const extraHeaders = OG_UA_STRATEGIES[si];
       try {
         const headers = { ...extraHeaders };
         if (referer) headers['Referer'] = referer;
         const r1 = await fetchUrl(url, 5, headers);
+
+        if (doDebug && si === 0) {
+          const uaShort = (extraHeaders['User-Agent'] || '').slice(0, 25);
+          const bodySnip = r1.body.slice(0, 200).replace(/\s+/g, ' ');
+          console.log(`  [OG-debug] ${debugLabel} | url:${r1.url.slice(0,80)} | status:${r1.status} | ua:${uaShort} | body:${bodySnip}`);
+        }
 
         if (isGoogleUrl(r1.url)) {
           _ogGoogleLanded++;
@@ -267,10 +278,16 @@ async function fetchOGData(url) {
         }
 
         const og = extractOGFromBody(r1.body);
-        if (og.image) return og; // success — stop trying other UAs
-      } catch { /* try next UA */ }
+        if (og.image) {
+          if (doDebug) console.log(`  [OG-debug] ${debugLabel} | SUCCESS ua-index:${si} image:${og.image.slice(0,60)}`);
+          return og;
+        }
+      } catch (e) {
+        if (doDebug && si === 0) console.log(`  [OG-debug] ${debugLabel} | ERROR ua-index:${si}: ${e.message}`);
+      }
     }
 
+    if (doDebug) console.log(`  [OG-debug] ${debugLabel} | ALL-UAS-FAILED`);
     return { image: null, description: null };
   } catch {
     return { image: null, description: null };
@@ -452,7 +469,8 @@ async function main() {
     const BATCH = 10;
     for (let i = 0; i < toFetch.length; i += BATCH) {
       await Promise.allSettled(toFetch.slice(i, i + BATCH).map(async a => {
-        const { image, description } = await fetchOGData(a.url);
+        const label = a.source !== 'Detik Health' ? `${a.source}` : null;
+        const { image, description } = await fetchOGData(a.url, label);
         if (image && !a.image) a.image = image;
         if (description && description.length > 30 && summaryLooksLikeTitle(a.summary, a.title)) {
           a.summary = description;
