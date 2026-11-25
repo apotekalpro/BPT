@@ -62,6 +62,32 @@ function parseXmlText(xml, tag) {
   return m ? extractCDATA(m[1]).trim() : '';
 }
 
+function parseAtomItems(xml) {
+  const items = [];
+  const entryRx = /<entry>([\s\S]*?)<\/entry>/gi;
+  let m;
+  while ((m = entryRx.exec(xml)) !== null) {
+    const block = m[1];
+    const title = stripHtml(extractCDATA(parseXmlText(block, 'title')));
+    const linkM = block.match(/<link[^>]+href="([^"]+)"/i);
+    const idM   = block.match(/<id>([^<]+)<\/id>/i);
+    const link  = linkM ? linkM[1].trim() : (idM ? idM[1].trim() : '');
+    const pubDate = parseXmlText(block, 'published') || parseXmlText(block, 'updated');
+    const rawContent = extractCDATA(parseXmlText(block, 'content')) || extractCDATA(parseXmlText(block, 'summary'));
+    const summary = stripHtml(rawContent).slice(0, 300);
+    const image = (() => {
+      const med = block.match(/<media:(?:content|thumbnail)[^>]+url="([^"]+)"/i);
+      if (med) return med[1];
+      const img = rawContent.match(/<img[^>]+src="([^"]+)"/i);
+      return img ? img[1] : null;
+    })();
+    if (title && link && link.startsWith('http')) {
+      items.push({ title, url: link, image, summary, pubDate, source: null });
+    }
+  }
+  return items;
+}
+
 function parseItems(xml) {
   const items = [];
   const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
@@ -289,32 +315,48 @@ const DIRECT_RSS = [
 
 async function crawlRSS({ url, source, color }) {
   const { body } = await fetchUrl(url);
-  return parseItems(body).map(item => ({
+  let items = parseItems(body);
+  if (items.length === 0) items = parseAtomItems(body); // try Atom format
+  if (items.length === 0) {
+    console.log(`  [debug] RSS "${source}" first 300: ${body.slice(0, 300).replace(/\s+/g, ' ')}`);
+  }
+  return items.map(item => ({
     title: item.title, url: item.url, image: item.image,
     summary: item.summary, publishedAt: item.pubDate,
     source, color,
   }));
 }
 
-// ── Google News only for trending detection ───────────────────────────────────
+// ── Google News: trending + source-specific site: queries ────────────────────
+// Source-specific site: queries reliably return real article URLs from that
+// publisher, extracted from the RSS description's <a href>.
 
-const GNEWS_TRENDING = [
-  { q: 'berita+kesehatan+terbaru+indonesia', label: 'Trending Kesehatan', trending: true },
-  { q: 'penyakit+obat+tips+sehat+apotek+indonesia', label: 'Tips & Penyakit' },
+const GNEWS = [
+  // Trending signals (mark top-10 as trending)
+  { q: 'berita+kesehatan+terbaru+indonesia',       label: 'Trending',         trending: true },
+  { q: 'penyakit+obat+tips+sehat+apotek+indonesia',label: 'Tips & Penyakit' },
+  // Source-specific — real article URLs via description <a href>
+  { q: 'kesehatan+site:health.kompas.com',  label: 'Kompas',   source: 'Kompas.com',     color: '#c0392b' },
+  { q: 'kesehatan+site:liputan6.com',       label: 'Liputan6', source: 'Liputan6.com',   color: '#e67e22' },
+  { q: 'kesehatan+site:tribunnews.com',     label: 'Tribun',   source: 'Tribunnews.com', color: '#d35400' },
+  { q: 'kesehatan+site:cnnindonesia.com',   label: 'CNN Ind',  source: 'CNN Indonesia',  color: '#cc0000' },
+  { q: 'kesehatan+site:tempo.co',           label: 'Tempo',    source: 'Tempo.co',       color: '#2c3e50' },
 ];
 
 async function crawlGNews(query) {
   const url = `https://news.google.com/rss/search?q=${query.q}&hl=id&gl=ID&ceid=ID:id`;
   const { body } = await fetchUrl(url);
   return parseItems(body).map((item, idx) => {
-    const srcName = item.source || '';
-    const title = srcName
-      ? item.title.replace(new RegExp(' - ' + srcName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '').trim()
+    // For source-specific queries, force the source name; otherwise use RSS <source> tag
+    const srcName = query.source || item.source || 'Google News';
+    const srcColor = query.color || colorFor(srcName);
+    const title = item.source
+      ? item.title.replace(new RegExp(' - ' + item.source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '').trim()
       : item.title;
     return {
       title, url: item.url, image: item.image || null,
       summary: item.summary, publishedAt: item.pubDate,
-      source: srcName || 'Google News', color: colorFor(srcName),
+      source: srcName, color: srcColor,
       trending: query.trending && idx < 10 ? true : undefined,
     };
   });
@@ -326,16 +368,16 @@ async function main() {
   console.log('[Crawl] Starting at', new Date().toISOString());
 
   const tasks = [
-    // Direct RSS feeds — give real URLs and often include images in the feed
+    // Direct RSS feeds — real article URLs and often include images in the feed
     ...DIRECT_RSS.map(src =>
       crawlRSS(src)
         .then(a => { console.log(`  RSS "${src.source}": ${a.length}`); return a; })
         .catch(e => { console.error(`  RSS "${src.source}" failed: ${e.message}`); return []; })
     ),
-    // Google News for trending signals only
-    ...GNEWS_TRENDING.map(q =>
+    // Google News: trending signals + source-specific site: queries for other publishers
+    ...GNEWS.map(q =>
       crawlGNews(q)
-        .then(a => { console.log(`  GNews "${q.label}": ${a.length}`); return a; })
+        .then(a => { console.log(`  GNews "${q.label}": ${a.length}${q.source ? ' ['+q.source+']' : ''}`); return a; })
         .catch(e => { console.error(`  GNews "${q.label}" failed: ${e.message}`); return []; })
     ),
   ];
@@ -365,7 +407,8 @@ async function main() {
     'lemak','gula darah','tulang','kulit','mata','gigi','hamil','bayi','balita',
     'lansia','imun','infeksi','demam','flu','batuk','asma','alergi','mental',
     'depresi','stres','tidur','olahraga','fitness','sanitasi','hygiene',
-    'detik health','kesehatan.kompas','liputan6.com/health','halodoc','alodokter',
+    'detik health','kompas.com','liputan6.com','tribunnews.com','cnnindonesia.com',
+    'tempo.co','republika.co.id','halodoc','alodokter',
   ];
   const healthArticles = articles.filter(a => {
     const text = ((a.title||'') + ' ' + (a.summary||'') + ' ' + (a.source||'')).toLowerCase();
