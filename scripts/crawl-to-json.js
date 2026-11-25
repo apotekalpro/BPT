@@ -11,7 +11,7 @@ const path  = require('path');
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function fetchUrl(url, maxRedirects = 5) {
+function fetchUrl(url, maxRedirects = 5, extraHeaders = {}) {
   return new Promise((resolve, reject) => {
     const mod = url.startsWith('https') ? https : http;
     const req = mod.get(url, {
@@ -19,6 +19,7 @@ function fetchUrl(url, maxRedirects = 5) {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml,application/rss+xml,*/*',
         'Accept-Language': 'id-ID,id;q=0.9,en;q=0.8',
+        ...extraHeaders,
       },
       timeout: 12000,
     }, (res) => {
@@ -27,7 +28,7 @@ function fetchUrl(url, maxRedirects = 5) {
           ? res.headers.location
           : new URL(res.headers.location, url).href;
         res.resume();
-        return fetchUrl(loc, maxRedirects - 1).then(resolve).catch(reject);
+        return fetchUrl(loc, maxRedirects - 1, extraHeaders).then(resolve).catch(reject);
       }
       let data = '';
       res.setEncoding('utf8');
@@ -201,29 +202,50 @@ function extractOGFromBody(body) {
 
 let _ogGoogleLanded = 0, _ogResolved = 0, _ogFailed = 0;
 
+// Many sites whitelist these UAs for social preview / SEO crawlers
+const OG_UA_STRATEGIES = [
+  { 'User-Agent': 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' },
+  { 'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' },
+  { 'User-Agent': 'Twitterbot/1.0' },
+  { 'User-Agent': 'WhatsApp/2.23.1 A' },
+  { 'User-Agent': 'Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36' },
+];
+
 async function fetchOGData(url) {
   try {
-    const r1 = await fetchUrl(url);
+    let siteHost = '';
+    try { siteHost = new URL(url).host; } catch {}
+    const referer = siteHost ? `https://${siteHost}/` : '';
 
-    // If HTTP redirects left us on a Google page, look for the real article URL in the HTML
-    if (isGoogleUrl(r1.url)) {
-      _ogGoogleLanded++;
-      const realUrl = extractFromGooglePage(r1.body);
-      if (realUrl) {
-        try {
-          const r2 = await fetchUrl(realUrl);
-          if (!isGoogleUrl(r2.url)) {
-            _ogResolved++;
-            return extractOGFromBody(r2.body);
+    for (const extraHeaders of OG_UA_STRATEGIES) {
+      try {
+        const headers = { ...extraHeaders };
+        if (referer) headers['Referer'] = referer;
+        const r1 = await fetchUrl(url, 5, headers);
+
+        if (isGoogleUrl(r1.url)) {
+          _ogGoogleLanded++;
+          const realUrl = extractFromGooglePage(r1.body);
+          if (realUrl) {
+            try {
+              const r2 = await fetchUrl(realUrl, 5, headers);
+              if (!isGoogleUrl(r2.url)) {
+                _ogResolved++;
+                return extractOGFromBody(r2.body);
+              }
+            } catch { /* fall through */ }
+          } else {
+            _ogFailed++;
           }
-        } catch { /* fall through */ }
-      } else {
-        _ogFailed++;
-      }
-      return { image: null, description: null };
+          return { image: null, description: null };
+        }
+
+        const og = extractOGFromBody(r1.body);
+        if (og.image) return og; // success — stop trying other UAs
+      } catch { /* try next UA */ }
     }
 
-    return extractOGFromBody(r1.body);
+    return { image: null, description: null };
   } catch {
     return { image: null, description: null };
   }
@@ -363,9 +385,21 @@ async function main() {
     if (!a.publishedAt) return false;
     return new Date(a.publishedAt).getTime() >= cutoff;
   });
-  // Keep top 40 newest articles
-  const recent = recentAll.slice(0, 40);
-  console.log(`[Crawl] 7-day filter: ${recentAll.length} articles → capped at ${recent.length}`);
+
+  // Balance across sources: cap each source at 8 articles (sorted newest-first)
+  // so no single source dominates the 40-article pool
+  const PER_SOURCE_CAP = 8;
+  const srcCount = {};
+  const balanced = [];
+  for (const a of recentAll) {
+    const src = a.source || 'other';
+    srcCount[src] = (srcCount[src] || 0) + 1;
+    if (srcCount[src] <= PER_SOURCE_CAP) balanced.push(a);
+  }
+  // Keep top 40 newest from balanced pool
+  const recent = balanced.slice(0, 40);
+  console.log(`[Crawl] 7-day filter: ${recentAll.length} → balanced: ${balanced.length} → capped at ${recent.length}`);
+  console.log(`[Crawl] Source distribution: ${Object.entries(srcCount).map(([s,c]) => `${s}:${Math.min(c,PER_SOURCE_CAP)}`).join(', ')}`);
 
   // Fetch OG image+description for articles missing images OR with bad (title-like) descriptions
   const needsOG = recent.filter(a => !a.image || summaryLooksLikeTitle(a.summary, a.title));
