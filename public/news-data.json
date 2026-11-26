@@ -1,7 +1,49 @@
 {
-  "crawledAt": "2026-11-26T05:10:27.839Z",
+  "crawledAt": "2026-11-26T07:03:18.581Z",
   "count": 40,
   "articles": [
+    {
+      "title": "Cawapres Amran-Sugiono Jalani Tes Kesehatan di RSPAD, Berapa Lama Prosesnya?",
+      "url": "https://health.detik.com/berita-detikhealth/d-8770926/cawapres-amran-sugiono-jalani-tes-kesehatan-di-rspad-berapa-lama-prosesnya",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/26/jumpa-pers-di-rspad-jelang-tes-kesehatan-cawapres-amran-dan-sugiono-taufikdetikcom-1795654578021_169.jpeg?w=360&amp;q=90",
+      "summary": "Calon wakil presiden (cawapres) Amran Sulaiman dan Sugiono menjalani pemeriksaan kesehatan di RSPAD Gatot Soebroto. Berapa lama sih prosesnya?",
+      "publishedAt": "Thu, 26 Nov 2026 06:28:44 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e",
+      "trending": true,
+      "trendRank": 1
+    },
+    {
+      "title": "Kemenkes Perkuat Deteksi Dini Kanker Paru Lewat AI hingga Skrining CKG",
+      "url": "https://health.kompas.com/read/26K26131700868/kemenkes-perkuat-deteksi-dini-kanker-paru-lewat-ai-hingga-skrining-ckg",
+      "image": "https://asset.kompas.com/crops/SZD-lnStmF378TColw6YMOt57N4=/0x0:1500x1000/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/06/10/6848438e79f28.jpg",
+      "summary": "Mayoritas kasus kanker paru ditemukan pada stadium lanjut. Pemerintah kini memperluas skrining risiko dan pemanfaatan teknologi AI untuk deteksi dini.",
+      "publishedAt": "Thu, 26 Nov 2026 06:17:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b",
+      "trending": true,
+      "trendRank": 7
+    },
+    {
+      "title": "Konsumsi Protein Saat Sarapan, Risiko Penyakit Jantung Bisa Menurun",
+      "url": "https://kesehatan.liputan6.com/diet-dan-kebugaran/read/8342920/konsumsi-protein-saat-sarapan-risiko-penyakit-jantung-bisa-menurun",
+      "image": "https://cdn1-production-images-kly.akamaized.net/HT34LTusQimrz8_zTITfgrTqowk=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4545377/original/034902200_1692597490-ben-kolde-FFqNATH27EM-unsplash.jpg",
+      "summary": "Sarapan tinggi protein membantu menjaga kesehatan jantung, mengontrol tekanan darah, dan kolesterol baik.",
+      "publishedAt": "Thu, 26 Nov 2026 05:59:07 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 8
+    },
+    {
+      "title": "Mengapa Kanker Paru Sering Terlambat Terdeteksi hingga Stadium 4?",
+      "url": "https://health.kompas.com/read/26K26121500868/mengapa-kanker-paru-sering-terlambat-terdeteksi-hingga-stadium-4-",
+      "image": "https://asset.kompas.com/crops/zLa9NBsDTk5CGxSFkmGdLbmOiG4=/0x0:1000x667/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2023/12/01/65699b91957e0.jpg",
+      "summary": "Tak adanya keluhan spesifik membuat orang tak menyadari ada perubahan sel di dalam saluran napas. Ternyata bisa menjadi tanda kanker paru stadium 4.",
+      "publishedAt": "Thu, 26 Nov 2026 05:15:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
+    },
     {
       "title": "Makin Banyak Pria Mau Vasektomi, Terbanyak dari Kalangan Ini",
       "url": "https://health.detik.com/berita-detikhealth/d-8770743/makin-banyak-pria-mau-vasektomi-terbanyak-dari-kalangan-ini",
@@ -47,7 +89,9 @@
       "summary": "Bagaimana Kementerian Kesehatan Mengumpulkan Data Genom Tempo.co",
       "publishedAt": "Thu, 26 Nov 2026 03:30:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50"
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 10
     },
     {
       "title": "Rokok Herbal, Tingwe, dan Vape Terbukti Tak Lebih Aman bagi Paru",
@@ -61,11 +105,29 @@
       "trendRank": 2
     },
     {
-      "title": "Ladaku Ditolak Taiwan, Mengapa Standar Residu Pestisida Berbeda di Tiap Negara?",
-      "url": "https://health.detik.com/berita-detikhealth/d-8770503/ladaku-ditolak-taiwan-mengapa-standar-residu-pestisida-berbeda-di-tiap-negara",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/26/1207411396-1795659319070_169.jpeg?w=360&amp;q=90",
-      "summary": "Kontaminasi pestisida bukan hanya soal kandungan residu pada produk akhir. Tetapi juga dapat mencakup praktik produksi dan penanganan hasil pertanian.",
-      "publishedAt": "Thu, 26 Nov 2026 03:02:32 GMT",
+      "title": "Bayang-bayang Risiko Kebocoran Data Genom BGSi",
+      "url": "https://www.tempo.co/politik/risiko-kebocoran-data-genomik-bgsi-2306688",
+      "image": null,
+      "summary": "Bayang-bayang Risiko Kebocoran Data Genom BGSi Tempo.co",
+      "publishedAt": "Thu, 26 Nov 2026 03:15:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
+    },
+    {
+      "title": "Amran dan Sugiono Menjalani Tes Kesehatan Calon Wapres",
+      "url": "https://www.tempo.co/politik/amran-dan-sugiono-menjalani-tes-kesehatan-calon-wapres-2306707",
+      "image": null,
+      "summary": "Amran dan Sugiono Menjalani Tes Kesehatan Calon Wapres Tempo.co",
+      "publishedAt": "Thu, 26 Nov 2026 02:42:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
+    },
+    {
+      "title": "Cawapres Amran-Sugiono Puasa Sebelum Tes Kesehatan, Apa Tujuannya?",
+      "url": "https://health.detik.com/berita-detikhealth/d-8770469/cawapres-amran-sugiono-puasa-sebelum-tes-kesehatan-apa-tujuannya",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/26/sugiono-dan-amran-sulaiman-jalani-tes-kesehatan-cawapres-di-rspad-1795653978837_169.jpeg?w=360&amp;q=90",
+      "summary": "Cawapres Andi Amran Sulaiman dan Sugiono menjalani tes kesehatan di RSPAD. Keduanya melakukan puasa sebagai persiapan untuk hasil yang akurat.",
+      "publishedAt": "Thu, 26 Nov 2026 02:31:34 GMT",
       "source": "Detik Health",
       "color": "#e63a2e"
     },
@@ -76,9 +138,7 @@
       "summary": "Kandungan nikotin, ratusan varian rasa, hingga algoritma media sosial membuat remaja rentan kecanduan rokok elektrik.",
       "publishedAt": "Thu, 26 Nov 2026 02:15:00 GMT",
       "source": "Kompas.com",
-      "color": "#c0392b",
-      "trending": true,
-      "trendRank": 7
+      "color": "#c0392b"
     },
     {
       "title": "Andi Amran Sulaiman dan Sugiono Jalani Pemeriksaan Kesehatan sebagai Calon Wapres",
@@ -97,15 +157,6 @@
       "publishedAt": "Thu, 26 Nov 2026 01:31:00 GMT",
       "source": "Kompas.com",
       "color": "#c0392b"
-    },
-    {
-      "title": "Penyebab Hidung Bisa Berair ketika Mengonsumsi Makanan Panas dan Pedas",
-      "url": "https://jogja.tribunnews.com/kesehatan/1228950/penyebab-hidung-bisa-berair-ketika-mengonsumsi-makanan-panas-dan-pedas",
-      "image": "https://asset.tribunnews.com/tshjcEfcWQHaWpy1VgdGoyq8PCg=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/jogja/foto/bank/originals/ILUSTRASI-Hidung-Berair.jpg",
-      "summary": "Gustatory rhinitis yakni gangguan non-alergi pada hidung yang menyebabkan hidung berair saat mengonsumsi makanan panas atau pedas.",
-      "publishedAt": "Thu, 26 Nov 2026 01:23:36 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
     },
     {
       "title": "Real Madrid Superior di UCL, Inikah Rahasia Fisik Prima dan Minim Cedera?",
@@ -163,7 +214,7 @@
       "source": "Tempo.co",
       "color": "#2c3e50",
       "trending": true,
-      "trendRank": 10
+      "trendRank": 5
     },
     {
       "title": "Penanganan Kanker Payudara Makin Presisi, dari Deteksi Dini hingga Operasi",
@@ -173,6 +224,15 @@
       "publishedAt": "Wed, 25 Nov 2026 12:54:00 GMT",
       "source": "Kompas.com",
       "color": "#c0392b"
+    },
+    {
+      "title": "Anak Pengguna Vape Meningkat 10 Kali Lipat",
+      "url": "https://www.tempo.co/gaya-hidup/anak-pengguna-vape-meningkat-10-kali-lipat-2306619",
+      "image": null,
+      "summary": "Anak Pengguna Vape Meningkat 10 Kali Lipat Tempo.co",
+      "publishedAt": "Wed, 25 Nov 2026 11:55:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
     },
     {
       "title": "Dokter Ingatkan Risiko Gangguan Neurologis pada Bayi Prematur, Pemantauan Tak Boleh Berhenti di NICU",
@@ -213,13 +273,13 @@
       "color": "#c0392b"
     },
     {
-      "title": "Cek Kesehatan Gratis di Solo, Seberapa Efektif Mendeteksi Penyakit Sejak Dini?",
-      "url": "https://health.kompas.com/read/26K25161500068/cek-kesehatan-gratis-di-solo-seberapa-efektif-mendeteksi-penyakit-sejak-dini-?source=terkini_artikel",
-      "image": "https://asset.kompas.com/crops/hNaTvADd7oX3c7h7E4mEoAs1FbY=/50x3:1649x1070/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/04/30/6811d870364b8.jpg",
-      "summary": "CKG di Solo menemukan sejumlah faktor risiko penyakit, termasuk hipertensi. Seberapa efektif program ini membantu deteksi dini dan pencegahan?",
-      "publishedAt": "Wed, 25 Nov 2026 09:15:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
+      "title": "HBsAg Positif Harus Langsung Diberi Anti Virus? Ini Penjelasan Dokter Terkait Cara Penanganannya - Halaman 3",
+      "url": "https://m.tribunnews.com/kesehatan/7916417/hbsag-positif-harus-langsung-diberi-anti-virus-ini-penjelasan-dokter-terkait-cara-penanganannya?page=3",
+      "image": "https://asset.tribunnews.com/Ucni83aGQ49XTwLfh1p9TUjyVIk=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/program-Cek-Kesehatan-Gratis-CKG.jpg",
+      "summary": "Hasil pemeriksaan HBsAg positif tidak selalu harus mengonsumsi anti virus, simak penjelasan dokter mengenai cara penanganannya. - Halaman 3",
+      "publishedAt": "Wed, 25 Nov 2026 09:23:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
     },
     {
       "title": "Jangan Salah Kaprah, Dokter Jelaskan Fakta Medis Penyakit Lupus - Halaman 4",
@@ -231,53 +291,13 @@
       "color": "#d35400"
     },
     {
-      "title": "20 Juta Pasien Diabetes Belum Terdiagnosis, Deteksi Dini Jadi Tantangan",
-      "url": "https://kesehatan.liputan6.com/info-sehat/read/8342204/20-juta-pasien-diabetes-belum-terdiagnosis-deteksi-dini-jadi-tantangan",
-      "image": "https://cdn1-production-images-kly.akamaized.net/mAFuyF3Jis0_AVap2EhWAtPdT1I=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9405424/original/075226700_1795591718-55666747121_c404fdbe7b_c.jpg",
-      "summary": "Wamenkes Dante mengatakan ada sekitar 20 juta orang dengan diabetes belum terdeteksi. CKG merupakan upaya untuk menemukan kasus.",
-      "publishedAt": "Wed, 25 Nov 2026 07:00:40 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
-    },
-    {
-      "title": "3 Gejala Endometriosis yang Perlu Diwaspadai, Jangan Abai Nyeri Haid",
-      "url": "https://health.kompas.com/read/26K25131200268/3-gejala-endometriosis-yang-perlu-diwaspadai-jangan-abai-nyeri-haid?source=wp_terkini",
-      "image": "https://asset.kompas.com/crops/4fd9NeJsVj5JHn6tiSSVuelMZso=/0x0:1500x1000/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2026/07/17/6a59aa72b620e.jpg",
-      "summary": "Nyeri haid hebat, sakit saat berhubungan seksual, hingga nyeri BAB bisa menjadi gejala endometriosis yang perlu diperiksakan.",
-      "publishedAt": "Wed, 25 Nov 2026 06:12:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
-    },
-    {
       "title": "Penyakit Aorta Kerap Tanpa Gejala, Kenali Tanda yang Perlu Diwaspadai",
       "url": "https://kesehatan.liputan6.com/info-sehat/read/8342104/penyakit-aorta-kerap-tanpa-gejala-kenali-tanda-yang-perlu-diwaspadai",
       "image": "https://cdn0-production-images-kly.akamaized.net/qJiu4RV3oBYm6-_2gBoGsd2jodk=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4626785/original/073873500_1698449777-20231026_132515.jpg",
       "summary": "Penyakit aorta kerap tidak terdeteksi sejak awal karena gejalanya menyerupai gangguan kesehatan lain.",
       "publishedAt": "Wed, 25 Nov 2026 05:31:59 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 8
-    },
-    {
-      "title": "Demi Kembalikan Kejayaan MU, Pochettino Punya Aturan 'Body Fat Check'",
-      "url": "https://health.detik.com/kebugaran/d-8768993/demi-kembalikan-kejayaan-mu-pochettino-punya-aturan-body-fat-check",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/23/mauricio-pochettino-1795403847910_169.jpeg?w=360&amp;q=90",
-      "summary": "Mauricio Pochettino menerapkan aturan baru di Manchester United, termasuk pemeriksaan lemak tubuh pemain untuk meningkatkan kebugaran dan performa tim.",
-      "publishedAt": "Wed, 25 Nov 2026 05:07:26 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e",
-      "trending": true,
-      "trendRank": 1
-    },
-    {
-      "title": "Sering Mengalami Perut Kembung? Kenali Kondisi Meteorismus",
-      "url": "https://jogja.tribunnews.com/kesehatan/1228869/sering-mengalami-perut-kembung-kenali-kondisi-meteorismus",
-      "image": "https://asset.tribunnews.com/gF6p55PZMJUcttFZWN-IeO7-Huc=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/jogja/foto/bank/originals/ilustrasigmbr3.jpg",
-      "summary": "Perut terasa penuh, begah, atau membesar setelah makan sering kali dianggap sebagai keluhan biasa.",
-      "publishedAt": "Wed, 25 Nov 2026 04:04:23 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
+      "color": "#e67e22"
     },
     {
       "title": "Jaga Kesehatan Kulit, Kenali Manfaat Sunscreen untuk Perlindungan dari Sinar UV",
@@ -287,6 +307,15 @@
       "publishedAt": "Wed, 25 Nov 2026 02:00:34 GMT",
       "source": "Liputan6.com",
       "color": "#e67e22"
+    },
+    {
+      "title": "Bolehkah Ibu Hamil Makan Nanas? Ini Kandungan Nutrisi di Dalamnya - Halaman 2",
+      "url": "https://jogja.tribunnews.com/kesehatan/1228851/bolehkah-ibu-hamil-makan-nanas-ini-kandungan-nutrisi-di-dalamnya?page=2",
+      "image": "https://asset.tribunnews.com/rBaxbG9ihLQeJzu9y_9fgDkO1bc=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/jogja/foto/bank/originals/nanas-09082021.jpg",
+      "summary": "Nanas kaya akan vitamin C, serat, serta mineral seperti folat, zat besi, magnesium dan mangan yang memberikan manfaat untuk ibu hamil - Halaman 2",
+      "publishedAt": "Tue, 24 Nov 2026 23:05:12 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
     },
     {
       "title": "Shin Tae-yong Jelaskan Kondisi Kesehatan usai Persija Gilas Sumsel United",
@@ -350,35 +379,6 @@
       "image": null,
       "summary": "Lewat WhatsApp Blast, Kemenkes dan BPJS Kesehatan Dorong Upaya Promotif Preventif Tempo.co",
       "publishedAt": "Sun, 22 Nov 2026 08:00:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 5
-    },
-    {
-      "title": "Kemauan Politik Memajukan Pendidikan dan Kesehatan",
-      "url": "https://www.tempo.co/prelude/kemauan-politik-memajukan-pendidikan-dan-kesehatan-2305866",
-      "image": null,
-      "summary": "Kemauan Politik Memajukan Pendidikan dan Kesehatan Tempo.co",
-      "publishedAt": "Sat, 21 Nov 2026 16:00:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
-      "title": "UI-ITB Kembangkan Inovasi Terapi Penyakit Neurodegeneratif",
-      "url": "https://www.tempo.co/politik/ui-itb-kembangkan-inovasi-terapi-penyakit-neurodegeneratif-2305838",
-      "image": null,
-      "summary": "UI-ITB Kembangkan Inovasi Terapi Penyakit Neurodegeneratif Tempo.co",
-      "publishedAt": "Fri, 20 Nov 2026 04:59:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
-      "title": "Rencana Bantuan Jaminan Kesehatan untuk Hewan di Jakarta",
-      "url": "https://www.tempo.co/politik/bantuan-jaminan-kesehatan-untuk-hewan-di-jakarta-2305787",
-      "image": null,
-      "summary": "Rencana Bantuan Jaminan Kesehatan untuk Hewan di Jakarta Tempo.co",
-      "publishedAt": "Fri, 20 Nov 2026 03:15:00 GMT",
       "source": "Tempo.co",
       "color": "#2c3e50"
     }
