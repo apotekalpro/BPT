@@ -425,7 +425,7 @@ function render() {
   // Top 10 trending — two rows of 5
   const trendSec = document.getElementById('trendSection');
   const trendList = document.getElementById('trendList');
-  const flagged = all.filter(a => a.trending);
+  const flagged = all.filter(a => a.trending).sort((a, b) => (a.trendRank || 99) - (b.trendRank || 99));
   const trending = flagged.length > 0 ? flagged : all.slice(0, 10); // fallback to first 10
   if (trending.length > 0 && !isFiltered) {
     trendSec.style.display = '';

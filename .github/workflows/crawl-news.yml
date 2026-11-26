@@ -25,7 +25,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install headless browser driver
+        run: npm install --prefix "$RUNNER_TEMP/pw" --no-save --no-audit --no-fund playwright-core@1.63.0
+
       - name: Run news crawler
+        env:
+          NODE_PATH: ${{ runner.temp }}/pw/node_modules
         run: node scripts/crawl-to-json.js
 
       - name: Commit and push news data
