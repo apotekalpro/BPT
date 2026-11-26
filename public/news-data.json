@@ -1,7 +1,18 @@
 {
-  "crawledAt": "2026-11-26T13:37:24.761Z",
+  "crawledAt": "2026-11-26T18:15:42.414Z",
   "count": 40,
   "articles": [
+    {
+      "title": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal",
+      "url": "https://www.tempo.co/newsletter/siasat-akun-dokter-palsu-ai-menjual-obat-ilegal-2306818",
+      "image": null,
+      "summary": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal Tempo.co",
+      "publishedAt": "Thu, 26 Nov 2026 16:11:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 5
+    },
     {
       "title": "Alasan Pekerja Bangunan hingga Pabrik Rentan Kena Kanker Paru",
       "url": "https://health.kompas.com/read/26K26202600468/alasan-pekerja-bangunan-hingga-pabrik-rentan-kena-kanker-paru",
@@ -21,13 +32,24 @@
       "color": "#2c3e50"
     },
     {
+      "title": "Berawal dari Tantangan, Pria Bandung Ini Pecahkan Rekor Dunia Jump Rope pakai Sandal",
+      "url": "https://health.detik.com/kebugaran/d-8771683/berawal-dari-tantangan-pria-bandung-ini-pecahkan-rekor-dunia-jump-rope-pakai-sandal",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/24/tiji-prahyudi-mudjono-pria-berusia-33-tahun-asal-bojongsoang-kabupaten-bandung-berhasil-pecahkan-rekor-dunia-lompat-tali-denga-1795499801285_169.jpeg?w=360&amp;q=90",
+      "summary": "Tidji Prahyudi Nurdjono mengubah lompat tali dari hobi menjadi prestasi dunia. Dengan konsistensi, ia berhasil mencetak rekor 249 lompatan per menit.",
+      "publishedAt": "Thu, 26 Nov 2026 13:05:50 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
       "title": "7 Pengaruh Keluarga terhadap Kesehatan Mental, Sering Tidak Disadari",
       "url": "https://www.liputan6.com/citizen6/read/8343241/pengaruh-keluarga-terhadap-kesehatan-mental",
       "image": "https://cdn1-production-images-kly.akamaized.net/LP1Hb9gpRoxw_kd-YxOazpdX7is=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3127196/original/044656400_1589373437-people-gathered-inside-house-sitting-on-sofa-1054974.jpg",
       "summary": "Temukan pengaruh keluarga terhadap kesehatan mental, sering dialami dan tidak disadari.",
       "publishedAt": "Thu, 26 Nov 2026 12:30:00 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22"
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 8
     },
     {
       "title": "Kanker Paru Bukan Cuma Soal Perokok, Stigma Bikin Pasien Takut Berobat",
@@ -65,9 +87,7 @@
       "summary": "Upaya menjaga kesehatan sejak dini dapat membantu menekan risiko komplikasi sekaligus mempertahankan produktivitas.",
       "publishedAt": "Thu, 26 Nov 2026 11:00:58 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 8
+      "color": "#e67e22"
     },
     {
       "title": "INDOMEDEX 2026 Perkuat Ekosistem Industri Kesehatan",
@@ -144,15 +164,6 @@
       "trendRank": 1
     },
     {
-      "title": "Kasus Medis Tak Biasa Wanita Alami Kerusakan Jantung Usai Minum Dingin",
-      "url": "https://health.detik.com/true-story/d-8771172/kasus-medis-tak-biasa-wanita-alami-kerusakan-jantung-usai-minum-dingin",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2025/04/11/ilustrasi-pasien-1744358351515_169.jpeg?w=360&amp;q=90",
-      "summary": "Seorang wanita 46 tahun di AS mengalami serangan jantung setelah minum minuman dingin. Ia didiagnosis dengan diseksi arteri koroner spontan dan kini stabil.",
-      "publishedAt": "Thu, 26 Nov 2026 08:32:36 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
       "title": "Nutri-Level Dinilai Belum Efektif, CISDI Soroti Ambang Batas Gula dan Lemak",
       "url": "https://health.kompas.com/read/26K26153000568/nutri-level-dinilai-belum-efektif-cisdi-soroti-ambang-batas-gula-dan-lemak?source=terkini_artikel",
       "image": "https://asset.kompas.com/crops/iBfnY5ju4RCt2KXfbuNVy6sNLpg=/0x82:7833x5304/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2026/04/30/69f3366b331f4.jpg",
@@ -180,6 +191,15 @@
       "publishedAt": "Thu, 26 Nov 2026 08:07:55 GMT",
       "source": "Liputan6.com",
       "color": "#e67e22"
+    },
+    {
+      "title": "Bengkulu hingga Papua, 4 Provinsi Belum Punya Layanan Operasi Jantung",
+      "url": "https://health.kompas.com/read/26K26142200168/bengkulu-hingga-papua-4-provinsi-belum-punya-layanan-operasi-jantung",
+      "image": "https://asset.kompas.com/crops/yoQCuXhrwah0TgySdZVVLQe89CI=/0x0:1000x667/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/04/19/68032321033fa.jpg",
+      "summary": "Empat provinsi belum memiliki layanan operasi jantung. Bagaimana upaya pemerintah memperluas aksesnya?",
+      "publishedAt": "Thu, 26 Nov 2026 07:22:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
     },
     {
       "title": "Sering Sakit Kepala Tanpa Sebab yang Jelas, Bisa Jadi Tanda Tumor Otak",
@@ -211,15 +231,6 @@
       "color": "#d35400"
     },
     {
-      "title": "Kemenkes Perkuat Deteksi Dini Kanker Paru Lewat AI hingga Skrining CKG",
-      "url": "https://health.kompas.com/read/26K26131700868/kemenkes-perkuat-deteksi-dini-kanker-paru-lewat-ai-hingga-skrining-ckg",
-      "image": "https://asset.kompas.com/crops/SZD-lnStmF378TColw6YMOt57N4=/0x0:1500x1000/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/06/10/6848438e79f28.jpg",
-      "summary": "Mayoritas kasus kanker paru ditemukan pada stadium lanjut. Pemerintah kini memperluas skrining risiko dan pemanfaatan teknologi AI untuk deteksi dini.",
-      "publishedAt": "Thu, 26 Nov 2026 06:17:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
-    },
-    {
       "title": "Konsumsi Protein Saat Sarapan, Risiko Penyakit Jantung Bisa Menurun",
       "url": "https://kesehatan.liputan6.com/diet-dan-kebugaran/read/8342920/konsumsi-protein-saat-sarapan-risiko-penyakit-jantung-bisa-menurun",
       "image": "https://cdn1-production-images-kly.akamaized.net/HT34LTusQimrz8_zTITfgrTqowk=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4545377/original/034902200_1692597490-ben-kolde-FFqNATH27EM-unsplash.jpg",
@@ -235,9 +246,7 @@
       "summary": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan Tempo.co",
       "publishedAt": "Thu, 26 Nov 2026 04:30:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 10
+      "color": "#2c3e50"
     },
     {
       "title": "Bagaimana Kementerian Kesehatan Mengumpulkan Data Genom",
@@ -257,7 +266,7 @@
       "source": "Tempo.co",
       "color": "#2c3e50",
       "trending": true,
-      "trendRank": 5
+      "trendRank": 10
     },
     {
       "title": "Rokok Herbal, Tingwe, dan Vape Terbukti Tak Lebih Aman bagi Paru",
@@ -327,15 +336,6 @@
       "trendRank": 4
     },
     {
-      "title": "BPJS Umumkan Pemenang Healthkathon 2026, Ajak Anak Muda Perkuat Ekosistem JKN",
-      "url": "https://www.tempo.co/politik/bpjs-umumkan-pemenang-healthkathon-2026-ajak-anak-muda-perkuat-ekosistem-jkn--2306610",
-      "image": null,
-      "summary": "BPJS Umumkan Pemenang Healthkathon 2026, Ajak Anak Muda Perkuat Ekosistem JKN Tempo.co",
-      "publishedAt": "Wed, 25 Nov 2026 11:14:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
       "title": "HBsAg Positif Harus Langsung Diberi Anti Virus? Ini Penjelasan Dokter Terkait Cara Penanganannya - Halaman 3",
       "url": "https://m.tribunnews.com/kesehatan/7916417/hbsag-positif-harus-langsung-diberi-anti-virus-ini-penjelasan-dokter-terkait-cara-penanganannya?page=3",
       "image": "https://asset.tribunnews.com/Ucni83aGQ49XTwLfh1p9TUjyVIk=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/program-Cek-Kesehatan-Gratis-CKG.jpg",
@@ -363,22 +363,22 @@
       "color": "#e67e22"
     },
     {
-      "title": "252 Juta Orang di Dunia Tak Menyadari Mengidap Penyakit Diabetes, Deteksi Dini Jadi Tantangan",
-      "url": "https://www.tribunnews.com/kesehatan/7916001/252-juta-orang-di-dunia-tak-menyadari-mengidap-penyakit-diabetes-deteksi-dini-jadi-tantangan",
-      "image": "https://asset.tribunnews.com/-BWLwuRBmNymGF1ZlJW3vpaPBvs=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/Link-Twibbon-Hari-Diabetes-Sedunia-2026-bingkai-foto.jpg",
-      "summary": "International Diabetes Federation (IDF) memperkirakan sekitar 589 juta orang dewasa berusia 20–79 tahun hidup dengan diabetes di tahun 2034 mendatang.",
-      "publishedAt": "Tue, 24 Nov 2026 12:38:00 GMT",
+      "title": "Benjolan Kecil Sering Dianggap Bisa Sembuh Sendiri, Jangan Abaikan! Kanker Bisa Terlambat Ditangani - Halaman 2",
+      "url": "https://m.tribunnews.com/kesehatan/7916145/benjolan-kecil-sering-dianggap-bisa-sembuh-sendiri-jangan-abaikan-kanker-bisa-terlambat-ditangani?page=2",
+      "image": "https://asset.tribunnews.com/RBfMzpeoagAuAxb-1b-S5mcIagI=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/benjolan-pada-tangan.jpg",
+      "summary": "Benjolan kecil atau keluhan kesehatan yang tidak terlalu mengganggu kerap diabaikan dan dinilai bisa sembuh sendiri. - Halaman 2",
+      "publishedAt": "Wed, 25 Nov 2026 01:31:05 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400",
       "trending": true,
       "trendRank": 9
     },
     {
-      "title": "Cara Cegah Penularan Hepatitis B, Hindari Penggunaan Sikat Gigi dan Gunting Kuku Bergantian",
-      "url": "https://www.tribunnews.com/kesehatan/7915936/cara-cegah-penularan-hepatitis-b-hindari-penggunaan-sikat-gigi-dan-gunting-kuku-bergantian",
-      "image": "https://asset.tribunnews.com/VDtkI2K7-TShwomxa7LL5CPcLH8=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/Cek-kesehatan-gratis-di-Colomadu-Tohudan.jpg",
-      "summary": "Penularan hepatitis B bisa terjadi melalui barang pribadi yang terkontaminasi darah, berikut penjelasan dokter mengenai cara pencegahannya.",
-      "publishedAt": "Tue, 24 Nov 2026 10:33:00 GMT",
+      "title": "252 Juta Orang di Dunia Tak Menyadari Mengidap Penyakit Diabetes, Deteksi Dini Jadi Tantangan",
+      "url": "https://www.tribunnews.com/kesehatan/7916001/252-juta-orang-di-dunia-tak-menyadari-mengidap-penyakit-diabetes-deteksi-dini-jadi-tantangan",
+      "image": "https://asset.tribunnews.com/-BWLwuRBmNymGF1ZlJW3vpaPBvs=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/Link-Twibbon-Hari-Diabetes-Sedunia-2026-bingkai-foto.jpg",
+      "summary": "International Diabetes Federation (IDF) memperkirakan sekitar 589 juta orang dewasa berusia 20–79 tahun hidup dengan diabetes di tahun 2034 mendatang.",
+      "publishedAt": "Tue, 24 Nov 2026 12:38:00 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
     }
