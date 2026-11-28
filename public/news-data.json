@@ -1,22 +1,60 @@
 {
-  "crawledAt": "2026-11-28T06:33:28.919Z",
+  "crawledAt": "2026-11-28T12:45:59.047Z",
   "count": 40,
   "articles": [
     {
-      "title": "Dibayangi Residu Pestisida, Giling Merica Sendiri Lebih Aman? Faktanya Sama Saja",
-      "url": "https://health.detik.com/berita-detikhealth/d-8773616/dibayangi-residu-pestisida-giling-merica-sendiri-lebih-aman-faktanya-sama-saja",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1128255127-1795804530285_169.jpeg?w=360&amp;q=90",
-      "summary": "Adanya laporan residu pestisida dalam produk merica bubuk bikin kepikiran. Apakah beli merica utuh lalu digiling sendiri akan lebih aman? Faktanya sama aja sih.",
-      "publishedAt": "Sat, 28 Nov 2026 05:09:17 GMT",
+      "title": "Resmikan RS Harkit-Tokushukai, Prabowo Harap Warga Tak Berobat ke Luar Negeri",
+      "url": "https://health.detik.com/berita-detikhealth/d-8774391/resmikan-rs-harkit-tokushukai-prabowo-harap-warga-tak-berobat-ke-luar-negeri",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/presiden-prabowo-subianto-meresmikan-gedung-harapan-kita-tokushukai-1795856486217_169.jpeg?w=360&amp;q=90",
+      "summary": "Prabowo meresmikan RS Harkit-Tokushukai, berharap warga tidak perlu berobat ke luar negeri. Fasilitas modern ini mendukung keadilan sosial dan akses kesehatan.",
+      "publishedAt": "Sat, 28 Nov 2026 11:16:59 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e",
+      "trending": true,
+      "trendRank": 1
+    },
+    {
+      "title": "Ortu Wajib Tahu, Ini Tanda-tanda Anak Kekurangan Zat Besi",
+      "url": "https://health.detik.com/diet/d-8773660/ortu-wajib-tahu-ini-tanda-tanda-anak-kekurangan-zat-besi",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/03/13/2184362055-1773375466314_169.jpeg?w=360&amp;q=90",
+      "summary": "Anak yang tetap aktif tak selalu berarti baik-baik saja. Kekurangan zat besi bisa muncul perlahan dan luput dari perhatian lantaran tak terlihat ada masalah.",
+      "publishedAt": "Sat, 28 Nov 2026 10:09:53 GMT",
       "source": "Detik Health",
       "color": "#e63a2e"
     },
     {
-      "title": "Meski Dibayangi Kontroversi, Diet Suntik Reta Diburu di 'Pasar Gelap'",
-      "url": "https://health.detik.com/diet/d-8773614/meski-dibayangi-kontroversi-diet-suntik-reta-diburu-di-pasar-gelap",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/09/16/ilustrasi-skin-booster-1789546245658_169.jpeg?w=360&amp;q=90",
-      "summary": "Obat diet Reta alias Retatrutide disebut lebih manjur meski sebenarnya masih uji coba. Banyak diburu di pasar gelap meski tak terjamin keaslian dan keamanannya.",
-      "publishedAt": "Sat, 28 Nov 2026 04:09:29 GMT",
+      "title": "10 Negara dengan Kualitas Hidup Terbaik, RI Masuk Daftar?",
+      "url": "https://health.detik.com/berita-detikhealth/d-8774175/10-negara-dengan-kualitas-hidup-terbaik-ri-masuk-daftar",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/09/01/ilustrasi-perempuan-bahagia-di-taman-1788239861592_169.jpeg?w=360&amp;q=90",
+      "summary": "Kualitas hidup diukur dari keamanan, daya beli, dan layanan kesehatan. Temukan 10 negara dengan kualitas hidup terbaik di dunia pada 2026.",
+      "publishedAt": "Sat, 28 Nov 2026 09:04:19 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Anak Picky Eater, Bagaimana Memastikan Asupan Zat Besi Tercukupi?",
+      "url": "https://health.detik.com/diet/d-8773621/anak-picky-eater-bagaimana-memastikan-asupan-zat-besi-tercukupi",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/02/04/adv-1770187288197_169.png?w=360&amp;q=90",
+      "summary": "Anak yang pilih-pilih makanan atau picky eater kerap membuat orang tua khawatir. Bagaimana kebutuhan zat besi bisa terpenuhi kalau asupannya tak seimbang?",
+      "publishedAt": "Sat, 28 Nov 2026 08:08:52 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Sering Dijadikan Lalapan, Apa Saja Manfaat Daun Beluntas Bagi Tubuh",
+      "url": "https://jogja.tribunnews.com/kesehatan/1229179/sering-dijadikan-lalapan-apa-saja-manfaat-daun-beluntas-bagi-tubuh",
+      "image": "https://asset.tribunnews.com/eGmBqzal4BWXpuq5GveSTwI43TY=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/jogja/foto/bank/originals/kegunaann.jpg",
+      "summary": "Tanaman yang memiliki aroma khas dan rasa sedikit pahit ini cukup dikenal dalam kehidupan masyarakat Indonesia.",
+      "publishedAt": "Sat, 28 Nov 2026 07:05:21 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
+    },
+    {
+      "title": "Kasus Bullying Siswi SMA di Malang, Kepala BKKBN Soroti Rapuhnya Pengasuhan",
+      "url": "https://health.detik.com/berita-detikhealth/d-8774058/kasus-bullying-siswi-sma-di-malang-kepala-bkkbn-soroti-rapuhnya-pengasuhan",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2024/02/21/ilustrasi-bullying_169.jpeg?w=360&amp;q=90",
+      "summary": "Kepala BKKBN Wihaji soroti rapuhnya pengasuhan setelah kasus bullying siswi SMA di Malang. Ia dorong orang tua terapkan pengasuhan positif.",
+      "publishedAt": "Sat, 28 Nov 2026 07:02:04 GMT",
       "source": "Detik Health",
       "color": "#e63a2e",
       "trending": true,
@@ -41,13 +79,13 @@
       "color": "#e63a2e"
     },
     {
-      "title": "Apa Itu Retatrutide? Obat 'Suntik Reta' Penangkal Gemuk yang Lagi Viral",
-      "url": "https://health.detik.com/diet/d-8773608/apa-itu-retatrutide-obat-suntik-reta-penangkal-gemuk-yang-lagi-viral",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2019/02/26/66ce40fe-5b86-4a65-b0bc-e5d9f738ff73_169.jpeg?w=360&amp;q=90",
-      "summary": "Tren diet suntik makin beragam, kini muncul 'Reta' alias Retatrutide yang viral di platform media sosial. Kabarnya masih uji klinis, belum punya izin edar.",
-      "publishedAt": "Sat, 28 Nov 2026 01:05:11 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
+      "title": "Dokter Magang Singapura Rekam 874 Rekan Kerja di Toilet RS",
+      "url": "https://www.liputan6.com/global/read/8343533/dokter-magang-singapura-rekam-874-rekan-kerja-di-toilet-rs",
+      "image": "https://cdn0-production-images-kly.akamaized.net/3GOVTeXoqHGvLsB4vkNl6riwhRg=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/5099595/original/076851300_1737187075-1737186206385_mimpi-masuk-rumah-sakit-menurut-islam.jpg",
+      "summary": "Dokter magang asal Singapura ditahan di Melbourne setelah merekam ratusan rekan kerja di toilet rumah sakit.",
+      "publishedAt": "Sat, 28 Nov 2026 00:00:40 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
     },
     {
       "title": "Saran Dokter Jika Asupan Zat Besi Anak Belum Tercukupi dari Makanan Sehari-hari",
@@ -55,15 +93,6 @@
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1193154264-1795801186107_169.jpeg?w=360&amp;q=90",
       "summary": "Memilih susu untuk anak yang picky eater penting untuk memenuhi gizi seimbang. Susu terfortifikasi membantu menutup kekurangan zat besi dan vitamin C.",
       "publishedAt": "Fri, 27 Nov 2026 23:09:02 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Jalan Kaki 10 Ribu Langkah Vs Durasi 30 Menit, Mana yang Lebih Menyehatkan?",
-      "url": "https://health.detik.com/kebugaran/d-8773580/jalan-kaki-10-ribu-langkah-vs-durasi-30-menit-mana-yang-lebih-menyehatkan",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2025/12/27/972083956-1766789264607_169.jpeg?w=360&amp;q=90",
-      "summary": "Target 10.000 langkah dan olahraga 30 menit memiliki manfaat kesehatan yang signifikan. Kombinasi keduanya dapat meningkatkan kesehatan jantung dan mental.",
-      "publishedAt": "Fri, 27 Nov 2026 22:08:15 GMT",
       "source": "Detik Health",
       "color": "#e63a2e"
     },
@@ -94,7 +123,9 @@
       "summary": "BKKBN dan Kemensos memperkuat pendampingan kesehatan mental remaja melalui program PIK-R yang telah menjangkau 143 Sekolah Rakyat.",
       "publishedAt": "Fri, 27 Nov 2026 10:02:36 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22"
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 8
     },
     {
       "title": "Mengapa Jantung Berdebar Meski Tidak Sedang Berolahraga? Ini Penyebabnya",
@@ -103,7 +134,9 @@
       "summary": "Jantung berdebar meski tidak berolahraga terkadang membuat seseorang merasa khawatir",
       "publishedAt": "Fri, 27 Nov 2026 09:40:22 GMT",
       "source": "Tribunnews.com",
-      "color": "#d35400"
+      "color": "#d35400",
+      "trending": true,
+      "trendRank": 4
     },
     {
       "title": "Penderita Diabetes Sebaiknya Periksa Mata Sejak Dini, Kadar Gula Bisa Merusak Retina Tanpa Gejala - Halaman 2",
@@ -112,9 +145,7 @@
       "summary": "Penderita diabetes melitus perlu perhatikan kesehatan mata karena  kadar gula darah yang tinggi dan tidak terkontrol dalam waktu lama merusak retina. - Halaman 2",
       "publishedAt": "Fri, 27 Nov 2026 09:23:30 GMT",
       "source": "Tribunnews.com",
-      "color": "#d35400",
-      "trending": true,
-      "trendRank": 9
+      "color": "#d35400"
     },
     {
       "title": "Kalium Darah Rendah Bisa Ganggu Irama Jantung, Ini Penyebabnya",
@@ -132,9 +163,7 @@
       "summary": "Surabaya Raih Dua Penghargaan Kemenkes, Perkuat Pengendalian Superbug dan Layanan Kesehatan Tradisional Tempo.co",
       "publishedAt": "Fri, 27 Nov 2026 07:31:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 5
+      "color": "#2c3e50"
     },
     {
       "title": "Sering Makan Terlalu Cepat? Kenali Dampaknya bagi Pencernaan",
@@ -152,11 +181,13 @@
       "summary": "Selain hukuman penjara, jaksa meminta Richard Lee langsung ditahan di rutan. Simak selengkapnya di sini.",
       "publishedAt": "Fri, 27 Nov 2026 05:38:15 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22"
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 3
     },
     {
       "title": "54 Persen Masyarakat Indonesia Kehilangan Gigi di Usia Produktif, Ini Penyebabnya",
-      "url": "https://health.kompas.com/read/26K27121900768/54-persen-masyarakat-indonesia-kehilangan-gigi-di-usia-produktif-ini-penyebabnya?source=wp_terkini",
+      "url": "https://health.kompas.com/read/26K27121900768/54-persen-masyarakat-indonesia-kehilangan-gigi-di-usia-produktif-ini-penyebabnya",
       "image": "https://asset.kompas.com/crops/eaqeFX955LPwqqi-SgRaX6vsr4Q=/0x1077:2379x2663/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2026/11/21/6b01c0dd6688e.jpg",
       "summary": "Sekitar 54 persen masyarakat Indonesia mengalami kehilangan gigi di usia produktif. Simak penyebab utama dan risikonya menurut dokter.",
       "publishedAt": "Fri, 27 Nov 2026 05:19:00 GMT",
@@ -170,9 +201,16 @@
       "summary": "BRI Peduli memperkuat layanan kesehatan masyarakat melalui penyaluran ambulans dan cek kesehatan gratis bagi puluhan ribu warga pada Hari Kesehatan Nasional.",
       "publishedAt": "Fri, 27 Nov 2026 04:48:52 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 8
+      "color": "#e67e22"
+    },
+    {
+      "title": "Bella Hadid Jujur soal Deretan Penyakit Kronis yang Mempengaruhi Kariernya, Termasuk Endometriosis",
+      "url": "https://www.liputan6.com/showbiz/read/8343114/bella-hadid-jujur-soal-deretan-penyakit-kronis-yang-mempengaruhi-kariernya-termasuk-endometriosis",
+      "image": "https://cdn1-production-images-kly.akamaized.net/goHdCOaweoJeHv0K765QbtN8VV8=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/6195153/original/050293200_1779074774-AFP__20260517__B34J2QQ__v1__MidRes__FranceFilmFestivalCannes2026.jpg",
+      "summary": "Sebelumnya Bella Hadid telah mengungkap bahwa dirinya mengidap Lyme disease.",
+      "publishedAt": "Fri, 27 Nov 2026 04:41:33 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
     },
     {
       "title": "Cara Mengaktifkan Kembali BPJS Kesehatan yang Nonaktif lewat WhatsApp",
@@ -203,7 +241,7 @@
       "source": "Tribunnews.com",
       "color": "#d35400",
       "trending": true,
-      "trendRank": 4
+      "trendRank": 9
     },
     {
       "title": "Pengobatan Kanker Paru Kini Lebih Presisi, Disesuaikan Profil Genetik",
@@ -215,22 +253,20 @@
       "color": "#c0392b"
     },
     {
+      "title": "Ketombe Tak Kunjung Hilang? Dokter Ingatkan Cara Pakai Sampo yang Tepat",
+      "url": "https://kesehatan.liputan6.com/info-sehat/read/8343430/ketombe-tak-kunjung-hilang-dokter-ingatkan-cara-pakai-sampo-yang-tepat",
+      "image": "https://cdn1-production-images-kly.akamaized.net/yCINji1RImHaqP7YEZuaPnx0L-E=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9406933/original/006788700_1795707246-WhatsApp_Image_2026-11-26_at_3.48.45_PM.jpeg",
+      "summary": "Kesalahan yang biasanya dilakukan ketika keramas untuk mengilangkan ketombe, perlu mulai dihilangkan.",
+      "publishedAt": "Fri, 27 Nov 2026 03:00:27 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
+    },
+    {
       "title": "Kemendukbangga Luncurkan Uji Coba Survei Demografi dan Kesehatan Indonesia 2027",
       "url": "https://www.tempo.co/digital/kemendukbangga-luncurkan-uji-coba-survei-demografi-dan-kesehatan-indonesia-2027-2306859",
       "image": null,
       "summary": "Kemendukbangga Luncurkan Uji Coba Survei Demografi dan Kesehatan Indonesia 2027 Tempo.co",
       "publishedAt": "Fri, 27 Nov 2026 02:33:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 10
-    },
-    {
-      "title": "Apa Dampaknya ketika Taliban Gunakan Agama Batasi Akses Kesehatan Perempuan Afganistan?",
-      "url": "https://www.tempo.co/internasional/dw/apa-dampaknya-ketika-taliban-gunakan-agama-batasi-akses-kesehatan-perempuan-afganistan-12627",
-      "image": null,
-      "summary": "Apa Dampaknya ketika Taliban Gunakan Agama Batasi Akses Kesehatan Perempuan Afganistan? Tempo.co",
-      "publishedAt": "Fri, 27 Nov 2026 02:04:00 GMT",
       "source": "Tempo.co",
       "color": "#2c3e50"
     },
@@ -245,32 +281,12 @@
     },
     {
       "title": "3 Infeksi Saat Hamil yang Bisa Ganggu Otak, Mata, dan Telinga Bayi",
-      "url": "https://health.kompas.com/read/26K27081200168/3-infeksi-saat-hamil-yang-bisa-ganggu-otak-mata-dan-telinga-bayi",
+      "url": "https://health.kompas.com/read/26K27081200168/3-infeksi-saat-hamil-yang-bisa-ganggu-otak-mata-dan-telinga-bayi?source=terkini_artikel",
       "image": "https://asset.kompas.com/crops/juwy6FMiSozV9ihQSplLNbQ2Umk=/0x0:3861x2574/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/10/07/68e45f53883ef.jpg",
       "summary": "Infeksi CMV, rubella, dan toksoplasmosis pada ibu hamil dapat memengaruhi otak, mata, hingga pendengaran bayi. Kenali tandanya.",
       "publishedAt": "Fri, 27 Nov 2026 01:12:00 GMT",
       "source": "Kompas.com",
       "color": "#c0392b"
-    },
-    {
-      "title": "Cerita Pria Bandung Pecahkan Rekor Dunia Jump Rope, Siapkan Saksi Hitung Lompatan",
-      "url": "https://health.detik.com/kebugaran/d-8771697/cerita-pria-bandung-pecahkan-rekor-dunia-jump-rope-siapkan-saksi-hitung-lompatan",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/24/tiji-prahyudi-mudjono-pria-berusia-33-tahun-asal-bojongsoang-kabupaten-bandung-berhasil-pecahkan-rekor-dunia-lompat-tali-denga-1795499801413_169.jpeg?w=360&amp;q=90",
-      "summary": "Tidji Prahyudi Nurdjono memecahkan rekor dunia dengan 249 lompatan single under menggunakan sandal jepit. Persiapan dan strategi kunci suksesnya.",
-      "publishedAt": "Thu, 26 Nov 2026 23:05:16 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e",
-      "trending": true,
-      "trendRank": 1
-    },
-    {
-      "title": "Dari Polindes hingga Posyandu, Upaya Harita Nickel Perluas Akses Kesehatan di Pulau Obi",
-      "url": "https://www.tempo.co/politik/dari-polindes-hingga-posyandu-upaya-harita-nickel-perluas-akses-kesehatan-di-pulau-obi-2306934",
-      "image": null,
-      "summary": "Dari Polindes hingga Posyandu, Upaya Harita Nickel Perluas Akses Kesehatan di Pulau Obi Tempo.co",
-      "publishedAt": "Thu, 26 Nov 2026 17:00:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
     },
     {
       "title": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal",
@@ -279,16 +295,9 @@
       "summary": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal Tempo.co",
       "publishedAt": "Thu, 26 Nov 2026 16:11:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
-      "title": "Alasan Pekerja Bangunan hingga Pabrik Rentan Kena Kanker Paru",
-      "url": "https://health.kompas.com/read/26K26202600468/alasan-pekerja-bangunan-hingga-pabrik-rentan-kena-kanker-paru",
-      "image": "https://asset.kompas.com/crops/a_hE7a0U7Y62V0v3a8osE-F0XGI=/67x94:894x645/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2021/11/28/61a346fc69677.jpg",
-      "summary": "Pekerja sektor konstruksi dan industri rentan terpapar zat karsinogenik. Simak pentingnya alat pelindung diri dan skrining paru berkala.",
-      "publishedAt": "Thu, 26 Nov 2026 13:26:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 5
     },
     {
       "title": "Sentul City Gandeng IPB University Bangun Pusat Riset Kesehatan Berstandar Internasional",
@@ -300,13 +309,13 @@
       "color": "#2c3e50"
     },
     {
-      "title": "7 Pengaruh Keluarga terhadap Kesehatan Mental, Sering Tidak Disadari",
-      "url": "https://www.liputan6.com/citizen6/read/8343241/pengaruh-keluarga-terhadap-kesehatan-mental",
-      "image": "https://cdn1-production-images-kly.akamaized.net/LP1Hb9gpRoxw_kd-YxOazpdX7is=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3127196/original/044656400_1589373437-people-gathered-inside-house-sitting-on-sofa-1054974.jpg",
-      "summary": "Temukan pengaruh keluarga terhadap kesehatan mental, sering dialami dan tidak disadari.",
-      "publishedAt": "Thu, 26 Nov 2026 12:30:00 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
+      "title": "Kanker Paru Bukan Cuma Soal Perokok, Stigma Bikin Pasien Takut Berobat",
+      "url": "https://health.kompas.com/read/26K26192700168/kanker-paru-bukan-cuma-soal-perokok-stigma-bikin-pasien-takut-berobat?source=wp_terkini",
+      "image": "https://asset.kompas.com/crops/RceTANri1mQmFU7bo6MjkJZ341Y=/0x0:800x533/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2019/12/11/5df0da0fc37bf.jpg",
+      "summary": "Anggapan keliru yang mengaitkan kanker paru hanya dengan rokok membuat pasien enggan memeriksakan diri.",
+      "publishedAt": "Thu, 26 Nov 2026 12:27:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
     },
     {
       "title": "Biaya Perawatan Kesehatan Bukan Sekadar Pengeluaran, Ini Investasi untuk Masa Depan",
@@ -327,15 +336,6 @@
       "color": "#2c3e50"
     },
     {
-      "title": "Kepala RSPAD Ungkap Proses Tes Kesehatan Amran dan Sugiono",
-      "url": "https://www.liputan6.com/news/read/8343050/kepala-rspad-ungkap-proses-tes-kesehatan-amran-dan-sugiono",
-      "image": "https://cdn1-production-images-kly.akamaized.net/9aWRJ0SYD2TA9SdRXDzTNMocBoI=/0x0:1280x853/1200x675/filters:quality(75):strip_icc():format(jpeg):watermark(kly-media-production/assets/images/watermarks/liputan6/watermark-color-landscape-new.png,1100,20,0)/kly-media-production/medias/9406037/original/069457800_1795658169-WhatsApp_Image_2026-11-26_at_7.10.44_AM__1_.jpeg",
-      "summary": "Pemeriksaan di RSPAD ini melibatkan 25 dokter spesialis, 14 item utama, tes kejiwaan, dan narkoba.",
-      "publishedAt": "Thu, 26 Nov 2026 08:07:55 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
-    },
-    {
       "title": "BPOM Ungkap Hasil Uji Laboratorium Kopi Indonesia yang Ditahan di Taiwan karena Residu Pestisida - Halaman 2",
       "url": "https://m.tribunnews.com/kesehatan/7916838/bpom-ungkap-hasil-uji-laboratorium-kopi-indonesia-yang-ditahan-di-taiwan-karena-residu-pestisida?page=2",
       "image": "https://asset.tribunnews.com/_UCbYHB8NlMvJQgLvA7XO6YE0U4=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/ilustrasi-biji-kopi-luwak.jpg",
@@ -343,6 +343,17 @@
       "publishedAt": "Thu, 26 Nov 2026 06:50:28 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
+    },
+    {
+      "title": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan",
+      "url": "https://www.tempo.co/foto/arsip/calon-wakil-presiden-jalani-pemeriksaan-kesehatan-2306753",
+      "image": null,
+      "summary": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan Tempo.co",
+      "publishedAt": "Thu, 26 Nov 2026 04:30:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 10
     },
     {
       "title": "Bayang-bayang Risiko Kebocoran Data Genom BGSi",
@@ -354,24 +365,13 @@
       "color": "#2c3e50"
     },
     {
-      "title": "Cawapres Sugiono dan Amran Jalani Pemeriksaan Kesehatan",
-      "url": "https://www.liputan6.com/news/read/8342695/cawapres-sugiono-dan-amran-jalani-pemeriksaan-kesehatan",
-      "image": "https://cdn1-production-images-kly.akamaized.net/4FTnFdkH38hdxek7hgDlyk4oOsM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9405988/original/024895200_1795653509-WhatsApp_Image_2026-11-26_at_07.30.11.jpeg",
-      "summary": "Sugiono dan Andi Amran Sulaima menjalani pemeriksaan kesehatan sebagai bagian verifikasi faktual MPR terhadap cawapres.",
-      "publishedAt": "Thu, 26 Nov 2026 00:33:25 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 3
-    },
-    {
-      "title": "Dokter Ingatkan Risiko Gangguan Neurologis pada Bayi Prematur, Pemantauan Tak Boleh Berhenti di NICU",
-      "url": "https://www.tribunnews.com/kesehatan/7916495/dokter-ingatkan-risiko-gangguan-neurologis-pada-bayi-prematur-pemantauan-tak-boleh-berhenti-di-nicu",
-      "image": "https://asset.tribunnews.com/sPgQ6YRqfBNoVI9g1BcYW9eDLiY=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/Bayi-Prematur-1-25112026.jpg",
-      "summary": "Dr. dr. Achmad Rafli, Sp.A mengatakan bayi prematur membutuhkan pemantauan yang berbeda dan berkelanjutan dibandingkan bayi yang lahir cukup bulan.",
-      "publishedAt": "Wed, 25 Nov 2026 11:25:22 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
+      "title": "Menjaga Kesehatan Gigi Jadi Bagian Penting dari Healthy Aging",
+      "url": "https://www.tempo.co/gaya-hidup/menjaga-kesehatan-gigi-jadi-bagian-penting-dari-healthy-aging-2306639",
+      "image": null,
+      "summary": "Menjaga Kesehatan Gigi Jadi Bagian Penting dari Healthy Aging Tempo.co",
+      "publishedAt": "Wed, 25 Nov 2026 14:36:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
     },
     {
       "title": "Jangan Salah Kaprah, Dokter Jelaskan Fakta Medis Penyakit Lupus - Halaman 4",
