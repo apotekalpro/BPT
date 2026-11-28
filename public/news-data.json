@@ -1,7 +1,38 @@
 {
-  "crawledAt": "2026-11-28T12:45:59.047Z",
+  "crawledAt": "2026-11-28T16:43:39.849Z",
   "count": 40,
   "articles": [
+    {
+      "title": "Separuh Lebih Asupan Gula Warga +62 Berasal dari Dapur, Jus Buah Termasuk",
+      "url": "https://health.detik.com/diet/d-8773667/separuh-lebih-asupan-gula-warga-62-berasal-dari-dapur-jus-buah-termasuk",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1401137649-1795825709145_169.jpeg?w=360&amp;q=90",
+      "summary": "Riset terbaru menunjukkan lebih dari separuh asupan gula warga +62 datang dari makanan dan minuman yang dibuat sendiri di rumah. Jus buah termasuk di antaranya.",
+      "publishedAt": "Sat, 28 Nov 2026 13:09:44 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e",
+      "trending": true,
+      "trendRank": 1
+    },
+    {
+      "title": "Ricu's Secret Hadirkan Inovasi untuk Gaya Hidup Sehat yang Menyenangkan",
+      "url": "https://health.detik.com/berita-detikhealth/d-8774501/ricus-secret-hadirkan-inovasi-untuk-gaya-hidup-sehat-yang-menyenangkan",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/ricus-secret-1795869204569_43.jpeg?w=360&amp;q=90",
+      "summary": "Ricu's Secret hadir untuk memudahkan gaya hidup sehat dengan produk inovatif. Fokus pada nutrisi, serat, dan cita rasa, menjadikan hidup sehat menyenangkan.",
+      "publishedAt": "Sat, 28 Nov 2026 12:36:16 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Prabowo Terima Laporan Setiap Kabupaten Kini Sudah Punya CT Scan",
+      "url": "https://www.tribunnews.com/kesehatan/7917882/prabowo-terima-laporan-setiap-kabupaten-kini-sudah-punya-ct-scan",
+      "image": "https://asset.tribunnews.com/HmNuzUWCfIQN29Mfau9imUawoaw=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/Ngab-Owo-Prabowo-Subianto-13421sdgsd.jpg",
+      "summary": "Prabowo menegaskan pemerintah akan terus berupaya menghadirkan perangkat kesehatan yang lebih mutakhir di tingkat daerah.",
+      "publishedAt": "Sat, 28 Nov 2026 12:00:00 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400",
+      "trending": true,
+      "trendRank": 4
+    },
     {
       "title": "Resmikan RS Harkit-Tokushukai, Prabowo Harap Warga Tak Berobat ke Luar Negeri",
       "url": "https://health.detik.com/berita-detikhealth/d-8774391/resmikan-rs-harkit-tokushukai-prabowo-harap-warga-tak-berobat-ke-luar-negeri",
@@ -11,7 +42,7 @@
       "source": "Detik Health",
       "color": "#e63a2e",
       "trending": true,
-      "trendRank": 1
+      "trendRank": 6
     },
     {
       "title": "Ortu Wajib Tahu, Ini Tanda-tanda Anak Kekurangan Zat Besi",
@@ -19,15 +50,6 @@
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/03/13/2184362055-1773375466314_169.jpeg?w=360&amp;q=90",
       "summary": "Anak yang tetap aktif tak selalu berarti baik-baik saja. Kekurangan zat besi bisa muncul perlahan dan luput dari perhatian lantaran tak terlihat ada masalah.",
       "publishedAt": "Sat, 28 Nov 2026 10:09:53 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "10 Negara dengan Kualitas Hidup Terbaik, RI Masuk Daftar?",
-      "url": "https://health.detik.com/berita-detikhealth/d-8774175/10-negara-dengan-kualitas-hidup-terbaik-ri-masuk-daftar",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/09/01/ilustrasi-perempuan-bahagia-di-taman-1788239861592_169.jpeg?w=360&amp;q=90",
-      "summary": "Kualitas hidup diukur dari keamanan, daya beli, dan layanan kesehatan. Temukan 10 negara dengan kualitas hidup terbaik di dunia pada 2026.",
-      "publishedAt": "Sat, 28 Nov 2026 09:04:19 GMT",
       "source": "Detik Health",
       "color": "#e63a2e"
     },
@@ -56,9 +78,7 @@
       "summary": "Kepala BKKBN Wihaji soroti rapuhnya pengasuhan setelah kasus bullying siswi SMA di Malang. Ia dorong orang tua terapkan pengasuhan positif.",
       "publishedAt": "Sat, 28 Nov 2026 07:02:04 GMT",
       "source": "Detik Health",
-      "color": "#e63a2e",
-      "trending": true,
-      "trendRank": 6
+      "color": "#e63a2e"
     },
     {
       "title": "Gofar Hilman Disarankan Coba Japanese Walking, Gimana Sih Caranya?",
@@ -66,15 +86,6 @@
       "image": "https://akcdn.detik.net.id/community/media/visual/2024/11/20/ilustrasi-olahraga-jalan-kaki_169.jpeg?w=360&amp;q=90",
       "summary": "Japanese walking, metode jalan kaki interval, mudah dilakukan dan bermanfaat bagi kesehatan. Rutin melakukannya dapat tingkatkan kebugaran dan kesehatan mental.",
       "publishedAt": "Sat, 28 Nov 2026 03:03:01 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Bubuk Merica Tercemar Residu Pestisida, Kontaminasi dari Mana?",
-      "url": "https://health.detik.com/berita-detikhealth/d-8773612/bubuk-merica-tercemar-residu-pestisida-kontaminasi-dari-mana",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1820445261-1795802822527_169.jpeg?w=360&amp;q=90",
-      "summary": "Kontaminasi residu pestisida bukan hanya berasal dari proses budidaya tanaman. Setelah panen, pengendalian hama di penyimpanan juga kerap memakai pestisida.",
-      "publishedAt": "Sat, 28 Nov 2026 02:01:36 GMT",
       "source": "Detik Health",
       "color": "#e63a2e"
     },
@@ -103,11 +114,13 @@
       "summary": "Menjadikan self care sebagai prioritas sangat penting bagi kesejahteraan Anda, terutama jika Anda menjalani kehidupan yang sibuk.",
       "publishedAt": "Fri, 27 Nov 2026 14:00:30 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22"
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 8
     },
     {
       "title": "RS Awal Bros Kembangkan 28 Layanan Unggulan di Riau dan Kepri",
-      "url": "https://health.kompas.com/read/26K27195100568/rs-awal-bros-kembangkan-28-layanan-unggulan-di-riau-dan-kepri?source=wp_terkini",
+      "url": "https://health.kompas.com/read/26K27195100568/rs-awal-bros-kembangkan-28-layanan-unggulan-di-riau-dan-kepri",
       "image": "https://asset.kompas.com/crops/jX1mC89zI6nSNAJ06SwYhU_zGPo=/408x442:3672x2618/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2026/11/25/6b06ab38625bd.jpg",
       "summary": "RS Awal Bros raih penghargaan atas penyediaan layanan kesehatan spesialistik di Kepulauan Riau dan Riau. ",
       "publishedAt": "Fri, 27 Nov 2026 12:51:00 GMT",
@@ -123,9 +136,7 @@
       "summary": "BKKBN dan Kemensos memperkuat pendampingan kesehatan mental remaja melalui program PIK-R yang telah menjangkau 143 Sekolah Rakyat.",
       "publishedAt": "Fri, 27 Nov 2026 10:02:36 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 8
+      "color": "#e67e22"
     },
     {
       "title": "Mengapa Jantung Berdebar Meski Tidak Sedang Berolahraga? Ini Penyebabnya",
@@ -136,16 +147,7 @@
       "source": "Tribunnews.com",
       "color": "#d35400",
       "trending": true,
-      "trendRank": 4
-    },
-    {
-      "title": "Penderita Diabetes Sebaiknya Periksa Mata Sejak Dini, Kadar Gula Bisa Merusak Retina Tanpa Gejala - Halaman 2",
-      "url": "https://m.tribunnews.com/kesehatan/7917461/penderita-diabetes-sebaiknya-periksa-mata-sejak-dini-kadar-gula-bisa-merusak-retina-tanpa-gejala?page=2",
-      "image": "https://asset.tribunnews.com/xZkfoULKlMKsDPJtbOOhjU7IB2Q=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/tribunnews/foto/bank/originals/rs-mata-cicendo-gelar-periksa-mata-gratis_20191013_195203.jpg",
-      "summary": "Penderita diabetes melitus perlu perhatikan kesehatan mata karena  kadar gula darah yang tinggi dan tidak terkontrol dalam waktu lama merusak retina. - Halaman 2",
-      "publishedAt": "Fri, 27 Nov 2026 09:23:30 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
+      "trendRank": 9
     },
     {
       "title": "Kalium Darah Rendah Bisa Ganggu Irama Jantung, Ini Penyebabnya",
@@ -163,7 +165,9 @@
       "summary": "Surabaya Raih Dua Penghargaan Kemenkes, Perkuat Pengendalian Superbug dan Layanan Kesehatan Tradisional Tempo.co",
       "publishedAt": "Fri, 27 Nov 2026 07:31:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50"
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 10
     },
     {
       "title": "Sering Makan Terlalu Cepat? Kenali Dampaknya bagi Pencernaan",
@@ -173,6 +177,15 @@
       "publishedAt": "Fri, 27 Nov 2026 06:09:18 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
+    },
+    {
+      "title": "Amran Bocorkan Isi Obrolan dengan Sugiono Saat Cek Kesehatan",
+      "url": "https://www.liputan6.com/news/read/8343678/amran-bocorkan-isi-obrolan-dengan-sugiono-saat-cek-kesehatan",
+      "image": "https://cdn1-production-images-kly.akamaized.net/0YdfRxCmZvY0XlgJneACGNIPkTU=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9407226/original/028796200_1795760002-Screenshot_2026-11-27_095949.jpg",
+      "summary": "Amran mengatakan, suasana pertemuan berlangsung akrab. Keduanya tidak membahas hal yang serius",
+      "publishedAt": "Fri, 27 Nov 2026 06:08:43 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
     },
     {
       "title": "Dokter Richard Lee Dituntut 3 Tahun Penjara Terkait Dugaan Produk Ilegal",
@@ -214,7 +227,7 @@
     },
     {
       "title": "Cara Mengaktifkan Kembali BPJS Kesehatan yang Nonaktif lewat WhatsApp",
-      "url": "https://health.kompas.com/read/26K27110500568/cara-mengaktifkan-kembali-bpjs-kesehatan-yang-nonaktif-lewat-whatsapp?source=terkini_artikel",
+      "url": "https://health.kompas.com/read/26K27110500568/cara-mengaktifkan-kembali-bpjs-kesehatan-yang-nonaktif-lewat-whatsapp",
       "image": "https://asset.kompas.com/crops/3jWZSoowniCcSmfInK1CTLyaT6U=/256x277:2304x1643/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2026/02/19/6996abe096841.jpeg",
       "summary": "BPJS Kesehatan nonaktif? Jangan khawatir, peserta bisa mengajukan pengaktifan kembali lewat WhatsApp PANDAWA tanpa harus datang ke kantor BPJS.",
       "publishedAt": "Fri, 27 Nov 2026 04:05:00 GMT",
@@ -239,9 +252,7 @@
       "summary": "BPOM menemukan kosmetik ilegal dan tidak memenuhi ketentuan (TMK) yang  memiliki nilai keekonomian mencapai Rp131,8 miliar.",
       "publishedAt": "Fri, 27 Nov 2026 03:18:49 GMT",
       "source": "Tribunnews.com",
-      "color": "#d35400",
-      "trending": true,
-      "trendRank": 9
+      "color": "#d35400"
     },
     {
       "title": "Pengobatan Kanker Paru Kini Lebih Presisi, Disesuaikan Profil Genetik",
@@ -271,8 +282,17 @@
       "color": "#2c3e50"
     },
     {
+      "title": "Apa Dampaknya ketika Taliban Gunakan Agama Batasi Akses Kesehatan Perempuan Afganistan?",
+      "url": "https://www.tempo.co/internasional/dw/apa-dampaknya-ketika-taliban-gunakan-agama-batasi-akses-kesehatan-perempuan-afganistan-12627",
+      "image": null,
+      "summary": "Apa Dampaknya ketika Taliban Gunakan Agama Batasi Akses Kesehatan Perempuan Afganistan? Tempo.co",
+      "publishedAt": "Fri, 27 Nov 2026 02:04:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
+    },
+    {
       "title": "Perempuan Pengidap Migrain Lebih Berisiko Kena Stroke di Usia Muda, Jangan Sepelekan",
-      "url": "https://health.kompas.com/read/26K27081500068/perempuan-pengidap-migrain-lebih-berisiko-kena-stroke-di-usia-muda-jangan-sepelekan?source=wp_terkini",
+      "url": "https://health.kompas.com/read/26K27081500068/perempuan-pengidap-migrain-lebih-berisiko-kena-stroke-di-usia-muda-jangan-sepelekan",
       "image": "https://asset.kompas.com/crops/LyMHPwcjNa3SITKOm2z_0xYAe8c=/0x0:1000x667/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/06/18/68522a9957e68.jpg",
       "summary": "Studi terbaru mengungkap perempuan pengidap migrain memiliki risiko 85 persen lebih tinggi mengalami stroke sebelum usia 60 tahun.",
       "publishedAt": "Fri, 27 Nov 2026 01:15:00 GMT",
@@ -281,12 +301,23 @@
     },
     {
       "title": "3 Infeksi Saat Hamil yang Bisa Ganggu Otak, Mata, dan Telinga Bayi",
-      "url": "https://health.kompas.com/read/26K27081200168/3-infeksi-saat-hamil-yang-bisa-ganggu-otak-mata-dan-telinga-bayi?source=terkini_artikel",
+      "url": "https://health.kompas.com/read/26K27081200168/3-infeksi-saat-hamil-yang-bisa-ganggu-otak-mata-dan-telinga-bayi",
       "image": "https://asset.kompas.com/crops/juwy6FMiSozV9ihQSplLNbQ2Umk=/0x0:3861x2574/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2025/10/07/68e45f53883ef.jpg",
       "summary": "Infeksi CMV, rubella, dan toksoplasmosis pada ibu hamil dapat memengaruhi otak, mata, hingga pendengaran bayi. Kenali tandanya.",
       "publishedAt": "Fri, 27 Nov 2026 01:12:00 GMT",
       "source": "Kompas.com",
       "color": "#c0392b"
+    },
+    {
+      "title": "Dari Polindes hingga Posyandu, Upaya Harita Nickel Perluas Akses Kesehatan di Pulau Obi",
+      "url": "https://www.tempo.co/politik/dari-polindes-hingga-posyandu-upaya-harita-nickel-perluas-akses-kesehatan-di-pulau-obi-2306934",
+      "image": null,
+      "summary": "Dari Polindes hingga Posyandu, Upaya Harita Nickel Perluas Akses Kesehatan di Pulau Obi Tempo.co",
+      "publishedAt": "Thu, 26 Nov 2026 17:00:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 5
     },
     {
       "title": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal",
@@ -295,9 +326,7 @@
       "summary": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal Tempo.co",
       "publishedAt": "Thu, 26 Nov 2026 16:11:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 5
+      "color": "#2c3e50"
     },
     {
       "title": "Sentul City Gandeng IPB University Bangun Pusat Riset Kesehatan Berstandar Internasional",
@@ -318,15 +347,6 @@
       "color": "#c0392b"
     },
     {
-      "title": "Biaya Perawatan Kesehatan Bukan Sekadar Pengeluaran, Ini Investasi untuk Masa Depan",
-      "url": "https://www.liputan6.com/lifestyle/read/8342950/biaya-perawatan-kesehatan-bukan-sekadar-pengeluaran-ini-investasi-untuk-masa-depan",
-      "image": "https://cdn0-production-images-kly.akamaized.net/s7C0PsLq8apdu6ZupJ82B68cmBo=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9406336/original/002162400_1795674654-adam-berry-MeS_Wb5XwZ8-unsplash.jpg",
-      "summary": "Upaya menjaga kesehatan sejak dini dapat membantu menekan risiko komplikasi sekaligus mempertahankan produktivitas.",
-      "publishedAt": "Thu, 26 Nov 2026 11:00:58 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
-    },
-    {
       "title": "INDOMEDEX 2026 Perkuat Ekosistem Industri Kesehatan",
       "url": "https://www.tempo.co/info-tempo/indomedex-2026-perkuat-ekosistem-industri-kesehatan-2306777",
       "image": null,
@@ -345,31 +365,11 @@
       "color": "#d35400"
     },
     {
-      "title": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan",
-      "url": "https://www.tempo.co/foto/arsip/calon-wakil-presiden-jalani-pemeriksaan-kesehatan-2306753",
-      "image": null,
-      "summary": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan Tempo.co",
-      "publishedAt": "Thu, 26 Nov 2026 04:30:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 10
-    },
-    {
       "title": "Bayang-bayang Risiko Kebocoran Data Genom BGSi",
       "url": "https://www.tempo.co/politik/risiko-kebocoran-data-genomik-bgsi-2306688",
       "image": null,
       "summary": "Bayang-bayang Risiko Kebocoran Data Genom BGSi Tempo.co",
       "publishedAt": "Thu, 26 Nov 2026 03:15:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
-    },
-    {
-      "title": "Menjaga Kesehatan Gigi Jadi Bagian Penting dari Healthy Aging",
-      "url": "https://www.tempo.co/gaya-hidup/menjaga-kesehatan-gigi-jadi-bagian-penting-dari-healthy-aging-2306639",
-      "image": null,
-      "summary": "Menjaga Kesehatan Gigi Jadi Bagian Penting dari Healthy Aging Tempo.co",
-      "publishedAt": "Wed, 25 Nov 2026 14:36:00 GMT",
       "source": "Tempo.co",
       "color": "#2c3e50"
     },
