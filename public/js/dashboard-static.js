@@ -527,6 +527,9 @@ class StaticDashboardManager {
                 case 'kenali-gula-anda':
                     this.activateKenaliGulaAndaContent();
                     break;
+                case 'yes-2026':
+                    this.activateYes2026Content();
+                    break;
                 case 'campaign-calendar':
                     this.activateCampaignCalendarContent();
                     break;
@@ -902,6 +905,37 @@ class StaticDashboardManager {
         }
     }
 
+    activateYes2026Content() {
+        try {
+            const yesContent = document.getElementById('yes-2026') || 
+                              document.querySelector('[id="yes-2026"]');
+            
+            if (yesContent) {
+                yesContent.classList.add('active');
+                yesContent.style.display = 'flex';
+                yesContent.style.flexDirection = 'column';
+                yesContent.style.opacity = '1';
+                
+                // Ensure the iframe for YES 2026 campaign is properly loaded
+                const yesIframe = yesContent.querySelector('iframe');
+                if (yesIframe) {
+                    // Refresh iframe src to ensure proper loading
+                    const currentSrc = yesIframe.src;
+                    yesIframe.src = '';
+                    setTimeout(() => {
+                        yesIframe.src = currentSrc || 'https://9aa0e548-5036-4a65-8958-544a0f0e0dc7.vip.gensparksite.com/';
+                    }, 100);
+                }
+                
+                console.log('✅ YES 2026 content activated');
+            } else {
+                console.warn('⚠️ YES 2026 content not found');
+            }
+        } catch (error) {
+            console.error('🎯 YES 2026 activation error:', error);
+        }
+    }
+
     activateCampaignCalendarContent() {
         try {
             const calendarContent = document.getElementById('campaignCalendarContent') || 
@@ -928,9 +962,9 @@ class StaticDashboardManager {
             const campaignContents = document.querySelectorAll('.campaign-tab-content');
             
             if (campaignTabs && campaignTabs.length > 0) {
-                // Find the Kenali Gula Anda campaign tab (preferred default - latest campaign) or use first available
+                // Find the YES 2026 campaign tab (preferred default - latest campaign) or use first available
                 let defaultTab = Array.from(campaignTabs).find(tab => 
-                    tab.dataset && tab.dataset.campaign === 'kenali-gula-anda'
+                    tab.dataset && tab.dataset.campaign === 'yes-2026'
                 ) || campaignTabs[0];
                 
                 if (defaultTab) {
