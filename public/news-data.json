@@ -1,13 +1,69 @@
 {
-  "crawledAt": "2026-11-27T17:57:20.049Z",
+  "crawledAt": "2026-11-28T06:33:28.919Z",
   "count": 40,
   "articles": [
     {
-      "title": "Dukung Disney Run Jakarta 2026, Hansaplast Buka Wound Care Corner",
-      "url": "https://health.detik.com/berita-detikhealth/d-8773514/dukung-disney-run-jakarta-2026-hansaplast-buka-wound-care-corner",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/27/hansaplast-1795792760187_169.png?w=360&amp;q=90",
-      "summary": "Hansaplast hadir di Disney Run Jakarta 2026 dengan layanan pemeriksaan luka dan produk perawatan. Booth menyediakan P3K dan promo menarik bagi peserta.",
-      "publishedAt": "Fri, 27 Nov 2026 15:21:33 GMT",
+      "title": "Dibayangi Residu Pestisida, Giling Merica Sendiri Lebih Aman? Faktanya Sama Saja",
+      "url": "https://health.detik.com/berita-detikhealth/d-8773616/dibayangi-residu-pestisida-giling-merica-sendiri-lebih-aman-faktanya-sama-saja",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1128255127-1795804530285_169.jpeg?w=360&amp;q=90",
+      "summary": "Adanya laporan residu pestisida dalam produk merica bubuk bikin kepikiran. Apakah beli merica utuh lalu digiling sendiri akan lebih aman? Faktanya sama aja sih.",
+      "publishedAt": "Sat, 28 Nov 2026 05:09:17 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Meski Dibayangi Kontroversi, Diet Suntik Reta Diburu di 'Pasar Gelap'",
+      "url": "https://health.detik.com/diet/d-8773614/meski-dibayangi-kontroversi-diet-suntik-reta-diburu-di-pasar-gelap",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/09/16/ilustrasi-skin-booster-1789546245658_169.jpeg?w=360&amp;q=90",
+      "summary": "Obat diet Reta alias Retatrutide disebut lebih manjur meski sebenarnya masih uji coba. Banyak diburu di pasar gelap meski tak terjamin keaslian dan keamanannya.",
+      "publishedAt": "Sat, 28 Nov 2026 04:09:29 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e",
+      "trending": true,
+      "trendRank": 6
+    },
+    {
+      "title": "Gofar Hilman Disarankan Coba Japanese Walking, Gimana Sih Caranya?",
+      "url": "https://health.detik.com/kebugaran/d-8773579/gofar-hilman-disarankan-coba-japanese-walking-gimana-sih-caranya",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2024/11/20/ilustrasi-olahraga-jalan-kaki_169.jpeg?w=360&amp;q=90",
+      "summary": "Japanese walking, metode jalan kaki interval, mudah dilakukan dan bermanfaat bagi kesehatan. Rutin melakukannya dapat tingkatkan kebugaran dan kesehatan mental.",
+      "publishedAt": "Sat, 28 Nov 2026 03:03:01 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Bubuk Merica Tercemar Residu Pestisida, Kontaminasi dari Mana?",
+      "url": "https://health.detik.com/berita-detikhealth/d-8773612/bubuk-merica-tercemar-residu-pestisida-kontaminasi-dari-mana",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1820445261-1795802822527_169.jpeg?w=360&amp;q=90",
+      "summary": "Kontaminasi residu pestisida bukan hanya berasal dari proses budidaya tanaman. Setelah panen, pengendalian hama di penyimpanan juga kerap memakai pestisida.",
+      "publishedAt": "Sat, 28 Nov 2026 02:01:36 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Apa Itu Retatrutide? Obat 'Suntik Reta' Penangkal Gemuk yang Lagi Viral",
+      "url": "https://health.detik.com/diet/d-8773608/apa-itu-retatrutide-obat-suntik-reta-penangkal-gemuk-yang-lagi-viral",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2019/02/26/66ce40fe-5b86-4a65-b0bc-e5d9f738ff73_169.jpeg?w=360&amp;q=90",
+      "summary": "Tren diet suntik makin beragam, kini muncul 'Reta' alias Retatrutide yang viral di platform media sosial. Kabarnya masih uji klinis, belum punya izin edar.",
+      "publishedAt": "Sat, 28 Nov 2026 01:05:11 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Saran Dokter Jika Asupan Zat Besi Anak Belum Tercukupi dari Makanan Sehari-hari",
+      "url": "https://health.detik.com/berita-detikhealth/d-8773581/saran-dokter-jika-asupan-zat-besi-anak-belum-tercukupi-dari-makanan-sehari-hari",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/28/1193154264-1795801186107_169.jpeg?w=360&amp;q=90",
+      "summary": "Memilih susu untuk anak yang picky eater penting untuk memenuhi gizi seimbang. Susu terfortifikasi membantu menutup kekurangan zat besi dan vitamin C.",
+      "publishedAt": "Fri, 27 Nov 2026 23:09:02 GMT",
+      "source": "Detik Health",
+      "color": "#e63a2e"
+    },
+    {
+      "title": "Jalan Kaki 10 Ribu Langkah Vs Durasi 30 Menit, Mana yang Lebih Menyehatkan?",
+      "url": "https://health.detik.com/kebugaran/d-8773580/jalan-kaki-10-ribu-langkah-vs-durasi-30-menit-mana-yang-lebih-menyehatkan",
+      "image": "https://akcdn.detik.net.id/community/media/visual/2025/12/27/972083956-1766789264607_169.jpeg?w=360&amp;q=90",
+      "summary": "Target 10.000 langkah dan olahraga 30 menit memiliki manfaat kesehatan yang signifikan. Kombinasi keduanya dapat meningkatkan kesehatan jantung dan mental.",
+      "publishedAt": "Fri, 27 Nov 2026 22:08:15 GMT",
       "source": "Detik Health",
       "color": "#e63a2e"
     },
@@ -18,18 +74,7 @@
       "summary": "Menjadikan self care sebagai prioritas sangat penting bagi kesejahteraan Anda, terutama jika Anda menjalani kehidupan yang sibuk.",
       "publishedAt": "Fri, 27 Nov 2026 14:00:30 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 8
-    },
-    {
-      "title": "Ribut-ribut soal Lada, Dokter Gizi Soroti Hal Ini",
-      "url": "https://health.detik.com/diet/d-8773242/ribut-ribut-soal-lada-dokter-gizi-soroti-hal-ini",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/19/ilustrasi-lada-bubuk-1795057037482_169.jpeg?w=360&amp;q=90",
-      "summary": "Lada kembali jadi sorotan setelah temuan residu pestisida. Dokter gizi menjelaskan manfaat piperin di dalamnya dan batas konsumsi yang wajar agar lambung aman.",
-      "publishedAt": "Fri, 27 Nov 2026 13:07:04 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
+      "color": "#e67e22"
     },
     {
       "title": "RS Awal Bros Kembangkan 28 Layanan Unggulan di Riau dan Kepri",
@@ -41,15 +86,6 @@
       "color": "#c0392b",
       "trending": true,
       "trendRank": 2
-    },
-    {
-      "title": "Benarkah SKM Tak Punya Kandungan Susu Segar? Begini Faktanya",
-      "url": "https://health.detik.com/berita-detikhealth/d-8773055/benarkah-skm-tak-punya-kandungan-susu-segar-begini-faktanya",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/09/15/637039300-1789435566872_169.jpeg?w=360&amp;q=90",
-      "summary": "Susu kental manis (SKM) mengandung bahan baku susu dan gula. Meski manis, SKM tetap memiliki zat gizi. Ketahui komposisi dan cara konsumsi yang tepat.",
-      "publishedAt": "Fri, 27 Nov 2026 10:30:52 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
     },
     {
       "title": "BKKBN dan Kemensos Perkuat Pendampingan Kesehatan Mental Siswa Sekolah Rakyat",
@@ -96,7 +132,9 @@
       "summary": "Surabaya Raih Dua Penghargaan Kemenkes, Perkuat Pengendalian Superbug dan Layanan Kesehatan Tradisional Tempo.co",
       "publishedAt": "Fri, 27 Nov 2026 07:31:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50"
+      "color": "#2c3e50",
+      "trending": true,
+      "trendRank": 5
     },
     {
       "title": "Sering Makan Terlalu Cepat? Kenali Dampaknya bagi Pencernaan",
@@ -114,9 +152,7 @@
       "summary": "Selain hukuman penjara, jaksa meminta Richard Lee langsung ditahan di rutan. Simak selengkapnya di sini.",
       "publishedAt": "Fri, 27 Nov 2026 05:38:15 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22",
-      "trending": true,
-      "trendRank": 3
+      "color": "#e67e22"
     },
     {
       "title": "54 Persen Masyarakat Indonesia Kehilangan Gigi di Usia Produktif, Ini Penyebabnya",
@@ -134,7 +170,9 @@
       "summary": "BRI Peduli memperkuat layanan kesehatan masyarakat melalui penyaluran ambulans dan cek kesehatan gratis bagi puluhan ribu warga pada Hari Kesehatan Nasional.",
       "publishedAt": "Fri, 27 Nov 2026 04:48:52 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22"
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 8
     },
     {
       "title": "Cara Mengaktifkan Kembali BPJS Kesehatan yang Nonaktif lewat WhatsApp",
@@ -146,6 +184,15 @@
       "color": "#c0392b",
       "trending": true,
       "trendRank": 7
+    },
+    {
+      "title": "Kenapa Makanan Asin Bisa Membuat Cepat Haus? Ini Penjelasannya",
+      "url": "https://jogja.tribunnews.com/kesehatan/1229072/kenapa-makanan-asin-bisa-membuat-cepat-haus-ini-penjelasannya",
+      "image": "https://asset.tribunnews.com/q10Q2PtFz562ge0Q8nBYXEMoqSo=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/jogja/foto/bank/originals/ILUSTRASI-Makanan-Asin.jpg",
+      "summary": "Untuk menjaga keseimbangan cairan dan mineral, tubuh akan memberi sinyal berupa rasa haus, sehingga terdorong untuk minum.",
+      "publishedAt": "Fri, 27 Nov 2026 04:01:17 GMT",
+      "source": "Tribunnews.com",
+      "color": "#d35400"
     },
     {
       "title": "BPOM Temukan Kosmetik Ilegal Senilai Rp131,8 Miliar, Mayoritas Dijual di Marketplace",
@@ -168,15 +215,6 @@
       "color": "#c0392b"
     },
     {
-      "title": "Ketombe Tak Kunjung Hilang? Dokter Ingatkan Cara Pakai Sampo yang Tepat",
-      "url": "https://kesehatan.liputan6.com/info-sehat/read/8343430/ketombe-tak-kunjung-hilang-dokter-ingatkan-cara-pakai-sampo-yang-tepat",
-      "image": "https://cdn1-production-images-kly.akamaized.net/yCINji1RImHaqP7YEZuaPnx0L-E=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9406933/original/006788700_1795707246-WhatsApp_Image_2026-11-26_at_3.48.45_PM.jpeg",
-      "summary": "Kesalahan yang biasanya dilakukan ketika keramas untuk mengilangkan ketombe, perlu mulai dihilangkan.",
-      "publishedAt": "Fri, 27 Nov 2026 03:00:27 GMT",
-      "source": "Liputan6.com",
-      "color": "#e67e22"
-    },
-    {
       "title": "Kemendukbangga Luncurkan Uji Coba Survei Demografi dan Kesehatan Indonesia 2027",
       "url": "https://www.tempo.co/digital/kemendukbangga-luncurkan-uji-coba-survei-demografi-dan-kesehatan-indonesia-2027-2306859",
       "image": null,
@@ -186,26 +224,6 @@
       "color": "#2c3e50",
       "trending": true,
       "trendRank": 10
-    },
-    {
-      "title": "Gigi Berlubang Bisa Memicu Biduran? Ini Faktanya",
-      "url": "https://health.detik.com/berita-detikhealth/d-8772156/gigi-berlubang-bisa-memicu-biduran-ini-faktanya",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2022/11/06/ramai-wisata-dokter-gigi-di-turki-pasien-dari-luar-negeri-lho-3_169.jpeg?w=360&amp;q=90",
-      "summary": "Di sebuah unggahan viral di Tiktok, gigi berlubang disebut sebagai penyebab bidurang. Apakah benar keduanya bisa saling berhubungan? Ini faktanya.",
-      "publishedAt": "Fri, 27 Nov 2026 02:22:28 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Ginjal Pria 35 Tahun Setua Lansia Umur 70 karena Kebiasaan Makan Ini",
-      "url": "https://health.detik.com/berita-detikhealth/d-8772137/ginjal-pria-35-tahun-setua-lansia-umur-70-karena-kebiasaan-makan-ini",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/08/21/ilustrasi-ginjal-1787298236314_169.jpeg?w=360&amp;q=90",
-      "summary": "Seorang pria berusia 35 tahun di Taiwan bernama Lam didiagnosis mengalami penyakit ginjal kronis stadium 2. Ternyata kebiasaan ini yang jadi pemicunya.",
-      "publishedAt": "Fri, 27 Nov 2026 02:06:35 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e",
-      "trending": true,
-      "trendRank": 1
     },
     {
       "title": "Apa Dampaknya ketika Taliban Gunakan Agama Batasi Akses Kesehatan Perempuan Afganistan?",
@@ -235,33 +253,15 @@
       "color": "#c0392b"
     },
     {
-      "title": "7 Tanda Diabetes pada Anak Muda yang Sering Diabaikan",
-      "url": "https://health.detik.com/berita-detikhealth/d-8771863/7-tanda-diabetes-pada-anak-muda-yang-sering-diabaikan",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/05/26/ilustrasi-diabetes-pada-anak-remaja-1779762715812_169.jpeg?w=360&amp;q=90",
-      "summary": "Diabetes kini banyak dialami dewasa muda. Kenali 7 tanda peringatan dini seperti kelelahan, sering buang air kecil, dan perubahan berat badan.",
-      "publishedAt": "Fri, 27 Nov 2026 00:05:30 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e",
-      "trending": true,
-      "trendRank": 6
-    },
-    {
-      "title": "Rutin Sarapan Pagi Membantu Tubuh Mendukung Aktivitas Seharian - Halaman 2",
-      "url": "https://jogja.tribunnews.com/kesehatan/1229047/rutin-sarapan-pagi-membantu-tubuh-mendukung-aktivitas-seharian?page=2",
-      "image": "https://asset.tribunnews.com/B8P5PEZrDoKGDxvqCfrbsTIo6-g=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/jogja/foto/bank/originals/20261007-Ilustrasi-Sarapan.jpg",
-      "summary": "Mengonsumsi makanan bergizi melalui sarapan sehat juga bermanfaat untuk menjaga tekanan darah, mencegah peningkatan kadar kolesterol dan berat badan. - Halaman 2",
-      "publishedAt": "Thu, 26 Nov 2026 23:09:41 GMT",
-      "source": "Tribunnews.com",
-      "color": "#d35400"
-    },
-    {
       "title": "Cerita Pria Bandung Pecahkan Rekor Dunia Jump Rope, Siapkan Saksi Hitung Lompatan",
       "url": "https://health.detik.com/kebugaran/d-8771697/cerita-pria-bandung-pecahkan-rekor-dunia-jump-rope-siapkan-saksi-hitung-lompatan",
       "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/24/tiji-prahyudi-mudjono-pria-berusia-33-tahun-asal-bojongsoang-kabupaten-bandung-berhasil-pecahkan-rekor-dunia-lompat-tali-denga-1795499801413_169.jpeg?w=360&amp;q=90",
       "summary": "Tidji Prahyudi Nurdjono memecahkan rekor dunia dengan 249 lompatan single under menggunakan sandal jepit. Persiapan dan strategi kunci suksesnya.",
       "publishedAt": "Thu, 26 Nov 2026 23:05:16 GMT",
       "source": "Detik Health",
-      "color": "#e63a2e"
+      "color": "#e63a2e",
+      "trending": true,
+      "trendRank": 1
     },
     {
       "title": "Dari Polindes hingga Posyandu, Upaya Harita Nickel Perluas Akses Kesehatan di Pulau Obi",
@@ -279,9 +279,16 @@
       "summary": "Siasat Akun Dokter Palsu AI Menjual Obat Ilegal Tempo.co",
       "publishedAt": "Thu, 26 Nov 2026 16:11:00 GMT",
       "source": "Tempo.co",
-      "color": "#2c3e50",
-      "trending": true,
-      "trendRank": 5
+      "color": "#2c3e50"
+    },
+    {
+      "title": "Alasan Pekerja Bangunan hingga Pabrik Rentan Kena Kanker Paru",
+      "url": "https://health.kompas.com/read/26K26202600468/alasan-pekerja-bangunan-hingga-pabrik-rentan-kena-kanker-paru",
+      "image": "https://asset.kompas.com/crops/a_hE7a0U7Y62V0v3a8osE-F0XGI=/67x94:894x645/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2021/11/28/61a346fc69677.jpg",
+      "summary": "Pekerja sektor konstruksi dan industri rentan terpapar zat karsinogenik. Simak pentingnya alat pelindung diri dan skrining paru berkala.",
+      "publishedAt": "Thu, 26 Nov 2026 13:26:00 GMT",
+      "source": "Kompas.com",
+      "color": "#c0392b"
     },
     {
       "title": "Sentul City Gandeng IPB University Bangun Pusat Riset Kesehatan Berstandar Internasional",
@@ -302,20 +309,29 @@
       "color": "#e67e22"
     },
     {
-      "title": "Kanker Paru Bukan Cuma Soal Perokok, Stigma Bikin Pasien Takut Berobat",
-      "url": "https://health.kompas.com/read/26K26192700168/kanker-paru-bukan-cuma-soal-perokok-stigma-bikin-pasien-takut-berobat?source=wp_terkini",
-      "image": "https://asset.kompas.com/crops/RceTANri1mQmFU7bo6MjkJZ341Y=/0x0:800x533/1200x675/filters:watermark(data/photo/2026/01/30/697c819f9c086.png,0,-0,1)/data/photo/2019/12/11/5df0da0fc37bf.jpg",
-      "summary": "Anggapan keliru yang mengaitkan kanker paru hanya dengan rokok membuat pasien enggan memeriksakan diri.",
-      "publishedAt": "Thu, 26 Nov 2026 12:27:00 GMT",
-      "source": "Kompas.com",
-      "color": "#c0392b"
-    },
-    {
       "title": "Biaya Perawatan Kesehatan Bukan Sekadar Pengeluaran, Ini Investasi untuk Masa Depan",
       "url": "https://www.liputan6.com/lifestyle/read/8342950/biaya-perawatan-kesehatan-bukan-sekadar-pengeluaran-ini-investasi-untuk-masa-depan",
       "image": "https://cdn0-production-images-kly.akamaized.net/s7C0PsLq8apdu6ZupJ82B68cmBo=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/9406336/original/002162400_1795674654-adam-berry-MeS_Wb5XwZ8-unsplash.jpg",
       "summary": "Upaya menjaga kesehatan sejak dini dapat membantu menekan risiko komplikasi sekaligus mempertahankan produktivitas.",
       "publishedAt": "Thu, 26 Nov 2026 11:00:58 GMT",
+      "source": "Liputan6.com",
+      "color": "#e67e22"
+    },
+    {
+      "title": "INDOMEDEX 2026 Perkuat Ekosistem Industri Kesehatan",
+      "url": "https://www.tempo.co/info-tempo/indomedex-2026-perkuat-ekosistem-industri-kesehatan-2306777",
+      "image": null,
+      "summary": "INDOMEDEX 2026 Perkuat Ekosistem Industri Kesehatan Tempo.co",
+      "publishedAt": "Thu, 26 Nov 2026 10:30:00 GMT",
+      "source": "Tempo.co",
+      "color": "#2c3e50"
+    },
+    {
+      "title": "Kepala RSPAD Ungkap Proses Tes Kesehatan Amran dan Sugiono",
+      "url": "https://www.liputan6.com/news/read/8343050/kepala-rspad-ungkap-proses-tes-kesehatan-amran-dan-sugiono",
+      "image": "https://cdn1-production-images-kly.akamaized.net/9aWRJ0SYD2TA9SdRXDzTNMocBoI=/0x0:1280x853/1200x675/filters:quality(75):strip_icc():format(jpeg):watermark(kly-media-production/assets/images/watermarks/liputan6/watermark-color-landscape-new.png,1100,20,0)/kly-media-production/medias/9406037/original/069457800_1795658169-WhatsApp_Image_2026-11-26_at_7.10.44_AM__1_.jpeg",
+      "summary": "Pemeriksaan di RSPAD ini melibatkan 25 dokter spesialis, 14 item utama, tes kejiwaan, dan narkoba.",
+      "publishedAt": "Thu, 26 Nov 2026 08:07:55 GMT",
       "source": "Liputan6.com",
       "color": "#e67e22"
     },
@@ -327,24 +343,6 @@
       "publishedAt": "Thu, 26 Nov 2026 06:50:28 GMT",
       "source": "Tribunnews.com",
       "color": "#d35400"
-    },
-    {
-      "title": "Hasil Uji Residu Pestisida Merica Bubuk Ladaku oleh BPOM RI Keluar, Ini Hasilnya",
-      "url": "https://health.detik.com/berita-detikhealth/d-8770825/hasil-uji-residu-pestisida-merica-bubuk-ladaku-oleh-bpom-ri-keluar-ini-hasilnya",
-      "image": "https://akcdn.detik.net.id/community/media/visual/2026/11/21/ladaku-merica-bubuk-1795206695769_169.png?w=360&amp;q=90",
-      "summary": "BPOM melakukan pengujian terhadap produk Ladaku merica bubuk dan biji kopi mentah Robusta asal RI yang ditolak Taiwan. Ini hasilnya.",
-      "publishedAt": "Thu, 26 Nov 2026 05:42:43 GMT",
-      "source": "Detik Health",
-      "color": "#e63a2e"
-    },
-    {
-      "title": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan",
-      "url": "https://www.tempo.co/foto/arsip/calon-wakil-presiden-jalani-pemeriksaan-kesehatan-2306753",
-      "image": null,
-      "summary": "Calon Wakil Presiden Jalani Pemeriksaan Kesehatan Tempo.co",
-      "publishedAt": "Thu, 26 Nov 2026 04:30:00 GMT",
-      "source": "Tempo.co",
-      "color": "#2c3e50"
     },
     {
       "title": "Bayang-bayang Risiko Kebocoran Data Genom BGSi",
@@ -362,7 +360,9 @@
       "summary": "Sugiono dan Andi Amran Sulaima menjalani pemeriksaan kesehatan sebagai bagian verifikasi faktual MPR terhadap cawapres.",
       "publishedAt": "Thu, 26 Nov 2026 00:33:25 GMT",
       "source": "Liputan6.com",
-      "color": "#e67e22"
+      "color": "#e67e22",
+      "trending": true,
+      "trendRank": 3
     },
     {
       "title": "Dokter Ingatkan Risiko Gangguan Neurologis pada Bayi Prematur, Pemantauan Tak Boleh Berhenti di NICU",
